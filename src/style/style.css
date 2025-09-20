@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  background-color: #f6f6f6;
+  min-height: 100dvh;
+  min-width: 100dvw;
+}
