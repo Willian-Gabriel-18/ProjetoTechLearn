@@ -1,5 +1,11 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
+
+const isActiveRoute = (path) => {
+  const route = useRoute();
+  return route.path === path;
+};
+
 </script>
 
 <template>
@@ -10,9 +16,9 @@ import { RouterLink } from 'vue-router';
 
     <nav>
       <ul class="flex flex-row flex-nowrap gap-4">
-        <li class="navItem"><RouterLink to="/"><i class="pi pi-home"></i> Home</RouterLink></li>
-        <li class="navItem"><RouterLink to="/learn"><i class="pi pi-graduation-cap"></i> Learn</RouterLink></li>
-        <li class="navItem"><RouterLink to="/news"><i class="pi pi-envelope"></i> News</RouterLink></li>
+        <li :class="{navItem: true, isActive: (isActiveRoute('/'))}"><RouterLink to="/"><i class="pi pi-home"></i> Home</RouterLink></li>
+        <li :class="{navItem: true, isActive: (isActiveRoute('/learn'))}"><RouterLink to="/learn"><i class="pi pi-graduation-cap"></i> Learn</RouterLink></li>
+        <li :class="{navItem: true, isActive: (isActiveRoute('/news'))}"><RouterLink to="/news"><i class="pi pi-envelope"></i> News</RouterLink></li>
       </ul>
     </nav>
   </header>
@@ -20,6 +26,10 @@ import { RouterLink } from 'vue-router';
 
 <style scoped>
 .navItem{
-  @apply text-xl flex items-center gap-1 hover:scale-110 hover:cursor-pointer hover:text-orange-500 transition duration-150 hover:border-b hover:border-orange-500;
+  @apply text-xl flex items-center px-2 py-1 rounded-md gap-1 md:hover:scale-110 md:hover:cursor-pointer md:hover:text-orange-500 md:hover:shadow md:hover:shadow-orange-500 transition duration-75;
+}
+
+.isActive{
+  @apply bg-slate-200 text-slate-900/90 px-2 py-1 rounded-md scale-110;
 }
 </style>
