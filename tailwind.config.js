@@ -5,6 +5,12 @@ export default {
   theme: {
     extend: {
       width: {
+        '30p': '30%',
+        '50p': '50%',
+        '80p': '80%'
+      },
+      maxWidth: {
+        '30p': '30%',
         '50p': '50%',
         '80p': '80%'
       }

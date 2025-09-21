@@ -29,7 +29,7 @@ defineProps({
           <i class="pi pi-graduation-cap text-xl align-middle md:text-4xl"></i>
           <p class="font-bold">Learn</p>
         </RouterLink>
-        <RouterLink to="/news" class="interactiveButton bg-slate-200/70 text-stone-600 px-4 py-2 rounded flex items-center flex-nowrap gap-2">
+        <RouterLink to="/news" class="interactiveButton bg-slate-200/70 text-stone-700 px-4 py-2 rounded flex items-center flex-nowrap gap-2">
           <i class="pi pi-sparkles align-middle text-yellow-300 text-xl md:text-4xl"></i>
           <p class="font-bold">News</p>
         </RouterLink>
