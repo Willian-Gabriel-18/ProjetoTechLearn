@@ -1,0 +1,69 @@
+[{
+    "id": 1,
+    "titulo": "Por que todos os sites do mundo usam JavaScript?",
+    "subtitulo": "A linguagem que começou simples e virou a base da internet moderna",
+    "autor": "TechLearn",
+    "data_publicacao": "2025-09-21",
+    "categoria": "Tecnologia",
+    "tags": ["JavaScript", "Curiosidades", "Internet", "Web", "Tecnologia"],
+    "imagem_principal": "https://www.cmarix.com/blog/wp-content/uploads/2023/09/large-website-using-javascript-for-web-development.webp",
+    "resumo": "Quase 99% dos sites no mundo utilizam JavaScript. Mas por que essa linguagem é tão essencial para a internet moderna? Descubra como ela transformou páginas estáticas em experiências interativas e se tornou a base da web.",
+    "conteudo": [
+        {
+        "tipo": "paragrafo",
+        "texto": "Se você já clicou em um botão e viu algo mudar instantaneamente na tela, assistiu a um vídeo no YouTube, ou acompanhou o feed de uma rede social, pode ter certeza: o JavaScript estava por trás dessa experiência. Hoje, praticamente 99% dos sites em todo o mundo utilizam a linguagem de alguma forma."
+        },
+        {
+        "tipo": "paragrafo",
+        "texto": "Mas por que exatamente todos os sites usam JavaScript? A resposta está na função que a linguagem cumpre. Diferente do HTML e do CSS, que estruturam e embelezam a página, o JavaScript é o responsável por dar vida à internet, tornando-a interativa e dinâmica."
+        },
+        {
+        "tipo": "destaque",
+        "texto": "Sem JavaScript, a web seria apenas um conjunto de páginas estáticas, como livros digitais sem interação."
+        },
+        {
+        "tipo": "paragrafo",
+        "texto": "Imagine fazer compras em um site sem conseguir adicionar produtos ao carrinho, ou usar uma rede social onde a página precisaria recarregar inteira toda vez que você curtisse uma publicação. Esse era o cenário antes do JavaScript se popularizar. Ele resolveu esse problema ao permitir que mudanças acontecessem em tempo real, sem recarregar a página."
+        },
+        {
+        "tipo": "destaque",
+        "texto": "Outro motivo de sua onipresença é a universalidade: o JavaScript funciona em praticamente todos os navegadores modernos, seja no computador, tablet ou celular. Isso garante que empresas e desenvolvedores possam criar experiências que chegam a bilhões de pessoas sem precisar de adaptações complicadas."
+        },
+        {
+        "tipo": "paragrafo",
+        "texto": "Grandes plataformas como Netflix, Amazon, Google e Facebook utilizam JavaScript intensivamente para oferecer recursos em tempo real, recomendações personalizadas e interfaces rápidas e fluidas. Sem ele, a internet não teria a mesma cara que conhecemos hoje."
+        },
+        {
+        "tipo": "paragrafo",
+        "texto": "Além disso, o ecossistema da linguagem cresceu muito. Bibliotecas e frameworks como React, Vue e Angular facilitaram ainda mais o desenvolvimento, permitindo criar desde redes sociais até aplicativos completos, usando JavaScript como base."
+        },
+        {
+        "tipo": "paragrafo",
+        "texto": "No fim das contas, o segredo do JavaScript é simples: ele está em todos os lugares onde existe interação na web. Essa combinação de ubiquidade, praticidade e poder de transformar páginas em experiências vivas explica por que praticamente todos os sites do planeta o utilizam."
+        }
+    ],
+    
+  "referencias": [
+    {
+      "titulo": "MDN — Introduction to JavaScript",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction"
+    },
+    {
+      "titulo": "W3Techs — Usage Statistics of JavaScript (client-side)",
+      "url": "https://w3techs.com/technologies/details/cp-javascript"
+    },
+    {
+      "titulo": "Stack Overflow — 2024 Developer Survey (Technology)",
+      "url": "https://survey.stackoverflow.co/2024/technology"
+    },
+    {
+      "titulo": "freeCodeCamp — What is JavaScript? (explicado em linguagem simples)",
+      "url": "https://www.freecodecamp.org/news/what-is-javascript-javascript-code-explained-in-plain-english/"
+    },
+    {
+      "titulo": "Brendan Eich — A Brief History of JavaScript",
+      "url": "https://brendaneich.com/2010/07/a-brief-history-of-javascript/"
+    }
+  ]
+}
+]

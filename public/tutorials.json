@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "categoria": "JavaScript",
+        "aulas": [
+            {
+            "id": 1,
+            "titulo": "Visão geral do JS",
+            "paragrafos": [
+                "JavaScript é uma linguagem de programação interpretada, de alto nível, criada inicialmente para adicionar interatividade às páginas web.",
+                "Ela foi desenvolvida por Brendan Eich em 1995 e, desde então, tornou-se uma das linguagens mais populares do mundo.",
+                "Originalmente, o JavaScript era executado apenas em navegadores, mas hoje também pode ser usado no lado do servidor com tecnologias como Node.js.",
+                "JavaScript é uma linguagem baseada em protótipos, orientada a objetos, dinâmica e multiparadigma, permitindo programação funcional, imperativa e orientada a objetos.",
+                "A linguagem é padronizada pela especificação ECMAScript, que define suas principais funcionalidades e recursos.",
+                "Com JavaScript, é possível manipular o DOM (Document Object Model), permitindo alterar o conteúdo, estrutura e estilo das páginas web em tempo real.",
+                "Além de páginas web, JavaScript é utilizado no desenvolvimento de aplicativos móveis, jogos, servidores, APIs e até mesmo aplicações desktop.",
+                "O ecossistema JavaScript é vasto, contando com milhares de bibliotecas e frameworks como React, Angular, Vue.js, Express, entre outros.",
+                "A sintaxe do JavaScript é relativamente simples para iniciantes, mas também oferece recursos avançados para desenvolvedores experientes.",
+                "A comunidade JavaScript é muito ativa, com grande quantidade de recursos, tutoriais, fóruns e eventos ao redor do mundo.",
+                "Em resumo, JavaScript é uma linguagem essencial para o desenvolvimento web moderno, sendo uma habilidade fundamental para desenvolvedores front-end e back-end."
+            ],
+            "imagens": [
+                {
+                "url": "https://exemplo.com/imagem-js.png",
+                "descricao": "Logo do JavaScript"
+                }
+            ],
+            "referencias": [
+                "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
+                "https://www.javascript.com/",
+                "https://pt.wikipedia.org/wiki/JavaScript",
+                "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"
+            ],
+            "videos": [
+                {
+                "url": "https://www.youtube.com/watch?v=upDLs1sn7g4",
+                "descricao": "Tutorial básico de JavaScript"
+                },
+                {
+                "url": "https://www.youtube.com/watch?v=PkZNo7MFNFg",
+                "descricao": "Curso completo de JavaScript para iniciantes"
+                }
+                    ]
+                    }
+                ]
+            }
+        ]

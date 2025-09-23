@@ -27,11 +27,11 @@ defineProps({
       <div class="flex flex-nowrap justify-center items-center mt-5 md:mt-8 gap-2 md:gap-4 italic">
         <RouterLink to="/learn" class="interactiveButton bg-green-400 px-4 py-2 rounded text-white flex items-center flex-nowrap gap-2">
           <i class="pi pi-graduation-cap text-xl align-middle md:text-4xl"></i>
-          <p class="font-bold">Learn</p>
+          <p class="font-bold">Aprenda</p>
         </RouterLink>
         <RouterLink to="/news" class="interactiveButton bg-slate-200/70 text-stone-700 px-4 py-2 rounded flex items-center flex-nowrap gap-2">
           <i class="pi pi-sparkles align-middle text-yellow-300 text-xl md:text-4xl"></i>
-          <p class="font-bold">News</p>
+          <p class="font-bold">Novidades</p>
         </RouterLink>
       </div>
     </div>

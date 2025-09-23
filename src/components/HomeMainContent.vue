@@ -1,12 +1,13 @@
 <script setup>
 import CardSampleTemplate from './CardSampleTemplate.vue';
-import tutorial1Img from '../../assets/img/tutorial1Img.jpg';
+import { inject } from 'vue';
 
 /*
 OBS: Planejo Futuramente criar um componente carrosel e tornar tudo aqui mais dinâmico,
 no entanto, vou deixar assim mesmo, pois, é somente representativo.
 */
 
+const newsData = inject('NewsData');
 </script>
 
 <template>
@@ -14,17 +15,17 @@ no entanto, vou deixar assim mesmo, pois, é somente representativo.
   <section class="mt-8 px-4">
     <div>
       <h3 class="titulos flex items-center flex-nowrap gap-2"><i class="pi pi-graduation-cap text-green-600 text-4xl align-middle"></i> Tutoriais e Guias</h3>
-      <div class="carrosel mt-2">
+      <div class="carrosel">
         <!-- Vai guardar os itens do carrosel -->
-         <CardSampleTemplate :imgPath="tutorial1Img" title="teste" resume="kfdhshf" :list-icon-class="['pi-star', 'pi-asterisk']" destination-url="/learn"></CardSampleTemplate>
+         <CardSampleTemplate title="teste" resume="kfdhshf" :list-icon-class="['pi pi-star', 'pi pi-asterisk']" destination-url="/learn"></CardSampleTemplate>
       </div>
     </div>
 
     <div class="mt-3">
       <h3 class="titulos flex items-center flex-nowrap gap-2"><i class="pi pi-sparkles text-yellow-300 text-4xl align-middle"></i> Novidades e Artigos</h3>
-      <div class="carrosel mt-2">
+      <div class="carrosel">
         <!-- Vai guardar os itens do carrosel -->
-        <CardSampleTemplate title="tesfdsssssssssfdfdfdte" resume="kfdhadfsfdsfsdfshf dfssssssssssssss dfccsasdfafdcadfdafdaffad kfdhadfsfdsfsdfshf dfssssssssssssss dfccsasdfafdcadfdafdaffad" destination-url="/news"></CardSampleTemplate>
+        <CardSampleTemplate v-for="(noticia ,index) in newsData.getAllData().slice(0, 3 || newsData.getLength())" :key="noticia.id" :title="newsData.getTitulo(index)" :resume="newsData.getResumo(index)" :img-path="newsData.getURLBannerImg(index)" :destination-url="'/news/'+ noticia.id"></CardSampleTemplate>
       </div>
     </div>
   </section>
@@ -36,6 +37,6 @@ no entanto, vou deixar assim mesmo, pois, é somente representativo.
 }
 
 .carrosel{
-  @apply py-2 px-5;
+  @apply py-2 px-5 mt-2 flex flex-nowrap gap-6 overflow-x-scroll;
 }
 </style>
