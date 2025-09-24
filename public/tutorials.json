@@ -4,9 +4,9 @@
     "categoria": "JavaScript",
     "categoriaIconClass": "fa-brands fa-js",
     
-    "bannerImgUrl": "../assets/img/defaultCardImg.jpg",
+    "bannerImgUrl": "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg",
     "titulo": "Introdução ao JavaScript",
-    "resumo": "Aula inicial que apresenta o que é JavaScript, sua importância no desenvolvimento web, editores de código e o uso do terminal e dos navegadores. Mostra como inserir JavaScript em páginas, fazer comentários e três formas de exibir o primeiro 'Hello World', com explicações simples para termos técnicos.",
+    "resumo": "Nessa primeira aula será apresentado o que é JavaScript, sua importância no desenvolvimento web, editores de código e o uso do terminal e dos navegadores. Mostra como inserir JavaScript em páginas, fazer comentários e três formas de exibir o primeiro 'Hello World', com explicações simples para termos técnicos.",
     "autor": "TechLearn",
     "data_publicacao": "2025-09-23",
     "meta": {
@@ -269,7 +269,6 @@
           }
         ]
       },
-
       {
         "tipo": "paragrafo",
         "trechos": [
@@ -279,9 +278,14 @@
             "isItalic": false,
             "isLink": false,
             "urlPage": ""
-          },
+          }
+        ]
+      },
+      {
+        "tipo": "script",
+        "trechos": [
           {
-            "texto": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Exemplo Inline</title>\n  </head>\n  <body>\n    <script>\n      console.log('Olá do script embutido');\n    </script>\n  </body>\n</html>",
+            "texto": "\n<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Exemplo Inline</title>\n  </head>\n  <body>\n    <script>\n      console.log('Olá do script embutido');\n    </script>\n  </body>\n</html>",
             "isBold": false,
             "isItalic": false,
             "isLink": false,
@@ -289,7 +293,6 @@
           }
         ]
       },
-
       {
         "tipo": "paragrafo",
         "trechos": [
@@ -299,9 +302,14 @@
             "isItalic": false,
             "isLink": false,
             "urlPage": ""
-          },
+          }
+        ]
+      },
+      {
+        "tipo": "script",
+        "trechos": [
           {
-            "texto": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Exemplo Externo</title>\n    <script src=\"script.js\"></script>\n  </head>\n  <body>\n  </body>\n</html>\n\n/* arquivo script.js */\nconsole.log('Olá do arquivo externo');",
+            "texto": "\n<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Exemplo Externo</title>\n    <script src=\"script.js\"></script>\n  </head>\n  <body>\n  </body>\n</html>\n\n/* arquivo script.js */\nconsole.log('Olá do arquivo externo');",
             "isBold": false,
             "isItalic": false,
             "isLink": false,
@@ -309,7 +317,6 @@
           }
         ]
       },
-
       {
         "tipo": "topico",
         "trechos": [
@@ -502,13 +509,6 @@
             "isItalic": false,
             "isLink": true,
             "urlPage": "https://javascript.info/devtools"
-          },
-          {
-            "texto": "• Faça commits pequenos e frequentes com Git (controle de versão).",
-            "isBold": false,
-            "isItalic": false,
-            "isLink": false,
-            "urlPage": ""
           }
         ]
       },
@@ -532,21 +532,21 @@
           {
             "texto": "1) Abra um arquivo index.html e coloque um script externo script.js. Faça o script escrever 'Olá' no console.",
             "isBold": false,
-            "isItalic": false,
+            "isItalic": true,
             "isLink": false,
             "urlPage": ""
           },
           {
             "texto": "2) No console do navegador, tente: console.log('Olá do console'); e depois document.body.innerHTML = '<p>Feito!</p>'",
             "isBold": false,
-            "isItalic": false,
+            "isItalic": true,
             "isLink": false,
             "urlPage": ""
           },
           {
             "texto": "3) Adicione comentários ao código explicando cada linha (prática de documentação).",
             "isBold": false,
-            "isItalic": false,
+            "isItalic": true,
             "isLink": false,
             "urlPage": ""
           }

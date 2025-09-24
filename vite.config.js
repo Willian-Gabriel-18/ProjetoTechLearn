@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [vue(), vueDevTools()],
   server: {
     port: 3000,
+    host: true
   },
   resolve: {
     alias: {

@@ -14,7 +14,7 @@ const newsData = inject('NewsData');
 
 <template>
 
-  <section class="mt-8 px-4">
+  <section class="mt-8 px-4 max-w-full">
     <div>
       <h3 class="titulos flex items-center flex-nowrap gap-2"><i class="pi pi-graduation-cap text-green-600 text-4xl align-middle"></i> Tutoriais e Guias</h3>
       <div class="carrosel">
