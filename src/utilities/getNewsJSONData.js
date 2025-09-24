@@ -1,32 +1,37 @@
 import NewJSON from '../../public/news.json';
 
 export default function getData() {
-  const getTitulo = (index) => {
-    return NewJSON[index].titulo;
+  /*
+  Essa função vai dar getters de muitos dados que vou precisar para a aplicação,
+  a maioria nem vou usar, mas vai estar aqui para facilitar quando eu precisar
+  */
+ 
+  const getTitulo = (id) => {
+    return NewJSON.filter(elem => parseInt(elem.id) === parseInt(id))[0].titulo;
   }
 
-  const getSubTitulo = (index) => {
-    return NewJSON[index].subtitulo;
+  const getSubTitulo = (id) => {
+    return NewJSON.filter(elem => parseInt(elem.id) === parseInt(id))[0].subtitulo;
   }
 
-  const getAuthor = (index) => {
-    return NewJSON[index].autor;
+  const getAuthor = (id) => {
+    return NewJSON.filter(elem => parseInt(elem.id) === parseInt(id))[0].autor;
   }
 
-  const getDataPublicação = (index) => {
-    return NewJSON[index].data_publicacao;
+  const getDataPublicação = (id) => {
+    return NewJSON.filter(elem => parseInt(elem.id) === parseInt(id))[0].data_publicacao;
   }
 
-  const getURLBannerImg = (index) => NewJSON[index].imagem_principal;
+  const getURLBannerImg = (id) => NewJSON.filter(elem => parseInt(elem.id) === parseInt(id))[0].imagem_principal;
 
-  const getResumo = (index) => NewJSON[index].resumo;
+  const getResumo = (id) => NewJSON.filter(elem => parseInt(elem.id) === parseInt(id))[0].resumo;
 
   const getConteudo = (index) => {
     return NewJSON[index].conteudo;
   }
 
-  const getReferencias = (index) => {
-    return NewJSON[index].conteudo;
+  const getReferencias = (id) => {
+    return NewJSON.filter(elem => parseInt(elem.id) === parseInt(id))[0].referencias;
   }
 
   const getLength = () => NewJSON.length;
@@ -37,5 +42,6 @@ export default function getData() {
     return NewJSON.filter(elem => parseInt(elem.id) === parseInt(id))[0];
   }
 
+  //retornando os getters em um objeto para posteriormente serem chamados
   return { getTitulo, getSubTitulo, getAuthor, getDataPublicação, getURLBannerImg, getResumo, getConteudo, getReferencias, getLength, getAllData, getAllDataById };
 }

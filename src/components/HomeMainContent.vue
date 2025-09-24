@@ -7,7 +7,9 @@ OBS: Planejo Futuramente criar um componente carrosel e tornar tudo aqui mais di
 no entanto, vou deixar assim mesmo, pois, é somente representativo.
 */
 
+const tutorialsData = inject('TutorialsData');
 const newsData = inject('NewsData');
+
 </script>
 
 <template>
@@ -17,7 +19,12 @@ const newsData = inject('NewsData');
       <h3 class="titulos flex items-center flex-nowrap gap-2"><i class="pi pi-graduation-cap text-green-600 text-4xl align-middle"></i> Tutoriais e Guias</h3>
       <div class="carrosel">
         <!-- Vai guardar os itens do carrosel -->
-         <CardSampleTemplate title="teste" resume="kfdhshf" :list-icon-class="['pi pi-star', 'pi pi-asterisk']" destination-url="/learn"></CardSampleTemplate>
+         <CardSampleTemplate
+          v-for="tutorial in tutorialsData.getAllData().slice(0, 3 || tutorialsData.getLength())"
+          :key="tutorial.id"
+          :img-path="tutorial.bannerImgUrl"
+          :title="tutorial.titulo" :resume="tutorial.resumo" :list-icon-class="[tutorial.categoriaIconClass]"
+          :destination-url="'/learn/' + tutorial.categoria + '/' + tutorial.id"></CardSampleTemplate>
       </div>
     </div>
 
@@ -25,7 +32,7 @@ const newsData = inject('NewsData');
       <h3 class="titulos flex items-center flex-nowrap gap-2"><i class="pi pi-sparkles text-yellow-300 text-4xl align-middle"></i> Novidades e Artigos</h3>
       <div class="carrosel">
         <!-- Vai guardar os itens do carrosel -->
-        <CardSampleTemplate v-for="(noticia ,index) in newsData.getAllData().slice(0, 3 || newsData.getLength())" :key="noticia.id" :title="newsData.getTitulo(index)" :resume="newsData.getResumo(index)" :img-path="newsData.getURLBannerImg(index)" :destination-url="'/news/'+ noticia.id"></CardSampleTemplate>
+        <CardSampleTemplate v-for="noticia in newsData.getAllData().slice(0, 3 || newsData.getLength())" :key="noticia.id" :title="newsData.getTitulo(noticia.id)" :resume="newsData.getResumo(noticia.id)" :list-icon-class="[noticia.categoriaIconClass]" :img-path="newsData.getURLBannerImg(noticia.id)" :destination-url="'/news/'+ noticia.id"></CardSampleTemplate>
       </div>
     </div>
   </section>
@@ -37,6 +44,6 @@ const newsData = inject('NewsData');
 }
 
 .carrosel{
-  @apply py-2 px-5 mt-2 flex flex-nowrap gap-6 overflow-x-scroll;
+  @apply py-2 px-2 md:px-5 mt-2 flex flex-nowrap gap-6 overflow-y-hidden overflow-x-scroll;
 }
 </style>

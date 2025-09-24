@@ -1,47 +1,577 @@
 [
-    {
-        "id": 1,
-        "categoria": "JavaScript",
-        "aulas": [
-            {
-            "id": 1,
-            "titulo": "Visão geral do JS",
-            "paragrafos": [
-                "JavaScript é uma linguagem de programação interpretada, de alto nível, criada inicialmente para adicionar interatividade às páginas web.",
-                "Ela foi desenvolvida por Brendan Eich em 1995 e, desde então, tornou-se uma das linguagens mais populares do mundo.",
-                "Originalmente, o JavaScript era executado apenas em navegadores, mas hoje também pode ser usado no lado do servidor com tecnologias como Node.js.",
-                "JavaScript é uma linguagem baseada em protótipos, orientada a objetos, dinâmica e multiparadigma, permitindo programação funcional, imperativa e orientada a objetos.",
-                "A linguagem é padronizada pela especificação ECMAScript, que define suas principais funcionalidades e recursos.",
-                "Com JavaScript, é possível manipular o DOM (Document Object Model), permitindo alterar o conteúdo, estrutura e estilo das páginas web em tempo real.",
-                "Além de páginas web, JavaScript é utilizado no desenvolvimento de aplicativos móveis, jogos, servidores, APIs e até mesmo aplicações desktop.",
-                "O ecossistema JavaScript é vasto, contando com milhares de bibliotecas e frameworks como React, Angular, Vue.js, Express, entre outros.",
-                "A sintaxe do JavaScript é relativamente simples para iniciantes, mas também oferece recursos avançados para desenvolvedores experientes.",
-                "A comunidade JavaScript é muito ativa, com grande quantidade de recursos, tutoriais, fóruns e eventos ao redor do mundo.",
-                "Em resumo, JavaScript é uma linguagem essencial para o desenvolvimento web moderno, sendo uma habilidade fundamental para desenvolvedores front-end e back-end."
-            ],
-            "imagens": [
-                {
-                "url": "https://exemplo.com/imagem-js.png",
-                "descricao": "Logo do JavaScript"
-                }
-            ],
-            "referencias": [
-                "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
-                "https://www.javascript.com/",
-                "https://pt.wikipedia.org/wiki/JavaScript",
-                "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"
-            ],
-            "videos": [
-                {
-                "url": "https://www.youtube.com/watch?v=upDLs1sn7g4",
-                "descricao": "Tutorial básico de JavaScript"
-                },
-                {
-                "url": "https://www.youtube.com/watch?v=PkZNo7MFNFg",
-                "descricao": "Curso completo de JavaScript para iniciantes"
-                }
-                    ]
-                    }
-                ]
-            }
+  {
+    "id": 1,
+    "categoria": "JavaScript",
+    "categoriaIconClass": "fa-brands fa-js",
+    
+    "bannerImgUrl": "../assets/img/defaultCardImg.jpg",
+    "titulo": "Introdução ao JavaScript",
+    "resumo": "Aula inicial que apresenta o que é JavaScript, sua importância no desenvolvimento web, editores de código e o uso do terminal e dos navegadores. Mostra como inserir JavaScript em páginas, fazer comentários e três formas de exibir o primeiro 'Hello World', com explicações simples para termos técnicos.",
+    "autor": "TechLearn",
+    "data_publicacao": "2025-09-23",
+    "meta": {
+      "tempo_estimado_leitura": "20 minutos",
+      "nivel": "Iniciante"
+    },
+    "leia_tambem": "/news/1",
+    "conteudo": [
+      {
+        "tipo": "topico",
+        "trechos": [
+          {
+            "texto": "O que é JavaScript?",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
         ]
+      },
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "JavaScript (JS) é a linguagem que traz interatividade às páginas web. Enquanto HTML define o conteúdo e CSS define o estilo, o JavaScript permite que a página responda ao usuário, mude conteúdo sem recarregar e se comunique com servidores.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "destacar",
+        "trechos": [
+          { "texto": "DOM", "isBold": true, "isItalic": false, "isLink": false, "urlPage": "" }
+        ]
+      },
+      {
+        "tipo": "explicacao",
+        "trechos": [
+          {
+            "texto": "DOM = Document Object Model. Pense na página como uma árvore de elementos (títulos, parágrafos, botões). O JavaScript usa a DOM para encontrar e mudar esses elementos (por exemplo, alterar o texto de um botão quando o usuário clica).",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "topico",
+        "trechos": [
+          {
+            "texto": "Por que aprender JavaScript?",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "JavaScript é a principal habilidade para quem quer trabalhar com front-end. Com ele você pode validar formulários, criar animações, carregar dados do servidor sem recarregar a página (usando AJAX/fetch), criar aplicações completas (com frameworks) e até rodar código fora do navegador (Node.js).",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "destacar",
+        "trechos": [
+          {
+            "texto": "Engine JavaScript",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+      {
+        "tipo": "explicacao",
+        "trechos": [
+          {
+            "texto": "Engine = motor que executa JavaScript dentro do navegador. Exemplos: V8 (Chrome/Edge), SpiderMonkey (Firefox) e JavaScriptCore (Safari). Para iniciantes, basta saber que os navegadores entendem e executam JS usando esse motor.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "topico",
+        "trechos": [
+          {
+            "texto": "Editores de código e o terminal",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "Um editor de código é o lugar onde você escreve seus arquivos (HTML, CSS, JS). Alguns exemplos populares:",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "• Visual Studio Code (VS Code) — gratuito, com muitos plugins.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "• WebStorm — IDE pago, com recursos avançados.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "• Sublime, Vim/Neovim — editores mais leves e rápidos.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "destacar",
+        "trechos": [
+          {
+            "texto": "Terminal (linha de comando)",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+      {
+        "tipo": "explicacao",
+        "trechos": [
+          {
+            "texto": "Terminal é uma forma de dar comandos ao seu computador digitando textos (ex.: abrir um servidor local, instalar pacotes com npm, rodar testes). Nem tudo precisa do terminal no início, mas aprender comandos básicos ajuda muito.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "O fluxo de trabalho típico: escrever código no editor → salvar arquivos → abrir no navegador → usar DevTools para testar e depurar.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": true,
+            "urlPage": "https://javascript.info/code-editors"
+          }
+        ]
+      },
+
+      {
+        "tipo": "destacar",
+        "trechos": [
+          {
+            "texto": "DevTools / Console do navegador",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+      {
+        "tipo": "explicacao",
+        "trechos": [
+          {
+            "texto": "DevTools é o conjunto de ferramentas que todo navegador tem para desenvolvedores (inspecionar HTML, ver erros, medir performance). O 'Console' é onde você pode ver mensagens do seu script (console.log) e testar pequenos trechos de código enquanto desenvolve.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": true,
+            "urlPage": "https://javascript.info/devtools"
+          }
+        ]
+      },
+
+      {
+        "tipo": "topico",
+        "trechos": [
+          {
+            "texto": "Primeiros passos — como incluir JavaScript",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "Há duas formas básicas de colocar JS em uma página HTML: embutido (inline) ou em arquivo externo. Para projetos reais, use arquivo externo (organização e reaproveitamento).",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "destacar",
+        "trechos": [
+          {
+            "texto": "Inline vs Externo",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+      {
+        "tipo": "explicacao",
+        "trechos": [
+          {
+            "texto": "Inline: código dentro da própria página HTML (útil para testes rápidos). Externo: código em um arquivo separado (ex.: script.js) que é referenciado pelo HTML — isso facilita manutenção e leitura.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "Exemplo 1 — script embutido (inline):",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Exemplo Inline</title>\n  </head>\n  <body>\n    <script>\n      console.log('Olá do script embutido');\n    </script>\n  </body>\n</html>",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "Exemplo 2 — arquivo externo (recomendado):",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Exemplo Externo</title>\n    <script src=\"script.js\"></script>\n  </head>\n  <body>\n  </body>\n</html>\n\n/* arquivo script.js */\nconsole.log('Olá do arquivo externo');",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "topico",
+        "trechos": [
+          {
+            "texto": "Comentários em JavaScript",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "Comentários não são executados: servem para explicar o código a você e a outros desenvolvedores.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "// comentário de linha única",
+            "isBold": false,
+            "isItalic": true,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "/* comentário\n   de múltiplas linhas */",
+            "isBold": false,
+            "isItalic": true,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "destacar",
+        "trechos": [
+          {
+            "texto": "console.log",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+      {
+        "tipo": "explicacao",
+        "trechos": [
+          {
+            "texto": "console.log(...) escreve uma mensagem no Console do navegador — é a maneira mais simples e comum de depurar e ver valores enquanto você programa.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "topico",
+        "trechos": [
+          {
+            "texto": "Primeiro 'Hello World' — exemplos simples",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "1) No console:",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "console.log('Hello, world!');",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "2) Caixa de alerta (aparece na tela):",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "alert('Hello, world!');",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "3) Inserir na página (DOM):",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "document.body.innerHTML = '<h1>Hello, world!</h1>'; // substitui o conteúdo do body",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "destacar",
+        "trechos": [
+          {
+            "texto": "Node.js e npm (breve)",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+      {
+        "tipo": "explicacao",
+        "trechos": [
+          {
+            "texto": "Node.js permite rodar JavaScript fora do navegador (no servidor). npm é um gerenciador de pacotes que instala bibliotecas que você pode usar no seu projeto (ex.: frameworks, ferramentas de build). No começo, você pode programar sem Node.js, mas é útil aprender depois.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "topico",
+        "trechos": [
+          {
+            "texto": "Boas práticas iniciais",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "• Separe HTML, CSS e JS: mantenha arquivos organizados.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "• Use o console e as DevTools para entender erros e testar código.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": true,
+            "urlPage": "https://javascript.info/devtools"
+          },
+          {
+            "texto": "• Faça commits pequenos e frequentes com Git (controle de versão).",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "topico",
+        "trechos": [
+          {
+            "texto": "Exercícios práticos (mão na massa)",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "1) Abra um arquivo index.html e coloque um script externo script.js. Faça o script escrever 'Olá' no console.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "2) No console do navegador, tente: console.log('Olá do console'); e depois document.body.innerHTML = '<p>Feito!</p>'",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          },
+          {
+            "texto": "3) Adicione comentários ao código explicando cada linha (prática de documentação).",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+
+      {
+        "tipo": "paragrafo",
+        "trechos": [
+          {
+            "texto": "Próximos passos sugeridos: variáveis, tipos de dados, operadores, estruturas de controle (if, for), funções e manipulação do DOM (selecionar elementos, responder a eventos).",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      }
+    ],
+    "imagens": [],
+    "videos": [],
+    "referencias": [
+      { "titulo": "An Introduction to JavaScript", "url": "https://javascript.info/intro" },
+      { "titulo": "Code editors", "url": "https://javascript.info/code-editors" },
+      { "titulo": "DevTools / Developer console", "url": "https://javascript.info/devtools" }
+    ]
+  }
+]

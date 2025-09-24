@@ -1,5 +1,8 @@
 <script setup>
 import CardSampleTemplate from '@/components/CardSampleTemplate.vue';
+import { inject } from 'vue';
+
+const tutorialsData = inject('TutorialsData');
 </script>
 
 <template>
@@ -13,9 +16,14 @@ import CardSampleTemplate from '@/components/CardSampleTemplate.vue';
       <i class="fa-brands fa-js text-yellow-400 text-2xl align-middle"></i>JavaScript
     </h3>
 
-    <div class="carrosel">
-      <!-- Vai guardar os itens do carrosel -->
-      <CardSampleTemplate v-for="(n,index) in [0,1,2]" :key="index" title="teste" resume="kkfdhadfsfdsfsdfshf dfssssssssssssss dfccsasdfafdcadfdafdaffad kfdhadfsfdsfsdfshf dfssssssssssssss dfccsasdfafdcadfdafdaffad" :list-icon-class="['fa-brands fa-js']" destination-url="/learn"></CardSampleTemplate>
+    <div class="gridContent">
+      <!-- Grid com todos os tutoriais do site -->
+      <CardSampleTemplate
+          v-for="tutorial in tutorialsData.getAllData().slice(0, 3 || tutorialsData.getLength())"
+          :key="tutorial.id"
+          :img-path="tutorial.bannerImgUrl"
+          :title="tutorial.titulo" :resume="tutorial.resumo" :list-icon-class="[tutorial.categoriaIconClass]"
+          :destination-url="'/learn/' + tutorial.categoria + '/' + tutorial.id"></CardSampleTemplate>
     </div>
   </div>
 </section>
@@ -23,7 +31,7 @@ import CardSampleTemplate from '@/components/CardSampleTemplate.vue';
 </template>
 
 <style scoped>
-.carrosel{
-  @apply py-4 md:mx-8 grid grid-cols-1 auto-rows-auto md:grid-cols-3 gap-6;
+.gridContent{
+  @apply py-4 md:px-8 grid grid-cols-1 auto-rows-auto md:grid-cols-3 gap-6;
 }
 </style>

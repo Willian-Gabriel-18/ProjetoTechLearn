@@ -60,9 +60,9 @@ const resumoFormatado = (resumo, limite = 50) => {
 </script>
 
 <template>
-  <RouterLink :to="destinationUrl" v-if="renderizar" class="demarcar py-7 px-5 max-w-96 min-w-96 max-h-105 rounded-md flex flex-col flex-nowrap md:hover:scale-105 md:hover:cursor-pointer">
+  <RouterLink :to="destinationUrl" v-if="renderizar" class="demarcar py-7 px-5 max-w-80 min-w-80 rounded-md flex flex-col flex-nowrap md:hover:scale-105 md:hover:cursor-pointer">
 
-    <div class="overflow-hidden rounded-md min-h-45p max-h-45p">
+    <div class="overflow-hidden rounded-md">
       <img v-if="imgPath" :src="imgPath" alt="Imagem do card" class="rounded-md hover:scale-125">
     </div>
 
