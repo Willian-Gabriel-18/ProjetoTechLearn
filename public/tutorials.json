@@ -574,13 +574,13 @@
       {
         "textoIndex": 34,
         "insertTop": false,
-        "urlImg": "../../assets/img/estruturaProjeto.jpg",
+        "urlImg": "./assets/img/estruturaProjeto.jpg",
         "imgDescricao": "Exemplo estrutura de um projeto" 
       },
       {
         "textoIndex": 35,
         "insertTop": true,
-        "urlImg": "../../public/images/devToolsConsole.jpg",
+        "urlImg": "./public/images/devToolsConsole.jpg",
         "imgDescricao": "DevTools Console (pressione F12 no seu navegador para abrir)" 
       }
     ],
