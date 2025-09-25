@@ -580,7 +580,7 @@
       {
         "textoIndex": 35,
         "insertTop": true,
-        "urlImg": "./public/images/devToolsConsole.jpg",
+        "urlImg": "/images/devToolsConsole.jpg",
         "imgDescricao": "DevTools Console (pressione F12 no seu navegador para abrir)" 
       }
     ],
