@@ -42,6 +42,7 @@ const copiarCodigoParaClipBoard = (texto) => {
 
 <template>
   <section class="max-w-full py-8 px-4 md:px-24">
+    <div class="indicadorLeitura bg-stone-500 origin-left h-2 inset-0 fixed"> </div>
     <div>
       <h1 class="text-4xl md:text-5xl text-stone-900 font-bold text-wrap text-center">
         {{ lesson.titulo }}
@@ -64,7 +65,7 @@ const copiarCodigoParaClipBoard = (texto) => {
       <img
         :src="lesson.bannerImgUrl"
         :alt="'Banner aula - ' + lesson.titulo"
-        class="w-full rounded-lg outline outline-stone-400 outline-2 outline-offset-4"
+        class="w-full md:h-[520px] object-cover rounded-lg outline outline-stone-400 outline-2 outline-offset-4"
       />
     </div>
 
@@ -73,7 +74,7 @@ const copiarCodigoParaClipBoard = (texto) => {
 
     <!--Tópicos da aula-->
     <div class="mt-4">
-      <h2 class="text-3xl md:text-5xl text-stone-900 font-bold text-wrap text-start">Tópicos</h2>
+      <h2 class="text-3xl md:text-5xl text-stone-900 font-bold text-start">Tópicos</h2>
 
       <ul class="pl-4">
         <li v-for="(topico, index) in listaTopicos" :key="index" class="topicoItem mt-2 w-max">
@@ -88,6 +89,26 @@ const copiarCodigoParaClipBoard = (texto) => {
     <!-- Inserindo os conteudos da página dinamicamente -->
     <div class="border-t-2 mt-4">
       <div v-for="(texto, textoIndex) in lesson.conteudo" :key="textoIndex">
+
+        <!--INSERIR IMAGEM, DANDO LOOP EM TODAS AS IMAGENS DA AULA, E RENDERIZANDO
+        SOMENTE SE A PROPRIEDADE 'textoIndex' DA IMAGEM FOR IGUAL AO 'textoIndex', OU,
+        MELHOR DIZENDO, O INDICE DO ITEM NA LISTA DE CONTEUDO FOR IGUAL AO INDICE
+        APONTADO PELA PROPRIEDADE 'textoIndex' DA IMAGEM.
+        OUTRA CONDIÇÃO DE RENDERIZAÇÃO É QUE ELA SÓ VAI SER RENDERIZADA QUANDO
+        A PROPRIEDADE 'insertTop' FOR TRUE, SE NÃO FOR, LÁ EM BAIXO VAI TER OUTRA,
+        FAZENDO MESMA COISA.
+        -->
+        <div v-for="(imagem, index) in lesson.imagens" :key="index">
+          <div v-if="imagem.insertTop && (imagem.textoIndex === textoIndex)"
+          class="imagemAulaContainer">
+            <img :src="imagem.urlImg" :alt="imagem.imgDescricao"
+            class="rounded-md max-h-96 object-cover shadow-lg shadow-black">
+            <p class="text-stone-800 italic mt-2">
+              Imagem {{ index + 1 }} -  {{ imagem.imgDescricao }}
+            </p>
+          </div>
+        </div>
+
         <!--
         OBS: Importante colocar uma div para ser pai
         dos titulos, paragrafos, destaques e explicações,
@@ -100,19 +121,23 @@ const copiarCodigoParaClipBoard = (texto) => {
         propriedade tipo do valor interado de
         lesson.conteudo, texto, for igual 'topico'-->
         <div v-for="(trecho, index) in texto.trechos" :key="index">
-          <h3
-            v-if="texto.tipo === 'topico'"
-            :class="{
-              'texto text-2xl mt-7 flex flex-nowrap items-center': true,
-              'font-bold': trecho.isBold,
-              italic: trecho.isItalic,
-              linkText: trecho.isLink,
-            }"
-            :id="textoIndex"
-          >
-            <i class="pi pi-arrow-circle-right align-middle mr-2"></i>
-            {{ trecho.texto }}
-          </h3>
+          <div class="w-max max-w-full border-b-4 rounded-b-md border-green-400">
+            <h3
+              v-if="texto.tipo === 'topico'"
+              :class="{
+                'texto text-2xl mt-7 flex flex-wrap items-center': true,
+                'font-bold': trecho.isBold,
+                italic: trecho.isItalic,
+                linkText: trecho.isLink,
+              }"
+              :id="textoIndex"
+            >
+              <span>
+                <i class="pi pi-arrow-circle-right align-middle mr-1 md:mr-2"></i>
+                {{ trecho.texto }}
+              </span>
+            </h3>
+          </div>
         </div>
 
         <!-- Paragrafos só vai ser gerado se a propriedade tipo do iteravel texto do objeto
@@ -141,7 +166,7 @@ const copiarCodigoParaClipBoard = (texto) => {
         <!-- Script só vai ser gerado se a propriedade tipo do iteravel texto do objeto
         lesson.conteudo for igual a script -->
         <div v-for="(trecho, index) in texto.trechos" :key="index" class="mt-4">
-          <div v-if="texto.tipo === 'script'" class="bg-cyan-950 text-white font-semibold py-2 px-1 md:px-5 rounded-md overflow-x-scroll">
+          <div v-if="texto.tipo === 'script'" class="bg-cyan-950 text-white font-semibold py-2 px-5 md:px-8 rounded-md overflow-x-scroll">
             <button class="copyButton" @click="copiarCodigoParaClipBoard(trecho.texto)">
                 <i class="pi pi-copy"></i> Copy
             </button>
@@ -160,6 +185,7 @@ const copiarCodigoParaClipBoard = (texto) => {
           <div v-if="isCopiedToClipBoard" class="animNotifierCopyClipBoard text-2xl text-nowrap text-white bg-slate-800 py-2 px-3 rounded-md fixed right-1/2 translate-x-1/2 top-16">
             Código copiado
           </div>
+
         </div>
 
         <!-- Destaques e Explicações só vão ser gerados se a propriedade tipo do iteravel texto do objeto
@@ -178,6 +204,25 @@ const copiarCodigoParaClipBoard = (texto) => {
           </div>
         </div>
 
+        <!--INSERIR IMAGEM, DANDO LOOP EM TODAS AS IMAGENS DA AULA, E RENDERIZANDO
+        SOMENTE SE A PROPRIEDADE 'textoIndex' DA IMAGEM FOR IGUAL AO 'textoIndex', OU,
+        MELHOR DIZENDO, O INDICE DO ITEM NA LISTA DE CONTEUDO FOR IGUAL AO INDICE
+        APONTADO PELA PROPRIEDADE 'textoIndex' DA IMAGEM.
+        OUTRA CONDIÇÃO DE RENDERIZAÇÃO É QUE ELA SÓ VAI SER RENDERIZADA QUANDO
+        A PROPRIEDADE 'insertTop' FOR FALSE, SE NÃO FOR, LÁ EM CIMA VAI TER OUTRA,
+        FAZENDO MESMA COISA.
+        -->
+        <div v-for="(imagem, index) in lesson.imagens" :key="index">
+          <div v-if="(!imagem.insertTop) && (imagem.textoIndex === textoIndex)"
+          class="imagemAulaContainer">
+            <img :src="imagem.urlImg" :alt="imagem.imgDescricao"
+            class="rounded-md max-h-96 object-cover shadow-lg shadow-black">
+            <p class="text-stone-800 italic mt-2">
+              Imagem {{ index + 1 }} -  {{ imagem.imgDescricao }}
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -186,7 +231,7 @@ const copiarCodigoParaClipBoard = (texto) => {
       <h2 class="text-3xl md:text-5xl text-stone-900 font-bold text-wrap text-start">Referências</h2>
 
       <ul class="pl-4">
-        <li v-for="(item, index) in lesson.referencias" :key="index" class="linkText mt-3">
+        <li v-for="(item, index) in lesson.referencias" :key="index" class="linkText mt-3 text-xl md:text-2xl">
           <a :href="item.url">
             <span>{{ item.titulo }} - {{ item.url }}</span>
           </a>
@@ -198,6 +243,26 @@ const copiarCodigoParaClipBoard = (texto) => {
 </template>
 
 <style scoped>
+@keyframes aumentarIndicador {
+  from{
+    scale: 0 1;
+    opacity: 1;
+  }
+  to{
+    scale: 1 1;
+  }
+}
+
+.indicadorLeitura{
+  opacity: 0;
+  animation: aumentarIndicador 3ms ease-in-out;
+  animation-timeline: scroll();
+}
+
+.imagemAulaContainer{
+  @apply w-full flex flex-nowrap flex-col items-center justify-center mt-8;
+}
+
 .texto {
   @apply text-wrap text-justify text-stone-900 whitespace-nowrap tracking-tighter;
 }
@@ -211,15 +276,15 @@ const copiarCodigoParaClipBoard = (texto) => {
 }
 
 .linkText {
-  @apply text-orange-500 underline underline-offset-2 hover:cursor-pointer hover:text-orange-600 visited:visited:text-violet-800;
+  @apply text-orange-500 underline underline-offset-2 hover:cursor-pointer hover:text-orange-600 visited:text-violet-800;
 }
 
 .destacar{
-  @apply bg-yellow-300 text-xl text-stone-900 font-bold px-2 py-2 rounded-t-md;
+  @apply bg-green-200 text-xl text-stone-900 font-bold px-2 py-2 rounded-md;
 }
 
 .explicacao{
-  @apply bg-blue-300 font-semibold text-wrap text-justify text-stone-800 whitespace-nowrap tracking-tighter rounded-b-md px-2 py-2;
+  @apply bg-blue-300 text-xl font-semibold text-wrap text-justify text-stone-800 whitespace-nowrap tracking-tighter rounded-md px-4 py-2;
 }
 
 .copyButton{
@@ -228,19 +293,11 @@ const copiarCodigoParaClipBoard = (texto) => {
 
 @keyframes notifierClipBoardAnim {
   0% {
-    opacity: 100%;
+    opacity: 1;
   }
-  25%{
-    opacity: 75%;
-  }
-  50%{
-    opacity: 50%;
-  }
-  75%{
-    opacity: 25%;
-  }
+
   100%{
-    opacity: 0%;
+    opacity: 0;
   }
 }
 

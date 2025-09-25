@@ -44,6 +44,6 @@ const newsData = inject('NewsData');
 }
 
 .carrosel{
-  @apply py-2 px-2 md:px-5 mt-2 flex flex-nowrap gap-6 overflow-y-hidden overflow-x-scroll;
+  @apply py-3 px-3 md:px-5 mt-2 flex flex-nowrap gap-6 overflow-y-hidden overflow-x-scroll;
 }
 </style>

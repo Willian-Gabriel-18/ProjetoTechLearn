@@ -9,7 +9,8 @@ const isActiveRoute = (path) => {
 </script>
 
 <template>
-  <header class="max-w-full py-5 px-4 md:px-8 flex justify-between items-center flex-nowrap border-b border-black/40">
+  <!--Id topo para o funcionamento do botao voltar para o topo-->
+  <header id="topo" class="max-w-full py-5 px-4 md:px-8 flex justify-between items-center flex-nowrap border-b border-black/40">
     <RouterLink to="/" class="md:text-2xl text-black italic">
       <div class="flex flex-col md:flex-row items-center md:hover:scale-150 hover:cursor-pointer md:hover:text-orange-500 md:hover:translate-x-4 transition duration-150">
         <i class="pi pi-box align-middle mb-1"></i>

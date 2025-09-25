@@ -18,6 +18,7 @@ if (!noticia) {
 
 <template>
 <section class="max-w-full py-8 px-4 md:px-24">
+  <div class="indicadorLeitura bg-stone-500 origin-left h-2 inset-0 fixed"> </div>
   <div>
     <h1 class="text-3xl md:text-5xl text-stone-900 font-bold text-wrap text-center">{{ noticia.titulo }}</h1>
     <p class="text-center text-stone-800 mt-2">{{ noticia.subtitulo }}</p>
@@ -28,7 +29,7 @@ if (!noticia) {
   </div>
 
   <div class="py-2 px-1">
-    <img :src="noticia.imagem_principal" :alt="'Banner notícia - ' + noticia.subtitulo" class="w-full rounded-lg outline outline-stone-400 outline-2 outline-offset-4">
+    <img :src="noticia.imagem_principal" :alt="'Banner notícia - ' + noticia.subtitulo" class="w-full rounded-lg outline object-cover outline-stone-400 outline-2 outline-offset-4">
   </div>
 
   <p class="texto mt-4 md:mt-8" >{{ noticia.resumo }}</p>
@@ -51,6 +52,21 @@ if (!noticia) {
 </template>
 
 <style scoped>
+@keyframes aumentarIndicador {
+  from{
+    scale: 0 1;
+  }
+  to{
+    scale: 1 1;
+  }
+}
+
+.indicadorLeitura{
+  display: none;
+  animation: aumentarIndicador 3ms ease-in-out;
+  animation-timeline: scroll();
+}
+
 .texto{
   @apply mt-2 text-xl text-wrap text-justify indent-4 text-stone-900 whitespace-nowrap;
 }

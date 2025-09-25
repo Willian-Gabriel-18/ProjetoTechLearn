@@ -75,7 +75,7 @@
         "tipo": "paragrafo",
         "trechos": [
           {
-            "texto": "JavaScript é a principal habilidade para quem quer trabalhar com front-end. Com ele você pode validar formulários, criar animações, carregar dados do servidor sem recarregar a página (usando AJAX/fetch), criar aplicações completas (com frameworks) e até rodar código fora do navegador (Node.js).",
+            "texto": "JavaScript é a principal habilidade para quem quer trabalhar com front-end. Com ele você pode validar formulários, criar animações, carregar dados do servidor sem recarregar a página (usando AJAX/fetch), criar aplicações completas (com frameworks) e até rodar código fora do navegador (Node.js). Esses termos serão melhor abordados em outra aula.",
             "isBold": false,
             "isItalic": false,
             "isLink": false,
@@ -210,11 +210,35 @@
         "tipo": "explicacao",
         "trechos": [
           {
-            "texto": "DevTools é o conjunto de ferramentas que todo navegador tem para desenvolvedores (inspecionar HTML, ver erros, medir performance). O 'Console' é onde você pode ver mensagens do seu script (console.log) e testar pequenos trechos de código enquanto desenvolve.",
+            "texto": "DevTools (pressione F12 no seu navegador para abrir) é o conjunto de ferramentas que todo navegador tem para desenvolvedores (inspecionar HTML, ver erros, medir performance). O 'Console' é onde você pode ver mensagens do seu script (console.log) e testar pequenos trechos de código enquanto desenvolve.",
             "isBold": false,
             "isItalic": false,
             "isLink": true,
             "urlPage": "https://javascript.info/devtools"
+          }
+        ]
+      },
+      {
+        "tipo": "destacar",
+        "trechos": [
+          {
+            "texto": "console.log",
+            "isBold": true,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+          }
+        ]
+      },
+      {
+        "tipo": "explicacao",
+        "trechos": [
+          {
+            "texto": "console.log(...) escreve uma mensagem no Console do navegador — é a maneira mais simples e comum de depurar e ver valores enquanto você programa.",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
           }
         ]
       },
@@ -356,32 +380,6 @@
           }
         ]
       },
-
-      {
-        "tipo": "destacar",
-        "trechos": [
-          {
-            "texto": "console.log",
-            "isBold": true,
-            "isItalic": false,
-            "isLink": false,
-            "urlPage": ""
-          }
-        ]
-      },
-      {
-        "tipo": "explicacao",
-        "trechos": [
-          {
-            "texto": "console.log(...) escreve uma mensagem no Console do navegador — é a maneira mais simples e comum de depurar e ver valores enquanto você programa.",
-            "isBold": false,
-            "isItalic": false,
-            "isLink": false,
-            "urlPage": ""
-          }
-        ]
-      },
-
       {
         "tipo": "topico",
         "trechos": [
@@ -459,7 +457,7 @@
         "tipo": "destacar",
         "trechos": [
           {
-            "texto": "Node.js e npm (breve)",
+            "texto": "Node.js e npm (breve apresentação)",
             "isBold": true,
             "isItalic": false,
             "isLink": false,
@@ -504,7 +502,7 @@
             "urlPage": ""
           },
           {
-            "texto": "• Use o console e as DevTools para entender erros e testar código.",
+            "texto": "• Use o console e as DevTools para entender erros e testar código. (pressione F12 no seu navegador para abrir).",
             "isBold": false,
             "isItalic": false,
             "isLink": true,
@@ -557,7 +555,7 @@
         "tipo": "paragrafo",
         "trechos": [
           {
-            "texto": "Próximos passos sugeridos: variáveis, tipos de dados, operadores, estruturas de controle (if, for), funções e manipulação do DOM (selecionar elementos, responder a eventos).",
+            "texto": "Se tiver alguma dúvida em relação aos exercícios, ou, algum tema abordado na aula, consule a referência abaixo.",
             "isBold": false,
             "isItalic": false,
             "isLink": false,
@@ -566,8 +564,26 @@
         ]
       }
     ],
-    "imagens": [],
-    "videos": [],
+    "imagens": [
+      {
+        "textoIndex": 3,
+        "insertTop": false,
+        "urlImg": "https://lh5.googleusercontent.com/SQ3qz32VvBhTPFTeGtWOzPVhcv-mfB7C8mj6k4C1IVOttNGWf71T9s8Pq9QY4F_AlMbEKMwgnMGh5XEQf2v8-UU-G6xZc984pnSwfJvKF-CxSEOsBafgKCkkg6tCWgH6Ni9bb_N8",
+        "imgDescricao": "DOM de uma página HTML" 
+      },
+      {
+        "textoIndex": 34,
+        "insertTop": false,
+        "urlImg": "../../assets/img/estruturaProjeto.png",
+        "imgDescricao": "Exemplo estrutura de um projeto" 
+      },
+      {
+        "textoIndex": 35,
+        "insertTop": true,
+        "urlImg": "../../assets/img/devToolsConsole.png",
+        "imgDescricao": "DevTools Console (pressione F12 no seu navegador para abrir)" 
+      }
+    ],
     "referencias": [
       { "titulo": "An Introduction to JavaScript", "url": "https://javascript.info/intro" },
       { "titulo": "Code editors", "url": "https://javascript.info/code-editors" },
