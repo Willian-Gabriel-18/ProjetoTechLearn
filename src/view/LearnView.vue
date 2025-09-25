@@ -31,7 +31,7 @@ const isCopiedToClipBoard = computed(()=>{
 });
 
 const copiarCodigoParaClipBoard = (texto) => {
-  clipBoard.copy(texto);
+  clipBoard.copy(texto.trim());
 
   setTimeout(()=>{
     clipBoard.isCopied.value = false;
@@ -43,6 +43,7 @@ const copiarCodigoParaClipBoard = (texto) => {
 <template>
   <section class="max-w-full py-8 px-4 lg:px-40">
     <div class="indicadorLeitura bg-stone-500 origin-left h-2 inset-0 fixed"> </div>
+
     <div>
       <h1 class="text-4xl md:text-5xl text-stone-900 font-bold text-wrap text-center">
         {{ lesson.titulo }}
@@ -143,7 +144,7 @@ const copiarCodigoParaClipBoard = (texto) => {
         <!-- Paragrafos só vai ser gerado se a propriedade tipo do iteravel texto do objeto
         lesson.conteudo for igual a paragrafo-->
         <div v-for="(trecho, index) in texto.trechos" :key="index">
-          <div v-if="texto.tipo === 'paragrafo'" class="mt-4 paragrafo">
+          <div v-if="texto.tipo === 'paragrafo'" class="mt-2 md:mt-4 paragrafo">
             <p v-if="!trecho.isLink"
               :class="{
                 'font-bold': trecho.isBold,
@@ -166,7 +167,7 @@ const copiarCodigoParaClipBoard = (texto) => {
         <!-- Script só vai ser gerado se a propriedade tipo do iteravel texto do objeto
         lesson.conteudo for igual a script -->
         <div v-for="(trecho, index) in texto.trechos" :key="index" class="mt-4">
-          <div v-if="texto.tipo === 'script'" class="bg-cyan-950 text-white font-semibold py-2 px-5 md:px-8 rounded-md overflow-x-scroll">
+          <div v-if="texto.tipo === 'script'" class="bg-cyan-950 relative inset-0 text-white font-semibold py-2 px-5 md:px-8 rounded-md overflow-x-scroll">
             <button class="copyButton" @click="copiarCodigoParaClipBoard(trecho.texto)">
                 <i class="pi pi-copy"></i> Copy
             </button>
@@ -181,8 +182,9 @@ const copiarCodigoParaClipBoard = (texto) => {
             </pre>
           </div>
 
+
           <!-- Notificador de texto copiado -->
-          <div v-if="isCopiedToClipBoard" class="animNotifierCopyClipBoard text-2xl text-nowrap text-white bg-slate-800 py-2 px-3 rounded-md fixed right-1/2 translate-x-1/2 top-16">
+          <div v-if="isCopiedToClipBoard" class="animNotifierCopyClipBoard text-nowrap text-white bg-slate-800 py-2 px-3 rounded-md fixed right-1/2 translate-x-1/2 top-0">
             Código copiado
           </div>
 
@@ -239,16 +241,21 @@ const copiarCodigoParaClipBoard = (texto) => {
       </ul>
     </div>
 
+    <!-- Links para interação com o usuário -->
+    <div class="mt-10 flex flex-nowrap justify-center">
+      <a class="bg-orange-600 text-xl md:text-3xl text-white py-2 px-4 rounded-md font-bold shadow-md shadow-black hover:cursor-pointer hover:scale-125 transition-all duration-300" :href="lesson.leia_tambem">Leia Tambem</a>
+    </div>
   </section>
 </template>
 
 <style scoped>
 @keyframes aumentarIndicador {
   from{
-    scale: 0 1;
     opacity: 1;
+    scale: 0 1;
   }
   to{
+    opacity: 1;
     scale: 1 1;
   }
 }
@@ -288,7 +295,7 @@ const copiarCodigoParaClipBoard = (texto) => {
 }
 
 .copyButton{
-  @apply text-xl relative top-0 left-0 px-1 py-2 ml-1 rounded-lg hover:bg-black active:bg-black transition duration-200;
+  @apply text-xl absolute top-4 right-4 px-1 sm:px-3 py-2 ml-1 bg-slate-900 opacity-60 hover:opacity-100 active:opacity-100 rounded-lg hover:cursor-pointer hover:bg-black active:bg-black transition duration-200;
 }
 
 @keyframes notifierClipBoardAnim {
@@ -298,6 +305,10 @@ const copiarCodigoParaClipBoard = (texto) => {
 
   100%{
     opacity: 0;
+    top: 48px;
+
+    font-size: 1.5rem;
+    transform: translateX(0.5);
   }
 }
 
