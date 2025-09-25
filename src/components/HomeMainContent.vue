@@ -14,7 +14,7 @@ const newsData = inject('NewsData');
 
 <template>
 
-  <section class="mt-8 px-4 max-w-full">
+  <section class="mt-8 px-4 py-2 max-w-full">
     <div>
       <h3 class="titulos flex items-center flex-nowrap gap-2"><i class="pi pi-graduation-cap text-green-600 text-4xl align-middle"></i> Tutoriais e Guias</h3>
       <div class="carrosel">
@@ -44,6 +44,6 @@ const newsData = inject('NewsData');
 }
 
 .carrosel{
-  @apply py-3 px-3 md:px-5 mt-2 flex flex-nowrap gap-6 overflow-y-hidden overflow-x-scroll;
+  @apply py-3 px-3 md:px-5 mt-2 flex flex-nowrap gap-6 overflow-y-hidden overflow-x-auto;
 }
 </style>

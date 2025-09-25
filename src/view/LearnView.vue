@@ -41,7 +41,7 @@ const copiarCodigoParaClipBoard = (texto) => {
 </script>
 
 <template>
-  <section class="max-w-full py-8 px-4 md:px-24">
+  <section class="max-w-full py-8 px-4 lg:px-40">
     <div class="indicadorLeitura bg-stone-500 origin-left h-2 inset-0 fixed"> </div>
     <div>
       <h1 class="text-4xl md:text-5xl text-stone-900 font-bold text-wrap text-center">
