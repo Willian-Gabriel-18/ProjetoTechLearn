@@ -8,7 +8,7 @@
     "titulo": "Introdução ao JavaScript",
     "resumo": "Nessa primeira aula será apresentado o que é JavaScript, sua importância no desenvolvimento web, editores de código e o uso do terminal e dos navegadores. Mostra como inserir JavaScript em páginas, fazer comentários e três formas de exibir o primeiro 'Hello World', com explicações simples para termos técnicos.",
     "autor": "TechLearn",
-    "data_publicacao": "2025-09-23",
+    "data_publicacao": "2025-09-15",
     "meta": {
       "tempo_estimado_leitura": "20 minutos",
       "nivel": "Iniciante"
