@@ -68,7 +68,7 @@ const resumoFormatado = (resumo, limite = 50) => {
 
     <div class="mt-2">
       <h4 class="text-3xl text-center text-stone-700 uppercase font-bold overflow-hidden overflow-ellipsis text-wrap tracking-tighter" :title="title">{{ title }}</h4>
-      <p class="text-wrap text-justify whitespace-nowrap indent-4 text-xl text-stone-700 overflow-hidden tracking-tighter" >{{ resumoFormatado(resume, 100) }}</p>
+      <p class="text-wrap text-justify mt-2 whitespace-nowrap indent-4 text-xl text-stone-700 overflow-hidden tracking-tighter" >{{ resumoFormatado(resume, 100) }}</p>
     </div>
 
     <div class="flex flex-nowrap flex-row justify-between items-center mt-auto">
