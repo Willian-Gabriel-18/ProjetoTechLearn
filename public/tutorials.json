@@ -574,7 +574,7 @@
       {
         "textoIndex": 34,
         "insertTop": false,
-        "urlImg": "./assets/img/estruturaProjeto.jpg",
+        "urlImg": "/images/estruturaProjeto.jpg",
         "imgDescricao": "Exemplo estrutura de um projeto" 
       },
       {
