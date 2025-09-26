@@ -5,6 +5,12 @@ O objetivo do projeto é oferecer aulas e materiais de forma didática e acessí
 
 ---
 
+## 🌐 Acesse o projeto online
+
+👉 [Clique aqui para acessar o TechLearn](https://projeto-tech-learn.vercel.app)
+
+---
+
 ## 🚀 Funcionalidades
 
 - 📖 Aulas organizadas por tópicos  
@@ -89,5 +95,4 @@ Contribuições são sempre bem-vindas!
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT.  
-Sinta-se livre para usar, modificar e compartilhar!  
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais informações.  
