@@ -11,6 +11,8 @@ const scrollBehavior = (to, from, savedPosition) => {
   //Se tiver uma posição do scroll já salva retorne ela
   if(savedPosition) return savedPosition;
 
+  if (to.hash) return { el: to.hash };
+
   //Por padrao vai retornar o topo da página
   return { left: 0, top: 0};
 }
