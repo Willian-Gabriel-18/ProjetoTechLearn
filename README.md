@@ -33,3 +33,23 @@ npm run build
 ```sh
 npm run lint
 ```
+Projeto TechLearn
+
+📚 TechLearn é uma plataforma de aprendizado voltada para iniciantes em programação.
+O projeto tem como objetivo oferecer aulas e materiais de forma didática e acessível, ajudando quem está começando no mundo da tecnologia a dar seus primeiros passos.
+
+🚀 Funcionalidades
+
+📖 Aulas organizadas por tópicos
+
+📝 Conteúdo explicativo com exemplos práticos
+
+🔗 Links de navegação interna para acesso rápido
+
+🎨 Interface simples e responsiva
+
+⚡ Construído em Vue.js
+
+🛠️ Tecnologias utilizadas
+
+Vue.js
