@@ -1,55 +1,93 @@
-# projetoFaculdadeAtvExtensionista
+# Projeto TechLearn
 
-This template should help get you started developing with Vue 3 in Vite.
+📚 **TechLearn** é uma plataforma de aprendizado voltada para iniciantes em programação.  
+O objetivo do projeto é oferecer aulas e materiais de forma didática e acessível, ajudando quem está começando no mundo da tecnologia a dar seus primeiros passos.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🚀 Funcionalidades
 
-## Customize configuration
+- 📖 Aulas organizadas por tópicos  
+- 📝 Conteúdo explicativo com exemplos práticos  
+- 🔗 Links de navegação interna para acesso rápido  
+- 🎨 Interface simples e responsiva  
+- ⚡ Construído em **Vue.js**
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+---
 
-## Project Setup
+## 🛠️ Tecnologias utilizadas
 
-```sh
+- Vue.js  
+- JavaScript (ES6+)  
+- HTML5 & CSS3  
+- Node.js & npm  
+
+---
+
+## ⚙️ Como rodar o projeto
+
+1. Clone este repositório:
+
+```bash
+git clone https://github.com/Willian-Gabriel-18/ProjetoTechLearn.git
+```
+
+2. Acesse a pasta do projeto:
+
+```bash
+cd ProjetoTechLearn
+```
+
+3. Instale as dependências:
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+4. Inicie o servidor de desenvolvimento:
 
-```sh
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+5. Abra no navegador:
 
-```sh
-npm run build
+```
+http://localhost:5173
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+---
 
-```sh
-npm run lint
+## 📂 Estrutura do Projeto
+
 ```
-Projeto TechLearn
+ProjetoTechLearn/
+├── public/           # Arquivos públicos
+├── src/
+│   ├── assets/       # Imagens e ícones
+│   ├── components/   # Componentes reutilizáveis do Vue
+│   ├── pages/        # Páginas principais do site
+│   ├── router/       # Configuração de rotas
+│   └── App.vue       # Componente raiz
+├── package.json      # Dependências e scripts
+└── README.md         # Documentação do projeto
+```
 
-📚 TechLearn é uma plataforma de aprendizado voltada para iniciantes em programação.
-O projeto tem como objetivo oferecer aulas e materiais de forma didática e acessível, ajudando quem está começando no mundo da tecnologia a dar seus primeiros passos.
+---
 
-🚀 Funcionalidades
+## 🤝 Contribuindo
 
-📖 Aulas organizadas por tópicos
+Contribuições são sempre bem-vindas!  
 
-📝 Conteúdo explicativo com exemplos práticos
+1. Faça um fork do projeto  
+2. Crie uma branch para sua feature (`git checkout -b minha-feature`)  
+3. Commit suas alterações (`git commit -m 'Adicionei minha feature'`)  
+4. Faça o push para a branch (`git push origin minha-feature`)  
+5. Abra um Pull Request  
 
-🔗 Links de navegação interna para acesso rápido
+---
 
-🎨 Interface simples e responsiva
+## 📄 Licença
 
-⚡ Construído em Vue.js
-
-🛠️ Tecnologias utilizadas
-
-Vue.js
+Este projeto está sob a licença MIT.  
+Sinta-se livre para usar, modificar e compartilhar!  
