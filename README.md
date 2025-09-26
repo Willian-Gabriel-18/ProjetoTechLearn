@@ -59,7 +59,7 @@ npm run dev
 5. Abra no navegador:
 
 ```
-http://localhost:5173
+http://localhost:3000
 ```
 
 ---
