@@ -91,22 +91,35 @@ const copiarCodigoParaClipBoard = (texto) => {
     <div class="border-t-2 mt-4">
       <div v-for="(texto, textoIndex) in lesson.conteudo" :key="textoIndex">
 
-        <!--INSERIR IMAGEM, DANDO LOOP EM TODAS AS IMAGENS DA AULA, E RENDERIZANDO
-        SOMENTE SE A PROPRIEDADE 'textoIndex' DA IMAGEM FOR IGUAL AO 'textoIndex', OU,
-        MELHOR DIZENDO, O INDICE DO ITEM NA LISTA DE CONTEUDO FOR IGUAL AO INDICE
-        APONTADO PELA PROPRIEDADE 'textoIndex' DA IMAGEM.
-        OUTRA CONDIÇÃO DE RENDERIZAÇÃO É QUE ELA SÓ VAI SER RENDERIZADA QUANDO
-        A PROPRIEDADE 'insertTop' FOR TRUE, SE NÃO FOR, LÁ EM BAIXO VAI TER OUTRA,
-        FAZENDO MESMA COISA.
+        <!--INSERIR OUTROS CONTÉUDOS(VÍDEO OU IMAGEM), DANDO LOOP EM TODAS CONTEUDOS NÃO
+        TEXTUAIS DA AULA, E RENDERIZANDO SOMENTE SE A PROPRIEDADE 'textoIndex' DO CONTEUDO
+        FOR IGUAL AO 'textoIndex', OU, MELHOR DIZENDO, O INDICE DO ITEM NA LISTA DE CONTEUDO
+        FOR IGUAL AO INDICE APONTADO PELA PROPRIEDADE 'textoIndex' DO CONTEUDO.OUTRA CONDIÇÃO
+        DE RENDERIZAÇÃO É QUE ELA SÓ VAI SER RENDERIZADA QUANDO A PROPRIEDADE 'insertTop' FOR
+        TRUE, SE NÃO FOR, LÁ EM BAIXO VAI TER OUTRA, FAZENDO MESMA COISA.
         -->
-        <div v-for="(imagem, index) in lesson.imagens" :key="index">
-          <div v-if="imagem.insertTop && (imagem.textoIndex === textoIndex)"
-          class="imagemAulaContainer">
-            <img :src="imagem.urlImg" :alt="imagem.imgDescricao"
-            class="rounded-md max-h-96 object-cover shadow-lg shadow-black">
-            <p class="text-stone-800 italic mt-2">
-              Imagem {{ index + 1 }} -  {{ imagem.imgDescricao }}
-            </p>
+        <div v-for="(conteudo, index) in lesson.outrosConteudos" :key="index">
+          <div v-if="conteudo.insertTop && (conteudo.textoIndex === textoIndex)"
+          class="outrosConteudosContainer">
+
+            <div v-if="(conteudo.type === 'image')">
+              <img :alt="conteudo.descricao"
+              class="rounded-md max-h-96 object-cover shadow-lg shadow-black" :src="conteudo.url">
+              <p class="text-stone-800 text-center italic mt-2">
+              {{ index + 1 }} -  {{ conteudo.descricao }}
+              </p>
+            </div>
+
+            <div v-if="(conteudo.type === 'video')" class="text-center">
+              <video controls
+              class="rounded-md max-h-96 object-cover shadow-lg shadow-black mb-4 sm:mb-6">
+                <source :src="conteudo.url">
+              </video>
+              <a class="text-stone-800 underline underline-offset-2 hover:cursor-pointer italic" :href="conteudo.urlOriginal" target="_blank" ref="external">
+                {{ index + 1 }} -  {{ conteudo.descricao }}
+              </a>
+            </div>
+
           </div>
         </div>
 
@@ -206,22 +219,35 @@ const copiarCodigoParaClipBoard = (texto) => {
           </div>
         </div>
 
-        <!--INSERIR IMAGEM, DANDO LOOP EM TODAS AS IMAGENS DA AULA, E RENDERIZANDO
-        SOMENTE SE A PROPRIEDADE 'textoIndex' DA IMAGEM FOR IGUAL AO 'textoIndex', OU,
-        MELHOR DIZENDO, O INDICE DO ITEM NA LISTA DE CONTEUDO FOR IGUAL AO INDICE
-        APONTADO PELA PROPRIEDADE 'textoIndex' DA IMAGEM.
-        OUTRA CONDIÇÃO DE RENDERIZAÇÃO É QUE ELA SÓ VAI SER RENDERIZADA QUANDO
-        A PROPRIEDADE 'insertTop' FOR FALSE, SE NÃO FOR, LÁ EM CIMA VAI TER OUTRA,
-        FAZENDO MESMA COISA.
+        <!--INSERIR OUTROS CONTÉUDOS(VÍDEO OU IMAGEM), DANDO LOOP EM TODAS CONTEUDOS NÃO
+        TEXTUAIS DA AULA, E RENDERIZANDO SOMENTE SE A PROPRIEDADE 'textoIndex' DO CONTEUDO
+        FOR IGUAL AO 'textoIndex', OU, MELHOR DIZENDO, O INDICE DO ITEM NA LISTA DE CONTEUDO
+        FOR IGUAL AO INDICE APONTADO PELA PROPRIEDADE 'textoIndex' DO CONTEUDO.OUTRA CONDIÇÃO
+        DE RENDERIZAÇÃO É QUE ELA SÓ VAI SER RENDERIZADA QUANDO A PROPRIEDADE 'insertTop' FOR
+        FALSE, SE NÃO FOR, LÁ EM CIMA VAI TER OUTRA, FAZENDO MESMA COISA.
         -->
-        <div v-for="(imagem, index) in lesson.imagens" :key="index">
-          <div v-if="(!imagem.insertTop) && (imagem.textoIndex === textoIndex)"
-          class="imagemAulaContainer">
-            <img :src="imagem.urlImg" :alt="imagem.imgDescricao"
-            class="rounded-md max-h-96 object-cover shadow-lg shadow-black">
-            <p class="text-stone-800 italic mt-2">
-              Imagem {{ index + 1 }} -  {{ imagem.imgDescricao }}
-            </p>
+        <div v-for="(conteudo, index) in lesson.outrosConteudos" :key="index">
+          <div v-if="(!conteudo.insertTop) && (conteudo.textoIndex === textoIndex)"
+          class="outrosConteudosContainer">
+
+            <div v-if="(conteudo.type === 'image')">
+              <img :alt="conteudo.descricao"
+              class="rounded-md max-h-96 object-cover shadow-lg shadow-black" :src="conteudo.url">
+              <p class="text-stone-800 text-center italic mt-2">
+              {{ index + 1 }} -  {{ conteudo.descricao }}
+              </p>
+            </div>
+
+            <div v-if="(conteudo.type === 'video')" class="text-center">
+              <video controls
+              class="rounded-md max-h-96 object-cover shadow-lg shadow-black mb-4 sm:mb-6">
+                <source :src="conteudo.url">
+              </video>
+              <a class="text-stone-800 underline underline-offset-2 hover:cursor-pointer italic" :href="conteudo.urlOriginal" target="_blank" ref="external">
+                {{ index + 1 }} -  {{ conteudo.descricao }}
+              </a>
+            </div>
+
           </div>
         </div>
 
@@ -233,7 +259,7 @@ const copiarCodigoParaClipBoard = (texto) => {
       <h2 class="text-3xl md:text-5xl text-stone-900 font-bold text-wrap text-start">Referências</h2>
 
       <ul class="pl-4">
-        <li v-for="(item, index) in lesson.referencias" :key="index" class="linkText mt-3 text-xl md:text-2xl">
+        <li v-for="(item, index) in lesson.referencias" :key="index" class="linkText mt-8 text-xl md:text-2xl">
           <a :href="item.url">
             <span>{{ item.titulo }} - {{ item.url }}</span>
           </a>
@@ -266,7 +292,7 @@ const copiarCodigoParaClipBoard = (texto) => {
   animation-timeline: scroll();
 }
 
-.imagemAulaContainer{
+.outrosConteudosContainer{
   @apply w-full flex flex-nowrap flex-col items-center justify-center mt-8;
 }
 

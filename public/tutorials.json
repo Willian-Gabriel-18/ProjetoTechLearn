@@ -564,24 +564,38 @@
         ]
       }
     ],
-    "imagens": [
+    "outrosConteudos": [
       {
+        "type": "video",
+        "textoIndex": 1,
+        "insertTop": true,
+        "url": "/videos/javaScriptAula1.mp4",
+        "urlOrigin": "https://www.youtube.com/watch?v=IJvVx2HMbNk",
+        "descricao": "O que é JavaScript"
+      },
+      {
+        "type": "image",
         "textoIndex": 3,
         "insertTop": false,
-        "urlImg": "https://lh5.googleusercontent.com/SQ3qz32VvBhTPFTeGtWOzPVhcv-mfB7C8mj6k4C1IVOttNGWf71T9s8Pq9QY4F_AlMbEKMwgnMGh5XEQf2v8-UU-G6xZc984pnSwfJvKF-CxSEOsBafgKCkkg6tCWgH6Ni9bb_N8",
-        "imgDescricao": "DOM de uma página HTML" 
+        "url": "https://lh5.googleusercontent.com/SQ3qz32VvBhTPFTeGtWOzPVhcv-mfB7C8mj6k4C1IVOttNGWf71T9s8Pq9QY4F_AlMbEKMwgnMGh5XEQf2v8-UU-G6xZc984pnSwfJvKF-CxSEOsBafgKCkkg6tCWgH6Ni9bb_N8",
+        "urlOrigin": "https://lh5.googleusercontent.com/SQ3qz32VvBhTPFTeGtWOzPVhcv-mfB7C8mj6k4C1IVOttNGWf71T9s8Pq9QY4F_AlMbEKMwgnMGh5XEQf2v8-UU-G6xZc984pnSwfJvKF-CxSEOsBafgKCkkg6tCWgH6Ni9bb_N8",
+        "descricao": "DOM de uma página HTML" 
       },
       {
+        "type": "image",
         "textoIndex": 34,
         "insertTop": false,
-        "urlImg": "/images/estruturaProjeto.jpg",
-        "imgDescricao": "Exemplo estrutura de um projeto" 
+        "url": "/images/estruturaProjeto.jpg",
+        "urlOrigin": "",
+        "descricao": "Exemplo estrutura de um projeto" 
       },
       {
+        "type": "image",
         "textoIndex": 35,
         "insertTop": true,
-        "urlImg": "/images/devToolsConsole.jpg",
-        "imgDescricao": "DevTools Console (pressione F12 no seu navegador para abrir)" 
+        "url": "/images/devToolsConsole.jpg",
+        "urlOrigin": "",
+        "descricao": "DevTools Console (pressione F12 no seu navegador para abrir)" 
       }
     ],
     "referencias": [
@@ -589,5 +603,757 @@
       { "titulo": "Code editors", "url": "https://javascript.info/code-editors" },
       { "titulo": "DevTools / Developer console", "url": "https://javascript.info/devtools" }
     ]
-  }
+  },
+  {
+  "id": 2,
+  "categoria": "JavaScript",
+  "categoriaIconClass": "fa-brands fa-js",
+  "bannerImgUrl": "https://images.pexels.com/photos/3987066/pexels-photo-3987066.jpeg",
+  "titulo": "Variáveis, Tipos de Dados e Operadores",
+  "resumo": "Aula completa e simples sobre como guardar valores (variáveis), entender os tipos de dados em JavaScript, usar operadores e compreender escopo e coerção. Explicações claras, exemplos práticos e exercícios pensados para quem está começando.",
+  "autor": "TechLearn",
+  "data_publicacao": "2025-09-20",
+  "meta": {
+    "tempo_estimado_leitura": "30 minutos",
+    "nivel": "Iniciante"
+  },
+  "leia_tambem": "/news/1",
+  "conteudo": [
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "O que é uma variável?",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "Uma variável é uma 'caixinha' com um nome que guarda um valor. Esse valor pode ser um número, um texto ou outro tipo. Variáveis permitem que seu programa trabalhe com dados que mudam: por exemplo, o nome do usuário que fez login ou a pontuação de um jogo.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "Como declarar variáveis",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+    "tipo": "destacar",
+    "trechos": [
+      {
+        "texto": "Como declarar variáveis",
+        "isBold": true,
+        "isItalic": false,
+        "isLink": false,
+        "urlPage": ""
+      }
+    ]
+    },
+    {
+      "tipo": "explicacao",
+      "trechos": [
+        {
+          "texto": "Em JavaScript usamos `const`, `let` e `var`. `const` cria uma constante (valor não pode ser reatribuído). `let` cria uma variável cujo valor pode mudar. `var` é a forma antiga e tem regras de alcance que confundem iniciantes; prefira `let` e `const`.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "script",
+      "trechos": [
+        {
+          "texto": "\nconst NOME = 'Ana';//Recomenda-se usar letras maiusculas para variaveis const\nlet idade = 30;\n// evitar usar var quando possível\nvar antigo = 1;\nconsole.log(nome, idade);",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "O que são tipos primitivos",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+    "tipo": "destacar",
+    "trechos": [
+      {
+        "texto": "O que são tipos primitivos",
+        "isBold": true,
+        "isItalic": false,
+        "isLink": false,
+        "urlPage": ""
+      }
+    ]
+    },
+    {
+      "tipo": "explicacao",
+      "trechos": [
+        {
+          "texto": "Tipos primitivos são valores simples que o JavaScript trata como unidades indivisíveis. Quando você copia um valor primitivo para outra variável, o valor é copiado por valor — ou seja, cada variável tem sua própria cópia. Primitivos são fáceis de entender e comparar, por isso são a base para aprender outras estruturas.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• String -- representa texto. Use aspas simples, duplas ou crases para template literals.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Number -- representa números (inteiros e decimais). Não há tipo separado para inteiros.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Boolean -- representa verdadeiro ou falso (`true` / `false`). Muito usado para condições.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Null -- é a atribuição intencional de 'sem valor'. Use quando quiser dizer que a variável existe mas está vazia de propósito.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Undefined -- indica que a variável foi declarada mas não recebeu valor.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• BigInt -- serve para inteiros muito grandes. É escrito com um sufixo `n`, por exemplo `123n`.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Symbol -- cria identificadores únicos. É um uso mais avançado, mas bom saber que existe.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "script",
+      "trechos": [
+        {
+          "texto": "\n// Exemplos simples e bem explicados dos TIPOS PRIMITIVOS (rode no Console do navegador)\n\n// STRING — texto\nconst nome = 'Maria';\nconsole.log('STRING -> valor:', nome, '| tipo:', typeof nome);\n\n// NUMBER — números inteiros ou decimais\nconst idade = 30;\nconst altura = 1.75;\nconsole.log('NUMBER -> idade:', idade, 'altura:', altura, '| tipo:', typeof idade);\n\n// BOOLEAN — verdadeiro ou falso\nconst inscrito = true; // true ou false\nconsole.log('BOOLEAN ->', inscrito, '| tipo:', typeof inscrito);\n\n// NULL — usamos quando queremos dizer 'nenhum valor' de propósito\nconst vazio = null;\nconsole.log('NULL ->', vazio, '| tipo (observação):', typeof vazio, \"(typeof null retorna 'object' por detalhe histórico)\");\n\n// UNDEFINED — variável declarada mas sem valor\nlet semValor;\nconsole.log('UNDEFINED ->', semValor, '| tipo:', typeof semValor);\n\n// Nota: BigInt e Symbol existem (uso mais avançado). Se quiser, posso adicionar exemplos separados.\n\n// --- Demonstração prática: primitivos são copiados por valor ---\nlet x = 5;\nlet y = x; // y recebe uma cópia do valor 5\ny = 10;    // mudar y NÃO muda x\nconsole.log('Primitivo (cópia por valor) -> x:', x, 'y:', y);\n\n// --- Para comparação: objetos/arrays NÃO são primitivos (são referências) ---\nconst pessoa = { nome: 'Ana' };\nconst outraReferencia = pessoa; // aponta para o mesmo objeto\noutraReferencia.nome = 'João'; // altera o objeto compartilhado\nconsole.log('Objeto (referência) -> pessoa.nome:', pessoa.nome, 'outraReferencia.nome:', outraReferencia.nome);\n\nconst lista = [1, 2, 3];\nconst copiaLista = lista; // mesma referência\ncopiaLista.push(4);\nconsole.log('Array (referência) -> lista:', lista, 'copiaLista:', copiaLista);\n\n// Conclusão: valores primitivos (string, number, boolean, null, undefined) são copiados por valor;\n// objetos e arrays são copiados por referência (duas variáveis podem apontar para a mesma estrutura).\nconsole.log('Fim dos exemplos simples de tipos primitivos.');",
+            "isBold": false,
+            "isItalic": false,
+            "isLink": false,
+            "urlPage": ""
+        }
+      ]
+    }
+    ,
+    {
+    "tipo": "destacar",
+    "trechos": [
+      {
+        "texto": "Comportamentos de variáveis primitivas quando atribuidas a outras variaveis",
+        "isBold": true,
+        "isItalic": false,
+        "isLink": false,
+        "urlPage": ""
+      }
+    ]
+    },
+    {
+      "tipo": "explicacao",
+      "trechos": [
+        {
+          "texto": "Variáveis primitivas, se comportam de uma maneira que ao atribuir o valor de uma variável primitiva para uma outra, elas não se referenciam, ou seja, são independentes, ao alterar valor de uma a outra não é alterada. Existem outros tipos de variaveis, que serão apresentados posteriormente, como objetos e arrays que não são primitivos: eles são estruturas que guardam múltiplos valores. Quando você copia um objeto ou array para outra variável, você copia uma referência — as duas variáveis passam a apontar para a mesma estrutura, ou seja, alterando o valor de alguma, altera na outra também.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "Como verificar o tipo de um valor",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "script",
+      "trechos": [
+        {
+          "texto": "\nconsole.log(typeof 'Olá')\t//String;\nconsole.log(typeof 42)\t//Number;\nconsole.log(typeof true)\t//Boolean;\nconsole.log(typeof undefined)\t//Undefined;\nconsole.log(typeof null);\t//Null (retorna Object no console)",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+    "tipo": "destacar",
+    "trechos": [
+      {
+        "texto": "Porque null retorna Object no console",
+        "isBold": true,
+        "isItalic": false,
+        "isLink": false,
+        "urlPage": ""
+      }
+    ]
+    },
+    {
+      "tipo": "explicacao",
+      "trechos": [
+        {
+          "texto": "`typeof null` retorna 'object' por um detalhe histórico do JavaScript. Apesar disso, null continua sendo um primitivo que indica ausência de valor.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "Operadores aritméticos",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "Soma, subtração, multiplicação, divisão e resto são usados para cálculo básico em programas.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "script",
+      "trechos": [
+        {
+          "texto": "\nlet a = 10;\nlet b = 3;\nconsole.log(a + b);\t//13\nconsole.log(a - b);\t//7\nconsole.log(a * b);\t//30\nconsole.log(a / b);\t//3.3333...\nconsole.log(a % b);\t//1",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "Operadores de comparação",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "Usamos operadores de comparação para verificar relações entre valores, por exemplo maior, menor ou igual. O resultado é um boolean (`true` ou `false`).",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+    "tipo": "destacar",
+    "trechos": [
+      {
+        "texto": "Comparação segura (=== vs ==)",
+        "isBold": true,
+        "isItalic": false,
+        "isLink": false,
+        "urlPage": ""
+      }
+    ]
+    },
+    {
+      "tipo": "explicacao",
+      "trechos": [
+        {
+          "texto": "Use `===` e `!==` para comparar valor e tipo. `==` e `!=` fazem conversão automática antes de comparar e podem produzir resultados inesperados; por isso `===` é recomendado.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "script",
+      "trechos": [
+        {
+          "texto": "\nconsole.log(10 == '10');\t//Compara por valor sem se preocupar com o tipo\nconsole.log(10 === '10');\t//Compara por valor e tipo, sendo de tipos diferentes retorna false",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "Operadores lógicos",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "Operadores lógicos combinam verificações: `&&` significa E (tudo precisa ser verdadeiro), `||` significa OU (pelo menos um verdadeiro) e `!` inverte o valor.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "script",
+      "trechos": [
+        {
+          "texto": "\nconsole.log(true && false);\t//false\nconsole.log(true || false);\t//true\nconsole.log(!false);\t//true",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "Coerção e conversão de tipos",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+    "tipo": "destacar",
+    "trechos": [
+      {
+        "texto": "Coerção e conversão de tipos",
+        "isBold": true,
+        "isItalic": false,
+        "isLink": false,
+        "urlPage": ""
+      }
+    ]
+    },
+    {
+      "tipo": "explicacao",
+      "trechos": [
+        {
+          "texto": "Coerção é quando o JavaScript converte valores automaticamente (por exemplo, somar string com número resulta em concatenação). Para evitar surpresas, converta valores de forma explícita com `Number()`, `String()` ou `Boolean()` quando for necessário.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "script",
+      "trechos": [
+        {
+          "texto": "\nlet s1 = '5';\nlet s2 = '2';\nconsole.log(s1 + s2); // '52'\nconsole.log(Number(s1) + Number(s2)); // 7\nconsole.log(Number(s1) + s2); // '52'",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "Escopo",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+    "tipo": "destacar",
+    "trechos": [
+      {
+        "texto": "Escopo",
+        "isBold": true,
+        "isItalic": false,
+        "isLink": false,
+        "urlPage": ""
+      }
+    ]
+    },
+    {
+      "tipo": "explicacao",
+      "trechos": [
+        {
+          "texto": "Escopo determina onde uma variável pode ser usada. Variáveis declaradas com `let` e `const` existem somente no bloco `{ }` em que foram criadas. `var` tem escopo de função e pode aparecer disponível em lugares inesperados.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "script",
+      "trechos": [
+        {
+          "texto": "\nif (true) {\n  let local = 'estou aqui';\n  console.log(local);\n}\n// console.log(local); // erro: local is not defined",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "Boas práticas",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Prefira `const` por padrão para valores que não mudam.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Use `let` quando souber que o valor precisará ser reatribuído.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Evite `var` para novas implementações; ele existe por compatibilidade com código antigo.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Use nomes de variáveis descritivos e claros que expliquem o que o valor representa.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Evite variáveis globais; prefira encapsular dados em funções ou módulos.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Teste frequentemente no Console do navegador e leia as mensagens de erro com atenção.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": true,
+          "urlPage": "https://developer.mozilla.org/pt-BR/docs/Web/API/Console"
+        }
+      ]
+    },
+
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "Exemplos práticos",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "script",
+      "trechos": [
+        {
+          "texto": "\n//prompt() permite usuário dar entrada em algum valor para ser armazenado em nome\n\nconst nome = prompt('Qual é o seu nome?');\nconsole.log(`Olá, ${nome}! Bem-vindo.`);\n\nconst idade = Number(prompt('Quantos anos você tem?'));\nif (idade >= 18) {\n  console.log('Você é maior de idade');\n} else {\n  console.log('Você é menor de idade');\n}",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+
+    {
+      "tipo": "topico",
+      "trechos": [
+        {
+          "texto": "Exercícios",
+          "isBold": true,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Crie index.html e script.js. Peça o nome do usuário com prompt e mostre no console: Olá, <nome>!",
+          "isBold": false,
+          "isItalic": true,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Faça uma calculadora simples: peça dois números, converta com Number() e mostre soma, subtração, multiplicação e divisão.",
+          "isBold": false,
+          "isItalic": true,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Teste comparação com == e === usando 10 e '10'. Escreva uma frase explicando a diferença dos resultados.",
+          "isBold": false,
+          "isItalic": true,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Dentro de um bloco if declare uma variável com let e tente acessá-la fora do bloco. Copie a mensagem de erro que aparecer no Console e explique por que ocorreu.",
+          "isBold": false,
+          "isItalic": true,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Exercício bônus: some a string '5' com o número 3 e observe o resultado. Depois converta a string para número e some novamente.",
+          "isBold": false,
+          "isItalic": true,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    },
+
+    {
+      "tipo": "paragrafo",
+      "trechos": [
+        {
+          "texto": "• Se tiver dúvidas, copie a mensagem de erro do Console (F12) e pesquise ou pergunte ao instrutor. Entender o erro é parte importante do aprendizado.",
+          "isBold": false,
+          "isItalic": false,
+          "isLink": false,
+          "urlPage": ""
+        }
+      ]
+    }
+  ],
+  "outrosConteudos": [
+    {
+      "type": "video",
+      "textoIndex": 1,
+      "insertTop": true,
+      "url": "/videos/variaveisJavaScriptAula2.mp4",
+      "urlOrigin": "https://www.youtube.com/watch?v=ZnI57tm2aac",
+      "descricao": "Variáveis e Tipos em 15 minutos"
+    }
+  ],
+  "referencias": [
+    {
+      "titulo": "MDN — Variáveis: let, const, var",
+      "url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Grammar_and_types#declara%C3%A7%C3%A3o_de_vari%C3%A1veis"
+    },
+    {
+      "titulo": "JavaScript.info — Tipos",
+      "url": "https://javascript.info/types"
+    },
+    {
+      "titulo": "Guia prático de operadores",
+      "url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators"
+    }
+  ]
+}
+
+
 ]
