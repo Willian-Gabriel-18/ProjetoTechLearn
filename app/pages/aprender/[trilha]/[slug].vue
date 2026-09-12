@@ -1,0 +1,104 @@
+<script setup>
+const route = useRoute()
+const { usuario, carregar } = useAuth()
+const { data, error, refresh } = await useFetch(
+  `/api/aulas/${route.params.trilha}/${route.params.slug}`,
+)
+
+useHead({ title: () => `${data.value?.aula?.titulo || 'Aula'} — TechLearn` })
+
+onMounted(() => {
+  if (!usuario.value) carregar()
+})
+
+const marcando = ref(false)
+async function marcarFeita() {
+  if (!data.value?.aula) return
+  marcando.value = true
+  try {
+    await $fetch('/api/progresso', {
+      method: 'POST',
+      body: { aulaId: data.value.aula.id },
+    })
+    await refresh()
+  } finally {
+    marcando.value = false
+  }
+}
+
+const topicos = computed(() =>
+  (data.value?.blocos || []).filter((b) => b.tipo === 'conceito' || b.tipo === 'tente'),
+)
+</script>
+
+<template>
+  <article class="mx-auto max-w-leitura px-4 py-10">
+    <p v-if="error" class="text-cerrado">Aula não encontrada.</p>
+    <template v-else-if="data">
+      <p class="text-sm">
+        <NuxtLink :to="`/aprender/${data.aula.trilha_id}`" class="underline text-cerrado">
+          {{ data.aula.trilha_titulo }}
+        </NuxtLink>
+      </p>
+      <p class="mt-2 text-sm text-tinta/70">
+        Aula {{ data.aula.ordem }} · {{ data.aula.tempo_minutos }} min
+        <span v-if="data.aula.tipo === 'projeto'"> · mini-projeto</span>
+      </p>
+      <h1 class="font-display text-4xl md:text-5xl mt-2 leading-tight">{{ data.aula.titulo }}</h1>
+      <p class="mt-4 text-xl leading-relaxed">{{ data.aula.resumo }}</p>
+
+      <p v-if="!data.blocos?.length" class="mt-8 border border-linha p-4 rounded-md">
+        O texto desta aula ainda está sendo preparado. Volte em breve.
+      </p>
+
+      <div class="mt-8 space-y-2 border-t border-linha pt-6">
+        <BlocoAula v-for="b in data.blocos" :key="b.id" :bloco="b" />
+      </div>
+
+      <div class="mt-10 flex flex-col gap-3">
+        <p v-if="data.feita" class="text-mata font-bold">Você já marcou esta aula como feita.</p>
+        <button
+          v-else-if="data.logado"
+          type="button"
+          class="self-start bg-mata text-papel font-bold px-4 py-2 rounded-md disabled:opacity-60"
+          :disabled="marcando"
+          @click="marcarFeita"
+        >
+          Marcar como feita
+        </button>
+        <p v-else class="text-sm">
+          Quer guardar o progresso?
+          <NuxtLink to="/entrar" class="underline text-cerrado">Entre</NuxtLink>
+          ou
+          <NuxtLink to="/cadastrar" class="underline text-cerrado">crie uma conta</NuxtLink>.
+          A aula você já pode ler de graça.
+        </p>
+      </div>
+
+      <nav class="mt-10 flex justify-between gap-4 border-t border-linha pt-6" aria-label="Aulas">
+        <NuxtLink
+          v-if="data.anterior"
+          :to="`/aprender/${data.aula.trilha_id}/${data.anterior.slug}`"
+          class="underline text-cerrado"
+        >
+          ← {{ data.anterior.titulo }}
+        </NuxtLink>
+        <span v-else />
+        <NuxtLink
+          v-if="data.proxima"
+          :to="`/aprender/${data.aula.trilha_id}/${data.proxima.slug}`"
+          class="bg-cerrado text-papel font-bold px-4 py-2 rounded-md"
+        >
+          Próxima aula
+        </NuxtLink>
+        <NuxtLink
+          v-else
+          :to="`/aprender/${data.aula.trilha_id}`"
+          class="underline text-cerrado"
+        >
+          Voltar à trilha
+        </NuxtLink>
+      </nav>
+    </template>
+  </article>
+</template>

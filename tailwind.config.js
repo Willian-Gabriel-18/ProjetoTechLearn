@@ -1,39 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,vue,css}'],
-  darkMode: false,
+  content: [
+    './app/**/*.{vue,js}',
+    './components/**/*.{vue,js}',
+  ],
   theme: {
     extend: {
-      width: {
-        '30p': '30%',
-        '45p': '45%',
-        '50p': '50%',
-        '80p': '80%',
-        '105': '420px'
+      colors: {
+        papel: '#F4EFE6',
+        tinta: '#241C15',
+        cerrado: '#C24E1D',
+        mata: '#1F6A4A',
+        linha: '#CDBFA8',
+        postit: '#E8C872',
+      },
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['Atkinson Hyperlegible', 'Segoe UI', 'sans-serif'],
       },
       maxWidth: {
-        '30p': '30%',
-        '45p': '45%',
-        '50p': '50%',
-        '80p': '80%',
-        '105': '420px'
+        leitura: '42rem',
       },
-      minHeight: {
-        '30p': '30%',
-        '45p': '45%',
-        '50p': '50%',
-        '80p': '80%',
-        '105': '420px'
-      },
-      maxHeight: {
-        '30p': '30%',
-        '45p': '45%',
-        '50p': '50%',
-        '80p': '80%',
-        '105': '420px'
-      }
-     },
+    },
   },
   plugins: [],
 }
-

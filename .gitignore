@@ -13,6 +13,10 @@ dist
 dist-ssr
 coverage
 *.local
+.nuxt
+.output
+.data
+.vercel
 
 /cypress/videos/
 /cypress/screenshots/
@@ -28,3 +32,15 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# Local-only: não sobe para o GitHub
+/orientacao
+AGENTS.md
+.grok/
+.env
+.env.*
+!.env.example
+.neon
+
+.env*
+.env.local
