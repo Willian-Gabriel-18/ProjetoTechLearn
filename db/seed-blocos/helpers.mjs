@@ -1,6 +1,9 @@
 export const md = (markdown) => ({ tipo: 'texto', conteudo: { markdown } })
 export const conce = (termo, explicacao) => ({ tipo: 'conceito', conteudo: { termo, explicacao } })
-export const code = (codigo) => ({ tipo: 'codigo', conteudo: { linguagem: 'javascript', codigo } })
+export const code = (codigo, linguagem = 'javascript') => ({
+  tipo: 'codigo',
+  conteudo: { linguagem, codigo },
+})
 export const yt = (video_id, titulo, canal) => ({ tipo: 'youtube', conteudo: { video_id, titulo, canal } })
 export const img = (src, alt, extras = {}) => ({
   tipo: 'imagem',
@@ -40,4 +43,16 @@ export function minutosAula(blocos, { projeto = false } = {}) {
   if (projeto) extra += 16
   const leitura = Math.max(1, Math.round(palavras / 150))
   return Math.min(45, Math.max(10, leitura + extra))
+}
+
+// Coloca o botão de baixar antes de “Na próxima”, sem duplicar.
+export function comDownload(blocos, href, rotulo) {
+  if (!href) return blocos
+  const semArq = blocos.filter((b) => b.tipo !== 'arquivo')
+  const bloco = arq(href, rotulo)
+  const i = semArq.findIndex(
+    (b) => b.tipo === 'texto' && String(b.conteudo?.markdown || '').startsWith('## Na próxima'),
+  )
+  if (i < 0) return [...semArq, bloco]
+  return [...semArq.slice(0, i), bloco, ...semArq.slice(i)]
 }

@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
   const sql = db()
   const rows = await sql`
     SELECT a.id, a.slug, a.titulo, a.resumo, a.ordem, a.tempo_minutos, a.tipo, a.publicada,
-           a.trilha_id, t.titulo AS trilha_titulo
+           a.nivel, a.precisa_pagina, a.trilha_id, t.titulo AS trilha_titulo
     FROM aulas a
     JOIN trilhas t ON t.id = a.trilha_id
     WHERE a.trilha_id = ${trilhaId} AND a.slug = ${slug}
@@ -31,10 +31,17 @@ export default defineEventHandler(async (event) => {
   `
 
   const viz = await sql`
-    SELECT slug, titulo, ordem, tipo
+    SELECT slug, titulo, ordem, tipo, nivel
     FROM aulas
     WHERE trilha_id = ${aula.trilha_id}
-    ORDER BY ordem
+    ORDER BY
+      CASE nivel
+        WHEN 'basico' THEN 1
+        WHEN 'intermediario' THEN 2
+        WHEN 'avancado' THEN 3
+        ELSE 4
+      END,
+      ordem
   `
   const i = viz.findIndex((x) => x.slug === aula.slug)
   const anterior = i > 0 ? viz[i - 1] : null

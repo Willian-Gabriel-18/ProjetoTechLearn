@@ -7,6 +7,8 @@ const titulo = ref('')
 const resumo = ref('')
 const publicada = ref(false)
 const tempo = ref(20)
+const nivel = ref('basico')
+const precisaPagina = ref(false)
 
 watch(
   () => data.value?.aula,
@@ -16,6 +18,8 @@ watch(
     resumo.value = a.resumo
     publicada.value = a.publicada
     tempo.value = a.tempo_minutos
+    nivel.value = a.nivel || 'basico'
+    precisaPagina.value = Boolean(a.precisa_pagina)
   },
   { immediate: true },
 )
@@ -39,6 +43,7 @@ const salvandoBloco = ref(false)
 
 function camposVazios() {
   return {
+    linguagem: 'javascript',
     markdown: '',
     termo: '',
     explicacao: '',
@@ -70,7 +75,7 @@ function conteudoDoTipo() {
     case 'conceito':
       return { termo: campos.termo, explicacao: campos.explicacao }
     case 'codigo':
-      return { linguagem: 'javascript', codigo: campos.codigo }
+      return { linguagem: campos.linguagem || 'javascript', codigo: campos.codigo }
     case 'youtube':
       return { video_id: campos.video_id.trim(), titulo: campos.titulo, canal: campos.canal }
     case 'arquivo':
@@ -100,6 +105,7 @@ function preencherDe(bloco) {
   campos.termo = c.termo || ''
   campos.explicacao = c.explicacao || ''
   campos.codigo = c.codigo || ''
+  campos.linguagem = c.linguagem || 'javascript'
   campos.video_id = c.video_id || ''
   campos.titulo = c.titulo || ''
   campos.canal = c.canal || ''
@@ -123,6 +129,8 @@ async function salvarMeta() {
         resumo: resumo.value,
         publicada: publicada.value,
         tempo_minutos: tempo.value,
+        nivel: nivel.value,
+        precisa_pagina: precisaPagina.value,
       },
     })
     await refresh()
@@ -183,6 +191,16 @@ useHead({ title: 'Editar aula — TechLearn' })
       <label class="flex items-center gap-2">
         <input v-model="publicada" type="checkbox" /> Publicada
       </label>
+      <label class="block">Nível
+        <select v-model="nivel" class="mt-1 border border-linha rounded px-2 py-1 bg-white">
+          <option value="basico">Básico</option>
+          <option value="intermediario">Intermediário</option>
+          <option value="avancado">Avançado</option>
+        </select>
+      </label>
+      <label class="flex items-center gap-2">
+        <input v-model="precisaPagina" type="checkbox" /> Precisa de página (aviso de HTML/CSS)
+      </label>
       <label class="block">Minutos
         <input v-model.number="tempo" type="number" class="mt-1 w-24 border border-linha rounded px-2 py-1 bg-white" />
       </label>
@@ -226,6 +244,13 @@ useHead({ title: 'Editar aula — TechLearn' })
         </label>
       </template>
       <template v-else-if="tipoNovo === 'codigo'">
+        <label class="block">Linguagem
+          <select v-model="campos.linguagem" class="mt-1 border border-linha rounded px-2 py-1 bg-white">
+            <option value="javascript">JavaScript</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+          </select>
+        </label>
         <label class="block">Código
           <textarea v-model="campos.codigo" rows="8" class="mt-1 w-full border border-linha rounded px-2 py-1 font-mono text-sm bg-white" />
         </label>

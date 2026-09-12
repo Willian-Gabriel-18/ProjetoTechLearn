@@ -39,11 +39,11 @@ useHead({
           </p>
           <NuxtLink
             v-if="!data?.continuar && !data?.trilhaConcluida"
-            to="/aprender/iniciante"
+            to="/aprender/html-css"
             class="inline-flex items-center gap-2 bg-mata text-papel font-bold px-5 py-3 rounded-md hover:opacity-90"
           >
             <i class="pi pi-book" aria-hidden="true" />
-            Começar pelo iniciante
+            Começar pelo HTML
           </NuxtLink>
           <NuxtLink
             to="/aprender"
@@ -64,8 +64,8 @@ useHead({
 
     <section class="mx-auto max-w-5xl px-4 py-8">
       <h2 class="font-display text-2xl md:text-3xl">As trilhas</h2>
-      <p class="mt-2 text-tinta/80">Comece pelo JavaScript iniciante. HTML e CSS vêm na sequência.</p>
-      <ol class="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <p class="mt-2 text-tinta/80">Comece pelo HTML e CSS. O JavaScript usa essa página.</p>
+      <ol class="mt-6 grid md:grid-cols-2 gap-4">
         <li
           v-for="t in data?.trilhas || []"
           :key="t.id"

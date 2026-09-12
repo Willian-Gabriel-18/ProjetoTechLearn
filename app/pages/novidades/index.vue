@@ -23,8 +23,8 @@ useHead({ title: 'Novidades — TechLearn' })
       </li>
     </ul>
     <p v-else class="mt-8 border border-linha p-4 rounded-md">
-      Ainda não publicamos novidades. Enquanto isso, comece pela
-      <NuxtLink to="/aprender/iniciante" class="underline text-cerrado">trilha iniciante</NuxtLink>.
+      Ainda não publicamos novidades. Enquanto isso, comece pelo
+      <NuxtLink to="/aprender/html-css" class="underline text-cerrado">HTML e CSS</NuxtLink>.
     </p>
   </section>
 </template>

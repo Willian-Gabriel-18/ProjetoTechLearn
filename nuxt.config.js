@@ -36,5 +36,8 @@ export default defineNuxtConfig({
   routeRules: {
     '/learn': { redirect: '/aprender' },
     '/news': { redirect: '/novidades' },
+    '/aprender/iniciante': { redirect: '/aprender/javascript' },
+    '/aprender/intermediario': { redirect: '/aprender/javascript' },
+    '/aprender/avancado': { redirect: '/aprender/javascript' },
   },
 })

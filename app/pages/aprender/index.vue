@@ -7,7 +7,7 @@ useHead({ title: 'Aprenda — TechLearn' })
   <section class="mx-auto max-w-5xl px-4 py-10">
     <h1 class="font-display text-4xl">Aprenda</h1>
     <p class="mt-3 text-lg max-w-leitura">
-      Uma trilha de cada vez. Não pule o iniciante: cada aula usa o que a anterior ensinou.
+      Comece pelo HTML e CSS básico. O JavaScript usa o que essa trilha ensina.
     </p>
     <ul class="mt-8 space-y-4">
       <li
@@ -18,6 +18,11 @@ useHead({ title: 'Aprenda — TechLearn' })
         <div>
           <h2 class="font-display text-2xl">{{ t.titulo }}</h2>
           <p class="mt-1">{{ t.descricao }}</p>
+          <p v-if="t.id === 'javascript'" class="mt-2 text-sm">
+            Usa o
+            <NuxtLink to="/aprender/html-css" class="underline text-cerrado">HTML e CSS básico</NuxtLink>
+            (recomendado, não obrigatório).
+          </p>
           <p v-if="t.publicada" class="mt-1 text-sm text-tinta/70">
             {{ t.total_aulas }} aulas
             <span v-if="typeof t.feitas === 'number'"> · {{ t.feitas }} feitas</span>

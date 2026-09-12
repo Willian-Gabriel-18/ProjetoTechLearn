@@ -32,11 +32,18 @@ export default defineEventHandler(async (event) => {
     }
 
     const fila = await sql`
-      SELECT a.id, a.slug, a.titulo, a.trilha_id, t.ordem AS trilha_ordem, a.ordem
+      SELECT a.id, a.slug, a.titulo, a.trilha_id, t.ordem AS trilha_ordem, a.ordem, a.nivel
       FROM aulas a
       JOIN trilhas t ON t.id = a.trilha_id
       WHERE t.publicada = true AND a.publicada = true
-      ORDER BY t.ordem, a.ordem
+      ORDER BY t.ordem,
+        CASE a.nivel
+          WHEN 'basico' THEN 1
+          WHEN 'intermediario' THEN 2
+          WHEN 'avancado' THEN 3
+          ELSE 4
+        END,
+        a.ordem
     `
     const proxima = fila.find((a) => !idsFeitas.has(a.id))
     if (proxima) {

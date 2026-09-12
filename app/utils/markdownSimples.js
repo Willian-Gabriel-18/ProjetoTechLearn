@@ -16,6 +16,10 @@ function inline(src) {
     /\[([^\]]+)\]\((https?:[^)]+)\)/g,
     '<a href="$2" class="underline text-cerrado" target="_blank" rel="noopener noreferrer">$1</a>',
   )
+  h = h.replace(
+    /\[([^\]]+)\]\((\/[^)]+)\)/g,
+    '<a href="$2" class="underline text-cerrado">$1</a>',
+  )
   return h
 }
 

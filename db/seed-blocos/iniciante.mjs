@@ -1,4 +1,4 @@
-import { md, conce, code, yt, img, tente, ex, arq, proxima } from './helpers.mjs'
+import { md, conce, code, yt, img, tente, ex, proxima } from './helpers.mjs'
 
 export const iniciante = {
   'o-que-e-javascript': [
@@ -6,7 +6,7 @@ export const iniciante = {
 
 Ao terminar esta aula, você abre o Console do navegador e vê uma mensagem que **você** mandou o computador escrever.
 
-Não precisa saber HTML nem CSS ainda. Esta aula desenha o mapa: o que cada peça faz.`),
+Se o HTML e CSS básico ainda não entrou, vale passar lá primeiro — o mapa abaixo fica mais claro. Esta aula é o JavaScript: a página reage.`),
     md(`## As três camadas de um site
 
 Um site que você abre no Chrome é, na prática, três linguagens trabalhando juntas.
@@ -17,7 +17,7 @@ Um site que você abre no Chrome é, na prática, três linguagens trabalhando j
 
 **JavaScript** é a reação. Clique, conta, busca um CEP, troca um texto sem recarregar. Sem JavaScript, a página só *está lá*. Ela não responde a você.
 
-Você não vai virar expert em HTML e CSS nesta trilha. Elas ganham uma trilha própria depois. Aqui, o HTML aparece só quando o JavaScript precisar colar um botão ou um título para mexer.`),
+HTML e CSS têm trilha própria (o palco). Aqui você escreve a reação. As primeiras aulas são no Console; depois o JS mexe na página que você já sabe montar.`),
     img(
       '/images/trilhas/iniciante/tres-camadas.svg',
       'Três faixas: HTML estrutura, CSS visual, JavaScript reação',
@@ -51,7 +51,6 @@ Você fala com o JavaScript no **Console** do navegador. F12 (ou botão direito 
       'Pedido para o navegador escrever uma mensagem no Console. Não aparece no meio da página — aparece nessa janela de ferramenta.',
     ),
     code(`console.log('Olá')`),
-    arq('/files/hello.html', 'Baixar uma página de exemplo (HTML + JS)'),
     tente(
       'Abra o Chrome ou o Edge. Aperte F12. Clique na aba Console. Cole console.log(\'Olá\') e aperte Enter. Tem que aparecer Olá. Se aparecer undefined na linha de baixo, tudo bem: o log funcionou; undefined é só o “retorno” da linha.',
     ),
@@ -387,7 +386,7 @@ Achar um título na página e trocar o texto dele com JavaScript.`),
 
 Até agora o JS só falou no Console. Para mexer no que a pessoa *vê*, o navegador transforma o HTML numa árvore de peças. Essa árvore se chama **DOM**.
 
-Você não precisa de um curso de HTML para isto. Precisa de uma tag com um nome (um \`id\`) para o JS achar.
+Você já viu tag e \`id\` no HTML básico. Aqui o JS usa esse gancho.
 
 Um arquivo HTML mínimo:
 
@@ -395,7 +394,7 @@ Um arquivo HTML mínimo:
 
 O JS pergunta: “cadê o que tem id titulo?” e troca o texto.
 
-A trilha de HTML e CSS (em breve) aprofunda a estrutura. Aqui, o \`id\` é o gancho.`),
+O \`id\` é o gancho. Se a peça não existir no HTML, o JS acha \`null\`.`),
     conce(
       'DOM',
       'Document Object Model: o mapa da página em forma de objetos. querySelector acha uma peça. textContent troca o texto.',
@@ -409,7 +408,6 @@ A trilha de HTML e CSS (em breve) aprofunda a estrutura. Aqui, o \`id\` é o gan
 const titulo = document.querySelector('#titulo')
 titulo.textContent = 'Aula de DOM'
 titulo.style.color = '#1F6A4A'`),
-    arq('/files/hello.html', 'Página simples para testar o script'),
     tente(
       'Crie um HTML com <p id="msg">oi</p> e um arquivo JS (ou um <script> no fim da página) que faz querySelector(\'#msg\').textContent = \'funcionou\'. Abra no navegador. Se der erro de null, o JS rodou antes do HTML existir — coloque o script no fim do body.',
     ),
@@ -427,7 +425,7 @@ Um botão na página reage ao clique e muda um texto, sem recarregar.`),
 
 **Evento** é algo que acontece: clique, tecla, envio de formulário. \`addEventListener\` fica de ouvido.
 
-O HTML mínimo desta aula: um botão com \`id="btn"\` e um parágrafo com \`id="saida"\`. De novo: não é curso de HTML. São duas peças nomeadas para o JS achar.`),
+O HTML desta aula: um botão com \`id="btn"\` e um parágrafo com \`id="saida"\` — as mesmas peças do HTML básico. O zip já traz a página montada.`),
     conce(
       'addEventListener',
       'Diz: quando este evento acontecer nesta peça, rode esta função. O primeiro argumento é o nome do evento, em inglês: click, input, submit.',

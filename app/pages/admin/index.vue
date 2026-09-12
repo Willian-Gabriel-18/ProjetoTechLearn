@@ -12,6 +12,7 @@ useHead({ title: 'Admin — TechLearn' })
       <thead class="bg-linha/40">
         <tr>
           <th class="p-2">Trilha</th>
+          <th class="p-2">Nível</th>
           <th class="p-2">Ordem</th>
           <th class="p-2">Título</th>
           <th class="p-2">Blocos</th>
@@ -21,6 +22,7 @@ useHead({ title: 'Admin — TechLearn' })
       <tbody>
         <tr v-for="a in data?.aulas || []" :key="a.id" class="border-t border-linha">
           <td class="p-2">{{ a.trilha_id }}</td>
+          <td class="p-2">{{ a.nivel }}</td>
           <td class="p-2">{{ a.ordem }}</td>
           <td class="p-2">
             <NuxtLink :to="`/admin/aulas/${a.id}`" class="underline text-cerrado">{{ a.titulo }}</NuxtLink>

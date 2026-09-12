@@ -1,0 +1,20 @@
+/* Como abrir: junto com o index.html, na mesma pasta.
+   O que mudar: as cores. Recarregue o HTML (F5). */
+
+/* Todas as tags h1 desta página. */
+h1 {
+  color: #1f6a4a;
+  font-size: 2rem;
+  font-family: Georgia, serif;
+}
+
+/* Quem tem class="card". O ponto é a classe. */
+.card {
+  color: #241c15;
+  font-size: 1.125rem;
+}
+
+/* O id aviso. A cerquilha é o id. */
+#aviso {
+  color: #c24e1d;
+}

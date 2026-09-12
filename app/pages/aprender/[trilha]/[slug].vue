@@ -53,11 +53,20 @@ async function desmarcarFeita() {
         </NuxtLink>
       </p>
       <p class="mt-2 text-sm text-tinta/70">
-        Aula {{ data.aula.ordem }} · {{ data.aula.tempo_minutos }} min
+        {{
+          data.aula.nivel === 'intermediario'
+            ? 'Intermediário'
+            : data.aula.nivel === 'avancado'
+              ? 'Avançado'
+              : 'Básico'
+        }}
+        · aula {{ data.aula.ordem }} · {{ data.aula.tempo_minutos }} min
         <span v-if="data.aula.tipo === 'projeto'"> · mini-projeto</span>
       </p>
       <h1 class="font-display text-3xl sm:text-4xl md:text-5xl mt-2 leading-tight break-words">{{ data.aula.titulo }}</h1>
       <p class="mt-4 text-xl leading-relaxed">{{ data.aula.resumo }}</p>
+
+      <AvisoRequisitoPagina v-if="data.aula.precisa_pagina" />
 
       <p v-if="!data.blocos?.length" class="mt-8 border border-linha p-4 rounded-md">
         O texto desta aula ainda está sendo preparado. Volte em breve.
@@ -116,13 +125,21 @@ async function desmarcarFeita() {
         >
           Próxima aula
         </NuxtLink>
-        <NuxtLink
-          v-else
-          :to="`/aprender/${data.aula.trilha_id}`"
-          class="underline text-cerrado"
-        >
-          Voltar à trilha
-        </NuxtLink>
+        <span v-else class="flex flex-col sm:flex-row gap-3 sm:items-center">
+          <NuxtLink
+            v-if="data.aula.trilha_id === 'html-css'"
+            to="/aprender/javascript/o-que-e-javascript"
+            class="bg-cerrado text-papel font-bold px-4 py-2 rounded-md text-center"
+          >
+            Começar o JavaScript
+          </NuxtLink>
+          <NuxtLink
+            :to="`/aprender/${data.aula.trilha_id}`"
+            class="underline text-cerrado"
+          >
+            Voltar à trilha
+          </NuxtLink>
+        </span>
       </nav>
     </template>
   </article>

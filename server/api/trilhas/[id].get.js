@@ -16,10 +16,17 @@ export default defineEventHandler(async (event) => {
   }
 
   const aulas = await sql`
-    SELECT id, slug, titulo, resumo, ordem, tempo_minutos, tipo, publicada
+    SELECT id, slug, titulo, resumo, ordem, tempo_minutos, tipo, publicada, nivel, precisa_pagina
     FROM aulas
     WHERE trilha_id = ${id}
-    ORDER BY ordem
+    ORDER BY
+      CASE nivel
+        WHEN 'basico' THEN 1
+        WHEN 'intermediario' THEN 2
+        WHEN 'avancado' THEN 3
+        ELSE 4
+      END,
+      ordem
   `
 
   let resumoProgresso = null

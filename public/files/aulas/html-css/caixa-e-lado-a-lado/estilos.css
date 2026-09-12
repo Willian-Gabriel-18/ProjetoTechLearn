@@ -1,0 +1,18 @@
+/* padding = dentro da borda. margin = fora. gap = espaço entre filhos do flex. */
+
+body {
+  font-family: Georgia, serif;
+  color: #241c15;
+}
+
+.botoes {
+  display: flex;
+  gap: 0.75rem;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border: 2px solid #1f6a4a;
+  background: #e7f0ea;
+  margin: 0;
+}

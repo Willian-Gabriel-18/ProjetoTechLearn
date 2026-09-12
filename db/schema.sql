@@ -5,6 +5,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 CREATE TYPE papel_usuario AS ENUM ('aluno', 'admin');
 CREATE TYPE tipo_aula AS ENUM ('aula', 'projeto');
+CREATE TYPE nivel_aula AS ENUM ('basico', 'intermediario', 'avancado');
 CREATE TYPE tipo_bloco AS ENUM (
   'texto',
   'conceito',
@@ -58,14 +59,16 @@ CREATE TABLE aulas (
   ordem integer NOT NULL,
   tempo_minutos integer NOT NULL DEFAULT 20 CHECK (tempo_minutos > 0),
   tipo tipo_aula NOT NULL DEFAULT 'aula',
+  nivel nivel_aula NOT NULL DEFAULT 'basico',
+  precisa_pagina boolean NOT NULL DEFAULT false,
   publicada boolean NOT NULL DEFAULT false,
   criado_em timestamptz NOT NULL DEFAULT now(),
   atualizado_em timestamptz NOT NULL DEFAULT now(),
   UNIQUE (trilha_id, slug),
-  UNIQUE (trilha_id, ordem)
+  UNIQUE (trilha_id, nivel, ordem)
 );
 
-CREATE INDEX aulas_trilha_ordem_idx ON aulas (trilha_id, ordem);
+CREATE INDEX aulas_trilha_ordem_idx ON aulas (trilha_id, nivel, ordem);
 
 -- Molde dinâmico: cada linha é um bloco. JSON varia com o tipo.
 -- texto:     { "markdown": "..." }

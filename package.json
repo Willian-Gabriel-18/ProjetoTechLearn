@@ -10,7 +10,8 @@
     "build": "nuxt build",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "criar-admin": "node db/criar-admin.mjs"
+    "criar-admin": "node db/criar-admin.mjs",
+    "seed": "node db/gerar-pacotes.mjs && node db/empacotar-arquivos.mjs && node db/seed-blocos.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",

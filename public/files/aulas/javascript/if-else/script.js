@@ -1,0 +1,11 @@
+// Troque hora para 9 (Bom dia) e 20 (Boa noite).
+// A condição dentro do if vira verdadeiro ou falso.
+
+const hora = 14
+if (hora < 12) {
+  console.log('Bom dia')
+} else if (hora < 18) {
+  console.log('Boa tarde')
+} else {
+  console.log('Boa noite')
+}
