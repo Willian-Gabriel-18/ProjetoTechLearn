@@ -49,7 +49,66 @@ Não precisa de internet para uma página só sua. O navegador lê o arquivo e d
     ),
     ex('Em uma frase: o que o HTML faz que o CSS sozinho não faz?'),
     proxima(
-      'Na próxima aula você monta o esqueleto direito: cabeça, corpo, acentuação e celular.',
+      'Na próxima aula o botão de baixar deixa de ser mistério: extrair o zip, abrir no Chrome e ver o JavaScript no Console.',
+    ),
+  ],
+
+  'abrir-o-arquivo': [
+    md(`## O que você vai conseguir
+
+Baixar o pacote da aula, extrair se for zip, abrir no Chrome e conferir o JavaScript no Console. Sem isso, o botão de baixar não serve.`),
+    md(`## O botão no fim da aula
+
+Toda aula que trabalha com código tem um botão **Baixar**. Às vezes é um arquivo só (\`.html\`). Às vezes é um \`.zip\` com dois ou três arquivos que precisam ficar **na mesma pasta**.
+
+O navegador guarda o download na pasta Downloads (ou Perguntar onde salvar, se você configurou).`),
+    conce(
+      'zip',
+      'Pacote compactado. Dentro vêm os arquivos da aula. Você extrai e só então abre o HTML. Não abra o zip como se fosse a página.',
+    ),
+    md(`## Se for um arquivo só
+
+Dois cliques no \`.html\`, ou arraste para a janela do Chrome (Arquivo → Abrir também vale). A página aparece. Não precisa de internet.
+
+Mude o texto no editor (Bloco de Notas, VS Code, o que você tiver), salve, volte no Chrome e aperte F5.`),
+    md(`## Se for um zip
+
+1. Botão direito no zip → Extrair / Extract / Descompactar. No Windows, “Extrair tudo”. No Mac, dois cliques. No Linux, “Extrair aqui”.
+2. Entre na pasta que saiu. Tem que existir um \`index.html\` (e, nesta aula, um \`script.js\`).
+3. Abra o \`index.html\` no Chrome. Se o HTML não achar o JS, os dois não estão na mesma pasta.
+
+Não abra o \`script.js\` no Chrome esperando ver a página. O JS é o cérebro; o HTML é a cara.`),
+    md(`## O JavaScript já rodou. O Console mostra.
+
+Este pacote tem HTML **e** JS. A página mostra uma frase. O script escreve outra no **Console**.
+
+F12 (no Mac, Cmd+Option+I) abre as ferramentas. Aba **Console**. Tem que aparecer a mensagem do \`script.js\`.
+
+Se a página abriu e o Console está vazio: o \`<script src="script.js">\` não achou o arquivo. Volte na pasta e confira os dois nomes.`),
+    conce(
+      'Console',
+      'Aba das ferramentas do navegador (F12) onde o JavaScript escreve mensagem e erro. Não é o meio da página.',
+    ),
+    md(`## Exemplo mínimo desta aula`),
+    code(
+      `<!-- index.html: a cara. O script no fim do body já chama o JS. -->
+<p id="frase">Se você lê isto no Chrome, o HTML abriu.</p>
+<script src="script.js"></script>`,
+      'html',
+    ),
+    code(
+      `// script.js: o cérebro. Roda sozinho quando a página abre.
+console.log('O JavaScript também rodou.')
+document.querySelector('#frase').textContent =
+  'HTML aberto. JS também — olhe o Console (F12).'`,
+      'javascript',
+    ),
+    tente(
+      'Baixe o zip desta aula. Extraia. Abra index.html no Chrome. A frase na página tem que mudar. F12 → Console: a mensagem do script tem que estar lá. Se a frase não mudar, HTML e JS não estão na mesma pasta.',
+    ),
+    ex('Por que abrir só o script.js no Chrome não mostra a página?'),
+    proxima(
+      'Na próxima aula o esqueleto da página: cabeça, corpo, acentuação e celular.',
     ),
   ],
 

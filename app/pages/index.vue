@@ -79,6 +79,20 @@ useHead({
             {{ t.total_aulas }} aulas
             <span v-if="typeof t.feitas === 'number'"> · {{ t.feitas }} feitas</span>
           </p>
+          <p
+            v-if="t.porNivel"
+            class="mt-1 text-xs text-tinta/70"
+          >
+            <span v-if="t.porNivel.basico?.total">
+              Básico {{ t.porNivel.basico.feitas }}/{{ t.porNivel.basico.total }}
+            </span>
+            <span v-if="t.porNivel.intermediario?.total">
+              · Intermediário {{ t.porNivel.intermediario.feitas }}/{{ t.porNivel.intermediario.total }}
+            </span>
+            <span v-if="t.porNivel.avancado?.total">
+              · Avançado {{ t.porNivel.avancado.feitas }}/{{ t.porNivel.avancado.total }}
+            </span>
+          </p>
           <p v-else class="mt-3 text-sm text-tinta/70">Em breve</p>
           <NuxtLink
             v-if="t.publicada"

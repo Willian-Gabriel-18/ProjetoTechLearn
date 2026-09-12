@@ -29,6 +29,20 @@ export default defineEventHandler(async (event) => {
         WHERE p.usuario_id = ${usuario.id} AND a.trilha_id = ${t.id}
       `
       t.feitas = n[0].c
+      const porNivel = await sql`
+        SELECT a.nivel,
+          count(*)::int AS total,
+          count(p.aula_id)::int AS feitas
+        FROM aulas a
+        LEFT JOIN progresso p
+          ON p.aula_id = a.id AND p.usuario_id = ${usuario.id}
+        WHERE a.trilha_id = ${t.id}
+        GROUP BY a.nivel
+      `
+      t.porNivel = { basico: null, intermediario: null, avancado: null }
+      for (const row of porNivel) {
+        t.porNivel[row.nivel] = { total: row.total, feitas: row.feitas }
+      }
     }
 
     const fila = await sql`

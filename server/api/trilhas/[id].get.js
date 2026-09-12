@@ -38,9 +38,20 @@ export default defineEventHandler(async (event) => {
     for (const a of aulas) {
       a.feita = set.has(a.id)
     }
+    const feitasN = aulas.filter((a) => a.feita).length
+    const niveis = ['basico', 'intermediario', 'avancado']
+    const porNivel = {}
+    for (const nv of niveis) {
+      const doNv = aulas.filter((a) => a.nivel === nv)
+      porNivel[nv] = {
+        total: doNv.length,
+        feitas: doNv.filter((a) => a.feita).length,
+      }
+    }
     resumoProgresso = {
       total: aulas.length,
-      feitas: aulas.filter((a) => a.feita).length,
+      feitas: feitasN,
+      porNivel,
     }
   }
 

@@ -12,6 +12,10 @@ const niveis = [
 function aulasDoNivel(id) {
   return (data.value?.aulas || []).filter((a) => a.nivel === id)
 }
+
+function progressoNivel(id) {
+  return data.value?.resumoProgresso?.porNivel?.[id] || null
+}
 </script>
 
 <template>
@@ -54,6 +58,27 @@ function aulasDoNivel(id) {
 
       <section v-for="nv in niveis" :key="nv.id" class="mt-10">
         <h2 class="font-display text-2xl">{{ nv.titulo }}</h2>
+        <p v-if="progressoNivel(nv.id)?.total" class="mt-1 text-sm text-tinta/70">
+          {{ progressoNivel(nv.id).feitas }} de {{ progressoNivel(nv.id).total }} aulas
+        </p>
+        <div
+          v-if="progressoNivel(nv.id)?.total"
+          class="mt-2 h-2 max-w-xs rounded-full bg-linha overflow-hidden"
+          role="progressbar"
+          :aria-valuenow="progressoNivel(nv.id).feitas"
+          :aria-valuemin="0"
+          :aria-valuemax="progressoNivel(nv.id).total"
+          :aria-label="'Progresso do ' + nv.titulo"
+        >
+          <div
+            class="h-full bg-mata"
+            :style="{
+              width: `${Math.round(
+                (100 * progressoNivel(nv.id).feitas) / progressoNivel(nv.id).total,
+              )}%`,
+            }"
+          />
+        </div>
         <ol v-if="aulasDoNivel(nv.id).length" class="mt-4 space-y-3">
           <li v-for="a in aulasDoNivel(nv.id)" :key="a.id">
             <NuxtLink

@@ -23,14 +23,15 @@ const sql = neon(env.DATABASE_URL)
 
 const htmlMeta = [
   ['o-que-e-uma-pagina', 'O que é uma página', 'Arquivo .html, abrir no navegador, e o mapa HTML / CSS / JS.', 1, 'aula'],
-  ['esqueleto', 'Esqueleto', 'doctype, html, head, body, charset, title e viewport.', 2, 'aula'],
-  ['texto-e-titulos', 'Texto e títulos', 'h1 a h3, parágrafo, negrito e ênfase.', 3, 'aula'],
-  ['links-imagens-listas', 'Links, imagens e listas', 'a, img com alt, listas numeradas e com marcador.', 4, 'aula'],
-  ['nomear-pecas', 'Nomear peças', 'id, class e div: o gancho que o JavaScript vai usar.', 5, 'aula'],
-  ['botao-e-formulario', 'Botão e formulário', 'button, input, label, form e checkbox. Sem JavaScript ainda.', 6, 'aula'],
-  ['css-ligar-e-vestir', 'CSS: ligar e vestir', 'Arquivo CSS, seletores, cor e letra.', 7, 'aula'],
-  ['caixa-e-lado-a-lado', 'Caixa e lado a lado', 'margin, padding, border e três botões em fila.', 8, 'aula'],
-  ['projeto-pagina-sua', 'Mini-projeto: uma página sua', 'Título, texto, imagem, lista e um botão. Depois: JavaScript ou HTML intermediário (em breve).', 9, 'projeto'],
+  ['abrir-o-arquivo', 'Abrir o que você baixou', 'Extrair o zip, abrir no Chrome e ver o JavaScript no Console.', 2, 'aula'],
+  ['esqueleto', 'Esqueleto', 'doctype, html, head, body, charset, title e viewport.', 3, 'aula'],
+  ['texto-e-titulos', 'Texto e títulos', 'h1 a h3, parágrafo, negrito e ênfase.', 4, 'aula'],
+  ['links-imagens-listas', 'Links, imagens e listas', 'a, img com alt, listas numeradas e com marcador.', 5, 'aula'],
+  ['nomear-pecas', 'Nomear peças', 'id, class e div: o gancho que o JavaScript vai usar.', 6, 'aula'],
+  ['botao-e-formulario', 'Botão e formulário', 'button, input, label, form e checkbox. Sem JavaScript ainda.', 7, 'aula'],
+  ['css-ligar-e-vestir', 'CSS: ligar e vestir', 'Arquivo CSS, seletores, cor e letra.', 8, 'aula'],
+  ['caixa-e-lado-a-lado', 'Caixa e lado a lado', 'margin, padding, border e três botões em fila.', 9, 'aula'],
+  ['projeto-pagina-sua', 'Mini-projeto: uma página sua', 'Título, texto, imagem, lista e um botão. Depois: JavaScript ou HTML intermediário (em breve).', 10, 'projeto'],
 ]
 
 await sql`

@@ -52,7 +52,7 @@ Você fala com o JavaScript no **Console** do navegador. F12 (ou botão direito 
     ),
     code(`console.log('Olá')`),
     tente(
-      'Abra o Chrome ou o Edge. Aperte F12. Clique na aba Console. Cole console.log(\'Olá\') e aperte Enter. Tem que aparecer Olá. Se aparecer undefined na linha de baixo, tudo bem: o log funcionou; undefined é só o “retorno” da linha.',
+      'Dois jeitos. 1) Extraia o zip desta aula, abra o index.html no Chrome, F12 → Console: a mensagem do script.js já está lá. 2) No Console, cole console.log(\'Olá\') e Enter. Se aparecer undefined na linha de baixo, tudo bem: o log funcionou.',
     ),
     ex('Em uma frase: o que o JavaScript faz que o HTML sozinho não faz?'),
     proxima(
