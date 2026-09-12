@@ -7,8 +7,8 @@ const src = computed(
 </script>
 
 <template>
-  <figure class="my-6">
-    <div class="aspect-video w-full overflow-hidden rounded-md border border-linha bg-tinta">
+  <figure class="my-6 max-w-full min-w-0">
+    <div class="aspect-video w-full max-w-full overflow-hidden rounded-md border border-linha bg-tinta">
       <iframe
         v-if="conteudo.video_id"
         class="h-full w-full"

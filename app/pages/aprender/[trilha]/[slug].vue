@@ -42,7 +42,7 @@ async function desmarcarFeita() {
 </script>
 
 <template>
-  <article class="mx-auto max-w-leitura px-4 py-10">
+  <article class="mx-auto max-w-leitura px-4 py-10 min-w-0 overflow-x-clip">
     <p v-if="error" class="text-cerrado">
       {{ error.statusCode === 403 ? 'Esta trilha abre em breve.' : 'Aula não encontrada.' }}
     </p>
@@ -56,7 +56,7 @@ async function desmarcarFeita() {
         Aula {{ data.aula.ordem }} · {{ data.aula.tempo_minutos }} min
         <span v-if="data.aula.tipo === 'projeto'"> · mini-projeto</span>
       </p>
-      <h1 class="font-display text-4xl md:text-5xl mt-2 leading-tight">{{ data.aula.titulo }}</h1>
+      <h1 class="font-display text-3xl sm:text-4xl md:text-5xl mt-2 leading-tight break-words">{{ data.aula.titulo }}</h1>
       <p class="mt-4 text-xl leading-relaxed">{{ data.aula.resumo }}</p>
 
       <p v-if="!data.blocos?.length" class="mt-8 border border-linha p-4 rounded-md">

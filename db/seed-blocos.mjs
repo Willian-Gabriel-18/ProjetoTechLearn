@@ -4,6 +4,7 @@ import { iniciante } from './seed-blocos/iniciante.mjs'
 import { intermediario } from './seed-blocos/intermediario.mjs'
 import { avancado } from './seed-blocos/avancado.mjs'
 import { noticias } from './seed-blocos/noticias.mjs'
+import { minutosAula } from './seed-blocos/helpers.mjs'
 
 function envLocal() {
   const t = readFileSync(new URL('../.env', import.meta.url), 'utf8')
@@ -57,6 +58,13 @@ for (const [slug, blocos] of Object.entries(aulas)) {
     ordem += 1
     n += 1
   }
+  const minutos = minutosAula(blocos, { projeto: slug.startsWith('projeto-') })
+  await sql`
+    UPDATE aulas
+    SET tempo_minutos = ${minutos}, atualizado_em = now()
+    WHERE id = ${aulaId}
+  `
+  console.log(slug, minutos, 'min')
 }
 
 await sql`UPDATE aulas SET publicada = true, atualizado_em = now()`

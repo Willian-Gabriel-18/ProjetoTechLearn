@@ -12,6 +12,14 @@ body {
   background-color: #f4efe6;
   color: #241c15;
   font-family: 'Atkinson Hyperlegible', 'Segoe UI', sans-serif;
+  max-width: 100%;
+}
+
+img,
+iframe,
+video,
+svg {
+  max-width: 100%;
 }
 
 :focus-visible {

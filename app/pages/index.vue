@@ -15,7 +15,7 @@ useHead({
   <div>
     <section class="mx-auto max-w-5xl px-4 pt-10 pb-6 grid md:grid-cols-2 gap-8 items-center">
       <div>
-        <h1 class="font-display text-4xl md:text-6xl leading-tight text-tinta">
+        <h1 class="font-display text-4xl md:text-6xl leading-tight text-tinta break-words">
           Aprenda tecnologia sem pressa e sem enrolação.
         </h1>
         <p class="mt-4 text-lg md:text-xl text-tinta/80 max-w-md">

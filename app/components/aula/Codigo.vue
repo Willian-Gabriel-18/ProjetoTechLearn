@@ -17,7 +17,7 @@ async function copiar() {
 </script>
 
 <template>
-  <div class="my-6 relative rounded-md bg-[#1c1917] text-papel overflow-x-auto">
+  <div class="my-6 relative rounded-md bg-[#1c1917] text-papel overflow-x-auto max-w-full min-w-0">
     <button
       type="button"
       class="absolute top-2 right-2 text-sm px-2 py-1 rounded bg-white/10 hover:bg-white/20"
@@ -25,6 +25,6 @@ async function copiar() {
     >
       {{ copiado ? 'Copiado' : 'Copiar' }}
     </button>
-    <pre class="p-4 pt-10 text-sm md:text-base font-mono whitespace-pre-wrap">{{ conteudo.codigo }}</pre>
+    <pre class="p-4 pt-10 text-sm md:text-base font-mono whitespace-pre-wrap break-words">{{ conteudo.codigo }}</pre>
   </div>
 </template>
