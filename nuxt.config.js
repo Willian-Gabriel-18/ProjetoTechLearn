@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Tutoriais de JavaScript claros e lineares, de graça, para quem está começando.',
+            'Tutoriais de tecnologia claros e lineares, de graça, para quem está começando.',
         },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],

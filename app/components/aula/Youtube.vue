@@ -19,6 +19,7 @@ const src = computed(
       />
     </div>
     <figcaption class="mt-2 text-sm text-tinta/80">
+      <i class="pi pi-youtube mr-1" aria-hidden="true" />
       {{ conteudo.titulo }}
       <template v-if="conteudo.canal"> — {{ conteudo.canal }}</template>
       <a

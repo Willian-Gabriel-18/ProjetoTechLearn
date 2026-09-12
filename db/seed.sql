@@ -22,6 +22,13 @@ INSERT INTO trilhas (id, titulo, descricao, ordem, publicada) VALUES
     'O motor da linguagem, um pouco de segurança e um app com API pública.',
     3,
     false
+  ),
+  (
+    'html-css',
+    'HTML e CSS',
+    'A estrutura e a roupa da página. Abre depois do JavaScript.',
+    4,
+    false
   );
 
 INSERT INTO aulas (trilha_id, slug, titulo, resumo, ordem, tempo_minutos, tipo, publicada) VALUES

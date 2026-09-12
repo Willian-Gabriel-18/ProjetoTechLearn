@@ -15,6 +15,14 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 404, statusMessage: 'Aula não encontrada.' })
   }
 
+  const usuario = await usuarioDaSessao(event)
+  const trilhaPub = await sql`
+    SELECT publicada FROM trilhas WHERE id = ${aula.trilha_id} LIMIT 1
+  `
+  if (!trilhaPub[0]?.publicada && usuario?.papel !== 'admin') {
+    throw createError({ statusCode: 403, statusMessage: 'Esta trilha abre em breve.' })
+  }
+
   const blocos = await sql`
     SELECT id, ordem, tipo, conteudo
     FROM blocos_aula
@@ -33,7 +41,6 @@ export default defineEventHandler(async (event) => {
   const proxima = i >= 0 && i < viz.length - 1 ? viz[i + 1] : null
 
   let feita = false
-  const usuario = await usuarioDaSessao(event)
   if (usuario) {
     const p = await sql`
       SELECT 1 FROM progresso

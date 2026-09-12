@@ -26,14 +26,26 @@ async function marcarFeita() {
   }
 }
 
-const topicos = computed(() =>
-  (data.value?.blocos || []).filter((b) => b.tipo === 'conceito' || b.tipo === 'tente'),
-)
+async function desmarcarFeita() {
+  if (!data.value?.aula) return
+  marcando.value = true
+  try {
+    await $fetch('/api/progresso', {
+      method: 'DELETE',
+      body: { aulaId: data.value.aula.id },
+    })
+    await refresh()
+  } finally {
+    marcando.value = false
+  }
+}
 </script>
 
 <template>
   <article class="mx-auto max-w-leitura px-4 py-10">
-    <p v-if="error" class="text-cerrado">Aula não encontrada.</p>
+    <p v-if="error" class="text-cerrado">
+      {{ error.statusCode === 403 ? 'Esta trilha abre em breve.' : 'Aula não encontrada.' }}
+    </p>
     <template v-else-if="data">
       <p class="text-sm">
         <NuxtLink :to="`/aprender/${data.aula.trilha_id}`" class="underline text-cerrado">
@@ -51,20 +63,33 @@ const topicos = computed(() =>
         O texto desta aula ainda está sendo preparado. Volte em breve.
       </p>
 
-      <div class="mt-8 space-y-2 border-t border-linha pt-6">
+      <div class="mt-8 space-y-6 border-t border-linha pt-6">
         <BlocoAula v-for="b in data.blocos" :key="b.id" :bloco="b" />
       </div>
 
       <div class="mt-10 flex flex-col gap-3">
-        <p v-if="data.feita" class="text-mata font-bold">Você já marcou esta aula como feita.</p>
+        <p v-if="data.feita" class="text-mata font-bold inline-flex items-center gap-2">
+          <i class="pi pi-check-circle" aria-hidden="true" />
+          Você já marcou esta aula como feita.
+        </p>
         <button
-          v-else-if="data.logado"
+          v-if="data.logado && !data.feita"
           type="button"
-          class="self-start bg-mata text-papel font-bold px-4 py-2 rounded-md disabled:opacity-60"
+          class="self-start bg-mata text-papel font-bold px-4 py-2 rounded-md disabled:opacity-60 inline-flex items-center gap-2"
           :disabled="marcando"
           @click="marcarFeita"
         >
+          <i class="pi pi-check" aria-hidden="true" />
           Marcar como feita
+        </button>
+        <button
+          v-else-if="data.logado && data.feita"
+          type="button"
+          class="self-start border border-linha px-4 py-2 rounded-md disabled:opacity-60 inline-flex items-center gap-2"
+          :disabled="marcando"
+          @click="desmarcarFeita"
+        >
+          Desmarcar
         </button>
         <p v-else class="text-sm">
           Quer guardar o progresso?

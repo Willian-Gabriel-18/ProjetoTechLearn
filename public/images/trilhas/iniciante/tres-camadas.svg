@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" role="img" aria-labelledby="titulo-camadas desc-camadas">
+  <title id="titulo-camadas">Três camadas de um site: HTML estrutura, CSS veste, JavaScript reage</title>
+  <desc id="desc-camadas">Três faixas empilhadas. Em cima o HTML, no meio o CSS, embaixo o JavaScript.</desc>
+  <rect width="800" height="440" fill="#F4EFE6"/>
+  <g>
+    <rect x="40" y="36" width="720" height="112" rx="8" fill="#E8E0D4" stroke="#241C15" stroke-width="2"/>
+    <text x="64" y="84" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#241C15">HTML — estrutura</text>
+    <text x="64" y="118" font-family="Segoe UI, sans-serif" font-size="18" fill="#241C15">Títulos, parágrafos, botões. É o esqueleto da página.</text>
+  </g>
+  <g>
+    <rect x="40" y="164" width="720" height="112" rx="8" fill="#E7F0EA" stroke="#1F6A4A" stroke-width="2"/>
+    <text x="64" y="212" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#1F6A4A">CSS — visual</text>
+    <text x="64" y="246" font-family="Segoe UI, sans-serif" font-size="18" fill="#241C15">Cor, tamanho, espaço. É a roupa do esqueleto.</text>
+  </g>
+  <g>
+    <rect x="40" y="292" width="720" height="112" rx="8" fill="#F6E4D8" stroke="#C24E1D" stroke-width="2"/>
+    <text x="64" y="340" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#C24E1D">JavaScript — reação</text>
+    <text x="64" y="374" font-family="Segoe UI, sans-serif" font-size="18" fill="#241C15">Clique, conta, busca dados. É o que faz a página responder.</text>
+  </g>
+</svg>

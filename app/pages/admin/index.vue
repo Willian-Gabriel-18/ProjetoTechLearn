@@ -7,7 +7,7 @@ useHead({ title: 'Admin — TechLearn' })
 <template>
   <section class="mx-auto max-w-5xl px-4 py-10">
     <h1 class="font-display text-3xl">Aulas</h1>
-    <p class="mt-2">Edite título, publicação e blocos. Sem editor tipo Word — um bloco de cada vez.</p>
+    <p class="mt-2">Edite título, publicação e blocos. Um bloco de cada vez, com o preview da aula. Sem editor tipo Word.</p>
     <table class="mt-6 w-full text-left text-sm border border-linha">
       <thead class="bg-linha/40">
         <tr>

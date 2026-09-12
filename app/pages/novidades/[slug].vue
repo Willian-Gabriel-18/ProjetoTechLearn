@@ -15,7 +15,7 @@ const html = computed(() => {
     <p v-if="error">Novidade não encontrada.</p>
     <template v-else-if="data">
       <h1 class="font-display text-4xl">{{ data.noticia.titulo }}</h1>
-      <div class="mt-6 text-lg leading-relaxed" v-html="html" />
+      <div class="mt-6 text-lg leading-relaxed texto-aula" v-html="html" />
     </template>
   </article>
 </template>

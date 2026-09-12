@@ -26,38 +26,70 @@ function ativo(path) {
           <li>
             <NuxtLink
               to="/"
-              class="px-2 py-1 rounded-md"
+              class="px-2 py-1 rounded-md inline-flex items-center gap-1.5"
               :class="ativo('/') && route.path === '/' ? 'bg-linha/70' : 'hover:text-cerrado'"
             >
+              <i class="pi pi-home" aria-hidden="true" />
               Início
             </NuxtLink>
           </li>
           <li>
             <NuxtLink
               to="/aprender"
-              class="px-2 py-1 rounded-md"
+              class="px-2 py-1 rounded-md inline-flex items-center gap-1.5"
               :class="ativo('/aprender') ? 'bg-linha/70' : 'hover:text-cerrado'"
             >
+              <i class="pi pi-book" aria-hidden="true" />
               Aprenda
             </NuxtLink>
           </li>
           <li>
             <NuxtLink
               to="/novidades"
-              class="px-2 py-1 rounded-md"
+              class="px-2 py-1 rounded-md inline-flex items-center gap-1.5"
               :class="ativo('/novidades') ? 'bg-linha/70' : 'hover:text-cerrado'"
             >
+              <i class="pi pi-comments" aria-hidden="true" />
               Novidades
             </NuxtLink>
           </li>
           <li v-if="usuario?.papel === 'admin'">
-            <NuxtLink to="/admin" class="px-2 py-1 rounded-md hover:text-cerrado">Admin</NuxtLink>
+            <NuxtLink
+              to="/admin"
+              class="px-2 py-1 rounded-md inline-flex items-center gap-1.5 hover:text-cerrado"
+            >
+              <i class="pi pi-cog" aria-hidden="true" />
+              Admin
+            </NuxtLink>
           </li>
           <li v-if="usuario">
-            <button type="button" class="px-2 py-1 hover:text-cerrado" @click="sair">Sair</button>
+            <NuxtLink
+              to="/conta"
+              class="px-2 py-1 rounded-md inline-flex items-center gap-1.5 hover:text-cerrado"
+              :class="ativo('/conta') ? 'bg-linha/70' : ''"
+            >
+              <i class="pi pi-user" aria-hidden="true" />
+              Conta
+            </NuxtLink>
+          </li>
+          <li v-if="usuario">
+            <button
+              type="button"
+              class="px-2 py-1 hover:text-cerrado inline-flex items-center gap-1.5"
+              @click="sair"
+            >
+              <i class="pi pi-sign-out" aria-hidden="true" />
+              Sair
+            </button>
           </li>
           <li v-else>
-            <NuxtLink to="/entrar" class="px-2 py-1 rounded-md hover:text-cerrado">Entrar</NuxtLink>
+            <NuxtLink
+              to="/entrar"
+              class="px-2 py-1 rounded-md inline-flex items-center gap-1.5 hover:text-cerrado"
+            >
+              <i class="pi pi-sign-in" aria-hidden="true" />
+              Entrar
+            </NuxtLink>
           </li>
         </ul>
       </nav>

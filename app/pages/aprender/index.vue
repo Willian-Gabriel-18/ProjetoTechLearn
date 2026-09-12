@@ -18,14 +18,27 @@ useHead({ title: 'Aprenda — TechLearn' })
         <div>
           <h2 class="font-display text-2xl">{{ t.titulo }}</h2>
           <p class="mt-1">{{ t.descricao }}</p>
-          <p class="mt-1 text-sm text-tinta/70">{{ t.total_aulas }} aulas · {{ t.publicada ? 'aberta' : 'em breve / rascunho' }}</p>
+          <p v-if="t.publicada" class="mt-1 text-sm text-tinta/70">
+            {{ t.total_aulas }} aulas
+            <span v-if="typeof t.feitas === 'number'"> · {{ t.feitas }} feitas</span>
+          </p>
+          <p v-else class="mt-1 text-sm text-tinta/70">Em breve — ainda não dá para entrar.</p>
         </div>
         <NuxtLink
+          v-if="t.publicada"
           :to="`/aprender/${t.id}`"
-          class="self-start bg-cerrado text-papel font-bold px-4 py-2 rounded-md"
+          class="self-start bg-cerrado text-papel font-bold px-4 py-2 rounded-md inline-flex items-center gap-2"
         >
           Abrir
+          <i class="pi pi-arrow-right" aria-hidden="true" />
         </NuxtLink>
+        <p
+          v-else
+          class="self-start inline-flex items-center gap-2 px-4 py-2 rounded-md border border-linha text-tinta/60 font-bold"
+        >
+          <i class="pi pi-lock" aria-hidden="true" />
+          Em breve
+        </p>
       </li>
     </ul>
   </section>

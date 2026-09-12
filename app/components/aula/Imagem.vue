@@ -7,10 +7,14 @@ defineProps({ conteudo: { type: Object, default: () => ({}) } })
     <img
       :src="conteudo.src"
       :alt="conteudo.alt || ''"
-      class="w-full rounded-md border border-linha object-cover max-h-[28rem]"
+      class="w-full rounded-md border border-linha object-contain max-h-[28rem] bg-papel"
     />
-    <figcaption v-if="conteudo.credito || conteudo.alt" class="mt-2 text-sm text-center italic text-tinta/70">
-      {{ conteudo.alt }}
+    <!-- Legenda só quando a frase ensina o desenho da aula. Alt nunca vira figcaption. -->
+    <figcaption
+      v-if="conteudo.legenda"
+      class="mt-2 text-sm text-center italic text-tinta/70"
+    >
+      {{ conteudo.legenda }}
       <span v-if="conteudo.credito"> — {{ conteudo.credito }}</span>
     </figcaption>
   </figure>

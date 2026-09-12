@@ -1,6 +1,14 @@
 <script setup>
 const { data } = await useFetch('/api/trilhas')
-useHead({ title: 'TechLearn — comece por aqui' })
+useHead({
+  title: 'TechLearn — comece por aqui',
+  meta: [
+    {
+      name: 'description',
+      content: 'Tutoriais de tecnologia claros e lineares, de graça, para quem está começando.',
+    },
+  ],
+})
 </script>
 
 <template>
@@ -8,16 +16,33 @@ useHead({ title: 'TechLearn — comece por aqui' })
     <section class="mx-auto max-w-5xl px-4 pt-10 pb-6 grid md:grid-cols-2 gap-8 items-center">
       <div>
         <h1 class="font-display text-4xl md:text-6xl leading-tight text-tinta">
-          Aprenda JavaScript sem pressa e sem enrolação.
+          Aprenda tecnologia sem pressa e sem enrolação.
         </h1>
         <p class="mt-4 text-lg md:text-xl text-tinta/80 max-w-md">
-          Aulas curtas, uma depois da outra. Feito para quem tem pouco tempo em Gurupi/TO — e para quem acompanha de qualquer lugar.
+          Aulas de graça para quem está começando. Abre o iniciante e tenta.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <NuxtLink
+            v-if="data?.continuar"
+            :to="`/aprender/${data.continuar.trilha_id}/${data.continuar.slug}`"
+            class="inline-flex items-center gap-2 bg-mata text-papel font-bold px-5 py-3 rounded-md hover:opacity-90"
+          >
+            <i class="pi pi-play" aria-hidden="true" />
+            Continuar: {{ data.continuar.titulo }}
+          </NuxtLink>
+          <p
+            v-else-if="data?.trilhaConcluida"
+            class="inline-flex items-center gap-2 text-mata font-bold"
+          >
+            <i class="pi pi-check-circle" aria-hidden="true" />
+            Você concluiu as trilhas abertas.
+          </p>
+          <NuxtLink
+            v-if="!data?.continuar && !data?.trilhaConcluida"
             to="/aprender/iniciante"
             class="inline-flex items-center gap-2 bg-mata text-papel font-bold px-5 py-3 rounded-md hover:opacity-90"
           >
+            <i class="pi pi-book" aria-hidden="true" />
             Começar pelo iniciante
           </NuxtLink>
           <NuxtLink
@@ -38,24 +63,38 @@ useHead({ title: 'TechLearn — comece por aqui' })
     </section>
 
     <section class="mx-auto max-w-5xl px-4 py-8">
-      <h2 class="font-display text-2xl md:text-3xl">Três caminhos</h2>
-      <p class="mt-2 text-tinta/80">Termine o iniciante. Depois o intermediário. Só então o avançado.</p>
-      <ol class="mt-6 grid md:grid-cols-3 gap-4">
+      <h2 class="font-display text-2xl md:text-3xl">As trilhas</h2>
+      <p class="mt-2 text-tinta/80">Comece pelo JavaScript iniciante. HTML e CSS vêm na sequência.</p>
+      <ol class="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         <li
           v-for="t in data?.trilhas || []"
           :key="t.id"
-          class="border border-linha rounded-md p-4 bg-white/40"
+          class="border border-linha rounded-md p-4 bg-white/40 flex flex-col"
+          :class="t.publicada ? '' : 'opacity-90'"
         >
           <p class="text-sm text-cerrado">{{ t.ordem }}º</p>
           <h3 class="font-display text-xl mt-1">{{ t.titulo }}</h3>
-          <p class="mt-2 text-sm leading-relaxed">{{ t.descricao }}</p>
-          <p class="mt-3 text-sm">{{ t.total_aulas }} aulas</p>
+          <p class="mt-2 text-sm leading-relaxed flex-1">{{ t.descricao }}</p>
+          <p v-if="t.publicada" class="mt-3 text-sm">
+            {{ t.total_aulas }} aulas
+            <span v-if="typeof t.feitas === 'number'"> · {{ t.feitas }} feitas</span>
+          </p>
+          <p v-else class="mt-3 text-sm text-tinta/70">Em breve</p>
           <NuxtLink
+            v-if="t.publicada"
             :to="`/aprender/${t.id}`"
-            class="mt-3 inline-block underline text-cerrado underline-offset-4"
+            class="mt-3 inline-flex items-center gap-1 underline text-cerrado underline-offset-4"
           >
-            {{ t.publicada ? 'Entrar na trilha' : 'Ver o que vem' }}
+            Entrar na trilha
+            <i class="pi pi-arrow-right text-xs" aria-hidden="true" />
           </NuxtLink>
+          <p
+            v-else
+            class="mt-3 inline-flex items-center gap-2 text-sm font-bold text-tinta/60"
+          >
+            <i class="pi pi-lock" aria-hidden="true" />
+            Em breve
+          </p>
         </li>
       </ol>
     </section>
