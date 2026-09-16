@@ -21,8 +21,15 @@ export function apagarCookieSessao(event) {
 }
 
 export async function usuarioDaSessao(event) {
+  // Mesmo request não consulta o Neon duas vezes (plugin + API).
+  if (event?.context && Object.prototype.hasOwnProperty.call(event.context, 'usuarioSessao')) {
+    return event.context.usuarioSessao
+  }
   const token = getCookie(event, COOKIE)
-  if (!token) return null
+  if (!token) {
+    if (event?.context) event.context.usuarioSessao = null
+    return null
+  }
   const sql = db()
   const segredo = useRuntimeConfig().sessionSecret
   const hash = hashToken(token, segredo)
@@ -34,7 +41,9 @@ export async function usuarioDaSessao(event) {
       AND s.expira_em > now()
     LIMIT 1
   `
-  return rows[0] || null
+  const usuario = rows[0] || null
+  if (event?.context) event.context.usuarioSessao = usuario
+  return usuario
 }
 
 export async function exigirUsuario(event) {

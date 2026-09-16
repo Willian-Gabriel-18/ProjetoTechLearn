@@ -8,6 +8,7 @@ defineProps({ conteudo: { type: Object, default: () => ({}) } })
       :src="conteudo.src"
       :alt="conteudo.alt || ''"
       class="w-full max-w-full h-auto rounded-md border border-linha object-contain max-h-[28rem] bg-papel"
+      loading="lazy"
     />
     <!-- Legenda só quando a frase ensina o desenho da aula. Alt nunca vira figcaption. -->
     <figcaption

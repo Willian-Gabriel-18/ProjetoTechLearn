@@ -19,6 +19,7 @@ export default defineEventHandler(async (event) => {
     SELECT id, slug, titulo, resumo, ordem, tempo_minutos, tipo, publicada, nivel, precisa_pagina
     FROM aulas
     WHERE trilha_id = ${id}
+      AND (${usuario?.papel === 'admin'} OR publicada = true)
     ORDER BY
       CASE nivel
         WHEN 'basico' THEN 1

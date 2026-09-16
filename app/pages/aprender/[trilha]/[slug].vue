@@ -1,7 +1,7 @@
 <script setup>
 const route = useRoute()
 const { usuario, carregar } = useAuth()
-const { data, error, refresh } = await useFetch(
+const { data, error } = await useFetch(
   `/api/aulas/${route.params.trilha}/${route.params.slug}`,
 )
 
@@ -15,12 +15,16 @@ const marcando = ref(false)
 async function marcarFeita() {
   if (!data.value?.aula) return
   marcando.value = true
+  const antes = data.value.feita
+  data.value.feita = true
   try {
     await $fetch('/api/progresso', {
       method: 'POST',
       body: { aulaId: data.value.aula.id },
     })
-    await refresh()
+  } catch (e) {
+    data.value.feita = antes
+    throw e
   } finally {
     marcando.value = false
   }
@@ -29,12 +33,16 @@ async function marcarFeita() {
 async function desmarcarFeita() {
   if (!data.value?.aula) return
   marcando.value = true
+  const antes = data.value.feita
+  data.value.feita = false
   try {
     await $fetch('/api/progresso', {
       method: 'DELETE',
       body: { aulaId: data.value.aula.id },
     })
-    await refresh()
+  } catch (e) {
+    data.value.feita = antes
+    throw e
   } finally {
     marcando.value = false
   }

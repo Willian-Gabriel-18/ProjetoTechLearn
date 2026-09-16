@@ -1,10 +1,3 @@
-<script setup>
-const { usuario, carregar, sair } = useAuth()
-onMounted(() => {
-  if (!usuario.value) carregar()
-})
-</script>
-
 <template>
   <div class="min-h-dvh flex flex-col bg-papel text-tinta overflow-x-clip max-w-full">
     <AppNavBar />

@@ -9,6 +9,10 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'vercel',
+    // Neon está em sa-east-1. Função em Virginia deixa cada query lenta.
+    vercel: {
+      regions: ['gru1'],
+    },
   },
   app: {
     head: {
