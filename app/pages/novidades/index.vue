@@ -13,12 +13,16 @@ useHead({ title: 'Novidades — TechLearn' })
     <ul v-if="data?.noticias?.length" class="mt-8 space-y-4">
       <li v-for="n in data.noticias" :key="n.id" class="border border-linha rounded-md overflow-hidden bg-white/40">
         <NuxtLink :to="`/novidades/${n.slug}`" class="block md:flex gap-4 items-stretch">
-          <img
+          <span
             v-if="n.imagem_capa"
-            :src="n.imagem_capa"
-            :alt="n.titulo"
-            class="w-full md:w-56 h-40 object-cover shrink-0"
-          />
+            class="block w-full md:w-64 h-40 shrink-0 bg-papel"
+          >
+            <img
+              :src="n.imagem_capa"
+              :alt="n.titulo"
+              class="w-full h-full object-contain p-2"
+            />
+          </span>
           <span class="block p-4">
             <span class="font-display text-2xl underline text-cerrado inline-flex items-center gap-2">
               <i class="pi pi-file" aria-hidden="true" />

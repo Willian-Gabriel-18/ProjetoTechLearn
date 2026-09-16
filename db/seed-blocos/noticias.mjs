@@ -8,8 +8,6 @@ export const noticias = [
 
 Não é.
 
-![Salão à esquerda, cozinha à direita, janela no meio](/images/novidades/salao-cozinha.jpg)
-
 ## O que é um servidor, em uma frase
 
 Servidor é o computador que guarda dados e responde pedidos. Você pede “me dá o CEP 01001000”; ele responde com a cidade. O navegador é o salão: mostra, recebe clique, desenha. O servidor é a cozinha: busca no banco, calcula, devolve.
@@ -48,8 +46,6 @@ Se alguém disser “JavaScript é só para pintar botão”, essa pessoa parou 
     markdown: `Você abre um app de banco. O saldo aparece. O dinheiro não está no seu celular — está no banco. O app **pediu** o saldo e **recebeu** um número.
 
 Esse pedido e essa resposta, feitos de um jeito combinado, são uma **API**.
-
-![Balcão: um recado vai, um prato volta](/images/novidades/api-balcao.jpg)
 
 ## Sem a palavra difícil
 
@@ -97,8 +93,6 @@ Toda vez que a tela mostra um dado que não estava no arquivo HTML, alguém perg
 
 Porque o que a IA faz bem e o que você precisa saber não são a mesma lista.
 
-![Pessoa estudando com caderno e tela](/images/novidades/estudar.jpg)
-
 ## O que a IA faz com código
 
 Ela imita texto que já viu. Código é texto. Então ela monta funções plausíveis: nomes bonitos, \`if\`, \`return\`, comentário em inglês.
@@ -143,8 +137,6 @@ A IA já programa. Você ainda precisa aprender a ler, a duvidar e a consertar. 
     markdown: `JavaScript nasceu no navegador, em 1995, para a página reagir. Décadas depois, a mesma língua saiu de casa e foi morar no servidor.
 
 As pessoas então perguntam: é a *mesma* coisa? Quase. A gramática é a mesma. A casa não.
-
-![Duas casas parecidas, trabalhos diferentes](/images/novidades/duas-casas.jpg)
 
 ## Gramática = as palavras que você já viu
 
@@ -196,8 +188,6 @@ Mesma gramática. Casa diferente. O navegador vê a página; o servidor vê o pe
 \`{ nome: 'Lia', idade: 19 }\`
 
 Isso é um **objeto**: pares de nome e valor na memória do programa. O problema: a internet não manda “memória de programa”. Manda texto. Bytes. Letras.
-
-![Ficha de objeto à esquerda, texto JSON à direita](/images/novidades/json.svg)
 
 Se cada linguagem mandasse seu objeto do jeito dela, Python não entenderia JavaScript, que não entenderia Go. Precisava de um combinado.
 
@@ -252,8 +242,6 @@ A internet não fala objeto. Fala texto. JSON é o texto combinado, com cara de 
     markdown: `Você conta que está aprendendo JavaScript. Alguém responde: “ah, Java”. Você hesita. São a mesma coisa? Uma é a versão web da outra?
 
 Não.
-
-![Duas placas: Java e JavaScript](/images/novidades/java-nao-js.svg)
 
 ## De onde veio o nome
 

@@ -19,7 +19,7 @@ const html = computed(() => {
         <img
           :src="data.noticia.imagem_capa"
           :alt="data.noticia.titulo"
-          class="w-full max-w-full h-auto rounded-md border border-linha object-cover max-h-[22rem]"
+          class="w-full max-w-full h-auto rounded-md border border-linha object-contain bg-papel"
         />
       </figure>
       <div class="mt-6 text-lg leading-relaxed texto-aula" v-html="html" />
