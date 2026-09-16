@@ -36,6 +36,13 @@ export function markdownParaHtml(src) {
       if (t.startsWith('### ')) {
         return `<h3 class="font-display text-xl text-tinta mt-2 mb-2">${inline(t.slice(4))}</h3>`
       }
+      // Figura: linha só com ![alt](/images/...) — caminho local ou https.
+      const figura = t.match(/^!\[([^\]]*)\]\((\/images\/[^)]+|https:[^)]+)\)$/)
+      if (figura) {
+        const alt = escapeHtml(figura[1])
+        const src = escapeHtml(figura[2])
+        return `<figure class="my-6"><img src="${src}" alt="${alt}" class="w-full max-w-full h-auto rounded-md border border-linha object-contain max-h-[28rem] bg-papel" /></figure>`
+      }
       const linhas = t.split('\n')
       if (linhas.every((l) => /^[-*] /.test(l.trim()) || l.trim() === '')) {
         const items = linhas

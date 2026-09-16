@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" role="img" aria-labelledby="t d">
+  <title id="t">Pasta da aula de JavaScript na página</title>
+  <desc id="d">Pasta minha-aula com index.html e script.js.</desc>
+  <rect width="420" height="220" fill="#f4efe6"/>
+  <path d="M40 48 h50 l14 18 h240 v120 h-304 z" fill="#E8C872" stroke="#241c15" stroke-width="3"/>
+  <text x="210" y="44" text-anchor="middle" font-family="ui-monospace, monospace" font-size="16" fill="#241c15">minha-aula/</text>
+  <rect x="70" y="90" width="120" height="64" rx="6" fill="#fff" stroke="#241c15" stroke-width="2"/>
+  <text x="130" y="128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#1F6A4A">index.html</text>
+  <rect x="220" y="90" width="130" height="64" rx="6" fill="#fff" stroke="#241c15" stroke-width="2"/>
+  <text x="285" y="128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#C24E1D">script.js</text>
+  <text x="210" y="200" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="14" fill="#241c15">abra o HTML; o JS fica ao lado</text>
+</svg>

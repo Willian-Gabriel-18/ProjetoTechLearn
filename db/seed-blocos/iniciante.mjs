@@ -2,121 +2,93 @@ import { md, conce, code, yt, img, tente, ex, proxima } from './helpers.mjs'
 
 export const iniciante = {
   'o-que-e-javascript': [
-    md(`## O que você vai conseguir
+    md(`JavaScript é a linguagem que faz a página **responder**. O HTML montou o palco. O CSS vestiu. O JS é o que se mexe quando você toca.
 
-Ao terminar esta aula, você abre o Console do navegador e vê uma mensagem que **você** mandou o computador escrever.
-
-Se o HTML e CSS básico ainda não entrou, vale passar lá primeiro — o mapa abaixo fica mais claro. Esta aula é o JavaScript: a página reage.`),
-    md(`## As três camadas de um site
-
-Um site que você abre no Chrome é, na prática, três linguagens trabalhando juntas.
-
-**HTML** é a estrutura. Títulos, parágrafos, botões, campos de formulário. Sem HTML, não há “página” — só uma tela vazia.
-
-**CSS** é o visual. Cor, tamanho da letra, espaço entre as coisas, se o botão é redondo ou quadrado. Sem CSS, a página existe, mas parece um documento cru.
-
-**JavaScript** é a reação. Clique, conta, busca um CEP, troca um texto sem recarregar. Sem JavaScript, a página só *está lá*. Ela não responde a você.
-
-HTML e CSS têm trilha própria (o palco). Aqui você escreve a reação. As primeiras aulas são no Console; depois o JS mexe na página que você já sabe montar.`),
+Se o [HTML e CSS básico](/aprender/html-css) ainda não entrou, o mapa abaixo ainda vale — só fica mais claro com o palco feito. Esta aula não trava.`),
     img(
       '/images/trilhas/iniciante/tres-camadas.svg',
       'Três faixas: HTML estrutura, CSS visual, JavaScript reação',
-      { legenda: 'De cima para baixo: HTML estrutura, CSS veste, JavaScript reage.' },
+      { legenda: 'HTML estrutura, CSS veste, JavaScript reage.' },
     ),
+    md(`Quando o site avisa “e-mail inválido” antes de enviar: JavaScript.
+
+Quando o botão soma um ponto sem recarregar a página: JavaScript.
+
+Quando um mapa ou um like atualiza na hora: JavaScript.
+
+Pontos fortes: roda no Chrome de graça. É a língua da web. Dá para começar com uma linha.
+
+Pontos fracos: o nome engana — **não é Java**. É fácil escrever algo que “funciona na minha máquina” e quebra no detalhe. O erro aparece no Console, em vermelho — aula que vem.
+
+As primeiras aulas desta trilha testam no **Console** (F12). Depois o JS mexe na página (arquivo HTML + script.js na mesma pasta).`),
     conce(
       'JavaScript',
-      'Linguagem que o navegador entende para a página responder a você: mudar texto, somar números, falar com a internet.',
+      'Linguagem que o navegador entende para a página responder: mudar texto, somar, falar com a internet. Não é Java.',
     ),
-    md(`## Onde isso aparece no dia a dia
+    md(`O pedido mais simples: \`console.log('Olá')\`. O Chrome escreve Olá **na aba Console**, não no meio da página.
 
-Quando você clica em “enviar” e a página não recarrega inteira: JavaScript.
+Como abrir o Console você viu em Antes de começar. Aqui o gesto: F12 (Mac: Cmd+Option+I) → aba **Console** → cole a linha → Enter.
 
-Quando o site avisa “e-mail inválido” antes de você mandar o formulário: JavaScript.
-
-Quando um mapa, um chat ou um botão de like atualiza na hora: JavaScript.
-
-O HTML e o CSS montaram o palco. O JS é o que se mexeu quando você tocou.`),
-    md(`## Pontos fortes e fracos do JavaScript
-
-Pontos fortes: roda no navegador de graça, sem instalar nada. É a língua da web — quase todo site usa. Dá para começar com uma linha. A mesma gramática também existe no servidor (isso é assunto de novidade, não desta aula).
-
-Pontos fracos: é fácil escrever código que “funciona na minha máquina” e quebra no detalhe (tipo de dado, acento, um clique duplo). O nome engana: **não é Java**. E não é a única língua do mundo — Python, Go, Rust existem; o TechLearn começa por JS porque é o que o navegador já entende.
-
-Honesto: no começo você vai errar. O Console (aula que vem) é o lugar onde o erro aparece em vermelho, não um pop-up de terror.`),
-    md(`## Exemplo mínimo desta aula
-
-Você fala com o JavaScript no **Console** do navegador. F12 (ou botão direito → Inspecionar) abre as ferramentas. A aba Console é uma linha de comando: você escreve, aperta Enter, o navegador responde.`),
+Se aparecer \`undefined\` na linha de baixo, tudo bem: o log funcionou; \`undefined\` é o “essa linha não devolveu valor”.`),
     conce(
       'console.log',
-      'Pedido para o navegador escrever uma mensagem no Console. Não aparece no meio da página — aparece nessa janela de ferramenta.',
+      'Pedido para o Chrome escrever uma mensagem no Console. Não aparece no meio da página.',
     ),
     code(`console.log('Olá')`),
     tente(
-      'Dois jeitos. 1) Extraia o zip desta aula, abra o index.html no Chrome, F12 → Console: a mensagem do script.js já está lá. 2) No Console, cole console.log(\'Olá\') e Enter. Se aparecer undefined na linha de baixo, tudo bem: o log funcionou.',
+      'Abra o Chrome, F12, aba Console. Cole console.log(\'Olá\') e Enter. Tem que aparecer Olá. O zip desta aula, se você abrir o index.html, já deixa uma mensagem no Console — é o mesmo log, vindo do arquivo.',
     ),
     ex('Em uma frase: o que o JavaScript faz que o HTML sozinho não faz?'),
-    proxima(
-      'Na próxima aula você abre a mesma janela com mais calma: onde o erro vermelho aparece e como ler o que ele está dizendo.',
-    ),
+    proxima('Na próxima a mesma janela com calma: onde o erro vermelho aparece e o que ele está dizendo.'),
   ],
 
   'console-e-devtools': [
-    md(`## O que você vai conseguir
-
-Achar sozinho um erro vermelho no Console e entender a mensagem o bastante para corrigir o nome de uma variável.`),
-    md(`## A janela que o navegador esconde
-
-F12 (no Mac, às vezes Cmd+Option+I) abre as **ferramentas do desenvolvedor**. Tem várias abas. No começo, uma basta: **Console**.
+    md(`F12 abre as **ferramentas do desenvolvedor**. Tem várias abas. No começo, uma basta: **Console**.
 
 É lá que o \`console.log\` aparece. É lá que o JavaScript grita quando algo não existe.
 
-A aba Elements mostra o HTML. Rede mostra pedidos à internet. Ignore-as hoje. O Console é a sala de aula.`),
+A aba Elements mostra o HTML. Rede mostra pedidos à internet. Ignore-as hoje.`),
     img(
       '/images/devToolsConsole.jpg',
       'Janela das ferramentas do navegador com a aba Console visível',
-      { credito: 'material do projeto', legenda: 'A aba Console é a da mensagem e do erro vermelho. As outras abas esperam.' },
+      { credito: 'material do projeto', legenda: 'A aba Console é a da mensagem e do erro vermelho.' },
     ),
     conce(
       'DevTools',
-      'Conjunto de ferramentas do navegador para quem programa. Console, Elements (HTML), Rede. Você não precisa de todas no primeiro dia.',
+      'Ferramentas do Chrome para quem programa. Console (mensagem e erro), Elements (HTML), Rede. Hoje só o Console.',
     ),
-    md(`## Onde isso aparece no dia a dia
+    md(`Todo mundo que programa para a web abre isso dezenas de vezes por dia. Sem o Console, você adivinha no escuro.
 
-Todo mundo que programa para a web abre isso dezenas de vezes por dia. Não é “coisa avançada”. É a lanterna: sem ela, você adivinha no escuro.`),
-    md(`## Exemplo mínimo desta aula`),
+Digite uma conta e Enter: o Console calcula. Digite um nome que não existe (\`banana\`): aparece vermelho. A palavra **ReferenceError** quer dizer “eu não conheço esse nome”. Não é vírus. É o Chrome pedindo um nome que ninguém declarou.
+
+\`console.error('teste')\` também fica vermelho — você mandou. Útil para marcar “aqui deu ruim” no seu código.`),
     code(`console.log('passo 1')
 console.log(2 + 2)
 console.error('isso é só um teste de erro')`),
     tente(
-      'No Console, some 10 + 32 só digitando a conta e Enter. O Console calcula na hora. Depois escreva um nome que não existe, tipo banana, e veja o vermelho. Leia a palavra ReferenceError — ela só diz “eu não conheço esse nome”.',
+      'Chrome, F12, Console. Some 10 + 32 só digitando a conta e Enter. Depois escreva banana e leia o vermelho. Ache a palavra ReferenceError. Depois cole as três linhas do exemplo.',
     ),
     ex('Qual tecla (ou caminho de menu) você usa para abrir o Console no seu computador?'),
-    proxima(
-      'Na próxima aula você dá nome às coisas: guarda um valor numa caixinha e troca esse valor depois.',
-    ),
+    proxima('Na próxima você dá nome às coisas: guarda um valor numa gaveta e troca esse valor depois.'),
   ],
 
   variaveis: [
-    md(`## O que você vai conseguir
+    md(`Uma **variável** é um nome que aponta para um valor. Gaveta: o nome na frente; o conteúdo dentro.
 
-Guardar um valor numa caixinha com nome, ler esse valor e trocá-lo quando fizer sentido.`),
-    md(`## Uma gaveta com etiqueta
+No JavaScript de hoje:
 
-Uma **variável** é um nome que aponta para um valor. Pense numa gaveta: o nome está na frente; dentro vai o conteúdo.
-
-Em JavaScript moderno usamos \`let\` (pode mudar o que está dentro) e \`const\` (não troca o valor). Quase não usamos \`var\`: é o jeito antigo, com regras mais confusas.`),
+- \`let\` — a gaveta **pode** trocar o que está dentro
+- \`const\` — a gaveta **não** troca o valor
+- \`var\` — jeito antigo. Quase não usamos. Se vir num exemplo velho, leia como “era let, mas antigo”.`),
     conce(
       'let e const',
-      '`let` declara uma gaveta que você pode rechear de novo. `const` declara uma gaveta que não troca o que está dentro. Prefira const quando o valor não muda.',
+      'let declara gaveta que pode rechear de novo. const declara gaveta que não troca o valor. Prefira const quando o valor não muda.',
     ),
-    conce(
-      'var',
-      'Jeito antigo. Quase não usamos em código novo. Se vir `var` num exemplo velho, leia como “era let, mas antigo”.',
-    ),
-    md(`## Onde isso aparece no dia a dia
+    md(`Nome da pessoa no formulário: \`const\`. Quantidade no carrinho: \`let\`. Pontos num jogo: \`let\`. Título fixo: \`const\`.
 
-Seu nome não muda no meio do formulário: \`const\`. A quantidade de itens no carrinho muda: \`let\`. Pontos num jogo: \`let\`. O título fixo da página: \`const\`.`),
-    md(`## Exemplo mínimo desta aula`),
+O nome da variável: letra ou \`_\` no começo, sem espaço. \`idade\` sim. \`2idade\` não. \`minha idade\` não.
+
+Esta aula testa **no Console**. O zip, se você abrir o HTML, também roda o mesmo código e já deixa o log lá — mas o exercício abaixo é colar no Console.`),
     code(`let idade = 18
 const pais = 'Brasil'
 idade = 19
@@ -124,41 +96,37 @@ console.log(idade)
 console.log(pais)`),
     yt('le-URjBhevE', 'Variables — Beau teaches JavaScript', 'freeCodeCamp.org'),
     tente(
-      'No Console, crie let idade = 18 e depois idade = 19. Dê console.log(idade). Tente mudar um const (pais = \'Outro\') e leia o erro — ele está te avisando que você prometeu não trocar.',
+      'Chrome → F12 → Console. Cole let idade = 18 e Enter. Depois idade = 19 e Enter. console.log(idade). Tente pais = \'Outro\' depois de um const pais: leia o erro — você prometeu não trocar.',
     ),
     ex('Quando você usaria const em vez de let? Dê um exemplo da sua vida (nome, quantidade, cidade).'),
-    proxima(
-      'Na próxima aula você olha o que *está* dentro da gaveta: número, texto, verdadeiro ou falso.',
-    ),
+    proxima('Na próxima o que está dentro da gaveta: número, texto, verdadeiro ou falso.'),
   ],
 
   'tipos-de-dados': [
-    md(`## O que você vai conseguir
+    md(`O computador trata \`42\` diferente de \`"42"\`.
 
-Olhar um valor e dizer se é número, texto ou verdadeiro/falso — e por que \`"42"\` não é a mesma coisa que \`42\`.`),
-    md(`## O computador trata 42 diferente de "42"
-
-O primeiro é número (dá para somar). O segundo é texto (dá para colar com outras palavras).
+O primeiro é **número** (dá para somar). O segundo é **texto** (dá para colar com outras palavras).
 
 Os tipos que mais aparecem no começo:
 
 - **number** — 10, 3.14, -1
 - **string** — texto entre aspas: \`'Ana'\` ou \`"Ana"\`
-- **boolean** — verdadeiro ou falso: \`true\` / \`false\`
+- **boolean** — verdadeiro ou falso: \`true\` / \`false\` (sem aspas)
 - **undefined** — ainda não pus nada nessa gaveta
 - **null** — pus de propósito o vazio`),
     conce(
       'tipo',
-      'A espécie do valor. `typeof` pergunta a espécie. `typeof 10` dá "number". `typeof \'10\'` dá "string".',
+      'A espécie do valor. typeof pergunta a espécie. typeof 10 dá "number". typeof \'10\' dá "string".',
     ),
     conce(
       'null e undefined',
-      '`undefined` é “ainda não pus nada”. `null` é “pus de propósito o vazio”. No começo, se der undefined, quase sempre faltou atribuir valor.',
+      'undefined é “ainda não pus nada”. null é “pus de propósito o vazio”. No começo, se der undefined, quase sempre faltou atribuir.',
     ),
-    md(`## Onde isso aparece no dia a dia
+    md(`Campo de idade que veio como texto \`"18"\` não entra no \`if (idade >= 18)\` do jeito que você espera. Loja que soma \`"10" + 5\` e ganha \`"105"\` em vez de 15: misturou texto com número.
 
-Campo de idade que veio como texto \`"18"\` não deixa entrar no \`if (idade >= 18)\` do jeito que você espera, se você comparar errado. Loja que soma \`"10" + 5\` e ganha \`"105"\` em vez de 15: misturou texto com número.`),
-    md(`## Exemplo mínimo desta aula`),
+Aspas fazem string. \`true\` sem aspas é boolean. \`'true'\` é texto.
+
+Teste no **Console**.`),
     code(`typeof 10
 typeof '10'
 typeof true
@@ -167,37 +135,26 @@ let caixa = null
 console.log(typeof caixa)`),
     yt('808eYu9B9Yw', 'Data Types — Beau teaches JavaScript', 'freeCodeCamp.org'),
     tente(
-      'No Console: typeof "Ana", typeof 2026, typeof false. Anote as três respostas. Elas têm que ser string, number, boolean. Depois teste "3" + 1 e 3 + 1. São resultados diferentes.',
+      'No Console (F12): typeof "Ana", typeof 2026, typeof false. As três respostas: string, number, boolean. Depois teste "3" + 1 e 3 + 1. São resultados diferentes — um cola, o outro soma.',
     ),
     ex('O que acontece se você fizer "3" + 1? Teste no Console e explique com a palavra tipo.'),
-    proxima(
-      'Na próxima aula você combina valores: somar, colar texto, comparar do jeito que não engana.',
-    ),
+    proxima('Na próxima você combina valores: somar, colar texto, comparar do jeito que não engana.'),
   ],
 
   operadores: [
-    md(`## O que você vai conseguir
+    md(`Operador é o símbolo da conta: \`+ - * / %\`.
 
-Comparar dois valores com \`===\` e saber a diferença para o \`+\` de texto.`),
-    md(`## Símbolos que fazem conta — ou colam palavras
+O \`+\` com número **soma**. Com texto, **cola** palavras. \`'Tech' + 'Learn'\` vira \`'TechLearn'\`.
 
-Operador é o símbolo da conta: \`+ - * / %\`.
+Para comparar, use **\`===\`** (três iguais): valor **e** tipo. \`10 === '10'\` é falso. \`10 == '10'\` (dois iguais) tenta converter e vira verdadeiro — isso engana.
 
-O \`+\` com número **soma**. Com texto, **cola** palavras. Por isso \`'Tech' + 'Learn'\` vira \`'TechLearn'\`.
+\`>\` \`<\` \`>=\` \`<=\` comparam tamanho.
 
-Para comparar, use \`===\` (três iguais): valor **e** tipo. \`10 === '10'\` é falso. \`10 == '10'\` (dois iguais) tenta converter e vira verdadeiro — isso engana gente iniciante.`),
+\`&&\` é “e”: os dois lados verdadeiros. \`||\` é “ou”: um dos dois basta. \`!\` inverte verdadeiro/falso.`),
     conce(
       '===',
-      'Compara valor e tipo. 10 e "10" não são a mesma coisa. Use === no dia a dia.',
+      'Compara valor e tipo. 10 e "10" não são a mesma coisa. Use === no dia a dia. Evite == em código novo.',
     ),
-    conce(
-      '&& e ||',
-      '\`&&\` é “e”: os dois lados verdadeiros. \`||\` é “ou”: um dos dois basta. \`!\` inverte verdadeiro/falso.',
-    ),
-    md(`## Pontos fortes e fracos
-
-\`===\` é o hábito saudável. \`==\` ainda existe por história da linguagem. Trate \`==\` como um atalho que você *não* quer no código novo.`),
-    md(`## Exemplo mínimo desta aula`),
     code(`console.log(10 + 5)
 console.log('Tech' + 'Learn')
 console.log(10 === 10)
@@ -205,31 +162,25 @@ console.log(10 === '10')
 console.log(10 == '10')
 console.log(7 > 3 && 7 < 10)`),
     tente(
-      'No Console: 7 > 3, 7 === "7", 7 == "7". Qual deu false? Esse é o === te protegendo.',
+      'No Console: 7 > 3, 7 === "7", 7 == "7". Qual deu false? Esse é o === te protegendo. Depois escreva uma conta com && que só é verdadeira se os dois lados forem verdadeiros.',
     ),
-    ex('Escreva uma comparação que só é verdadeira se idade for pelo menos 18 (use >=).'),
-    proxima(
-      'Na próxima aula o programa escolhe um caminho: se a pergunta for sim, faz A; senão, faz B.',
-    ),
+    ex('Escreva uma comparação que só é verdadeira se idade for pelo menos 18 (use >=). Cole no Console com uma idade de teste.'),
+    proxima('Na próxima o programa escolhe um caminho: se a pergunta for sim, faz A; senão, faz B.'),
   ],
 
   'if-else': [
-    md(`## O que você vai conseguir
+    md(`\`if\` lê uma pergunta. Os parênteses guardam a pergunta. As chaves \`{ }\` guardam o que fazer se a resposta for sim.
 
-Escrever um programa que escolhe um caminho: se a condição for verdadeira, faz A; senão, faz B.`),
-    md(`## Uma pergunta de sim ou não
+\`else\` é o “caso contrário”. \`else if\` é “senão, pergunta de novo”.
 
-\`if\` lê uma pergunta. Os parênteses guardam a pergunta. As chaves \`{ }\` guardam o que fazer se a resposta for sim.
-
-\`else\` é o “caso contrário”. \`else if\` é “senão, pergunta de novo”.`),
+A pergunta tem que virar verdadeiro ou falso. \`idade >= 18\` é uma pergunta. \`idade = 18\` **não** é: um igual só *atribui*, não compara. Comparar é \`===\` ou \`>=\`.`),
     conce(
       'condição',
       'Expressão que vira verdadeiro ou falso. É o que vai dentro do if. Ex.: idade >= 18.',
     ),
-    md(`## Onde isso aparece no dia a dia
+    md(`Site que mostra “Bom dia” ou “Boa noite” conforme a hora. Formulário que só envia se o campo não está vazio. Jogo que diz quem ganhou.
 
-Site que mostra “Bom dia” ou “Boa noite” conforme a hora. Formulário que só envia se o campo não está vazio. Jogo que diz quem ganhou.`),
-    md(`## Exemplo mínimo desta aula`),
+Cole o bloco **inteiro** no Console. Uma linha solta de \`if\` sem as chaves vira dor de cabeça no começo — use as chaves sempre.`),
     code(`const hora = 14
 if (hora < 12) {
   console.log('Bom dia')
@@ -239,28 +190,24 @@ if (hora < 12) {
   console.log('Boa noite')
 }`),
     tente(
-      'Troque hora para 9 e rode de novo (cole o bloco). Tem que aparecer Bom dia. Depois 20: Boa noite.',
+      'No Console, cole o bloco com hora = 14. Tem que aparecer Boa tarde. Mude para 9, cole de novo: Bom dia. Depois 20: Boa noite. O const hora não deixa você só escrever hora = 9 na linha de baixo se já existia — recarregue o Console (limpe) ou use let.',
     ),
-    ex('Escreva um if que imprime "pode dirigir" se idade for >= 18, e "espera um pouco" no else.'),
-    proxima(
-      'Na próxima aula o computador repete uma ação um número certo de vezes, sem você copiar a linha 20 vezes.',
-    ),
+    ex('Escreva um if que imprime "pode dirigir" se idade for >= 18, e "espera um pouco" no else. Rode no Console com dois valores.'),
+    proxima('Na próxima o computador repete uma ação um número certo de vezes, sem você copiar a linha 20 vezes.'),
   ],
 
   loops: [
-    md(`## O que você vai conseguir
+    md(`\`for\` é o mais comum no começo: começa em 0, enquanto \`i < 5\`, soma 1 a cada volta.
 
-Mandar o computador repetir uma ação um número certo de vezes — e saber quando parar, para a página não travar.`),
-    md(`## Repetir com controle
+Leia em voz alta: “i começa em 0; enquanto i for menor que 5; no fim de cada volta, i ganha 1”.
 
-\`for\` é o mais comum no começo: começa em 0, enquanto \`i < 5\`, soma 1.
+\`while\` repete *enquanto* a condição for verdadeira. Se você esquecer de mudar a variável da condição, o loop **não acaba**. O Chrome trava. Sempre pergunte: **quando isso acaba?**
 
-\`while\` repete *enquanto* a condição for verdadeira. Se você esquecer de mudar a variável da condição, o loop não acaba. O navegador trava. Sempre pergunte: **quando isso acaba?**`),
+Não rode um while infinito nesta página. Se travar, feche a aba.`),
     conce(
       'loop',
       'Repetição controlada. Sem a condição de parada, a página trava. Sempre pergunte: quando isso acaba?',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(`for (let i = 0; i < 5; i = i + 1) {
   console.log('volta', i)
 }
@@ -271,31 +218,22 @@ while (n > 0) {
   n = n - 1
 }`),
     tente(
-      'Some os números de 1 a 10 com um for. Use let soma = 0 e some i dentro do loop. console.log(soma) no fim — tem que dar 55.',
+      'No Console, some os números de 1 a 10 com um for. Use let soma = 0 e some i dentro do loop. console.log(soma) no fim — tem que dar 55. Se o Console “pensar” demais, você esqueceu de parar o while: feche a aba.',
     ),
     ex('O que aconteceria se no while você esquecesse n = n - 1? Não rode isso no site — só explique.'),
-    proxima(
-      'Na próxima aula você empacota um pedaço de código com nome e chama quando quiser.',
-    ),
+    proxima('Na próxima você empacota um pedaço de código com nome e chama quando quiser.'),
   ],
 
   funcoes: [
-    md(`## O que você vai conseguir
+    md(`Função é uma receita. Você define uma vez. Chama várias. Os **parâmetros** são os ingredientes. O \`return\` devolve o prato pronto e **para** a função.
 
-Empacotar um pedaço de código com nome, chamar quando quiser, e receber um resultado com \`return\`.`),
-    md(`## Uma receita com nome
+Sem \`return\`, o resultado é \`undefined\`. \`console.log\` *mostra* algo no Console. \`return\` *devolve* algo para quem chamou. São trabalhos diferentes. Um não substitui o outro.
 
-Função é uma receita. Você define uma vez. Chama várias. Os **parâmetros** são os ingredientes. O \`return\` devolve o prato pronto e **para** a função.
-
-Sem \`return\`, o resultado é \`undefined\`. \`console.log\` *mostra* algo; \`return\` *devolve* algo para quem chamou. São trabalhos diferentes.`),
+\`function somar(a, b) { return a + b }\` — a e b são parâmetros. \`somar(2, 3)\` é a chamada. O 5 sai no return.`),
     conce(
       'return',
       'Devolve um valor para quem chamou a função e para a função. Sem return, o resultado é undefined.',
     ),
-    md(`## Onde isso aparece no dia a dia
-
-Calcular frete. Validar e-mail. Sortear um número. Qualquer “faça isso de novo, com outros números” pede função.`),
-    md(`## Exemplo mínimo desta aula`),
     code(`function somar(a, b) {
   return a + b
 }
@@ -309,28 +247,24 @@ function cumprimentar(nome) {
 cumprimentar('Ana')`),
     yt('R8SjM4DKK80', 'Functions — Beau teaches JavaScript', 'freeCodeCamp.org'),
     tente(
-      'Escreva function dobro(n) { return n * 2 } e chame dobro(7). Tem que imprimir 14 se você der console.log no resultado.',
+      'No Console: escreva function dobro(n) { return n * 2 } e chame dobro(7). Tem que imprimir 14 se você der console.log no resultado. Sem o console.log, o 14 existe mas você não vê.',
     ),
     ex('Qual a diferença entre console.log dentro da função e return? Quando cada um serve?'),
-    proxima(
-      'Na próxima aula você guarda vários valores numa lista — e o primeiro item é o 0, não o 1.',
-    ),
+    proxima('Na próxima você guarda vários valores numa lista — e o primeiro item é o 0, não o 1.'),
   ],
 
   arrays: [
-    md(`## O que você vai conseguir
+    md(`Array é uma fila. O número da posição se chama **índice**. Zero é o começo. \`frutas[1]\` é o *segundo* item.
 
-Guardar vários valores numa lista e pegar o terceiro item (lembrando: o primeiro é o 0).`),
-    md(`## Uma fila numerada
+Isso não é capricho: é o combinado da linguagem. Errar por um é o bug mais comum do começo.
 
-Array é uma fila. O número da posição se chama **índice**. Zero é o começo. \`frutas[1]\` é o *segundo* item.
+\`length\` é quantos itens existem agora. \`push\` coloca um item no fim.
 
-\`length\` é quantos itens existem agora. \`push\` coloca um item no fim.`),
+As aspas na lista de texto: \`['açaí', 'manga']\`. Sem aspas, o JS procura variáveis com esses nomes.`),
     conce(
       'índice',
       'Posição na lista, começando em 0. frutas[1] é o segundo item. length é quantos itens existem agora.',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(`const frutas = ['açaí', 'manga', 'caju']
 console.log(frutas[0])
 console.log(frutas.length)
@@ -339,28 +273,24 @@ for (let i = 0; i < frutas.length; i = i + 1) {
   console.log(frutas[i])
 }`),
     tente(
-      'Crie const notas = [7, 8, 9] e calcule a média: some no for e divida por notas.length.',
+      'No Console: crie const notas = [7, 8, 9] e calcule a média — some no for e divida por notas.length. console.log da média. Se der NaN, algum índice passou do fim da lista.',
     ),
-    ex('Se a lista tem 4 itens, qual é o índice do último?'),
-    proxima(
-      'Na próxima aula a coisa do mundo real ganha nome nas chaves: um aluno, uma aula, um produto — não uma fila 0, 1, 2.',
-    ),
+    ex('Se a lista tem 4 itens, qual é o índice do último? Por que não é 4?'),
+    proxima('Na próxima a coisa do mundo real ganha nome nas chaves: um aluno, uma aula — não uma fila 0, 1, 2.'),
   ],
 
   objetos: [
-    md(`## O que você vai conseguir
+    md(`Objeto não usa índice 0, 1, 2. Usa **chaves** com nome: \`nome\`, \`idade\`, \`cidade\`.
 
-Descrever uma coisa do mundo real com pares nome: valor — um aluno, uma aula, um produto.`),
-    md(`## Não é fila. É ficha.
+Pense numa ficha, não numa fila.
 
-Objeto não usa índice 0, 1, 2. Usa **chaves** com nome: \`nome\`, \`idade\`, \`cidade\`.
+Ponto (\`aluno.nome\`) é o jeito mais comum de ler. Colchetes (\`aluno['cidade']\`) servem quando o nome da chave está numa variável.
 
-Ponto (\`aluno.nome\`) é o jeito mais comum de ler. Colchetes (\`aluno['cidade']\`) servem quando o nome da chave está numa variável.`),
+Lista de notas = array. Ficha de um aluno = objeto. Lista de alunos = array de objetos.`),
     conce(
       'objeto',
       'Coleção de pares chave/valor. Ponto (aluno.nome) é o jeito mais comum. Colchetes servem quando o nome da chave está numa variável.',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(`const aluno = {
   nome: 'Lia',
   cidade: 'Recife',
@@ -370,67 +300,56 @@ console.log(aluno.nome)
 console.log(aluno['cidade'])
 aluno.idade = 20`),
     tente(
-      'Modele const aula = { titulo: \'Variáveis\', minutos: 20 } e imprima aula.titulo.',
+      'No Console, modele const aula = { titulo: \'Variáveis\', minutos: 20 } e imprima aula.titulo. Depois mude aula.minutos e log de novo.',
     ),
     ex('Qual a diferença prática entre array e objeto? Pense: lista de notas vs ficha de um aluno.'),
-    proxima(
-      'Na próxima aula o JavaScript aponta para um título na *página* e troca o texto. Até agora tudo foi no Console.',
-    ),
+    proxima('Na próxima o JavaScript aponta para um título na *página* e troca o texto. Até agora tudo foi no Console.'),
   ],
 
   dom: [
-    md(`## O que você vai conseguir
+    md(`Até agora o JS só falou no Console. Para mexer no que a pessoa *vê*, o Chrome transforma o HTML numa árvore de peças. Essa árvore se chama **DOM**.
 
-Achar um título na página e trocar o texto dele com JavaScript.`),
-    md(`## A página vira uma árvore
+A bancada muda: **pasta + Chrome**. Dois arquivos na mesma pasta.`),
+    img(
+      '/images/trilhas/javascript/pasta-js.svg',
+      'Pasta minha-aula com index.html e script.js',
+      { legenda: 'Abra o HTML. O script.js precisa estar ao lado. [Como abrir](/aprender/comecar/baixar-e-abrir).' },
+    ),
+    md(`Você já deu \`id\` no HTML básico. Aqui o JS usa esse gancho.
 
-Até agora o JS só falou no Console. Para mexer no que a pessoa *vê*, o navegador transforma o HTML numa árvore de peças. Essa árvore se chama **DOM**.
+No HTML, no body: \`<h1 id="titulo">Olá</h1>\`
 
-Você já viu tag e \`id\` no HTML básico. Aqui o JS usa esse gancho.
+No JS: \`document.querySelector('#titulo')\` — “cadê o id titulo?”. A cerquilha é a mesma do CSS.
 
-Um arquivo HTML mínimo:
+\`textContent\` troca o texto que a pessoa lê.
 
-\`<h1 id="titulo">Olá</h1>\`
-
-O JS pergunta: “cadê o que tem id titulo?” e troca o texto.
-
-O \`id\` é o gancho. Se a peça não existir no HTML, o JS acha \`null\`.`),
+Se a peça não existir, o JS acha \`null\`. Aí a próxima linha quebra. Causas comuns: id diferente entre HTML e JS; script no \`head\` rodando **antes** do body existir. Coloque o \`<script src="script.js">\` no **fim do body**.`),
     conce(
       'DOM',
       'Document Object Model: o mapa da página em forma de objetos. querySelector acha uma peça. textContent troca o texto.',
     ),
-    conce(
-      'id',
-      'Nome único de uma peça no HTML. No CSS e no JS, a cerquilha (#titulo) significa “o id chamado titulo”.',
-    ),
-    md(`## Exemplo mínimo desta aula`),
-    code(`// Na página precisa existir: <h1 id="titulo">Olá</h1>
-const titulo = document.querySelector('#titulo')
-titulo.textContent = 'Aula de DOM'
-titulo.style.color = '#1F6A4A'`),
+    code(`const titulo = document.querySelector('#titulo')
+titulo.textContent = 'Aula de DOM'`),
+    md(`Cor (\`titulo.style.color\`) é o passo seguinte, não o primeiro. Primeiro: achar e trocar o texto. Se isso funcionar, a ponte HTML↔JS está de pé.`),
     tente(
-      'Crie um HTML com <p id="msg">oi</p> e um arquivo JS (ou um <script> no fim da página) que faz querySelector(\'#msg\').textContent = \'funcionou\'. Abra no navegador. Se der erro de null, o JS rodou antes do HTML existir — coloque o script no fim do body.',
+      'Baixe o zip, extraia, abra a pasta no VS Code, abra index.html no Chrome. O título tem que mudar sozinho. No script.js, troque a string do textContent, Ctrl+S, F5. Se der erro de null no Console: o id do HTML não bate com o do JS, ou o script subiu antes do HTML.',
     ),
     ex('Por que querySelector(\'#titulo\') usa a cerquilha? O que ela indica?'),
-    proxima(
-      'Na próxima aula um botão na página reage ao clique — sem recarregar.',
-    ),
+    proxima('Na próxima um botão na página reage ao clique — sem recarregar.'),
   ],
 
   eventos: [
-    md(`## O que você vai conseguir
+    md(`**Evento** é algo que acontece: clique, tecla, envio de formulário. \`addEventListener\` fica de ouvido.
 
-Um botão na página reage ao clique e muda um texto, sem recarregar.`),
-    md(`## Ficar de ouvido
-
-**Evento** é algo que acontece: clique, tecla, envio de formulário. \`addEventListener\` fica de ouvido.
-
-O HTML desta aula: um botão com \`id="btn"\` e um parágrafo com \`id="saida"\` — as mesmas peças do HTML básico. O zip já traz a página montada.`),
+Continua na pasta: \`index.html\` + \`script.js\`. O HTML desta aula já tem um botão \`id="btn"\` e um parágrafo \`id="saida"\`.`),
+    img(
+      '/images/trilhas/javascript/pasta-js.svg',
+      'Pasta com index.html e script.js',
+    ),
     conce(
       'addEventListener',
       'Diz: quando este evento acontecer nesta peça, rode esta função. O primeiro argumento é o nome do evento, em inglês: click, input, submit.',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(`const botao = document.querySelector('#btn')
 const saida = document.querySelector('#saida')
 let cliques = 0
@@ -439,56 +358,42 @@ botao.addEventListener('click', function () {
   cliques = cliques + 1
   saida.textContent = 'Cliques: ' + cliques
 })`),
+    md(`A função dentro do \`addEventListener\` só roda **quando** o clique vem. Não rode ela na mão no começo.
+
+Se o script estiver no head, \`querySelector('#btn')\` acha null: o botão ainda não existe. Fim do body.`),
     tente(
-      'Página com um botão e um parágrafo. Cada clique soma 1 e mostra o total. Se der undefined ou erro de null, o id do HTML não bate com o do JS — confira os dois.',
+      'Abra o zip no Chrome. Cada clique deve somar 1 no parágrafo. Se der null, os ids não batem. Mude o texto do botão no HTML (body) e recarregue — o JS continua ouvindo o mesmo id.',
     ),
     ex('O que a página faria se você pusesse o JS no <head> sem esperar o HTML? (Pista: querySelector acharia null.)'),
-    proxima(
-      'Na próxima aula você junta o iniciante num joguinho: o computador escolhe, você clica, o placar sobe na tela.',
-    ),
+    proxima('Na próxima você junta o iniciante num joguinho: o computador escolhe, você clica, o placar sobe na tela.'),
   ],
 
   'projeto-pedra-papel-tesoura': [
-    md(`## O que vai existir na tela no final
+    md(`No final existem, na tela, três botões (Pedra, Papel, Tesoura), um placar, e uma frase dizendo quem ganhou a rodada. Você joga contra o computador. Sem recarregar.
 
-Três botões (Pedra, Papel, Tesoura), um placar, e uma frase dizendo quem ganhou a rodada. Você joga contra o computador. Sem recarregar a página.`),
-    md(`## O que desta trilha entra
+O que desta trilha entra: variáveis para os pontos, função que sorteia, \`if\` para o resultado, clique, \`textContent\` para o placar. Não é aula nova. É cola.
 
-- Variáveis para os pontos
-- Função que sorteia a jogada do computador
-- \`if\` para decidir quem ganhou
-- Clique nos botões
-- \`textContent\` para mostrar o placar
-
-Não é aula nova. É cola.`),
-    md(`## Esqueleto mínimo`),
+Pasta: \`index.html\`, \`estilos.css\`, \`script.js\`. O CSS dos três botões em fila é o flex da trilha HTML.`),
+    img(
+      '/images/trilhas/javascript/pasta-js.svg',
+      'Pasta da aula com HTML e script (e CSS no zip)',
+    ),
     code(`function jogadaComputador() {
   const n = Math.random()
   if (n < 0.33) return 'pedra'
   if (n < 0.66) return 'papel'
   return 'tesoura'
-}
-
-function resultado(jogador, pc) {
-  if (jogador === pc) return 'empate'
-  if (
-    (jogador === 'pedra' && pc === 'tesoura') ||
-    (jogador === 'papel' && pc === 'pedra') ||
-    (jogador === 'tesoura' && pc === 'papel')
-  ) {
-    return 'você'
-  }
-  return 'computador'
 }`),
     conce(
       'Math.random',
-      'Número de 0 até quase 1. Multiplique e use if para virar pedra, papel ou tesoura.',
+      'Número de 0 até quase 1. Com if, vira pedra, papel ou tesoura.',
     ),
+    md(`O zip já monta a página e o script comentado. Leia o \`script.js\` de cima a baixo. Cada bloco tem recado. Jogue. Se o placar não sobe, abra o Console (F12): o erro vermelho aponta a linha.`),
     tente(
-      'Três botões e um <p id="placar">. Cada clique chama as funções, atualiza o texto. Conte vitórias com let pontos = 0. Jogue 5 vezes e confira se as regras batem.',
+      'Extraia o zip, abra index.html. Os três botões funcionam, o placar sobe, empate não soma ponto, a página não recarrega. Jogue 5 vezes. Se faltar um dos quatro, o projeto não fechou.',
     ),
     ex(
-      'Checklist de pronto: os três botões funcionam, o placar sobe, empate não soma ponto para ninguém, a página não recarrega. Se os quatro estiverem lá, o projeto está feito.',
+      'Checklist: três botões, placar, empate sem ponto, página quieta. Qual peça veio do HTML (id, botão) e qual veio do JS (if, função)?',
     ),
   ],
 }

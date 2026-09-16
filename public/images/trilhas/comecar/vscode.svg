@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-labelledby="t d">
+  <title id="t">VS Code: pasta à esquerda, arquivo no meio</title>
+  <desc id="d">Janela do VS Code com o explorador de arquivos à esquerda e o texto do arquivo no editor.</desc>
+  <rect width="720" height="300" fill="#f4efe6"/>
+  <rect x="20" y="20" width="680" height="260" rx="10" fill="#fff" stroke="#241c15" stroke-width="3"/>
+  <rect x="20" y="20" width="680" height="32" fill="#e8e0d4"/>
+  <text x="36" y="42" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="14" fill="#241c15">Visual Studio Code — pasta minha-aula</text>
+  <rect x="20" y="52" width="180" height="228" fill="#f4efe6" stroke="#241c15" stroke-width="2"/>
+  <text x="36" y="80" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="14" fill="#1F6A4A">EXPLORER</text>
+  <text x="36" y="110" font-family="ui-monospace, monospace" font-size="13" fill="#241c15">minha-aula</text>
+  <text x="48" y="136" font-family="ui-monospace, monospace" font-size="13" fill="#241c15">index.html</text>
+  <text x="48" y="158" font-family="ui-monospace, monospace" font-size="13" fill="#241c15">estilos.css</text>
+  <text x="110" y="250" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="12" fill="#C24E1D">abra a PASTA</text>
+  <text x="360" y="90" font-family="ui-monospace, monospace" font-size="16" fill="#1F6A4A">&lt;p&gt;Olá.&lt;/p&gt;</text>
+  <text x="450" y="250" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="12" fill="#241c15">editor: o texto do arquivo</text>
+</svg>

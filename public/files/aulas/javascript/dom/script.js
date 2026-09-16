@@ -1,8 +1,11 @@
-// querySelector('#titulo') = “cadê o id titulo?”.
-// textContent troca o texto. style.color troca a cor.
+// Este arquivo está na mesma pasta do index.html.
+// A cerquilha (#) é o id. Se mudar o id no HTML, mude aqui também.
 
+// 1) Acha na página a peça com id="titulo".
 const titulo = document.querySelector('#titulo')
+// 2) Troca o texto que a pessoa lê.
 titulo.textContent = 'Aula de DOM'
+// 3) (passo extra) Troca a cor. Se o texto já mudou, a ponte HTML↔JS está de pé.
 titulo.style.color = '#1F6A4A'
 
 const msg = document.querySelector('#msg')

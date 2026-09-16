@@ -117,6 +117,7 @@ CREATE TABLE noticias (
   titulo text NOT NULL,
   resumo text NOT NULL DEFAULT '',
   corpo jsonb NOT NULL DEFAULT '[]'::jsonb,
+  imagem_capa text,
   publicada boolean NOT NULL DEFAULT false,
   publicado_em timestamptz,
   criado_em timestamptz NOT NULL DEFAULT now()

@@ -30,7 +30,7 @@ const passou = notas.filter(function (n) {
 console.log(comUm)
 console.log(passou)`),
     tente(
-      'Dado const nomes = [\'ana\', \'bia\'], use map para deixar tudo maiúsculo (n.toUpperCase()).',
+      'No Console (F12): const nomes = [\'ana\', \'bia\']. Use map para deixar tudo maiúsculo (n.toUpperCase()). console.log do resultado.',
     ),
     ex('Qual método você usa para ficar só com os números pares de [1, 2, 3, 4]?'),
     proxima(
@@ -68,7 +68,7 @@ const { cidade } = aluno
 const copias = [...[1, 2], 3]
 console.log(cidade, copias)`),
     tente(
-      'Reescreva function soma(a, b) { return a + b } como arrow. Teste soma(1, 2).',
+      'No Console: reescreva function soma(a, b) { return a + b } como arrow. Teste soma(1, 2) e logue.',
     ),
     ex('Por que [...] copia um array em vez de apontar para o mesmo? (Pista: se mudar a cópia, o original fica.)'),
     proxima(
@@ -105,7 +105,7 @@ const proximo = criarContador()
 console.log(proximo())
 console.log(proximo())`),
     tente(
-      'Crie dois contadores: const a = criarContador(); const b = criarContador(). Eles têm que ter n separado. Some no a duas vezes e no b uma: 2 e 1.',
+      'Cole criarContador no Console. Crie const a = criarContador(); const b = criarContador(). Some no a duas vezes e no b uma: 2 e 1. Eles não compartilham o n.',
     ),
     ex('Se n fosse criado fora da função, os dois contadores brigariam pelo mesmo n. Por quê?'),
     proxima(
@@ -136,7 +136,7 @@ console.log(texto)
 const deNovo = JSON.parse(texto)
 console.log(deNovo.titulo)`),
     tente(
-      'Dê JSON.parse(\'{"ok": true}\') e leia .ok. Depois tente JSON.parse(\'nao e json\') e veja o erro no Console.',
+      'No Console: JSON.parse(\'{"ok": true}\') e leia .ok. Depois JSON.parse(\'nao e json\') e leia o erro vermelho.',
     ),
     ex('Por que a gente não manda o objeto JavaScript “cru” para outro programa? (Pista: texto atravessa rede.)'),
     proxima(
@@ -169,7 +169,7 @@ espera.then(function (msg) {
   console.log('falhou', err)
 })`),
     tente(
-      'Troque 500 por 1000 e veja o log atrasar um segundo. A página continua clicável — essa é a graça.',
+      'No Console, cole o exemplo. Troque 500 por 1000 e veja o log atrasar um segundo. A página continua clicável — essa é a graça.',
     ),
     ex('O que seria pior: travar a página 5 segundos ou mostrar “carregando” e continuar?'),
     proxima(
@@ -207,7 +207,7 @@ async function run() {
 }
 run()`),
     tente(
-      'Chame run() duas vezes seguidas. As duas esperas andam juntas. Isso é o JS não travando.',
+      'No Console, cole a função run e chame run() duas vezes seguidas. As duas esperas andam juntas. Isso é o JS não travando.',
     ),
     ex('Reescreva um .then simples (console.log depois de esperar) em async/await.'),
     proxima(
@@ -244,7 +244,7 @@ buscarCep('01001000').then(function (dados) {
   console.log(dados.localidade, dados.uf)
 })`),
     tente(
-      'Troque o CEP para o da sua rua (só números, 8 dígitos). Veja localidade no Console. Se der erro, o CEP pode ser inválido — trate isso no mini-projeto avançado.',
+      'No Console (ou no arquivo da aula): troque o CEP para o da sua rua (8 dígitos). Veja localidade. Se der erro, o CEP pode ser inválido — trate no mini-projeto avançado.',
     ),
     ex('Por que não colocamos senha de API no arquivo JS que o navegador baixa?'),
     proxima(
@@ -280,7 +280,7 @@ form.addEventListener('submit', function (evento) {
   saida.textContent = 'Você digitou ' + valor
 })`),
     tente(
-      'Form com input e botão Enviar. Se estiver vazio, mostre um aviso. Se tiver texto, mostre o texto no parágrafo. Teste com espaços na frente.',
+      'Abra o zip no Chrome (index.html + script.js na mesma pasta). Form: se estiver vazio, aviso; se tiver texto, mostre no parágrafo. Teste com espaços na frente.',
     ),
     ex('Por que trim() no value? Teste com espaços na frente.'),
     proxima(
@@ -319,7 +319,7 @@ console.log(somar(2, 3))
 // no HTML:
 // <script type="module" src="main.js"></script>`),
     tente(
-      'Dois arquivos locais: um exporta dobro, o outro importa e loga dobro(10). Se der erro de CORS ou module, você abriu como arquivo cru — use um servidor local.',
+      'Pasta com main.js e somar.js. Abra o HTML (type=module). Console deve mostrar 5. Se der erro de CORS ou module, você abriu como arquivo cru — use um servidor local.',
     ),
     ex('Cite uma razão para não deixar 400 linhas num único main.js.'),
     proxima(
@@ -348,7 +348,7 @@ function salvar(lista) {
       'Gaveta de texto no navegador, por site. Só cabe string — por isso JSON.stringify. Não é banco seguro: o usuário pode limpar.',
     ),
     tente(
-      'Input + botão Adicionar. Lista em <ul>. Cada item com botão feito. Ao mudar, salvar(). No carregamento, ler() e desenhar. Filtro para “só pendentes”.',
+      'Abra o zip da lista de tarefas. Input + Adicionar. Lista em ul. Clique marca feita. Recarregue: tem que lembrar (localStorage). Filtro para “só pendentes”.',
     ),
     ex(
       'Checklist de pronto: inclui, marca feita, filtra, recarrega e a lista volta, limpar dados do site nasce vazio sem erro. Se os cinco estiverem lá, o projeto está feito.',

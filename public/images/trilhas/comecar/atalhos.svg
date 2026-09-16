@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-labelledby="t d">
+  <title id="t">Atalhos do VS Code</title>
+  <desc id="d">Quatro teclas: salvar, formatar, comentar e desfazer.</desc>
+  <rect width="720" height="220" fill="#f4efe6"/>
+  <g font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" fill="#241c15">
+    <rect x="24" y="40" width="150" height="70" rx="8" fill="#fff" stroke="#241c15" stroke-width="3"/>
+    <text x="99" y="72" text-anchor="middle" font-size="16" font-family="ui-monospace, monospace">Ctrl+S</text>
+    <text x="99" y="132" text-anchor="middle" font-size="14">salvar</text>
+    <rect x="198" y="40" width="150" height="70" rx="8" fill="#fff" stroke="#241c15" stroke-width="3"/>
+    <text x="273" y="68" text-anchor="middle" font-size="13" font-family="ui-monospace, monospace">Shift+Alt+F</text>
+    <text x="273" y="132" text-anchor="middle" font-size="14">formatar</text>
+    <rect x="372" y="40" width="150" height="70" rx="8" fill="#fff" stroke="#241c15" stroke-width="3"/>
+    <text x="447" y="72" text-anchor="middle" font-size="16" font-family="ui-monospace, monospace">Ctrl+/</text>
+    <text x="447" y="132" text-anchor="middle" font-size="14">comentar</text>
+    <rect x="546" y="40" width="150" height="70" rx="8" fill="#fff" stroke="#241c15" stroke-width="3"/>
+    <text x="621" y="72" text-anchor="middle" font-size="16" font-family="ui-monospace, monospace">Ctrl+Z</text>
+    <text x="621" y="132" text-anchor="middle" font-size="14">desfazer</text>
+    <text x="360" y="190" text-anchor="middle" font-size="13">No Mac: Ctrl vira Cmd, Alt vira Option.</text>
+  </g>
+</svg>

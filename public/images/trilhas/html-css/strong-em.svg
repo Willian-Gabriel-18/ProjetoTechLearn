@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" role="img" aria-labelledby="t d">
+  <title id="t">strong e em não são a mesma tag</title>
+  <desc id="d">strong é importância; em é ênfase no tom. O visual negrito ou itálico é só o padrão do Chrome.</desc>
+  <rect width="720" height="200" fill="#f4efe6"/>
+  <rect x="40" y="30" width="300" height="140" rx="10" fill="#fff" stroke="#241c15" stroke-width="3"/>
+  <text x="190" y="80" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#241c15">strong</text>
+  <text x="190" y="112" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="16" fill="#1F6A4A">importância</text>
+  <text x="190" y="140" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="13" fill="#241c15">isto pesa na frase</text>
+  <rect x="380" y="30" width="300" height="140" rx="10" fill="#fff" stroke="#241c15" stroke-width="3"/>
+  <text x="530" y="80" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="22" font-style="italic" fill="#241c15">em</text>
+  <text x="530" y="112" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="16" fill="#C24E1D">ênfase no tom</text>
+  <text x="530" y="140" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="13" fill="#241c15">isto muda o jeito de falar</text>
+</svg>

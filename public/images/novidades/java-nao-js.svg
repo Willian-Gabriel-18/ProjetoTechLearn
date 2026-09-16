@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-labelledby="t d">
+  <title id="t">Java não é JavaScript</title>
+  <desc id="d">Duas placas de nome diferentes: Java e JavaScript.</desc>
+  <rect width="720" height="220" fill="#f4efe6"/>
+  <rect x="50" y="50" width="260" height="120" rx="10" fill="#fff" stroke="#241c15" stroke-width="3"/>
+  <text x="180" y="120" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="32" fill="#241c15">Java</text>
+  <rect x="410" y="50" width="260" height="120" rx="10" fill="#fff" stroke="#C24E1D" stroke-width="3"/>
+  <text x="540" y="120" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="28" fill="#C24E1D">JavaScript</text>
+</svg>

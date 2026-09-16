@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { mkdirSync, writeFileSync, rmSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -12,21 +12,37 @@ function gravar(trilha, slug, arquivos) {
   }
 }
 
-function htmlDoc({ titulo, corpo, css, js, modulo = false }) {
-  const linkCss = css ? `    <link rel="stylesheet" href="${css}" />\n` : ''
+function htmlDoc({ titulo, corpo, css, js, modulo = false, intro = '' }) {
+  const linkCss = css
+    ? `    <!-- CSS da mesma pasta. Se a cor não mudar, este href não achou o arquivo. -->
+    <link rel="stylesheet" href="${css}" />\n`
+    : ''
   const script = js
     ? modulo
-      ? `    <script type="module" src="${js}"></script>\n`
-      : `    <script src="${js}"></script>\n`
+      ? `    <!-- type="module" deixa este arquivo importar outros .js -->
+    <script type="module" src="${js}"></script>\n`
+      : `    <!-- script no fim do body: o HTML já existe quando o JS procura o id. -->
+    <script src="${js}"></script>\n`
     : ''
-  return `<!DOCTYPE html>
+  const recado =
+    intro ||
+    'Abra este arquivo no Chrome (dois cliques ou arrastar). No VS Code, abra a PASTA da aula, edite, Ctrl+S, volte no Chrome e F5.'
+  return `<!--
+  ${recado}
+-->
+<!DOCTYPE html>
 <html lang="pt-BR">
+  <!-- lang: o texto desta página está em português. -->
   <head>
+    <!-- head: aba, acento, celular, CSS. Não é o texto do meio da tela. -->
     <meta charset="utf-8" />
+    <!-- charset: acento (você, coração) aparece certo. -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- viewport: no celular a página usa a largura da tela. -->
     <title>${titulo} — TechLearn</title>
 ${linkCss}  </head>
   <body>
+    <!-- body: o que a pessoa vê. -->
 ${corpo}
 ${script}  </body>
 </html>
@@ -36,33 +52,19 @@ ${script}  </body>
 function htmlConsole(titulo) {
   return htmlDoc({
     titulo,
-    corpo: `    <!-- Abra no Chrome. Aperte F12, aba Console. O script.js já rodou. -->
-    <p>Abra o Console (F12). O código desta aula está em <code>script.js</code>.</p>`,
+    intro:
+      'Abra no Chrome. F12 → aba Console. O script.js já rodou. Você também pode colar o código do script no Console na mão.',
+    corpo: `    <p>Abra o Console (F12). O código desta aula está em <code>script.js</code>, nesta mesma pasta.</p>`,
     js: 'script.js',
   })
 }
 
 const htmlCss = {
-  'abrir-o-arquivo': {
-    'index.html': htmlDoc({
-      titulo: 'Abrir o que você baixou',
-      corpo: `    <!-- Extraia o zip. Abra ESTE arquivo no Chrome (não o script.js). -->
-    <p id="frase">Se você lê isto no Chrome, o HTML abriu.</p>`,
-      js: 'script.js',
-    }),
-    'script.js': `// Roda sozinho quando o index.html abre.
-// F12 → aba Console: esta mensagem tem que aparecer.
-
-console.log('O JavaScript também rodou.')
-
-const frase = document.querySelector('#frase')
-frase.textContent = 'HTML aberto. JS também — olhe o Console (F12).'
-`,
-  },
   'o-que-e-uma-pagina': {
     'pagina.html': `<!--
-  Como abrir: salve, dê dois cliques (ou arraste para o Chrome).
-  O que mudar: o texto entre <p> e </p>. Salve e aperte F5.
+  Abra no Chrome. No VS Code, abra a PASTA, edite, Ctrl+S, F5.
+  Hoje: mude o texto entre <p> e </p>.
+  DOCTYPE, head e body a aula "Esqueleto" explica com calma.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -71,24 +73,52 @@ frase.textContent = 'HTML aberto. JS também — olhe o Console (F12).'
     <title>Minha primeira página</title>
   </head>
   <body>
+    <!-- O que aparece na tela: mude só esta frase. -->
     <p>Olá. Isto é uma página.</p>
   </body>
 </html>
 `,
   },
-  esqueleto: {
-    'esqueleto.html': `<!--
-  Como abrir: Chrome. Olhe a aba — o título vem do <title>.
-  O que mudar: o <title> e o parágrafo. charset e viewport ficam.
+  'anatomia-da-tag': {
+    'tag.html': `<!--
+  Ache <p> (abertura), o texto (conteúdo) e </p> (fechamento).
+  A barra no fechamento diz: aqui acaba o parágrafo.
+  Troque o conteúdo. Acrescente um segundo <p>…</p> no body.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Esqueleto</title>
+    <title>Anatomia da tag</title>
   </head>
   <body>
+    <!-- par: abertura, conteúdo, fechamento. lang é atributo na abertura. -->
+    <p>Um parágrafo.</p>
+    <p lang="pt-BR">Outro parágrafo, com atributo na abertura.</p>
+  </body>
+</html>
+`,
+  },
+  esqueleto: {
+    'esqueleto.html': `<!--
+  Abra no Chrome. A aba vem do <title> (head). O parágrafo vive no body.
+  Troque o title e o p. charset e viewport ficam.
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <!-- lang na abertura da raiz. -->
+  <head>
+    <!-- head: o que a pessoa NÃO vê no meio da página. -->
+    <meta charset="utf-8" />
+    <!-- charset: acento aparece certo. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- viewport: no celular, largura da tela. -->
+    <title>Esqueleto</title>
+    <!-- title: texto da ABA, não o título enorme no meio. -->
+  </head>
+  <body>
+    <!-- body: o que aparece na tela. -->
     <p>O esqueleto está no lugar.</p>
   </body>
 </html>
@@ -96,8 +126,7 @@ frase.textContent = 'HTML aberto. JS também — olhe o Console (F12).'
   },
   'texto-e-titulos': {
     'texto.html': `<!--
-  Como abrir: Chrome.
-  O que mudar: o h2 e um parágrafo. Deixe um único h1.
+  Tudo que você vê está no body. Um h1 só. strong = importância. em = ênfase no tom.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -107,10 +136,14 @@ frase.textContent = 'HTML aberto. JS também — olhe o Console (F12).'
     <title>Texto e títulos</title>
   </head>
   <body>
+    <!-- h1: título da página. um por página. -->
     <h1>Bolo de fubá</h1>
     <p>Receita curta para um lanche.</p>
+    <!-- h2: seção, não um segundo título principal. -->
     <h2>Ingredientes</h2>
+    <!-- strong: isto é importante. não é a mesma tag que em. -->
     <p>Fubá, ovos, leite e um pouco de <strong>paciência</strong>.</p>
+    <!-- em: ênfase no tom, como mudar a voz. -->
     <p>O cheiro <em>importa</em> mais que o relógio.</p>
   </body>
 </html>
@@ -654,9 +687,45 @@ console.log('Num app grande, o bundler junta vários arquivos como este.')
   },
 }
 
+rmSync(join(raiz, 'html-css', 'abrir-o-arquivo'), { recursive: true, force: true })
+
 for (const [slug, arquivos] of Object.entries(htmlCss)) {
   gravar('html-css', slug, arquivos)
 }
+
+// Zip de treino da aula "Baixar e abrir": duas pastas, sem ensinar a linguagem.
+gravar('comecar', 'baixar-e-abrir/html-css', {
+  'index.html': htmlDoc({
+    titulo: 'Treino HTML e CSS',
+    intro:
+      'Isto NÃO ensina CSS. Só confere: os dois arquivos na mesma pasta e o HTML abre no Chrome. O título deve aparecer verde.',
+    css: 'estilos.css',
+    corpo: `    <h1>Os dois arquivos estão juntos</h1>
+    <p>Se este título não estiver verde, o estilos.css não está nesta pasta.</p>`,
+  }),
+  'estilos.css': `/* Só para o treino do zip. Não é aula de CSS.
+   Se o h1 não ficar verde, HTML e CSS não estão na mesma pasta. */
+
+h1 {
+  color: #1f6a4a;
+}
+`,
+})
+gravar('comecar', 'baixar-e-abrir/javascript', {
+  'index.html': htmlDoc({
+    titulo: 'Treino HTML e JS',
+    intro:
+      'Isto NÃO ensina JavaScript. Só confere: os dois arquivos na mesma pasta e o HTML abre no Chrome. A frase deve mudar.',
+    corpo: `    <p id="frase">Se esta frase não mudar, o script.js não está nesta pasta.</p>`,
+    js: 'script.js',
+  }),
+  'script.js': `// Só para o treino do zip. Não é aula de JavaScript.
+// Se a frase não mudar, HTML e JS não estão na mesma pasta.
+
+const frase = document.querySelector('#frase')
+frase.textContent = 'Os dois arquivos estão juntos.'
+`,
+})
 
 for (const [slug, { titulo, js }] of Object.entries(jsConsole)) {
   gravar('javascript', slug, {
@@ -673,11 +742,14 @@ gravar('javascript', 'dom', {
     <p id="msg">oi</p>`,
     js: 'script.js',
   }),
-  'script.js': `// querySelector('#titulo') = “cadê o id titulo?”.
-// textContent troca o texto. style.color troca a cor.
+  'script.js': `// Este arquivo está na mesma pasta do index.html.
+// A cerquilha (#) é o id. Se mudar o id no HTML, mude aqui também.
 
+// 1) Acha na página a peça com id="titulo".
 const titulo = document.querySelector('#titulo')
+// 2) Troca o texto que a pessoa lê.
 titulo.textContent = 'Aula de DOM'
+// 3) (passo extra) Troca a cor. Se o texto já mudou, a ponte HTML↔JS está de pé.
 titulo.style.color = '#1F6A4A'
 
 const msg = document.querySelector('#msg')
@@ -692,12 +764,14 @@ gravar('javascript', 'eventos', {
     <p id="saida">Cliques: 0</p>`,
     js: 'script.js',
   }),
-  'script.js': `// addEventListener fica de ouvido. Cada clique soma 1 e mostra o total.
-
+  'script.js': `// Pasta: este script.js ao lado do index.html.
+// 1) Acha o botão e o parágrafo pelos ids do HTML.
 const botao = document.querySelector('#btn')
 const saida = document.querySelector('#saida')
+// 2) let porque o número de cliques muda.
 let cliques = 0
 
+// 3) Quando o evento "click" acontecer neste botão, rode a função.
 botao.addEventListener('click', function () {
   cliques = cliques + 1
   saida.textContent = 'Cliques: ' + cliques

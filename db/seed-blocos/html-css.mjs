@@ -2,142 +2,119 @@ import { md, conce, code, img, tente, ex, proxima } from './helpers.mjs'
 
 export const htmlCss = {
   'o-que-e-uma-pagina': [
-    md(`## O que você vai conseguir
+    md(`Uma página que você abre no Chrome é, na prática, três linguagens. Cada uma faz um trabalho. As três podem viver em arquivos separados na mesma pasta.
 
-Abrir um arquivo \`.html\` no Chrome e ver uma página. Saber o que HTML, CSS e JavaScript fazem — cada um o seu trabalho.`),
-    md(`## Três camadas, um site
-
-Um site que você abre no navegador é, na prática, três linguagens juntas.
-
-**HTML** é a estrutura. Títulos, parágrafos, botões, campos. Sem HTML não há página — só tela vazia.
+**HTML** é a estrutura. Título, parágrafo, botão, campo. Sem HTML não há página — a janela fica vazia.
 
 **CSS** é o visual. Cor, tamanho da letra, espaço. Sem CSS a página existe, mas parece um documento cru.
 
 **JavaScript** é a reação. Clique, conta, troca um texto sem recarregar. Sem JS a página só *está lá*.
 
-Esta trilha é o palco: HTML e CSS. JavaScript tem trilha própria, depois.`),
+Esta trilha é o palco: HTML e CSS. JavaScript tem trilha própria depois.`),
     img(
       '/images/trilhas/iniciante/tres-camadas.svg',
       'Três faixas: HTML estrutura, CSS visual, JavaScript reação',
-      { legenda: 'De cima para baixo: HTML estrutura, CSS veste, JavaScript reage.' },
+      { legenda: 'HTML estrutura, CSS veste, JavaScript reage.' },
     ),
     conce(
       'HTML',
-      'Linguagem que descreve a estrutura da página: o que é título, o que é parágrafo, o que é botão.',
+      'Linguagem da estrutura: o que é título, o que é parágrafo, o que é botão. É um arquivo de texto com extensão .html.',
     ),
-    md(`## Um arquivo, um duplo clique
+    md(`HTML vive num arquivo \`.html\`. Você já abriu arquivo no Chrome na trilha Antes de começar: arrastar para a janela, ou Arquivo → Abrir. Não precisa de internet para uma página só sua.
 
-HTML vive num arquivo de texto com extensão \`.html\`. Você escreve no editor, salva, e abre no Chrome (arrastar o arquivo para a janela, ou Arquivo → Abrir).
+O arquivo desta aula é uma página mínima. Você ainda **não** precisa entender cada linha do começo (DOCTYPE, head, body). Isso é a aula do esqueleto. Hoje o que importa: existe um arquivo, o Chrome desenha o texto que está nele.
 
-Não precisa de internet para uma página só sua. O navegador lê o arquivo e desenha.`),
-    md(`## Exemplo mínimo desta aula`),
+No VS Code: abra a **pasta** da aula, abra o \`.html\`, mude a frase, Ctrl+S, F5 no Chrome.
+
+[Não lembra de baixar e abrir?](/aprender/comecar/baixar-e-abrir)`),
     code(
-      `<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <title>Minha primeira página</title>
-  </head>
-  <body>
-    <p>Olá. Isto é uma página.</p>
-  </body>
-</html>`,
+      `<p>Olá. Isto é uma página.</p>`,
       'html',
     ),
     tente(
-      'Baixe o arquivo desta aula, salve numa pasta e abra no Chrome. Tem que aparecer a frase. Depois mude o texto entre <p> e </p>, salve, e recarregue (F5).',
+      'Baixe o arquivo, abra no Chrome. Tem que aparecer a frase. No VS Code, mude o texto entre as letras p, salve, F5. A frase nova tem que aparecer. Se o Chrome não mudar, faltou salvar ou faltou F5.',
     ),
     ex('Em uma frase: o que o HTML faz que o CSS sozinho não faz?'),
-    proxima(
-      'Na próxima aula o botão de baixar deixa de ser mistério: extrair o zip, abrir no Chrome e ver o JavaScript no Console.',
-    ),
+    proxima('Na próxima a peça de que o HTML é feito: a tag — abertura, conteúdo, fechamento.'),
   ],
 
-  'abrir-o-arquivo': [
-    md(`## O que você vai conseguir
+  'anatomia-da-tag': [
+    md(`HTML não é um texto corrido. Ele marca pedaços com **tags**.
 
-Baixar o pacote da aula, extrair se for zip, abrir no Chrome e conferir o JavaScript no Console. Sem isso, o botão de baixar não serve.`),
-    md(`## O botão no fim da aula
+Uma tag tem nome. O nome vai entre \`<\` e \`>\`.
 
-Toda aula que trabalha com código tem um botão **Baixar**. Às vezes é um arquivo só (\`.html\`). Às vezes é um \`.zip\` com dois ou três arquivos que precisam ficar **na mesma pasta**.
+Quase toda tag vem em **par**:
 
-O navegador guarda o download na pasta Downloads (ou Perguntar onde salvar, se você configurou).`),
-    conce(
-      'zip',
-      'Pacote compactado. Dentro vêm os arquivos da aula. Você extrai e só então abre o HTML. Não abra o zip como se fosse a página.',
+- abertura: \`<p>\`
+- conteúdo: o que a pessoa lê
+- fechamento: \`</p>\` — a barra diz “aqui acaba”.
+
+Junto: \`<p>Olá</p>\`.
+
+O \`p\` é parágrafo. O nome na abertura e no fechamento é o **mesmo**. Se você abre \`p\` e fecha \`h1\`, o HTML fica errado.`),
+    img(
+      '/images/trilhas/html-css/anatomia-tag.svg',
+      'A frase <p>Olá</p> decomposta em abertura, conteúdo e fechamento',
+      { legenda: 'Abertura, conteúdo, fechamento. A barra só no fechamento.' },
     ),
-    md(`## Se for um arquivo só
+    md(`**Atributo** é uma informação extra na abertura, não no conteúdo. Formato: nome, igual, valor entre aspas.
 
-Dois cliques no \`.html\`, ou arraste para a janela do Chrome (Arquivo → Abrir também vale). A página aparece. Não precisa de internet.
+Exemplo: \`<html lang="pt-BR">\`. \`lang\` é o atributo. \`"pt-BR"\` é o valor. Isso avisa: o texto está em português. Não aparece no meio da página. Mora na tag de abertura.
 
-Mude o texto no editor (Bloco de Notas, VS Code, o que você tiver), salve, volte no Chrome e aperte F5.`),
-    md(`## Se for um zip
+Ainda não vamos montar a página inteira. Só a peça.
 
-1. Botão direito no zip → Extrair / Extract / Descompactar. No Windows, “Extrair tudo”. No Mac, dois cliques. No Linux, “Extrair aqui”.
-2. Entre na pasta que saiu. Tem que existir um \`index.html\` (e, nesta aula, um \`script.js\`).
-3. Abra o \`index.html\` no Chrome. Se o HTML não achar o JS, os dois não estão na mesma pasta.
-
-Não abra o \`script.js\` no Chrome esperando ver a página. O JS é o cérebro; o HTML é a cara.`),
-    md(`## O JavaScript já rodou. O Console mostra.
-
-Este pacote tem HTML **e** JS. A página mostra uma frase. O script escreve outra no **Console**.
-
-F12 (no Mac, Cmd+Option+I) abre as ferramentas. Aba **Console**. Tem que aparecer a mensagem do \`script.js\`.
-
-Se a página abriu e o Console está vazio: o \`<script src="script.js">\` não achou o arquivo. Volte na pasta e confira os dois nomes.`),
+Mais na frente você vai ver tags que **não fecham** (\`img\`, \`meta\`, \`input\`). São exceção. Hoje: par de abertura e fechamento.`),
     conce(
-      'Console',
-      'Aba das ferramentas do navegador (F12) onde o JavaScript escreve mensagem e erro. Não é o meio da página.',
+      'tag',
+      'Marca com nome. Abertura <p>, conteúdo, fechamento </p>. Atributo (lang="pt-BR") vai na abertura.',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(
-      `<!-- index.html: a cara. O script no fim do body já chama o JS. -->
-<p id="frase">Se você lê isto no Chrome, o HTML abriu.</p>
-<script src="script.js"></script>`,
+      `<p>Um parágrafo.</p>
+<p lang="pt-BR">Outro parágrafo, com atributo na abertura.</p>`,
       'html',
     ),
-    code(
-      `// script.js: o cérebro. Roda sozinho quando a página abre.
-console.log('O JavaScript também rodou.')
-document.querySelector('#frase').textContent =
-  'HTML aberto. JS também — olhe o Console (F12).'`,
-      'javascript',
-    ),
+    md(`No arquivo baixado essas tags já estão no lugar certo da página (você vai aprender o nome desse lugar na próxima aula). Hoje: ache o \`<p>\` e o \`</p>\`. Troque só o conteúdo.`),
     tente(
-      'Baixe o zip desta aula. Extraia. Abra index.html no Chrome. A frase na página tem que mudar. F12 → Console: a mensagem do script tem que estar lá. Se a frase não mudar, HTML e JS não estão na mesma pasta.',
+      'Baixe o arquivo, abra no VS Code. Troque o texto entre <p> e </p>. Salve, abra no Chrome. O texto novo tem que aparecer. Depois escreva um segundo par <p>…</p> embaixo. Recarregue. Dois parágrafos.',
     ),
-    ex('Por que abrir só o script.js no Chrome não mostra a página?'),
-    proxima(
-      'Na próxima aula o esqueleto da página: cabeça, corpo, acentuação e celular.',
-    ),
+    ex('O que a barra em </p> está dizendo, que <p> sozinho não diz?'),
+    proxima('Na próxima o esqueleto da página: onde essas tags visíveis entram (body) e o que fica escondido (head).'),
   ],
 
   esqueleto: [
-    md(`## O que você vai conseguir
+    md(`Uma página HTML completa tem um esqueleto. Sem ele o Chrome “adivinha” e às vezes acento, aba e celular saem errados.
 
-Montar o esqueleto de toda página: doctype, html, head, body, charset, title e viewport.`),
-    md(`## Cada peça tem um lugar
+Peça por peça.`),
+    md(`\`<!DOCTYPE html>\` na primeira linha. Avisa: isto é HTML de verdade, não um documento antigo. Não é tag de conteúdo. Não fecha.
 
-\`<!DOCTYPE html>\` avisa o navegador: isto é HTML de verdade, não um documento antigo.
+\`<html lang="pt-BR">\` … \`</html>\` é a raiz. Tudo o mais fica **dentro**. O \`lang\` você já viu: atributo na abertura.
 
-\`<html lang="pt-BR">\` é a raiz. O \`lang\` ajuda o leitor de tela e o corretor.
+Dentro do \`html\` existem **dois** filhos, com trabalhos diferentes.`),
+    img(
+      '/images/trilhas/html-css/head-body.svg',
+      'Janela do Chrome: a aba vem do title no head; o meio da página vem do body',
+      { legenda: 'Aba = head (title). Meio da página = body.' },
+    ),
+    md(`**head** — o que a pessoa *não* vê no meio da página.
 
-**head** é o que a pessoa *não* vê no meio da página: título da aba, letras, links para CSS.
+- \`<title>…</title>\` — texto da **aba** do Chrome, não o título enorme no meio.
+- \`<meta charset="utf-8" />\` — acento (você, coração) aparece certo. Sem isso, “você” pode virar símbolo.
+- \`<meta name="viewport" … />\` — pede ao celular para usar a largura da tela, não um pôster minúsculo.
+- Mais tarde: o \`<link>\` do CSS também mora no head.
 
-**body** é o que aparece.
+**body** — o que aparece no meio da tela. Parágrafo, título, imagem, botão: **aqui**.
 
-\`charset="utf-8"\` faz acento não virar símbolo estranho. Sem isso, “você” pode aparecer quebrado.
+A tag \`<p>\` da aula passada não fica solta no arquivo. Ela vai **dentro do body**.
 
-\`viewport\` pede ao celular para não encolher a página como se fosse um pôster minúsculo.`),
+\`meta\` é da família que **não tem fechamento**. Por isso a barra no fim da tag, às vezes. Você não escreve \`</meta>\`.` ),
     conce(
-      'head e body',
-      'head = informações da página (aba, letras). body = o que aparece na tela.',
+      'body',
+      'Onde vai o que a pessoa vê. Título visível, parágrafo, lista, botão. Se a tag é conteúdo da página, ela mora no body.',
     ),
     conce(
-      'viewport',
-      'Instrução para o celular desenhar na largura da tela, não numa tela de computador reduzida.',
+      'head',
+      'Informações da página: aba (title), acento (charset), celular (viewport), mais tarde o CSS. Não é o texto do meio da tela.',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(
       `<!DOCTYPE html>
 <html lang="pt-BR">
@@ -152,29 +129,38 @@ Montar o esqueleto de toda página: doctype, html, head, body, charset, title e 
 </html>`,
       'html',
     ),
+    md(`Leia o arquivo baixado de cima a baixo. Cada comentário no HTML diz o que aquele pedaço faz. O \`<p>\` está no body de propósito.`),
     tente(
-      'Abra o arquivo baixado. Olhe a aba do Chrome: o título tem que ser Esqueleto. Troque o <title> e recarregue. No celular (ou no modo celular do F12), a página não deve ficar minúscula.',
+      'Abra o arquivo no Chrome. Olhe a aba: tem que estar escrito Esqueleto. No VS Code, troque o <title>, salve, F5. A aba muda. Troque o texto do <p> no body: o meio da página muda. Title não é o parágrafo.',
     ),
-    ex('Onde vai o título da aba: no head ou no body?'),
-    proxima('Na próxima aula o body ganha texto de verdade: títulos e parágrafos.'),
+    ex('O título da aba vai no head ou no body? E o parágrafo que a pessoa lê?'),
+    proxima('Na próxima o body ganha texto de verdade: h1, h2, parágrafo — e duas tags que parecem iguais mas não são.'),
   ],
 
   'texto-e-titulos': [
-    md(`## O que você vai conseguir
+    md(`Tudo desta aula vai **dentro do body**. O esqueleto (DOCTYPE, html, head) já está no arquivo. Você trabalha no meio.
 
-Escrever um título principal, subtítulos e parágrafos — e marcar ênfase sem gritar a página inteira.`),
-    md(`## Hierarquia, não tamanho
+**\`<h1>\`** é o título da página. Um por página. Não use três h1 “para ficar grande”: tamanho é CSS, depois. **\`<h2>\`** e **\`<h3>\`** são seções, como capítulos.
 
-\`<h1>\` é o título da página. Um por página. \`<h2>\` e \`<h3>\` são seções. Não use h1 só porque “fica grande”: o tamanho vem depois, no CSS.
+**\`<p>\`** é um parágrafo. Cada ideia, um p. Não junte dois assuntos no mesmo p só para economizar tag.
 
-\`<p>\` é um parágrafo. Cada ideia, um p.
-
-\`<strong>\` é importância. \`<em>\` é ênfase. No visual costumam virar negrito e itálico — o sentido é o que importa.`),
-    conce(
-      'h1',
-      'Título principal da página. Um só. h2 e h3 organizam o que vem abaixo, como capítulos.',
+Agora duas tags que o Chrome desenha parecido com “negrito” e “itálico” — e **não são a mesma coisa**.`),
+    img(
+      '/images/trilhas/html-css/strong-em.svg',
+      'Dois cartões: strong é importância; em é ênfase no tom',
+      { legenda: 'Mesmo que o visual lembre negrito e itálico, o motivo de cada tag é o sentido.' },
     ),
-    md(`## Exemplo mínimo desta aula`),
+    md(`**\`<strong>\`** marca **importância**. “Isso pesa.” Leitor de tela trata como importante. Use quando a palavra é crítica (um aviso, um ingrediente que não pode faltar).
+
+**\`<em>\`** marca **ênfase no tom**, como se você mudasse a voz. “O cheiro *importa*.” Não é o mesmo que strong. Trocar uma pela outra muda o significado, mesmo que uma fique mais gordinha e a outra inclinada.
+
+O Chrome, por padrão, desenha strong em negrito e em em itálico. Isso é **visual**. O motivo da tag é o sentido. Depois o CSS pode até mudar o visual; o sentido continua.
+
+Existem \`<b>\` e \`<i>\`: só visual, quase sem esse significado. Nestas aulas não use. Quer importância → strong. Quer ênfase → em.`),
+    conce(
+      'strong e em',
+      'strong = importância. em = ênfase no tom. Não são a mesma tag. Negrito e itálico são o desenho padrão, não o motivo.',
+    ),
     code(
       `<h1>Bolo de fubá</h1>
 <p>Receita curta para um lanche.</p>
@@ -183,32 +169,43 @@ Escrever um título principal, subtítulos e parágrafos — e marcar ênfase se
 <p>O cheiro <em>importa</em> mais que o relógio.</p>`,
       'html',
     ),
+    md(`No arquivo, esse bloco está dentro do body. Se você colar fora do body (por exemplo depois de \`</html>\`), o Chrome pode até mostrar, mas está no lugar errado.`),
     tente(
-      'No arquivo baixado, acrescente um h2 “Modo de fazer” e um parágrafo seu. Recarregue. O h1 continua um só.',
+      'No arquivo, deixe um único h1. Acrescente um h2 “Modo de fazer” e um p seu, ainda dentro do body. Recarregue. Depois troque o strong por em (só para ver): o sentido da frase muda, o visual também — não é a mesma tag.',
     ),
-    ex('Por que não colocar três h1 numa página só para “ficar grande”?'),
-    proxima('Na próxima aula: links, imagens com texto alternativo, e listas.'),
+    ex('Por que não colocar três h1 numa página só para “ficar grande”? Onde o tamanho da letra vai ser resolvido?'),
+    proxima('Na próxima: link, imagem (esta tag não fecha) e lista — sempre no body.'),
   ],
 
   'links-imagens-listas': [
-    md(`## O que você vai conseguir
+    md(`Continua no **body**. Três tags do dia a dia, uma de cada vez.`),
+    md(`**Link.** \`<a href="https://...">texto visível</a>\`.
 
-Fazer um link que abre outra página, uma imagem com \`alt\`, e uma lista com marcador ou número.`),
-    md(`## Três tags do dia a dia
+- \`a\` abre e fecha.
+- \`href\` é atributo na abertura: o destino.
+- O que a pessoa lê é o conteúdo, entre \`<a>\` e \`</a>\`. Não coloque o endereço cru como texto se puder evitar — coloque um nome (“Documentação na MDN”).`),
+    md(`**Imagem.** \`<img src="foto.jpg" alt="descrição curta">\`.
 
-Link: \`<a href="https://...">texto visível</a>\`. O \`href\` é o destino. O texto entre as tags é o que a pessoa lê.
+Esta **não fecha**. Não existe \`</img>\`. É tag void: a abertura já é o recado inteiro.
 
-Imagem: \`<img src="arquivo.jpg" alt="descrição curta">\`. Não tem tag de fechamento. O \`alt\` descreve a imagem para quem não a vê (leitor de tela, imagem que falhou).
+- \`src\` — o arquivo da figura (na mesma pasta, ou um endereço).
+- \`alt\` — texto para quem não vê a imagem (leitor de tela, imagem que falhou). Curto e honesto. Se a imagem é só enfeite, \`alt=""\`.
 
-Lista com marcador: \`<ul>\` com \`<li>\` dentro. Lista numerada: \`<ol>\` com \`<li>\`.` ),
+Não use o nome do arquivo como alt (\`img1.jpg\` não descreve nada).`),
     conce(
-      'alt',
-      'Texto alternativo da imagem. Curto e honesto. Se a imagem é só enfeite, alt pode ser vazio: alt="".',
+      'tag void',
+      'Tag sem fechamento. img, meta, input. Você não escreve </img>. Tudo que ela precisa vai em atributo na abertura.',
     ),
-    md(`## Exemplo mínimo desta aula`),
+    md(`**Lista.** Itens soltos não viram lista. Você envolve:
+
+- \`<ul>\` — marcador (bolinha)
+- \`<ol>\` — número
+- cada item: \`<li>…</li>\` **dentro** do ul ou do ol
+
+O \`li\` não fica órfão no body. Ele mora dentro da lista.`),
     code(
       `<p><a href="https://developer.mozilla.org/pt-BR/">Documentação na MDN</a></p>
-<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='120'%3E%3Crect fill='%231F6A4A' width='240' height='120'/%3E%3Ctext x='120' y='68' fill='white' text-anchor='middle' font-size='18'%3Ecaderno%3C/text%3E%3C/svg%3E" alt="Desenho simples de um caderno verde" />
+<img src="foto.jpg" alt="Desenho simples de um caderno verde" />
 <ul>
   <li>Farinha</li>
   <li>Ovo</li>
@@ -220,32 +217,36 @@ Lista com marcador: \`<ul>\` com \`<li>\` dentro. Lista numerada: \`<ol>\` com \
       'html',
     ),
     tente(
-      'Troque o href do link para um site que você usa. Acrescente um item na lista. Recarregue e clique no link (Ctrl+clique abre em outra aba).',
+      'No arquivo (body), troque o href do link para um site que você usa. Acrescente um <li> na lista. Recarregue. Ctrl+clique no link abre outra aba. O alt da imagem deve descrever o desenho, não o nome do arquivo.',
     ),
-    ex('O que o alt deve dizer se a imagem é um bolo de chocolate: “imagem1.jpg” ou “Bolo de chocolate fatiado”?'),
-    proxima('Na próxima aula cada peça ganha um nome: id e class. O JavaScript vai precisar disso.'),
+    ex('O alt de um bolo de chocolate deve ser “imagem1.jpg” ou “Bolo de chocolate fatiado”? Por quê?'),
+    proxima('Na próxima cada peça ganha um nome: id (único) e class (repetível). O JavaScript vai perguntar esses nomes.'),
   ],
 
   'nomear-pecas': [
-    md(`## O que você vai conseguir
+    md(`Ainda no **body**. Agora a tag ganha um nome no atributo da **abertura** — o mesmo lugar do \`href\` e do \`lang\`.
 
-Dar um \`id\` único e uma \`class\` reutilizável. Agrupar um pedaço com \`div\` sem inventar significado.`),
-    md(`## Nome na peça
+O JavaScript, na outra trilha, não “enxerga” a página como você. Ele pergunta: “cadê a peça chamada titulo?”. Esse nome é o \`id\` ou a \`class\`.` ),
+    md(`**\`id\`** — nome **único** na página. Ninguém mais pode ter o mesmo. Um título, um aviso, um botão especial.
 
-\`id="titulo"\` é um nome **único** na página. Ninguém mais pode ter o mesmo id. O JavaScript pergunta: “cadê o id titulo?” e acha.
+No HTML: \`<h1 id="titulo">\`. Na abertura. Sem espaço no valor. Sem acento no começo.
 
-\`class="card"\` pode se repetir. Vários cards, a mesma classe. O CSS veste todos de uma vez.
+**\`class\`** — nome que **várias** peças podem compartilhar. Três cartões iguais, a mesma class \`card\`. O CSS veste todos de uma vez. O JS pode achar o grupo.
 
-\`div\` é uma caixa genérica. Use quando precisa agrupar e **não** existe uma tag com sentido (título, parágrafo, lista). Não embrulhe tudo em div por costume.`),
+No HTML: \`<div class="card">\`.
+
+id e class não são a mesma coisa. id = um. class = muitos.`),
     conce(
       'id',
-      'Nome único de uma peça. No CSS e no JS, #titulo significa “o id chamado titulo”.',
+      'Nome único de uma peça. Atributo na abertura. No CSS e no JS, #titulo significa “o id chamado titulo”.',
     ),
     conce(
       'class',
-      'Nome que várias peças podem compartilhar. No CSS, .card significa “quem tem a classe card”.',
+      'Nome compartilhado. Várias peças, a mesma class. No CSS, o ponto (.card) significa “quem tem a classe card”.',
     ),
-    md(`## Exemplo mínimo desta aula`),
+    md(`**\`div\`** é uma caixa genérica. Não significa título, nem parágrafo, nem lista. Use quando precisa agrupar e **não** existe uma tag com sentido. Não embrulhe tudo em div por costume: um \`<p>\` já é parágrafo; não precisa de div em volta só para existir.
+
+O arquivo desta aula tem um h1 com id e dois blocos com a mesma class. Leia os comentários no HTML.`),
     code(
       `<h1 id="titulo">Minha página</h1>
 <div class="card">
@@ -257,30 +258,27 @@ Dar um \`id\` único e uma \`class\` reutilizável. Agrupar um pedaço com \`div
       'html',
     ),
     tente(
-      'No arquivo, ponha id="aviso" num parágrafo. Confira: só existe um id aviso. Dê class="card" em dois blocos.',
+      'No body, ponha id="aviso" num parágrafo — e confira: só existe um id aviso na página. Dê class="card" em dois blocos. Se você repetir o mesmo id em dois lugares, está errado: id não se repete.',
     ),
-    ex('Quando você usaria class em vez de id? Pense em três botões iguais versus um título único.'),
-    proxima('Na próxima aula: botão, campo, rótulo e formulário — ainda sem JavaScript.'),
+    ex('Três botões iguais num joguinho: id ou class? E o título único da página?'),
+    proxima('Na próxima: botão, campo, rótulo e formulário — ainda sem JavaScript.'),
   ],
 
   'botao-e-formulario': [
-    md(`## O que você vai conseguir
+    md(`Peças que a pessoa toca. Continuam no **body**. Ainda sem JavaScript: o formulário, ao enviar, recarrega a página. Isso é o padrão do HTML. Na trilha JS você cancela isso.`),
+    md(`**\`<button type="button">\`** — botão que **não** envia formulário. O JS (outra trilha) vai ouvir o clique. Se você esquecer o \`type\`, alguns botões dentro de form se comportam como enviar.
 
-Montar um botão, um campo de texto, um checkbox e um formulário com rótulo. Sem JavaScript: o form ainda recarrega, e está tudo bem.`),
-    md(`## Peças que a pessoa toca
+**\`<button type="submit">\`** — envia o form.
 
-\`<button type="button">\` é um botão que **não** envia formulário. O JavaScript (outra trilha) vai ouvir o clique.
+**\`<input>\`** — campo. Tag void (não fecha). \`type="text"\` é linha de texto. \`type="checkbox"\` é caixinha.
 
-\`<input>\` é um campo. \`type="text"\` é linha de texto. \`type="checkbox"\` é caixinha de marcar.
+**\`<label>\`** — o texto do campo. O atributo \`for\` aponta para o **id** do input (o id da aula passada). Clique na palavra = foco no campo. Melhor no celular e para leitor de tela.
 
-\`<label>\` liga o texto ao campo. Clique na palavra também foca o campo — melhor no celular e para quem usa leitor de tela. O \`for\` do label tem que ser o \`id\` do input.
-
-\`<form>\` agrupa campos. Sem JavaScript, enviar recarrega a página. Isso é o padrão do HTML. Na trilha JS você cancela isso com \`preventDefault\`.` ),
+**\`<form>\`** — agrupa campos. Enviar sem JS recarrega.`),
     conce(
       'label',
-      'Rótulo do campo. O atributo for aponta para o id do input. Clique no texto = clique no campo.',
+      'Rótulo do campo. for="nome" tem que ser o mesmo valor do id do input. Clique no texto = clique no campo.',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(
       `<form>
   <p>
@@ -301,36 +299,38 @@ Montar um botão, um campo de texto, um checkbox e um formulário com rótulo. S
       'html',
     ),
     tente(
-      'Abra o arquivo. Clique na palavra Nome: o cursor tem que ir para o campo. Aperte Enviar: a página recarrega (é o padrão). O botão “Só um botão” não envia.',
+      'Abra o arquivo no Chrome. Clique na palavra Nome: o cursor tem que ir para o campo (label+for+id). Aperte Enviar: a página recarrega — é o HTML, não um erro. O botão “Só um botão” não envia.',
     ),
-    ex('Qual a diferença entre type="submit" e type="button"?'),
-    proxima('Na próxima aula o CSS entra: arquivo separado, seletor, cor e letra.'),
+    ex('Qual a diferença entre type="submit" e type="button"? Quando cada um serve?'),
+    proxima('Na próxima o CSS: arquivo separado na mesma pasta, ligado no head, cor e letra.'),
   ],
 
   'css-ligar-e-vestir': [
-    md(`## O que você vai conseguir
-
-Ligar um arquivo CSS à página e mudar cor e letra de um título, de uma classe e de um id.`),
-    md(`## O HTML aponta, o CSS veste
-
-No \`head\`:
+    md(`Até agora a página estava nua. CSS é a roupa. Mora noutro arquivo, **na mesma pasta** do HTML.`),
+    img(
+      '/images/trilhas/comecar/pasta-html-css.svg',
+      'Pasta minha-aula com index.html e estilos.css',
+      { legenda: 'Os dois juntos. Se o CSS estiver em outra pasta, o HTML não veste.' },
+    ),
+    md(`No **head** (não no body):
 
 \`<link rel="stylesheet" href="estilos.css" />\`
 
-Três seletores no começo:
+\`href\` é o nome do arquivo vizinho. Tag void.
+
+No CSS, cada regra tem um **seletor** (quem vestir) e um bloco \`{ }\` com propriedades.
 
 - \`h1\` — todas as tags h1
-- \`.card\` — quem tem class="card" (o ponto é a classe)
-- \`#titulo\` — o id titulo (a cerquilha é o id)
+- \`.card\` — quem tem \`class="card"\` (o **ponto** é a class da aula de nomes)
+- \`#titulo\` — o \`id="titulo"\` (a **cerquilha** é o id)
 
-\`color\` é a cor do texto. \`font-size\` é o tamanho da letra. \`font-family\` é o tipo da letra.
+\`color\` — cor do texto. \`font-size\` — tamanho. \`font-family\` — tipo da letra.
 
 Dá para pôr CSS dentro de \`<style>\` no HTML. Arquivo separado escala melhor: uma roupa, várias páginas.`),
     conce(
       'seletor',
-      'O começo da regra CSS: quem vai ser vestido. h1, .card, #titulo.',
+      'O começo da regra CSS: quem vai ser vestido. h1 (tag), .card (class), #titulo (id).',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(
       `h1 {
   color: #1F6A4A;
@@ -346,33 +346,36 @@ Dá para pôr CSS dentro de \`<style>\` no HTML. Arquivo separado escala melhor:
 }`,
       'css',
     ),
+    md(`O zip tem \`index.html\` + \`estilos.css\`. No VS Code, abra a **pasta**. [Como baixar e abrir](/aprender/comecar/baixar-e-abrir).`),
     tente(
-      'Baixe o zip, extraia, abra o index.html. O título deve estar verde. No estilos.css, troque a cor do h1 e recarregue. Se nada mudar, o link no head não está achando o arquivo — os dois precisam estar na mesma pasta.',
+      'Extraia, abra index.html no Chrome. O título deve estar verde. No estilos.css, troque a cor do h1, Ctrl+S, F5. Se nada mudar: ou não salvou, ou o link no head não acha o arquivo — os dois na mesma pasta.',
     ),
     ex('No CSS, qual sinal usa class e qual usa id: ponto ou cerquilha?'),
-    proxima('Na próxima aula a caixa ganha margem, padding, borda — e três botões ficam lado a lado.'),
+    proxima('Na próxima a caixa: margin, padding, border — e três botões na mesma linha.'),
   ],
 
   'caixa-e-lado-a-lado': [
-    md(`## O que você vai conseguir
+    md(`No CSS, toda peça é uma caixa. Três espaços, de fora para dentro.`),
+    img(
+      '/images/trilhas/html-css/caixa.svg',
+      'Três retângulos: margin por fora, border a linha, padding entre a linha e o texto',
+      { legenda: 'margin = fora. border = a linha. padding = entre a linha e o texto.' },
+    ),
+    md(`**padding** — espaço *dentro*, entre a borda e o texto. O botão “respira”.
 
-Controlar o espaço em volta de uma peça (margin, padding, border) e colocar três botões na mesma linha com flex.`),
-    md(`## Toda peça é uma caixa
+**border** — a linha da caixa.
 
-**padding** é o espaço *dentro*, entre a borda e o texto.
+**margin** — espaço *fora*, entre esta caixa e a vizinha.
 
-**border** é a linha da caixa.
+Para **lado a lado**, o jeito simples no começo: o **pai** ganha flex.
 
-**margin** é o espaço *fora*, entre esta caixa e a vizinha.
+\`display: flex;\` + \`gap\` (espaço entre os filhos). Os três botões do joguinho de JavaScript vão viver assim.
 
-Para lado a lado, o jeito simples no começo é **flex** no pai:
-
-\`display: flex;\` + \`gap\` (espaço entre os filhos). Os três botões do joguinho de JavaScript vão viver assim.`),
+O HTML desta aula já tem um \`div class="botoes"\` no body com três \`button\`. O CSS veste o pai e os botões.`),
     conce(
       'flex',
-      'Jeito de alinhar filhos em linha (ou coluna). O pai ganha display: flex; os filhos se organizam.',
+      'Jeito de alinhar filhos em linha (ou coluna). O pai ganha display: flex; os filhos se organizam. gap é o espaço entre eles.',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(
       `.botoes {
   display: flex;
@@ -387,29 +390,29 @@ button {
       'css',
     ),
     tente(
-      'No zip, abra a página. Os três botões devem estar em fila. Aumente o gap no CSS. Ponha padding maior num botão e veja o texto “respirar”.',
+      'No zip, abra a página. Os três botões devem estar em fila. No CSS, aumente o gap. Ponha padding maior num botão e veja o texto respirar. Margin empurra o vizinho; padding não.',
     ),
     ex('padding é dentro ou fora da borda? E margin?'),
-    proxima(
-      'Na próxima aula você junta tudo numa página sua — e escolhe a porta: JavaScript ou HTML intermediário (em breve).',
-    ),
+    proxima('Na próxima você junta o básico numa página sua. A porta seguinte é o JavaScript.'),
   ],
 
   'projeto-pagina-sua': [
-    md(`## O que vai existir na tela no final
+    md(`Não é aula nova. É cola do que você já fechou.
 
-Uma página com título, um parágrafo, uma imagem com alt, uma lista, e um botão visível. Vestida com CSS (cor, letra, caixa). Sem JavaScript — o botão ainda não “faz” nada, e tudo bem.`),
-    md(`## O que desta trilha entra
+No final existe, no Chrome, uma página com:
 
-- Esqueleto com viewport
-- h1 e p
-- img + alt e uma lista
-- id ou class nas peças
-- botão
-- CSS num arquivo: cor, letra, um pouco de caixa
+- esqueleto (DOCTYPE, head com charset, viewport, title, link do CSS)
+- um \`h1\` (um só) e pelo menos um \`p\` no **body**
+- uma imagem com \`alt\` honesto
+- uma lista (\`ul\` ou \`ol\`)
+- um botão
+- CSS **num arquivo à parte** (cor, letra, um pouco de caixa)
 
-Não é aula nova. É cola.`),
-    md(`## Esqueleto mínimo`),
+O botão ainda não “faz” nada. Está tudo bem. Reagir é JavaScript.`),
+    img(
+      '/images/trilhas/comecar/pasta-html-css.svg',
+      'Pasta do projeto com index.html e estilos.css',
+    ),
     code(
       `<h1 id="titulo">Sobre mim</h1>
 <p>Um parágrafo verdadeiro, não um lorem.</p>
@@ -420,20 +423,16 @@ Não é aula nova. É cola.`),
 <button type="button">Oi</button>`,
       'html',
     ),
+    md(`O zip já traz um esqueleto comentado. Troque o texto por algo seu. A imagem pode continuar o desenho de exemplo.
+
+Checklist de pronto: abre no Chrome; tem h1, lista, imagem com alt, botão; o visual vem do CSS (não de style no meio do HTML). Se os cinco estiverem lá, o projeto está feito.
+
+A porta **agora** é o [JavaScript básico](/aprender/javascript/o-que-e-javascript). Mais HTML e CSS (layout, hover, página no celular) entram depois nesta trilha — o básico já abre o palco.`),
     tente(
-      'Baixe o zip. Troque o texto por algo seu. A imagem pode continuar o desenho de exemplo ou você aponta o src para uma foto na mesma pasta. Checklist: título, parágrafo, lista, imagem com alt, botão, CSS separado.',
+      'Baixe o zip, abra a pasta no VS Code, troque o conteúdo por algo seu, F5 no Chrome. Confira o checklist. [Como abrir o zip](/aprender/comecar/baixar-e-abrir).',
     ),
     ex(
-      'Checklist de pronto: a página abre no Chrome, tem h1, lista, imagem com alt, botão, e o visual vem do CSS (não de style no meio do HTML). Se os cinco estiverem lá, o projeto está feito.',
+      'Checklist: a página abre, tem h1, lista, imagem com alt, botão, CSS separado. Falta algum? Qual, e em que aula você viu essa peça?',
     ),
-    md(`## Duas portas
-
-Você tem palco.
-
-**JavaScript básico** — a página passa a reagir (Console, depois botão de verdade, um joguinho). É o caminho se o objetivo é programar.
-
-**HTML e CSS intermediário** — mais layout, hover, página no celular. **Em breve.** Quando abrir, você volta nesta trilha.
-
-Recomendado agora: [começar o JavaScript](/aprender/javascript/o-que-e-javascript).`),
   ],
 }

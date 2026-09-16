@@ -11,20 +11,27 @@ useHead({ title: 'Novidades — TechLearn' })
       apresentar um tema.
     </p>
     <ul v-if="data?.noticias?.length" class="mt-8 space-y-4">
-      <li v-for="n in data.noticias" :key="n.id" class="border border-linha rounded-md p-4 bg-white/40">
-        <NuxtLink
-          :to="`/novidades/${n.slug}`"
-          class="font-display text-2xl underline text-cerrado inline-flex items-center gap-2"
-        >
-          <i class="pi pi-file" aria-hidden="true" />
-          {{ n.titulo }}
+      <li v-for="n in data.noticias" :key="n.id" class="border border-linha rounded-md overflow-hidden bg-white/40">
+        <NuxtLink :to="`/novidades/${n.slug}`" class="block md:flex gap-4 items-stretch">
+          <img
+            v-if="n.imagem_capa"
+            :src="n.imagem_capa"
+            :alt="n.titulo"
+            class="w-full md:w-56 h-40 object-cover shrink-0"
+          />
+          <span class="block p-4">
+            <span class="font-display text-2xl underline text-cerrado inline-flex items-center gap-2">
+              <i class="pi pi-file" aria-hidden="true" />
+              {{ n.titulo }}
+            </span>
+            <span class="mt-1 block">{{ n.resumo }}</span>
+          </span>
         </NuxtLink>
-        <p class="mt-1">{{ n.resumo }}</p>
       </li>
     </ul>
     <p v-else class="mt-8 border border-linha p-4 rounded-md">
-      Ainda não publicamos novidades. Enquanto isso, comece pelo
-      <NuxtLink to="/aprender/html-css" class="underline text-cerrado">HTML e CSS</NuxtLink>.
+      Ainda não publicamos novidades. Enquanto isso, comece por
+      <NuxtLink to="/aprender/comecar" class="underline text-cerrado">Antes de começar</NuxtLink>.
     </p>
   </section>
 </template>

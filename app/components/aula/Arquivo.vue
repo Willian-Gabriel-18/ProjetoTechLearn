@@ -4,7 +4,10 @@ const ehZip = computed(() => String(props.conteudo?.href || '').toLowerCase().en
 </script>
 
 <template>
-  <div class="my-4">
+  <aside
+    class="my-6 border-2 border-cerrado rounded-md p-4 bg-postit/60"
+    role="note"
+  >
     <p>
       <a
         class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-mata text-papel font-bold hover:opacity-90"
@@ -15,18 +18,37 @@ const ehZip = computed(() => String(props.conteudo?.href || '').toLowerCase().en
         {{ conteudo.rotulo || 'Baixar arquivo' }}
       </a>
     </p>
-    <p class="mt-2 text-sm text-tinta/80">
+    <p class="mt-3 font-bold inline-flex items-center gap-2">
+      <i class="pi pi-folder-open" aria-hidden="true" />
+      Como abrir
+    </p>
+    <p class="mt-2 leading-relaxed">
       <template v-if="ehZip">
-        Extraia o zip, deixe os arquivos na mesma pasta e abra o
+        Extraia o zip. Deixe os arquivos na <strong>mesma pasta</strong>. Abra o
         <code class="fonte-codigo">index.html</code>
-        no Chrome. JavaScript: F12 → Console.
+        no Chrome (dois cliques ou arrastar para a janela). Não abra o
+        <code class="fonte-codigo">.css</code>
+        nem o
+        <code class="fonte-codigo">.js</code>
+        como se fossem a página.
       </template>
       <template v-else>
-        Abra o arquivo no Chrome (dois cliques ou arrastar para a janela).
+        Se for
+        <code class="fonte-codigo">.html</code>,
+        abra no Chrome. Se for
+        <code class="fonte-codigo">.js</code>
+        ou
+        <code class="fonte-codigo">.css</code>,
+        abra no VS Code.
       </template>
-      <NuxtLink to="/aprender/html-css/abrir-o-arquivo" class="underline text-cerrado ml-1">
-        Como abrir
+    </p>
+    <p class="mt-3">
+      <NuxtLink
+        to="/aprender/comecar/baixar-e-abrir"
+        class="underline text-cerrado font-bold"
+      >
+        Não lembra? Volte à aula de baixar e abrir
       </NuxtLink>
     </p>
-  </div>
+  </aside>
 </template>

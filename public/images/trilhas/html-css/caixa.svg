@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-labelledby="t d">
+  <title id="t">Caixa: margin, border, padding</title>
+  <desc id="d">Três retângulos um dentro do outro: margin por fora, border a linha, padding entre a linha e o texto.</desc>
+  <rect width="480" height="280" fill="#f4efe6"/>
+  <rect x="40" y="30" width="400" height="220" fill="#E8C872" stroke="#241c15" stroke-width="2"/>
+  <text x="240" y="52" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="14" fill="#241c15">margin — espaço fora</text>
+  <rect x="80" y="70" width="320" height="160" fill="#fff" stroke="#1F6A4A" stroke-width="8"/>
+  <text x="240" y="100" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="14" fill="#1F6A4A">border — a linha</text>
+  <rect x="120" y="120" width="240" height="90" fill="#f4efe6"/>
+  <text x="240" y="155" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="14" fill="#C24E1D">padding — espaço dentro</text>
+  <text x="240" y="180" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="16" fill="#241c15">texto</text>
+</svg>

@@ -26,7 +26,7 @@ conta.mostrar()
 const solta = conta.mostrar
 solta()`),
     tente(
-      'Rode os dois chamados. O segundo vira undefined (ou erro estrito). Depois: const mostra = () => console.log(conta.saldo) e chame mostra().',
+      'No Console, cole o objeto conta. Rode os dois chamados. O segundo vira undefined (ou erro estrito). Depois: const mostra = () => console.log(conta.saldo) e chame mostra().',
     ),
     ex('Em uma frase: this depende de como a função é chamada, não de onde foi escrita (na function clássica).'),
     proxima(
@@ -61,7 +61,7 @@ const b = new Conta(0)
 a.depositar(5)
 console.log(a.saldo, b.saldo)`),
     tente(
-      'Crie class Aluno { constructor(nome) { this.nome = nome } } e dois alunos. Logue os nomes — têm que ser independentes.',
+      'No Console: class Aluno { constructor(nome) { this.nome = nome } } e dois alunos. Logue os nomes — têm que ser independentes.',
     ),
     ex('Por que new Conta(10) e new Conta(0) não compartilham o mesmo saldo?'),
     proxima(
@@ -91,7 +91,7 @@ filho.saldo = 3
 console.log(filho.saldo)
 console.log(filho.tipo)`),
     tente(
-      'Confira Object.getPrototypeOf(filho) === pai. Depois mude pai.tipo e leia filho.tipo de novo.',
+      'No Console, cole o exemplo. Confira Object.getPrototypeOf(filho) === pai. Depois mude pai.tipo e leia filho.tipo de novo.',
     ),
     ex('Se o filho não tem tipo e o pai tem, de onde vem filho.tipo?'),
     proxima(
@@ -119,7 +119,7 @@ setTimeout(function () {
 }, 0)
 console.log('C')`),
     tente(
-      'Rode o bloco. A ordem é A, C, B. Encaixe um Promise.resolve().then(() => console.log(\'D\')) e descubra se D vem antes ou depois de B. Anote. Não precisa decorar o nome “microtask” agora — só a ordem que você viu.',
+      'No Console, rode o bloco. A ordem é A, B, C (C depois, mesmo com 0). Encaixe Promise.resolve().then(() => console.log(\'D\')) e anote se D vem antes ou depois de C. Não precisa decorar “microtask” agora.',
     ),
     ex('Por que setTimeout com 0 não roda na hora, antes do próximo console.log?'),
     proxima(
@@ -152,7 +152,7 @@ Evite \`alert\` na produção (o beta fazia isso — não vamos repetir). Um par
 console.log(lerJson('{"ok":true}'))
 console.log(lerJson('ops'))`),
     tente(
-      'Chame lerJson com um JSON válido e com a palavra banana. A página continua, o segundo devolve null.',
+      'No Console, cole lerJson. Chame com JSON válido e com a palavra banana. A página continua, o segundo devolve null.',
     ),
     ex('Por que é melhor um parágrafo “CEP não encontrado” do que um pop-up vermelho?'),
     proxima(
@@ -203,7 +203,7 @@ const p = document.querySelector('#nome')
 p.textContent = nome
 // p.innerHTML = nome  // não faça isso com dado de fora`),
     tente(
-      'Teste textContent com o texto acima: tem que aparecer o símbolo < na tela, não um alerta. Esse é o comportamento seguro.',
+      'Abra o zip no Chrome. textContent tem que mostrar o símbolo < na tela, não um alerta. Esse é o comportamento seguro. F12 se algo vermelho aparecer.',
     ),
     ex('Onde a senha do banco (DATABASE_URL) deve viver? (Pista: servidor / .env, nunca num arquivo que o Chrome baixa.)'),
     proxima(
@@ -234,7 +234,7 @@ fetch + async/await + preventDefault + textContent + try/catch. O iniciante e o 
   }
 }`),
     tente(
-      'Formulário + parágrafo de saída. Só números no CEP (8 dígitos). Loading, sucesso, CEP inexistente e falha de rede (desligue o Wi-Fi para ver o catch). Nada de innerHTML com a resposta.',
+      'Abra o zip da consulta. Formulário + parágrafo. CEP com 8 dígitos. Loading, sucesso, CEP inexistente e falha de rede (desligue o Wi-Fi). Nada de innerHTML com a resposta.',
     ),
     ex(
       'Checklist: preventDefault, trim, mensagem para humano, textContent. Se os quatro estiverem lá, o projeto está feito.',

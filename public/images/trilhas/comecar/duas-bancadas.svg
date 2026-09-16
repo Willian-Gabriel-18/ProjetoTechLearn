@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-labelledby="t d">
+  <title id="t">Duas bancadas: pasta ou Console</title>
+  <desc id="d">Esquerda: pasta com arquivos aberta no Chrome. Direita: aba Console do Chrome.</desc>
+  <rect width="720" height="240" fill="#f4efe6"/>
+  <rect x="24" y="24" width="320" height="192" rx="10" fill="#fff" stroke="#241c15" stroke-width="3"/>
+  <text x="184" y="58" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="18" fill="#1F6A4A">A — pasta + Chrome</text>
+  <text x="184" y="100" text-anchor="middle" font-family="ui-monospace, monospace" font-size="14" fill="#241c15">index.html</text>
+  <text x="184" y="122" text-anchor="middle" font-family="ui-monospace, monospace" font-size="14" fill="#241c15">estilos.css  script.js</text>
+  <text x="184" y="168" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="14" fill="#241c15">você vê a página</text>
+  <rect x="376" y="24" width="320" height="192" rx="10" fill="#241c15"/>
+  <text x="536" y="58" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="18" fill="#E8C872">B — Console</text>
+  <text x="536" y="100" text-anchor="middle" font-family="ui-monospace, monospace" font-size="14" fill="#f4efe6">F12 → aba Console</text>
+  <text x="536" y="132" text-anchor="middle" font-family="ui-monospace, monospace" font-size="14" fill="#8f8">> 2 + 2</text>
+  <text x="536" y="156" text-anchor="middle" font-family="ui-monospace, monospace" font-size="14" fill="#f4efe6">4</text>
+  <text x="536" y="190" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="14" fill="#f4efe6">você fala com o JS</text>
+</svg>

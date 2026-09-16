@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-labelledby="t d">
+  <title id="t">head e body</title>
+  <desc id="d">Janela do Chrome: a aba vem do head; o meio da página vem do body.</desc>
+  <rect width="720" height="260" fill="#f4efe6"/>
+  <rect x="80" y="24" width="560" height="212" rx="10" fill="#fff" stroke="#241c15" stroke-width="3"/>
+  <rect x="80" y="24" width="560" height="40" fill="#e8e0d4"/>
+  <text x="360" y="50" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="16" fill="#C24E1D">aba: vem do &lt;title&gt; no head</text>
+  <text x="360" y="130" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="22" fill="#1F6A4A">o que você lê aqui</text>
+  <text x="360" y="160" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="16" fill="#241c15">vive no body</text>
+</svg>

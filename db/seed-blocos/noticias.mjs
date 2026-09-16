@@ -3,9 +3,12 @@ export const noticias = [
     slug: 'backend-so-com-js',
     titulo: 'Dá para fazer o servidor inteiro em JavaScript?',
     resumo: 'Sim. A mesma língua do navegador também roda no servidor — com outro nome de casa.',
+    imagem_capa: '/images/novidades/salao-cozinha.jpg',
     markdown: `A pergunta parece maluca se você só viu JavaScript no Chrome. O navegador lê a página, o JS mexe no botão, fim. “Servidor” soa como outra profissão, outra língua.
 
 Não é.
+
+![Salão à esquerda, cozinha à direita, janela no meio](/images/novidades/salao-cozinha.jpg)
 
 ## O que é um servidor, em uma frase
 
@@ -41,9 +44,12 @@ Se alguém disser “JavaScript é só para pintar botão”, essa pessoa parou 
     slug: 'o-que-e-uma-api',
     titulo: 'O que é uma API — e por que seu site precisa falar com alguém?',
     resumo: 'O site na sua tela quase nunca tem todos os dados. Ele pede. Alguém responde. Esse combinado tem nome.',
+    imagem_capa: '/images/novidades/api-balcao.jpg',
     markdown: `Você abre um app de banco. O saldo aparece. O dinheiro não está no seu celular — está no banco. O app **pediu** o saldo e **recebeu** um número.
 
 Esse pedido e essa resposta, feitos de um jeito combinado, são uma **API**.
+
+![Balcão: um recado vai, um prato volta](/images/novidades/api-balcao.jpg)
 
 ## Sem a palavra difícil
 
@@ -86,9 +92,12 @@ Toda vez que a tela mostra um dado que não estava no arquivo HTML, alguém perg
     slug: 'ia-e-aprender-js',
     titulo: 'A IA já programa. Então para que eu vou aprender?',
     resumo: 'Ela escreve código rápido. Ela também escreve código errado com cara de certo. Quem lê ainda manda.',
+    imagem_capa: '/images/novidades/estudar.jpg',
     markdown: `A pergunta é honesta. Você viu o ChatGPT, o Copilot, o Grok, o Claude gerar uma função em três segundos. Por que sofrer no Console?
 
 Porque o que a IA faz bem e o que você precisa saber não são a mesma lista.
+
+![Pessoa estudando com caderno e tela](/images/novidades/estudar.jpg)
 
 ## O que a IA faz com código
 
@@ -130,9 +139,12 @@ A IA já programa. Você ainda precisa aprender a ler, a duvidar e a consertar. 
     slug: 'js-navegador-e-servidor',
     titulo: 'Se é o mesmo JavaScript, por que tem um no Chrome e outro no servidor?',
     resumo: 'Mesma gramática. Casas diferentes. O que cada um pode ver muda tudo.',
+    imagem_capa: '/images/novidades/duas-casas.jpg',
     markdown: `JavaScript nasceu no navegador, em 1995, para a página reagir. Décadas depois, a mesma língua saiu de casa e foi morar no servidor.
 
 As pessoas então perguntam: é a *mesma* coisa? Quase. A gramática é a mesma. A casa não.
+
+![Duas casas parecidas, trabalhos diferentes](/images/novidades/duas-casas.jpg)
 
 ## Gramática = as palavras que você já viu
 
@@ -178,11 +190,14 @@ Mesma gramática. Casa diferente. O navegador vê a página; o servidor vê o pe
     slug: 'o-que-e-json',
     titulo: 'O que é JSON — e por que a internet não manda o objeto direto?',
     resumo: 'Programa pensa em objeto. Fio de internet pensa em texto. JSON é o combinado entre os dois.',
+    imagem_capa: '/images/novidades/json.svg',
     markdown: `No JavaScript, um aluno pode ser isto:
 
 \`{ nome: 'Lia', idade: 19 }\`
 
 Isso é um **objeto**: pares de nome e valor na memória do programa. O problema: a internet não manda “memória de programa”. Manda texto. Bytes. Letras.
+
+![Ficha de objeto à esquerda, texto JSON à direita](/images/novidades/json.svg)
 
 Se cada linguagem mandasse seu objeto do jeito dela, Python não entenderia JavaScript, que não entenderia Go. Precisava de um combinado.
 
@@ -233,9 +248,12 @@ A internet não fala objeto. Fala texto. JSON é o texto combinado, com cara de 
     slug: 'javascript-nao-e-java',
     titulo: 'Por que todo mundo confunde JavaScript com Java?',
     resumo: 'O nome foi marketing. As linguagens não são parentes. A confusão é velha e ainda pega quem está começando.',
+    imagem_capa: '/images/novidades/java-nao-js.svg',
     markdown: `Você conta que está aprendendo JavaScript. Alguém responde: “ah, Java”. Você hesita. São a mesma coisa? Uma é a versão web da outra?
 
 Não.
+
+![Duas placas: Java e JavaScript](/images/novidades/java-nao-js.svg)
 
 ## De onde veio o nome
 

@@ -16,15 +16,17 @@ function aulasDoNivel(id) {
 function progressoNivel(id) {
   return data.value?.resumoProgresso?.porNivel?.[id] || null
 }
+
+const soUmNivel = computed(() => niveis.filter((nv) => aulasDoNivel(nv.id).length).length <= 1)
 </script>
 
 <template>
   <section class="mx-auto max-w-5xl px-4 py-10">
     <p v-if="error" class="border border-linha rounded-md p-6">
-      <span class="font-display text-2xl block">Esta trilha abre em breve.</span>
-      <span class="mt-2 block">Enquanto isso, comece pelo HTML e CSS.</span>
-      <NuxtLink to="/aprender/html-css" class="mt-4 inline-flex underline text-cerrado">
-        Ir para HTML e CSS
+      <span class="font-display text-2xl block">Esta trilha ainda não está no ar.</span>
+      <span class="mt-2 block">Enquanto isso, comece por Antes de começar.</span>
+      <NuxtLink to="/aprender/comecar" class="mt-4 inline-flex underline text-cerrado">
+        Ir para Antes de começar
       </NuxtLink>
     </p>
     <template v-else>
@@ -33,6 +35,7 @@ function progressoNivel(id) {
       </p>
       <h1 class="font-display text-4xl mt-2">{{ data.trilha.titulo }}</h1>
       <p class="mt-3 text-lg max-w-leitura">{{ data.trilha.descricao }}</p>
+      <AvisoAntesDeComecar v-if="data.trilha.id === 'html-css' || data.trilha.id === 'javascript'" />
       <AvisoRequisitoPagina v-if="data.trilha.id === 'javascript'" />
       <p v-if="data.resumoProgresso" class="mt-4 text-sm">
         {{ data.resumoProgresso.feitas }} de {{ data.resumoProgresso.total }} aulas
@@ -56,8 +59,13 @@ function progressoNivel(id) {
         />
       </div>
 
-      <section v-for="nv in niveis" :key="nv.id" class="mt-10">
-        <h2 class="font-display text-2xl">{{ nv.titulo }}</h2>
+      <section
+        v-for="nv in niveis"
+        v-show="aulasDoNivel(nv.id).length"
+        :key="nv.id"
+        class="mt-10"
+      >
+        <h2 v-if="!soUmNivel" class="font-display text-2xl">{{ nv.titulo }}</h2>
         <p v-if="progressoNivel(nv.id)?.total" class="mt-1 text-sm text-tinta/70">
           {{ progressoNivel(nv.id).feitas }} de {{ progressoNivel(nv.id).total }} aulas
         </p>
@@ -79,16 +87,13 @@ function progressoNivel(id) {
             }"
           />
         </div>
-        <ol v-if="aulasDoNivel(nv.id).length" class="mt-4 space-y-3">
+        <ol class="mt-4 space-y-3">
           <li v-for="a in aulasDoNivel(nv.id)" :key="a.id">
             <NuxtLink
               :to="`/aprender/${data.trilha.id}/${a.slug}`"
               class="flex gap-4 items-start border border-linha rounded-md p-4 hover:border-cerrado bg-white/50"
             >
-              <span
-                class="font-display text-2xl w-10 shrink-0"
-                :class="a.feita ? 'text-mata' : 'text-mata'"
-              >
+              <span class="font-display text-2xl w-10 shrink-0 text-mata">
                 <i v-if="a.feita" class="pi pi-check-circle" aria-hidden="true" />
                 <template v-else>{{ a.ordem }}</template>
               </span>
@@ -107,14 +112,16 @@ function progressoNivel(id) {
             </NuxtLink>
           </li>
         </ol>
-        <p
-          v-else
-          class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-md border border-linha text-tinta/60 font-bold"
-        >
-          <i class="pi pi-lock" aria-hidden="true" />
-          Em breve
-        </p>
       </section>
+
+      <p
+        v-if="data.trilha.id === 'html-css'"
+        class="mt-10 max-w-leitura leading-relaxed border border-linha rounded-md p-4 bg-white/40"
+      >
+        O básico desta trilha está no ar. Mais HTML e CSS (layout, página no celular) entram
+        depois. Agora o próximo passo é o
+        <NuxtLink to="/aprender/javascript" class="underline text-cerrado font-bold">JavaScript</NuxtLink>.
+      </p>
     </template>
   </section>
 </template>

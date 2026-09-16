@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" role="img" aria-labelledby="t d">
+  <title id="t">Anatomia de uma tag</title>
+  <desc id="d">A tag p decomposta em abertura, conteúdo e fechamento.</desc>
+  <rect width="720" height="200" fill="#f4efe6"/>
+  <text x="360" y="50" text-anchor="middle" font-family="ui-monospace, monospace" font-size="28" fill="#241c15">&lt;p&gt;Olá&lt;/p&gt;</text>
+  <text x="175" y="110" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="16" fill="#1F6A4A">abertura</text>
+  <text x="175" y="132" text-anchor="middle" font-family="ui-monospace, monospace" font-size="16" fill="#1F6A4A">&lt;p&gt;</text>
+  <text x="360" y="110" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="16" fill="#C24E1D">conteúdo</text>
+  <text x="360" y="132" text-anchor="middle" font-family="ui-monospace, monospace" font-size="16" fill="#C24E1D">Olá</text>
+  <text x="545" y="110" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="16" fill="#241c15">fechamento</text>
+  <text x="545" y="132" text-anchor="middle" font-family="ui-monospace, monospace" font-size="16" fill="#241c15">&lt;/p&gt;</text>
+  <text x="360" y="176" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="14" fill="#241c15">a barra no fechamento diz: aqui acaba o parágrafo</text>
+</svg>

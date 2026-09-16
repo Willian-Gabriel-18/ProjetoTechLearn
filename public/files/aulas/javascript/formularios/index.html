@@ -1,17 +1,26 @@
+<!--
+  Abra este arquivo no Chrome (dois cliques ou arrastar). No VS Code, abra a PASTA da aula, edite, Ctrl+S, volte no Chrome e F5.
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <!-- lang: o texto desta página está em português. -->
   <head>
+    <!-- head: aba, acento, celular, CSS. Não é o texto do meio da tela. -->
     <meta charset="utf-8" />
+    <!-- charset: acento (você, coração) aparece certo. -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- viewport: no celular a página usa a largura da tela. -->
     <title>Formulários — TechLearn</title>
   </head>
   <body>
+    <!-- body: o que a pessoa vê. -->
     <form id="form">
       <label for="cep">CEP</label>
       <input id="cep" type="text" />
       <button type="submit">Enviar</button>
     </form>
     <p id="saida"></p>
+    <!-- script no fim do body: o HTML já existe quando o JS procura o id. -->
     <script src="script.js"></script>
   </body>
 </html>

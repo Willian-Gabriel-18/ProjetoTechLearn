@@ -39,5 +39,6 @@ export default defineNuxtConfig({
     '/aprender/iniciante': { redirect: '/aprender/javascript' },
     '/aprender/intermediario': { redirect: '/aprender/javascript' },
     '/aprender/avancado': { redirect: '/aprender/javascript' },
+    '/aprender/html-css/abrir-o-arquivo': { redirect: '/aprender/comecar/baixar-e-abrir' },
   },
 })

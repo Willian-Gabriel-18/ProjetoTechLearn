@@ -2,7 +2,7 @@ export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, 'slug')
   const sql = db()
   const rows = await sql`
-    SELECT id, slug, titulo, resumo, corpo, publicado_em
+    SELECT id, slug, titulo, resumo, corpo, imagem_capa, publicado_em
     FROM noticias
     WHERE slug = ${slug} AND publicada = true
     LIMIT 1

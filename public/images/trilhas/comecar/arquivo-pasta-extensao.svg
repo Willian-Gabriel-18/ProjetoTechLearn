@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-labelledby="t d">
+  <title id="t">Arquivo, pasta e extensão</title>
+  <desc id="d">Três desenhos: um arquivo, uma pasta com arquivos dentro, e o nome pagina.html com a extensão destacada.</desc>
+  <rect width="720" height="280" fill="#f4efe6"/>
+  <g transform="translate(40,50)">
+    <rect x="18" y="28" width="88" height="110" rx="6" fill="#fff" stroke="#241c15" stroke-width="3"/>
+    <path d="M18 28 h52 l18 16 v94" fill="none" stroke="#241c15" stroke-width="3"/>
+    <text x="62" y="160" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="16" fill="#241c15">arquivo</text>
+    <text x="62" y="180" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#1F6A4A">pagina.html</text>
+  </g>
+  <g transform="translate(260,50)">
+    <path d="M20 44 h40 l12 16 h80 v90 h-132 z" fill="#E8C872" stroke="#241c15" stroke-width="3"/>
+    <rect x="36" y="78" width="36" height="44" fill="#fff" stroke="#241c15" stroke-width="2"/>
+    <rect x="80" y="78" width="36" height="44" fill="#fff" stroke="#241c15" stroke-width="2"/>
+    <text x="86" y="180" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="16" fill="#241c15">pasta</text>
+    <text x="86" y="200" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="13" fill="#241c15">guarda vários arquivos</text>
+  </g>
+  <g transform="translate(480,70)">
+    <rect x="0" y="40" width="200" height="56" rx="8" fill="#fff" stroke="#241c15" stroke-width="3"/>
+    <text x="16" y="75" font-family="ui-monospace, monospace" font-size="22" fill="#241c15">pagina</text>
+    <text x="102" y="75" font-family="ui-monospace, monospace" font-size="22" fill="#C24E1D">.html</text>
+    <text x="100" y="130" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="16" fill="#C24E1D">extensão</text>
+    <text x="100" y="150" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="13" fill="#241c15">diz o tipo do arquivo</text>
+  </g>
+</svg>

@@ -9,6 +9,14 @@ useHead({
     },
   ],
 })
+
+function rotuloTrilha(t) {
+  if (!t?.publicada) return ''
+  if (t.id === 'comecar') return 'O ponto de partida · ' + t.total_aulas + ' aulas'
+  if (t.id === 'html-css') return 'Básico no ar · ' + t.total_aulas + ' aulas'
+  if (t.id === 'javascript') return 'Básico, intermediário e avançado · ' + t.total_aulas + ' aulas'
+  return t.total_aulas + ' aulas'
+}
 </script>
 
 <template>
@@ -39,11 +47,11 @@ useHead({
           </p>
           <NuxtLink
             v-if="!data?.continuar && !data?.trilhaConcluida"
-            to="/aprender/html-css"
+            to="/aprender/comecar"
             class="inline-flex items-center gap-2 bg-mata text-papel font-bold px-5 py-3 rounded-md hover:opacity-90"
           >
             <i class="pi pi-book" aria-hidden="true" />
-            Começar pelo HTML
+            Começar por aqui
           </NuxtLink>
           <NuxtLink
             to="/aprender"
@@ -64,8 +72,10 @@ useHead({
 
     <section class="mx-auto max-w-5xl px-4 py-8">
       <h2 class="font-display text-2xl md:text-3xl">As trilhas</h2>
-      <p class="mt-2 text-tinta/80">Comece pelo HTML e CSS. O JavaScript usa essa página.</p>
-      <ol class="mt-6 grid md:grid-cols-2 gap-4">
+      <p class="mt-2 text-tinta/80">
+        Comece por Antes de começar. Depois HTML e CSS. O JavaScript usa essa página.
+      </p>
+      <ol class="mt-6 grid md:grid-cols-3 gap-4">
         <li
           v-for="t in data?.trilhas || []"
           :key="t.id"
@@ -76,11 +86,11 @@ useHead({
           <h3 class="font-display text-xl mt-1">{{ t.titulo }}</h3>
           <p class="mt-2 text-sm leading-relaxed flex-1">{{ t.descricao }}</p>
           <p v-if="t.publicada" class="mt-3 text-sm">
-            {{ t.total_aulas }} aulas
+            {{ rotuloTrilha(t) }}
             <span v-if="typeof t.feitas === 'number'"> · {{ t.feitas }} feitas</span>
           </p>
           <p
-            v-if="t.porNivel"
+            v-if="t.publicada && data?.logado && t.porNivel"
             class="mt-1 text-xs text-tinta/70"
           >
             <span v-if="t.porNivel.basico?.total">
@@ -93,7 +103,6 @@ useHead({
               · Avançado {{ t.porNivel.avancado.feitas }}/{{ t.porNivel.avancado.total }}
             </span>
           </p>
-          <p v-else class="mt-3 text-sm text-tinta/70">Em breve</p>
           <NuxtLink
             v-if="t.publicada"
             :to="`/aprender/${t.id}`"
@@ -102,13 +111,6 @@ useHead({
             Entrar na trilha
             <i class="pi pi-arrow-right text-xs" aria-hidden="true" />
           </NuxtLink>
-          <p
-            v-else
-            class="mt-3 inline-flex items-center gap-2 text-sm font-bold text-tinta/60"
-          >
-            <i class="pi pi-lock" aria-hidden="true" />
-            Em breve
-          </p>
         </li>
       </ol>
     </section>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-labelledby="t d">
+  <title id="t">Objeto versus JSON</title>
+  <desc id="d">À esquerda uma ficha com nome e cidade. À direita o mesmo dado escrito como texto JSON.</desc>
+  <rect width="720" height="240" fill="#f4efe6"/>
+  <rect x="30" y="30" width="300" height="180" rx="10" fill="#fff" stroke="#241c15" stroke-width="3"/>
+  <text x="180" y="70" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="18" fill="#1F6A4A">objeto (na memória)</text>
+  <text x="60" y="120" font-family="ui-monospace, monospace" font-size="16" fill="#241c15">nome: Lia</text>
+  <text x="60" y="150" font-family="ui-monospace, monospace" font-size="16" fill="#241c15">cidade: Recife</text>
+  <rect x="390" y="30" width="300" height="180" rx="10" fill="#fff" stroke="#241c15" stroke-width="3"/>
+  <text x="540" y="70" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, sans-serif" font-size="18" fill="#C24E1D">JSON (texto)</text>
+  <text x="420" y="120" font-family="ui-monospace, monospace" font-size="15" fill="#241c15">{"nome":"Lia",</text>
+  <text x="420" y="148" font-family="ui-monospace, monospace" font-size="15" fill="#241c15"> "cidade":"Recife"}</text>
+</svg>
