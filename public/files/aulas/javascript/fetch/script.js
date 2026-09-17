@@ -1,5 +1,5 @@
-// fetch chama uma URL. A resposta ainda não é o JSON: chame .json().
-// Troque o CEP (8 dígitos) pelo da sua rua.
+// fetch chama uma URL. A resposta AINDA NÃO é o JSON: chame .json().
+// ViaCEP é pública, sem senha. Troque o CEP (8 dígitos) pelo da sua rua.
 
 async function buscarCep(cep) {
   const url = 'https://viacep.com.br/ws/' + cep + '/json/'

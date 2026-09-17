@@ -10,9 +10,14 @@ export const img = (src, alt, extras = {}) => ({
   conteudo: { src, alt, credito: extras.credito || '', legenda: extras.legenda || '' },
 })
 export const tente = (instrucao) => ({ tipo: 'tente', conteudo: { instrucao } })
-export const ex = (enunciado) => ({ tipo: 'exercicio', conteudo: { enunciado } })
+export const ex = (enunciado, resposta = '') => ({
+  tipo: 'exercicio',
+  conteudo: { enunciado, resposta },
+})
 export const arq = (href, rotulo) => ({ tipo: 'arquivo', conteudo: { href, rotulo } })
-export const proxima = (frase) => md(`## Na próxima\n\n${frase}`)
+// href: caminho da aula seguinte. Sem href, a frase já traz o destino (fim de trilha).
+export const proxima = (frase, href) =>
+  md(`## Na próxima\n\n${href ? `[${frase}](${href})` : frase}`)
 
 function contarPalavras(s) {
   return String(s || '')
@@ -33,7 +38,7 @@ export function minutosAula(blocos, { projeto = false } = {}) {
       palavras += contarPalavras(c.instrucao)
       extra += 4
     } else if (b.tipo === 'exercicio') {
-      palavras += contarPalavras(c.enunciado)
+      palavras += contarPalavras(c.enunciado) + contarPalavras(c.resposta)
       extra += 2
     } else if (b.tipo === 'codigo') extra += 2
     else if (b.tipo === 'youtube') extra += 7

@@ -1,5 +1,5 @@
-// A função interna “lembra” o que estava à volta quando foi criada.
-// Cada chamada de criarContador() tem o próprio let n.
+// n vive DENTRO de criarContador. Cada chamada abre a própria gaveta.
+// A função de dentro “lembra” esse n (closure).
 
 function criarContador() {
   let n = 0
@@ -10,5 +10,7 @@ function criarContador() {
 }
 
 const a = criarContador()
-console.log(a())
-console.log(a())
+const b = criarContador()
+console.log('a', a()) // 1
+console.log('a', a()) // 2
+console.log('b', b()) // 1 — não briga com a

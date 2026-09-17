@@ -1,10 +1,13 @@
-// Inclui, marca feita no clique, lembra no localStorage. Sem innerHTML com texto cru: textContent.
+// Mini-projeto intermediário. Inclui, marca feita, lembra no localStorage.
+// textContent (nunca innerHTML com texto cru).
 
 const chave = 'techlearn-tarefas'
 const form = document.querySelector('#form')
 const campo = document.querySelector('#campo')
 const lista = document.querySelector('#lista')
 
+// localStorage só guarda string. JSON.parse volta para lista.
+// Se o texto estiver quebrado, devolve [] — limpar dados do site não pode crashar.
 function ler() {
   try {
     return JSON.parse(localStorage.getItem(chave) || '[]')

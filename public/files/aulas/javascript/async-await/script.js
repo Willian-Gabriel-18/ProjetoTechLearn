@@ -1,5 +1,5 @@
-// async function + await: espera sem virar escada de then.
-// Só funciona dentro de função async.
+// Mesma Promise, letra de passo a passo.
+// await só funciona dentro de função async. Pausa ESTA função, não a página.
 
 function esperar(ms) {
   return new Promise(function (resolve) {

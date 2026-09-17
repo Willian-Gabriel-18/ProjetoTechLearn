@@ -59,6 +59,7 @@ function camposVazios() {
     credito: '',
     instrucao: '',
     enunciado: '',
+    resposta: '',
   }
 }
 
@@ -90,7 +91,7 @@ function conteudoDoTipo() {
     case 'tente':
       return { instrucao: campos.instrucao }
     case 'exercicio':
-      return { enunciado: campos.enunciado }
+      return { enunciado: campos.enunciado, resposta: campos.resposta }
     default:
       return { markdown: campos.markdown }
   }
@@ -117,6 +118,7 @@ function preencherDe(bloco) {
   campos.credito = c.credito || ''
   campos.instrucao = c.instrucao || ''
   campos.enunciado = c.enunciado || ''
+  campos.resposta = c.resposta || ''
 }
 
 async function salvarMeta() {
@@ -296,6 +298,9 @@ useHead({ title: 'Editar aula — TechLearn' })
       <template v-else>
         <label class="block">Enunciado
           <textarea v-model="campos.enunciado" rows="4" class="mt-1 w-full border border-linha rounded px-2 py-1 bg-white" />
+        </label>
+        <label class="block">Resposta (oculta até o aluno clicar em Consultar resposta)
+          <textarea v-model="campos.resposta" rows="6" class="mt-1 w-full border border-linha rounded px-2 py-1 bg-white" />
         </label>
       </template>
 

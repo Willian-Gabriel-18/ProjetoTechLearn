@@ -1,11 +1,14 @@
-// try/catch segura o erro. A página continua. Evite alert na cara do aluno.
+// try tenta. catch pega o erro. finally roda sempre.
+// A página continua. Evite alert na cara de quem lê.
 
 function lerJson(texto) {
   try {
     return JSON.parse(texto)
   } catch (e) {
-    console.log('JSON inválido')
+    console.log('Não deu para ler esse texto como JSON.')
     return null
+  } finally {
+    console.log('tentativa de parse acabou')
   }
 }
 

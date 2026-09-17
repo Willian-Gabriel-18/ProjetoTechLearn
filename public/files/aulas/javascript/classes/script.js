@@ -1,5 +1,5 @@
-// class é um molde. constructor roda na hora do new.
-// this.saldo é o saldo desta conta, não de todas.
+// class = molde. constructor roda no new.
+// this.saldo é o saldo DESTA conta, não de todas.
 
 class Conta {
   constructor(saldo) {
@@ -10,6 +10,7 @@ class Conta {
   }
 }
 
-const c = new Conta(10)
-c.depositar(5)
-console.log(c.saldo)
+const a = new Conta(10)
+const b = new Conta(0)
+a.depositar(5)
+console.log(a.saldo, b.saldo) // 15 e 0 — duas gavetas

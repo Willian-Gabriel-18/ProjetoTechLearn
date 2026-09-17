@@ -20,6 +20,12 @@ function inline(src) {
     /\[([^\]]+)\]\((\/[^)]+)\)/g,
     '<a href="$2" class="underline text-cerrado">$1</a>',
   )
+  // URL solta (https://...) que ainda não virou <a>. Não pega o que já está em href="...".
+  h = h.replace(/(^|[^"'>=])(https?:\/\/[^\s<]+)/g, (tudo, antes, url) => {
+    const limpo = url.replace(/[).,;:!?]+$/, '')
+    const resto = url.slice(limpo.length)
+    return `${antes}<a href="${limpo}" class="underline text-cerrado" target="_blank" rel="noopener noreferrer">${limpo}</a>${resto}`
+  })
   return h
 }
 

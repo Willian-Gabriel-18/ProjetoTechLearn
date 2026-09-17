@@ -1,4 +1,5 @@
-// textContent trata o texto como texto. innerHTML com dado de fora abre XSS.
+// textContent trata o texto como texto. innerHTML com dado de fora abre XSS
+// (o navegador executaria o onerror e um alerta apareceria).
 
 const nome = '<img src=x onerror=alert(1)>'
 const p = document.querySelector('#nome')

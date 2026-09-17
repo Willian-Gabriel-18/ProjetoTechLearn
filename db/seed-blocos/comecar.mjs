@@ -17,6 +17,7 @@ Nas aulas daqui para a frente você vai ouvir “deixe na mesma pasta”. Quer d
 - \`.html\` — página para o Chrome
 - \`.css\` — roupa da página
 - \`.js\` — JavaScript
+- \`.jpg\` (ou \`.png\`) — foto / desenho. Não é página. Dois cliques abrem o visualizador de imagem, não o Chrome como site.
 
 \`pagina.html\` e \`pagina.css\` não são o mesmo arquivo. O nome antes do ponto pode até ser igual; a extensão muda o tipo.
 
@@ -25,7 +26,7 @@ No Windows, a extensão às vezes **fica escondida**. Aí você vê só \`pagina
 No Mac, Finder → Ajustes → Avançado → mostrar todas as extensões.`),
     conce(
       'extensão',
-      'O pedaço do nome depois do ponto (.html, .css, .js). Diz o tipo do arquivo. Sem ela visível, é fácil salvar “pagina” e o Chrome não tratar como página.',
+      'O pedaço do nome depois do ponto (.html, .css, .js, .jpg). Diz o tipo do arquivo. Sem ela visível, é fácil salvar “pagina” e o Chrome não tratar como página.',
     ),
     md(`Nomeie simples. Evite espaço e acento no começo da vida: \`minha-aula\` é mais seguro que \`Minha Aula 1\`. Maiúscula e minúscula importam em alguns sistemas: \`Index.html\` e \`index.html\` podem ser dois arquivos.
 
@@ -33,8 +34,14 @@ Na próxima aula o Chrome entra. Antes: confira se você vê \`.html\` no nome d
     tente(
       'No seu computador, abra a pasta Downloads. Se os nomes não mostram .zip, .pdf, .html, ligue a opção de extensões (Windows ou Mac, texto acima). Só passe daqui quando você vir o ponto e a extensão.',
     ),
-    ex('O que a extensão .html está dizendo ao computador que a extensão .jpg não diz?'),
-    proxima('Na próxima: o Chrome é o programa da janela. Google é busca — um site, dentro do Chrome.'),
+    ex(
+      'O que a extensão .html está dizendo ao computador que a extensão .jpg não diz?',
+      '`.html` diz: isto é uma **página** — o Chrome sabe desenhar o conteúdo como site. `.jpg` diz: isto é uma **foto**. O computador abre no visualizador de imagem, não como página da web. A extensão é o recado do tipo; o nome antes do ponto pode até ser igual.',
+    ),
+    proxima(
+      'Na próxima: o Chrome é o programa da janela. Google é busca — um site, dentro do Chrome.',
+      '/aprender/comecar/chrome-nao-e-google',
+    ),
   ],
 
   'chrome-nao-e-google': [
@@ -42,7 +49,9 @@ Na próxima aula o Chrome entra. Antes: confira se você vê \`.html\` no nome d
 
 **Chrome** é o programa: a janela com abas, o endereço em cima, os três pontinhos. Você instala o Chrome. Ele abre arquivos da sua pasta e também sites da internet.
 
-**Google** é um site de busca. Você chega nele *pelo* Chrome (ou por outro navegador). Google não abre o seu \`index.html\` que está no computador.`),
+**Google** é um site de busca. Você chega nele *pelo* Chrome (ou por outro navegador). Google não abre o seu \`index.html\` que está no computador.
+
+A pasta **Downloads** também é no seu computador — é uma gaveta, como a da [aula de arquivo e pasta](/aprender/comecar/arquivo-pasta-extensao). Colar o nome do arquivo na busca do Google procura na **internet**, não nessa gaveta.`),
     img(
       '/images/trilhas/comecar/chrome-nao-google.svg',
       'Janela do Chrome ao lado de um campo de busca do Google',
@@ -72,8 +81,14 @@ Celular abre o TechLearn. Escrever arquivo, salvar e recarregar é trabalho de *
     tente(
       'Crie no Bloco de Notas ou no VS Code um arquivo chamado teste.html com o texto Olá, salve numa pasta, arraste para o Chrome. Tem que aparecer Olá. Mude o texto, salve, F5. O Chrome tem que mostrar o texto novo.',
     ),
-    ex('Por que “abrir no Google” não funciona para um arquivo que está na sua pasta Downloads?'),
-    proxima('Na próxima o editor: o programa em que você escreve o código. Não é Word.'),
+    ex(
+      'Por que colar o nome do arquivo na busca do Google não abre a página que está no seu computador?',
+      'Google é um **site de busca na internet**. O arquivo está numa pasta do seu computador (Downloads, Área de trabalho, etc.). A busca não enxerga essa gaveta. Quem abre o `.html` local é o **Chrome**: arraste o arquivo para a janela ou use Arquivo → Abrir arquivo. O endereço fica `file:///...`.',
+    ),
+    proxima(
+      'Na próxima o editor: o programa em que você escreve o código. Não é Word.',
+      '/aprender/comecar/editor-vscode',
+    ),
   ],
 
   'editor-vscode': [
@@ -89,7 +104,7 @@ Celular abre o TechLearn. Escrever arquivo, salvar e recarregar é trabalho de *
       'Janela do VS Code com a lista de arquivos à esquerda e o texto do HTML no meio',
       { legenda: 'Esquerda: a pasta. Meio: o arquivo aberto. Abra a pasta, não um arquivo solto.' },
     ),
-    md(`Instale pelo site oficial do VS Code (code.visualstudio.com). Na primeira abertura, pode escolher português.
+    md(`Instale pelo site oficial do VS Code: [code.visualstudio.com](https://code.visualstudio.com). Na primeira abertura, pode escolher português.
 
 O gesto que as aulas vão pedir:
 
@@ -108,8 +123,14 @@ Se você abrir só um arquivo solto, o VS Code não “enxerga” o vizinho. Aí
     tente(
       'Instale o VS Code se ainda não tem. Crie uma pasta minha-primeira-pasta no computador. No VS Code: Abrir pasta → essa pasta. Arquivo → Novo arquivo → salve como ola.html dentro dela. Escreva Olá e salve. Confira: o nome aparece à esquerda, na pasta.',
     ),
-    ex('Por que colar o código no Word e salvar como .html costuma dar página quebrada no Chrome?'),
-    proxima('Na próxima os atalhos do VS Code que as outras aulas vão citar: salvar, formatar, comentar.'),
+    ex(
+      'Por que colar o código no Word e salvar como .html costuma dar página quebrada no Chrome?',
+      'Word (e Google Docs, WhatsApp) grava **formatação escondida**: fonte, negrito, marcas que você não vê. O Chrome espera texto puro com tags. Esse lixo entra no arquivo e a página quebra sem um recado claro. Código vai no **VS Code** (ou outro editor), não no Word.',
+    ),
+    proxima(
+      'Na próxima os atalhos do VS Code que as outras aulas vão citar: salvar, formatar, comentar.',
+      '/aprender/comecar/atalhos-vscode',
+    ),
   ],
 
   'atalhos-vscode': [
@@ -136,8 +157,14 @@ Crie arquivo novo: clique com o botão direito na pasta à esquerda → New File
     tente(
       'No VS Code, abra a pasta da aula anterior (ou crie uma). Escreva três linhas tortas num .html, Shift+Alt+F. O texto deve alinhar. Ctrl+S. Depois Ctrl+/ numa linha: ela vira comentário.',
     ),
-    ex('Você mudou o HTML, apertou F5 no Chrome e nada mudou. Qual atalho provavelmente faltou no VS Code?'),
-    proxima('Na próxima o botão de baixar deste site: zip, mesma pasta, abrir o HTML — para HTML+CSS e para JavaScript.'),
+    ex(
+      'Você mudou o HTML, apertou F5 no Chrome e nada mudou. Qual atalho provavelmente faltou no VS Code?',
+      '**Ctrl+S** (no Mac, **Cmd+S**). O Chrome lê o arquivo no disco. Se a aba no VS Code ainda tem um pontinho, a mudança não foi gravada. F5 recarrega a versão velha. Salve, depois F5.',
+    ),
+    proxima(
+      'Na próxima o botão de baixar deste site: zip, mesma pasta, abrir o HTML — para HTML+CSS e para JavaScript.',
+      '/aprender/comecar/baixar-e-abrir',
+    ),
   ],
 
   'baixar-e-abrir': [
@@ -175,12 +202,18 @@ Dois jeitos que as trilhas vão usar — a regra é a mesma:`),
 
 No VS Code: **Abrir pasta** na pasta extraída (ou em cada subpasta). Edite, Ctrl+S, F5 no Chrome.
 
-Esqueceu este gesto no meio de outra aula? O botão de baixar tem o link de volta para cá.`),
+Esqueceu este gesto no meio de outra aula? O botão de baixar tem o link de volta para cá — e para a aula das [duas bancadas](/aprender/comecar/duas-bancadas).`),
     tente(
       'Baixe o zip desta aula. Extraia. Abra html-css/index.html no Chrome — deve ter um título verde. Abra javascript/index.html — a frase na página deve mudar. Se não mudar / não pintar, os dois arquivos daquela pasta não estão juntos.',
     ),
-    ex('Por que abrir só o arquivo script.js no Chrome não mostra a página da aula?'),
-    proxima('Na próxima as duas bancadas: quando o teste é a página no Chrome, e quando o teste é o Console (F12).'),
+    ex(
+      'Por que abrir só o arquivo script.js no Chrome não mostra a página da aula?',
+      '`.js` não é a página. É o companheiro que o HTML chama. A cara da aula é o **`index.html`**. Abra o HTML no Chrome; o `script.js` precisa estar na **mesma pasta**. Dois cliques no `.js` mostram código (ou o Chrome tenta baixar), não o desenho da página.',
+    ),
+    proxima(
+      'Na próxima as duas bancadas: quando o teste é a página no Chrome, e quando o teste é o Console (F12).',
+      '/aprender/comecar/duas-bancadas',
+    ),
   ],
 
   'duas-bancadas': [
@@ -207,7 +240,13 @@ Esqueceu de baixar e extrair? [Baixar e abrir o pacote](/aprender/comecar/baixar
     tente(
       'Abra o Chrome. F12. Aba Console. Digite 1 + 1 e Enter. Tem que aparecer 2. Depois abra qualquer index.html de uma pasta sua: isso é a bancada A. Os dois lugares existem no mesmo Chrome.',
     ),
-    ex('Você vai testar let cidade = "Recife" e console.log(cidade). Qual bancada: pasta+Chrome ou Console?'),
-    proxima('Acabou o ponto de partida. A próxima trilha é HTML e CSS: o palco. JavaScript usa esse palco.'),
+    ex(
+      'Você vai testar let cidade = "Recife" e console.log(cidade). Qual bancada: pasta+Chrome ou Console?',
+      '**Console** (bancada B). `let` e `console.log` são JavaScript puro: o resultado aparece na aba Console (F12), não no meio da página. Pasta+Chrome entra quando a aula pede para abrir um `index.html` e ver o título, o botão, a cor.',
+    ),
+    proxima(
+      'Acabou o ponto de partida. A próxima trilha é HTML e CSS: o palco. JavaScript usa esse palco.',
+      '/aprender/html-css/o-que-e-uma-pagina',
+    ),
   ],
 }

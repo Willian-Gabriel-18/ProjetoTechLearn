@@ -1,2 +1,12 @@
-.botoes { display: flex; gap: 0.75rem; }
-button { padding: 0.6rem 1rem; }
+/* Os três botões em fila: o PAI ganha flex. gap = espaço entre eles.
+   É a mesma ideia da aula de caixa (HTML e CSS). */
+
+.botoes {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* padding = espaço DENTRO da borda. O texto do botão respira. */
+button {
+  padding: 0.6rem 1rem;
+}

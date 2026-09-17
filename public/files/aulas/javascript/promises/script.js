@@ -1,4 +1,5 @@
-// Promise: um valor que ainda não chegou. then = quando chegar. catch = se falhar.
+// Promise = valor futuro. then = quando chegar. catch = se falhar.
+// A página NÃO trava: “isso sai antes” aparece primeiro.
 
 const espera = new Promise(function (resolve) {
   setTimeout(function () {

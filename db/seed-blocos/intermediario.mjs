@@ -2,24 +2,22 @@ import { md, conce, code, img, tente, ex, proxima } from './helpers.mjs'
 
 export const intermediario = {
   'arrays-map-filter': [
-    md(`## O que você vai conseguir
+    md(`No [iniciante](/aprender/javascript/arrays) você percorreu uma lista com \`for\`. Funciona. Fica comprido.
 
-Transformar e filtrar listas com \`map\` e \`filter\` — sem um \`for\` gigante.`),
-    md(`## A lista nova, a lista velha intacta
+Três métodos devolvem (ou visitam) a lista sem você escrever o índice na mão. Os dois primeiros **não mudam** a lista original: entregam outra.
 
-\`map\` devolve **outra** lista, do mesmo tamanho, cada item transformado.
+Bancada desta aula: **Console** (F12). O zip, se quiser, já roda o mesmo código.`),
+    md(`**\`map\`** — mesma quantidade de itens, cada um transformado. Lista de preços em real → lista em centavos. Lista de nomes → lista em maiúsculo.
 
-\`filter\` fica só com quem passa no teste.
+**\`filter\`** — fica só quem passa no teste. Produtos abaixo de 50. Notas que passaram.
 
-Os dois **não** mudam a lista original. \`forEach\` só visita; não é para construir outra lista.`),
+**\`find\`** — o **primeiro** que passa no teste (um item, não uma lista). Se ninguém passar, \`undefined\`.
+
+**\`forEach\`** só visita. Não devolve lista nova. Se você precisa do resultado, use map ou filter.`),
     conce(
-      'map / filter',
-      'Os dois devolvem lista nova. map: mesmo tamanho, item transformado. filter: só quem passa no teste.',
+      'map / filter / find',
+      'map: lista nova, mesmo tamanho, item transformado. filter: lista nova, só quem passa. find: o primeiro que passa (ou undefined). Nenhum dos três altera a lista original.',
     ),
-    md(`## Onde isso aparece no dia a dia
-
-Lista de produtos: ficar só com preço abaixo de 50. Lista de nomes: deixar tudo maiúsculo. Lista de alunas: achar quem mora em Recife.`),
-    md(`## Exemplo mínimo desta aula`),
     code(`const notas = [5, 7, 9, 4]
 const comUm = notas.map(function (n) {
   return n + 1
@@ -27,28 +25,40 @@ const comUm = notas.map(function (n) {
 const passou = notas.filter(function (n) {
   return n >= 6
 })
+const primeira = notas.find(function (n) {
+  return n >= 6
+})
 console.log(comUm)
-console.log(passou)`),
+console.log(passou)
+console.log(primeira)
+console.log(notas)`),
+    md(`\`map\` e \`filter\` devolvem **outra** lista. \`notas\` continua \`[5, 7, 9, 4]\`. Isso importa: você não perde o original.
+
+O teste do filter/find é uma função que devolve verdadeiro ou falso. \`n % 2 === 0\` é “é par”.`),
     tente(
-      'No Console (F12): const nomes = [\'ana\', \'bia\']. Use map para deixar tudo maiúsculo (n.toUpperCase()). console.log do resultado.',
+      'No Console (F12): const nomes = [\'ana\', \'bia\']. Use map para deixar tudo maiúsculo (n.toUpperCase()). console.log do resultado. Depois filter para ficar só com nomes com mais de 3 letras.',
     ),
-    ex('Qual método você usa para ficar só com os números pares de [1, 2, 3, 4]?'),
+    ex(
+      'Qual método você usa para ficar só com os números pares de [1, 2, 3, 4]?',
+      '`filter`. Ele devolve uma lista nova só com quem passa no teste. `const pares = [1, 2, 3, 4].filter(function (n) { return n % 2 === 0 })` → `[2, 4]`. `map` transformaria cada item (continuaria com 4 números). `find` pegaria só o primeiro par (`2`).',
+    ),
     proxima(
-      'Na próxima aula o código moderno fica mais curto: arrow, crase no texto, e desmontar objeto em variáveis.',
+      'Na próxima o código moderno fica mais curto: arrow, crase no texto, e desmontar objeto em variáveis.',
+      '/aprender/javascript/funcoes-es6',
     ),
   ],
 
   'funcoes-es6': [
-    md(`## O que você vai conseguir
+    md(`O JavaScript de hoje escreve a mesma função de um jeito mais curto. Não é outra linguagem. É letra menor para o que você já fez no [iniciante](/aprender/javascript/funcoes).
 
-Ler uma arrow function e uma template string como código do dia a dia — não como magia.`),
-    md(`## O mesmo, escrito menor
+Bancada: **Console**.`),
+    md(`**Arrow** \`() =>\` é forma curta de função. Se o corpo é uma expressão só, o \`return\` vem implícito: \`(n) => n * 2\` é o dobro.
 
-Arrow \`() =>\` é forma curta de função. Se só há uma expressão, o \`return\` é implícito.
+**Template string** — texto entre crases. Dentro, \`\${nome}\` encaixa o valor no meio da frase. Mais legível que vários \`+\`.
 
-Texto entre crases (\`\\\` \\\`) encaixa valor no meio com \`\${ }\`. Mais legível que vários \`+\`.
+**Desestruturar** — \`const { cidade } = aluno\` tira a chave \`cidade\` para uma variável. É o mesmo que \`const cidade = aluno.cidade\`.
 
-\`const { cidade } = aluno\` tira a chave cidade para uma variável. \`[...lista]\` copia um array.`),
+**Spread** \`[...lista]\` — os três pontinhos **espalham** os itens. Num array novo, isso **copia** os valores.`),
     conce(
       'arrow function',
       'Forma curta de função. Se só há uma expressão, o return é implícito. Cuidado: o this dela é diferente — isso fica para o avançado.',
@@ -57,7 +67,11 @@ Texto entre crases (\`\\\` \\\`) encaixa valor no meio com \`\${ }\`. Mais legí
       'template string',
       'Texto entre crases. ${} encaixa valor no meio da frase.',
     ),
-    md(`## Exemplo mínimo desta aula`),
+    md(`Por que a cópia importa. Duas variáveis podem apontar para **a mesma** lista:
+
+\`const a = [1, 2]\` e \`const b = a\`. Se você faz \`b[0] = 9\`, \`a[0]\` também vira 9: é o mesmo array com dois nomes.
+
+\`const c = [...a]\` cria **outra** lista, com os mesmos números. \`c[0] = 9\` não mexe em \`a\`. Os três pontinhos copiam os itens para um array novo; não apontam para o antigo.`),
     code(`const dobro = (n) => n * 2
 const nome = 'Lia'
 const frase = \`Olá, \${nome}. O dobro de 4 é \${dobro(4)}.\`
@@ -65,26 +79,29 @@ console.log(frase)
 
 const aluno = { nome: 'Lia', cidade: 'Recife' }
 const { cidade } = aluno
-const copias = [...[1, 2], 3]
-console.log(cidade, copias)`),
+const original = [1, 2]
+const copia = [...original]
+copia[0] = 9
+console.log(cidade, original, copia)`),
     tente(
-      'No Console: reescreva function soma(a, b) { return a + b } como arrow. Teste soma(1, 2) e logue.',
+      'No Console: reescreva function soma(a, b) { return a + b } como arrow. Teste soma(1, 2). Depois: const a = [1, 2]; const b = [...a]; b.push(3); console.log(a, b) — a tem que continuar com 2 itens.',
     ),
-    ex('Por que [...] copia um array em vez de apontar para o mesmo? (Pista: se mudar a cópia, o original fica.)'),
+    ex(
+      'O que [...lista] faz — e por que o array original não muda se você alterar a cópia?',
+      '`[...lista]` cria um **array novo** com os mesmos itens. É cópia, não o mesmo objeto. Por isso `copia[0] = 9` não altera `lista`. Se você fizer `const b = lista` (sem os pontinhos), `b` e `lista` são a **mesma** gaveta: mudar um muda o outro.',
+    ),
     proxima(
-      'Na próxima aula você explica por que uma variável de dentro da função não existe fora — e por que um contador “lembra”.',
+      'Na próxima você explica por que uma variável de dentro da função não existe fora — e por que um contador “lembra”.',
+      '/aprender/javascript/escopo-e-closure',
     ),
   ],
 
   'escopo-e-closure': [
-    md(`## O que você vai conseguir
+    md(`**Escopo** é onde o nome vale. \`let\` e \`const\` dentro de \`{ }\` não vazam para fora. Isso evita bagunça: a variável da função não atropela a da página.
 
-Explicar por que uma variável de dentro da função não existe fora — e por que um contador “lembra”.`),
-    md(`## Onde o nome vale
+**Closure** é o passo seguinte. A função de *dentro* continua enxergando a variável da função de *fora*, mesmo depois da de fora ter acabado. Por isso um contador “lembra”.
 
-\`let\` dentro de \`{ }\` não vaza para fora. Isso é **escopo**. Evita bagunça.
-
-**Closure** é o truque seguinte: a função de dentro continua enxergando \`n\` mesmo depois de \`criarContador\` ter acabado. Por isso o contador lembra.`),
+Bancada: **Console**.`),
     conce(
       'escopo',
       'Onde o nome vale. let dentro de { } não vaza para fora.',
@@ -93,7 +110,6 @@ Explicar por que uma variável de dentro da função não existe fora — e por 
       'closure',
       'A função de dentro continua enxergando a variável de fora mesmo depois da função de fora ter acabado.',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(`function criarContador() {
   let n = 0
   return function () {
@@ -101,63 +117,72 @@ Explicar por que uma variável de dentro da função não existe fora — e por 
     return n
   }
 }
-const proximo = criarContador()
-console.log(proximo())
-console.log(proximo())`),
+const a = criarContador()
+const b = criarContador()
+console.log(a())
+console.log(a())
+console.log(b())`),
+    md(`Cada chamada de \`criarContador()\` abre **a própria gaveta** \`n\`. Por isso \`a\` e \`b\` não brigam: o segundo \`a()\` dá 2; o primeiro \`b()\` dá 1.
+
+Se \`n\` vivesse **fora** da função (um \`let n = 0\` no topo), só existiria **uma** gaveta. Aí \`a\` e \`b\` somariam no mesmo número — brigariam.`),
     tente(
       'Cole criarContador no Console. Crie const a = criarContador(); const b = criarContador(). Some no a duas vezes e no b uma: 2 e 1. Eles não compartilham o n.',
     ),
-    ex('Se n fosse criado fora da função, os dois contadores brigariam pelo mesmo n. Por quê?'),
+    ex(
+      'Por que a e b não compartilham o mesmo n?',
+      'Porque `n` foi criado **dentro** de `criarContador`. Cada chamada da função abre uma gaveta nova. `a` tem a dela; `b` tem a dela. Closure faz cada função interna lembrar da sua. Se `n` vivesse fora, só existiria uma gaveta — aí os dois brigariam.',
+    ),
     proxima(
-      'Na próxima aula o objeto vira texto para viajar na internet — e o texto vira objeto de novo.',
+      'Na próxima o objeto vira texto para viajar na internet — e o texto vira objeto de novo.',
+      '/aprender/javascript/json',
     ),
   ],
 
   json: [
-    md(`## O que você vai conseguir
+    md(`JavaScript tem objeto. A internet manda **texto**. Os dois não são a mesma coisa.
 
-Transformar um objeto em texto JSON e o texto de volta em objeto — o formato que as APIs usam.`),
-    md(`## Objeto não atravessa a rede “cru”
+**JSON** é o combinado: texto com cara de objeto, chaves entre aspas. Quase toda API pública fala JSON: CEP, lista de produtos, configuração salva no navegador.
 
-JavaScript tem objeto. A internet manda **texto**. JSON é o combinado: texto com cara de objeto, chaves entre aspas.
+\`JSON.stringify\` vai (objeto → texto). \`JSON.parse\` volta (texto → objeto). Texto inválido quebra o parse — o Console fica vermelho.
 
-\`JSON.stringify\` vai (objeto → texto). \`JSON.parse\` volta (texto → objeto). JSON inválido quebra o parse.`),
+Bancada: **Console**.`),
     conce(
       'JSON',
       'Texto com cara de objeto. É o que viaja na internet. stringify vai, parse volta.',
     ),
-    md(`## Onde isso aparece no dia a dia
-
-Resposta de um CEP. Lista de produtos de uma loja. Configuração salva no navegador. Quase toda API pública fala JSON.`),
-    md(`## Exemplo mínimo desta aula`),
     code(`const aula = { titulo: 'JSON', minutos: 20 }
 const texto = JSON.stringify(aula)
 console.log(texto)
 const deNovo = JSON.parse(texto)
 console.log(deNovo.titulo)`),
+    md(`O objeto “cru” (com funções, com \`undefined\`) não atravessa a rede. O outro programa do outro lado talvez nem seja JavaScript. Texto JSON é o recado que os dois combinaram.
+
+Na aula de [erros](/aprender/javascript/erros) você envolve o parse num \`try\` para a página não cair.`),
     tente(
       'No Console: JSON.parse(\'{"ok": true}\') e leia .ok. Depois JSON.parse(\'nao e json\') e leia o erro vermelho.',
     ),
-    ex('Por que a gente não manda o objeto JavaScript “cru” para outro programa? (Pista: texto atravessa rede.)'),
+    ex(
+      'Por que a gente não manda o objeto JavaScript “cru” para outro programa?',
+      'Objeto é coisa do JavaScript, na memória desta página. A rede e o outro programa falam **texto**. JSON é o texto combinado (chaves entre aspas). `stringify` empacota; `parse` desembala. Sem isso, o outro lado não entende.',
+    ),
     proxima(
-      'Na próxima aula o JavaScript espera sem travar a página: uma promessa de valor futuro.',
+      'Na próxima o JavaScript espera sem travar a página: uma promessa de valor futuro.',
+      '/aprender/javascript/promises',
     ),
   ],
 
   promises: [
-    md(`## O que você vai conseguir
+    md(`Pedir um CEP na internet demora. Se o JavaScript **parasse** a página inteira nesses 5 segundos, o botão não clicaria, o scroll travaria.
 
-Encadear \`.then\` e \`.catch\`: a espera termina, aí o próximo passo roda — a página continua clicável.`),
-    md(`## Esperar sem congelar
+Ele **não para**. Agenda o resto. **Promise** é essa promessa de um valor futuro: ou resolve (deu certo) ou rejeita (deu errado).
 
-JS não para a página enquanto espera a internet. Ele agenda o resto. **Promise** é essa promessa de um valor futuro.
+\`then\` roda no sucesso. \`catch\` no erro. Nesta aula \`setTimeout\` só simula a espera — não é internet ainda. Internet é a aula de [fetch](/aprender/javascript/fetch).
 
-\`then\` roda no sucesso. \`catch\` no erro. \`setTimeout\` nesta aula só simula espera.`),
+Bancada: **Console**. A página continua clicável enquanto espera. Essa é a graça.`),
     conce(
       'Promise',
-      'Objeto que vai se resolver (deu certo) ou rejeitar (deu errado). then no sucesso; catch no erro.',
+      'Objeto que vai se resolver (deu certo) ou rejeitar (deu errado). then no sucesso; catch no erro. A página não trava.',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(`const espera = new Promise(function (resolve) {
   setTimeout(function () {
     resolve('pronto')
@@ -167,30 +192,34 @@ espera.then(function (msg) {
   console.log(msg)
 }).catch(function (err) {
   console.log('falhou', err)
-})`),
+})
+console.log('isso sai antes')`),
+    md(`A ordem no Console: primeiro “isso sai antes”, depois “pronto”. O JS não ficou parado 500 ms na linha da Promise: ele registrou o then e seguiu.`),
     tente(
-      'No Console, cole o exemplo. Troque 500 por 1000 e veja o log atrasar um segundo. A página continua clicável — essa é a graça.',
+      'No Console, cole o exemplo. Troque 500 por 1000 e veja o log atrasar um segundo. Clique em qualquer lugar da página durante a espera — ela continua viva.',
     ),
-    ex('O que seria pior: travar a página 5 segundos ou mostrar “carregando” e continuar?'),
+    ex(
+      'Por que o JavaScript não para a página inteira enquanto espera a internet?',
+      'Porque a espera é **assíncrona**. Ele agenda o resto (o `then`) e segue. A página continua clicável. Uma Promise é essa promessa de valor futuro. Se o JS travasse 5 segundos no meio, botão e scroll morreriam até a resposta chegar.',
+    ),
     proxima(
-      'Na próxima aula a mesma espera se escreve como passo a passo, com async e await.',
+      'Na próxima a mesma espera se escreve como passo a passo, com async e await.',
+      '/aprender/javascript/async-await',
     ),
   ],
 
   'async-await': [
-    md(`## O que você vai conseguir
+    md(`\`then\` em escada cansa. \`async\` / \`await\` é a **mesma Promise**, escrita como passo a passo.
 
-Escrever espera como se fosse passo a passo, com \`async\`/\`await\` e \`try\`/\`catch\`.`),
-    md(`## A mesma Promise, outra letra
+\`await\` só funciona dentro de função marcada \`async\`. Pausa **essa função** até a Promise resolver. O resto da página não trava.
 
-\`await\` só funciona dentro de função \`async\`. Pausa **essa função** até a Promise resolver, sem travar o resto da página.
+Erro: \`try\` / \`catch\`, como um \`if\` para falha — o mesmo par da aula de erros, mais à frente.
 
-Erro: \`try\`/\`catch\`, como um \`if\` para falha.`),
+Bancada: **Console**.`),
     conce(
       'await',
       'Só funciona dentro de função async. Pausa essa função até a Promise resolver, sem travar o resto da página.',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(`function esperar(ms) {
   return new Promise(function (resolve) {
     setTimeout(resolve, ms)
@@ -206,31 +235,32 @@ async function run() {
   }
 }
 run()`),
+    md(`Chamar \`run()\` duas vezes seguidas: as duas esperas andam juntas. Cada função async pausa a si mesma; não pausa o Chrome.`),
     tente(
       'No Console, cole a função run e chame run() duas vezes seguidas. As duas esperas andam juntas. Isso é o JS não travando.',
     ),
-    ex('Reescreva um .then simples (console.log depois de esperar) em async/await.'),
+    ex(
+      'Reescreva um .then simples (console.log depois de esperar) em async/await.',
+      'A Promise continua a mesma. Muda a letra: `async function run() { await esperar(300); console.log(\'depois da espera\') }` e no fim `run()`. `await` só vale dentro de `async`. Erro vai para o `try/catch`, não para um `.catch` encadeado.',
+    ),
     proxima(
-      'Na próxima aula você busca um CEP na internet e lê o JSON — sem chave de API.',
+      'Na próxima você busca um CEP na internet e lê o JSON — sem chave de API.',
+      '/aprender/javascript/fetch',
     ),
   ],
 
   fetch: [
-    md(`## O que você vai conseguir
+    md(`\`fetch\` chama uma URL. A resposta **não** é o JSON ainda: chame \`.json()\` (isso também é uma Promise — por isso o \`await\`).
 
-Buscar um CEP numa API pública e ler o JSON — cidade e UF no Console.`),
-    md(`## Pedir um endereço e esperar a resposta
+Vamos usar o [ViaCEP](https://viacep.com.br): API pública, sem senha. CEP de 8 dígitos, só números. Exemplo conhecido: \`01001000\` (centro de São Paulo).
 
-\`fetch\` chama uma URL. A resposta **não** é o JSON ainda: chame \`.json()\`.
+Senha de API no arquivo JS que o Chrome baixa é senha pública. Por isso treinamos com API sem chave.
 
-ViaCEP é pública e sem senha — boa para treinar. Use um CEP de 8 dígitos, só números. Exemplo conhecido: \`01001000\` (centro de São Paulo).
-
-Senha de API no arquivo JS que o Chrome baixa é senha pública. Por isso treinamos com API sem chave.`),
+Bancada: **Console**, ou o zip (pasta + Chrome) se quiser ver o script já rodando. Precisa de internet.`),
     conce(
       'fetch',
       'Função do navegador que chama uma URL. A resposta não é o JSON ainda: chame .json().',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(`async function buscarCep(cep) {
   const url = 'https://viacep.com.br/ws/' + cep + '/json/'
   const resp = await fetch(url)
@@ -244,28 +274,30 @@ buscarCep('01001000').then(function (dados) {
   console.log(dados.localidade, dados.uf)
 })`),
     tente(
-      'No Console (ou no arquivo da aula): troque o CEP para o da sua rua (8 dígitos). Veja localidade. Se der erro, o CEP pode ser inválido — trate no mini-projeto avançado.',
+      'No Console (ou no arquivo da aula): troque o CEP para o da sua rua (8 dígitos). Veja localidade. Se der erro, o CEP pode ser inválido — o tratamento humano fica no mini-projeto avançado.',
     ),
-    ex('Por que não colocamos senha de API no arquivo JS que o navegador baixa?'),
+    ex(
+      'Por que não colocamos senha de API no arquivo JS que o navegador baixa?',
+      'Porque esse arquivo o Chrome baixa para **qualquer visitante**. Abrir o código (F12 → Sources) mostra a senha. Senha pública não é senha. Por isso esta aula usa ViaCEP, sem chave. Senha de verdade vive no servidor.',
+    ),
     proxima(
-      'Na próxima aula o formulário não recarrega a página: você lê o campo e mostra o resultado na hora.',
+      'Na próxima o formulário não recarrega a página: você lê o campo e mostra o resultado na hora.',
+      '/aprender/javascript/formularios',
     ),
   ],
 
   formularios: [
-    md(`## O que você vai conseguir
+    md(`No HTML, enviar um \`form\` **recarrega** a página. Você viu isso na [aula de botão](/aprender/html-css/botao-e-formulario). Aqui o JavaScript cancela isso.
 
-O formulário não recarrega a página: você lê o input e mostra o resultado na hora.`),
-    md(`## O padrão do HTML é recarregar
+\`evento.preventDefault()\` diz: não faça o padrão. Sem ele, seu JS perde o estado — a página nasce de novo.
 
-No \`submit\`, o navegador recarrega a página. \`preventDefault\` cancela isso. Sem ele, seu JS perde o estado.
+\`trim()\` tira espaços nas pontas. Campo que parece preenchido com espaços está vazio de verdade.
 
-\`trim()\` tira espaços nas pontas. Campo que parece preenchido com espaços está vazio de verdade.`),
+Bancada: **pasta + Chrome**. Zip com \`index.html\` + \`script.js\`. [Como abrir](/aprender/comecar/baixar-e-abrir).`),
     conce(
       'preventDefault',
       'Cancela o comportamento padrão. No submit, o padrão é recarregar a página.',
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(`const form = document.querySelector('#form')
 const campo = document.querySelector('#cep')
 const saida = document.querySelector('#saida')
@@ -280,23 +312,26 @@ form.addEventListener('submit', function (evento) {
   saida.textContent = 'Você digitou ' + valor
 })`),
     tente(
-      'Abra o zip no Chrome (index.html + script.js na mesma pasta). Form: se estiver vazio, aviso; se tiver texto, mostre no parágrafo. Teste com espaços na frente.',
+      'Abra o zip no Chrome (index.html + script.js na mesma pasta). Form vazio: aviso. Form com texto: o parágrafo mostra o valor. Teste com espaços na frente — sem trim, passaria; com trim, o campo está vazio.',
     ),
-    ex('Por que trim() no value? Teste com espaços na frente.'),
+    ex(
+      'Por que trim() no value? Teste com espaços na frente.',
+      '`trim()` tira espaços no começo e no fim. Um campo com `"   "` parece preenchido e está vazio de verdade. Sem trim, o `if (valor === \'\')` não pega e você manda lixo adiante (CEP inválido, busca vazia).',
+    ),
     proxima(
-      'Na próxima aula o código se parte em dois arquivos: um calcula, o outro fala com a página.',
+      'Na próxima o código se parte em dois arquivos: um calcula, o outro fala com a página.',
+      '/aprender/javascript/modulos',
     ),
   ],
 
   modulos: [
-    md(`## O que você vai conseguir
+    md(`Um arquivo com 400 linhas mistura cálculo, página e recado. Dói achar o erro.
 
-Partir o código em dois arquivos e importar uma função — cada arquivo uma responsabilidade.`),
-    md(`## Um arquivo, um trabalho
+**Módulo**: um arquivo, um trabalho. \`export\` oferece um nome. \`import\` pega. No HTML, o script precisa de \`type="module"\`.
 
-\`export\` oferece um nome. \`import\` pega. No HTML, o script precisa de \`type="module"\`.
+Abrir como \`file://\` (dois cliques no HTML) às vezes bloqueia módulos. Sirva com um servidor simples (Live Preview no VS Code, ou \`npx serve\`).
 
-Abrir \`file://\` às vezes bloqueia módulos. Sirva com um servidor simples (Live Preview, \`npx serve\`).`),
+Bancada: **pasta + Chrome**, de preferência por um servidor local.`),
     conce(
       'módulo',
       'Arquivo que exporta nomes (export) e importa o que precisa (import). type="module" no script é obrigatório no navegador sem bundler.',
@@ -306,7 +341,6 @@ Abrir \`file://\` às vezes bloqueia módulos. Sirva com um servidor simples (Li
       'Pastas e arquivos de um projeto pequeno',
       { credito: 'material do projeto', legenda: 'Um arquivo calcula, outro fala com a página. Cada um uma responsabilidade.' },
     ),
-    md(`## Exemplo mínimo desta aula`),
     code(`// somar.js
 export function somar(a, b) {
   return a + b
@@ -321,20 +355,28 @@ console.log(somar(2, 3))
     tente(
       'Pasta com main.js e somar.js. Abra o HTML (type=module). Console deve mostrar 5. Se der erro de CORS ou module, você abriu como arquivo cru — use um servidor local.',
     ),
-    ex('Cite uma razão para não deixar 400 linhas num único main.js.'),
+    ex(
+      'Cite uma razão para não deixar 400 linhas num único main.js.',
+      'Um arquivo, um trabalho. 400 linhas misturam cálculo, página e recado: o erro vermelho aponta uma linha e você não sabe de qual assunto. Com módulos, `somar.js` calcula e `main.js` fala com a página. Achar, testar e reaproveitar fica menor.',
+    ),
     proxima(
-      'Na próxima aula um app único: tarefas, filtro, e a lista lembra depois que a página recarrega.',
+      'Na próxima um app único: tarefas, filtro, e a lista lembra depois que a página recarrega.',
+      '/aprender/javascript/projeto-lista-de-tarefas',
     ),
   ],
 
   'projeto-lista-de-tarefas': [
-    md(`## O que vai existir na tela no final
+    md(`No final existe, na tela: um campo, um botão Adicionar, uma lista. Dá para marcar feita, filtrar pendentes, recarregar a página e as tarefas continuarem lá.
 
-Um campo, um botão Adicionar, uma lista. Dá para marcar feita, filtrar pendentes, recarregar a página e as tarefas continuarem lá.`),
-    md(`## O que desta trilha entra
+O que desta trilha entra: map/filter para desenhar e filtrar. JSON para salvar. Formulário sem recarregar. Dois arquivos se quiser organizar.
 
-map/filter para desenhar e filtrar. JSON para salvar. Formulário sem recarregar. Dois arquivos se quiser organizar. \`localStorage\` é a gaveta do navegador.`),
-    md(`## Esqueleto mínimo`),
+\`localStorage\` é a gaveta do navegador, por site. Só cabe **string** — por isso \`JSON.stringify\`. Não é banco seguro: o usuário pode limpar.
+
+Bancada: **pasta + Chrome**. [Como abrir o zip](/aprender/comecar/baixar-e-abrir).`),
+    conce(
+      'localStorage',
+      'Gaveta de texto no navegador, por site. Só cabe string — por isso JSON.stringify. Não é banco seguro: o usuário pode limpar.',
+    ),
     code(`const chave = 'techlearn-tarefas'
 function ler() {
   const t = localStorage.getItem(chave)
@@ -343,15 +385,25 @@ function ler() {
 function salvar(lista) {
   localStorage.setItem(chave, JSON.stringify(lista))
 }`),
-    conce(
-      'localStorage',
-      'Gaveta de texto no navegador, por site. Só cabe string — por isso JSON.stringify. Não é banco seguro: o usuário pode limpar.',
-    ),
+    md(`O zip já monta o app comentado. Leia o \`script.js\` de cima a baixo. Cada função diz o que faz.`),
     tente(
       'Abra o zip da lista de tarefas. Input + Adicionar. Lista em ul. Clique marca feita. Recarregue: tem que lembrar (localStorage). Filtro para “só pendentes”.',
     ),
     ex(
       'Checklist de pronto: inclui, marca feita, filtra, recarrega e a lista volta, limpar dados do site nasce vazio sem erro. Se os cinco estiverem lá, o projeto está feito.',
+      `Os cinco na tela, não de memória:
+
+1. Incluir — form com preventDefault + trim; item vai para a lista.
+2. Marcar feita — clique no item risca (e grava).
+3. Filtrar — filter nas pendentes, sem um for gigante.
+4. Recarregar — localStorage + JSON; a lista volta.
+5. Limpar dados do site — nasce \`[]\`, sem erro no parse.
+
+O zip comentado é a cola. Faltou um? Volte na aula da peça (formulário, JSON, map/filter).`,
+    ),
+    proxima(
+      'O intermediário fechou. A próxima é o avançado: this, o ponto, e por que a arrow é diferente.',
+      '/aprender/javascript/this',
     ),
   ],
 }

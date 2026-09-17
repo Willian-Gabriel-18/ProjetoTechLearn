@@ -1,4 +1,5 @@
-// type="module" no HTML é obrigatório. Um arquivo calcula, o outro fala com a página.
+// type="module" no HTML é obrigatório. Sem isso o import quebra.
+// Se der erro de CORS / module, você abriu como file:// — use um servidor local.
 
 import { somar } from './somar.js'
 console.log(somar(2, 3))

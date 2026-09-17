@@ -1,5 +1,9 @@
 <script setup>
-defineProps({ conteudo: { type: Object, default: () => ({}) } })
+import { markdownParaHtml } from '~/utils/markdownSimples.js'
+
+const props = defineProps({ conteudo: { type: Object, default: () => ({}) } })
+const aberto = ref(false)
+const htmlResposta = computed(() => markdownParaHtml(props.conteudo?.resposta || ''))
 </script>
 
 <template>
@@ -9,5 +13,20 @@ defineProps({ conteudo: { type: Object, default: () => ({}) } })
       Exercício
     </p>
     <p class="mt-1 leading-relaxed">{{ conteudo.enunciado }}</p>
+    <div v-if="conteudo.resposta" class="mt-3">
+      <button
+        type="button"
+        class="underline text-cerrado font-bold"
+        :aria-expanded="aberto ? 'true' : 'false'"
+        @click="aberto = !aberto"
+      >
+        {{ aberto ? 'Esconder resposta' : 'Consultar resposta' }}
+      </button>
+      <div
+        v-show="aberto"
+        class="mt-3 rounded-md border border-linha bg-papel px-3 py-2 texto-aula text-lg leading-relaxed"
+        v-html="htmlResposta"
+      />
+    </div>
   </section>
 </template>

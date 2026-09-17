@@ -27,7 +27,7 @@ As primeiras aulas desta trilha testam no **Console** (F12). Depois o JS mexe na
     ),
     md(`O pedido mais simples: \`console.log('Olá')\`. O Chrome escreve Olá **na aba Console**, não no meio da página.
 
-Como abrir o Console você viu em Antes de começar. Aqui o gesto: F12 (Mac: Cmd+Option+I) → aba **Console** → cole a linha → Enter.
+Como abrir o Console você viu em [Duas bancadas](/aprender/comecar/duas-bancadas). Aqui o gesto: F12 (Mac: Cmd+Option+I) → aba **Console** → cole a linha → Enter.
 
 Se aparecer \`undefined\` na linha de baixo, tudo bem: o log funcionou; \`undefined\` é o “essa linha não devolveu valor”.`),
     conce(
@@ -38,8 +38,14 @@ Se aparecer \`undefined\` na linha de baixo, tudo bem: o log funcionou; \`undefi
     tente(
       'Abra o Chrome, F12, aba Console. Cole console.log(\'Olá\') e Enter. Tem que aparecer Olá. O zip desta aula, se você abrir o index.html, já deixa uma mensagem no Console — é o mesmo log, vindo do arquivo.',
     ),
-    ex('Em uma frase: o que o JavaScript faz que o HTML sozinho não faz?'),
-    proxima('Na próxima a mesma janela com calma: onde o erro vermelho aparece e o que ele está dizendo.'),
+    ex(
+      'Em uma frase: o que o JavaScript faz que o HTML sozinho não faz?',
+      'JavaScript faz a página **responder**: mudar texto, somar, avisar e-mail inválido, sem recarregar. HTML só monta o palco. Sem JS a página só *está lá*.',
+    ),
+    proxima(
+      'Na próxima a mesma janela com calma: onde o erro vermelho aparece e o que ele está dizendo.',
+      '/aprender/javascript/console-e-devtools',
+    ),
   ],
 
   'console-e-devtools': [
@@ -68,8 +74,14 @@ console.error('isso é só um teste de erro')`),
     tente(
       'Chrome, F12, Console. Some 10 + 32 só digitando a conta e Enter. Depois escreva banana e leia o vermelho. Ache a palavra ReferenceError. Depois cole as três linhas do exemplo.',
     ),
-    ex('Qual tecla (ou caminho de menu) você usa para abrir o Console no seu computador?'),
-    proxima('Na próxima você dá nome às coisas: guarda um valor numa gaveta e troca esse valor depois.'),
+    ex(
+      'Qual tecla (ou caminho de menu) você usa para abrir o Console no seu computador?',
+      'No Windows: **F12**, depois a aba Console. No Mac: **Cmd+Option+I** (F12 às vezes não abre). Pelo menu: Exibir → Opções do desenvolvedor → Console. O resultado do `console.log` aparece nessa aba, não no meio da página.',
+    ),
+    proxima(
+      'Na próxima você dá nome às coisas: guarda um valor numa gaveta e troca esse valor depois.',
+      '/aprender/javascript/variaveis',
+    ),
   ],
 
   variaveis: [
@@ -98,8 +110,14 @@ console.log(pais)`),
     tente(
       'Chrome → F12 → Console. Cole let idade = 18 e Enter. Depois idade = 19 e Enter. console.log(idade). Tente pais = \'Outro\' depois de um const pais: leia o erro — você prometeu não trocar.',
     ),
-    ex('Quando você usaria const em vez de let? Dê um exemplo da sua vida (nome, quantidade, cidade).'),
-    proxima('Na próxima o que está dentro da gaveta: número, texto, verdadeiro ou falso.'),
+    ex(
+      'Quando você usaria const em vez de let? Dê um exemplo da sua vida (nome, quantidade, cidade).',
+      '`const` quando o valor **não troca**: seu nome, o título da página, o país. `let` quando troca: quantidade no carrinho, pontos do jogo, idade que você atualiza. Prefira const; use let só se for rechear de novo.',
+    ),
+    proxima(
+      'Na próxima o que está dentro da gaveta: número, texto, verdadeiro ou falso.',
+      '/aprender/javascript/tipos-de-dados',
+    ),
   ],
 
   'tipos-de-dados': [
@@ -137,8 +155,14 @@ console.log(typeof caixa)`),
     tente(
       'No Console (F12): typeof "Ana", typeof 2026, typeof false. As três respostas: string, number, boolean. Depois teste "3" + 1 e 3 + 1. São resultados diferentes — um cola, o outro soma.',
     ),
-    ex('O que acontece se você fizer "3" + 1? Teste no Console e explique com a palavra tipo.'),
-    proxima('Na próxima você combina valores: somar, colar texto, comparar do jeito que não engana.'),
+    ex(
+      'O que acontece se você fizer "3" + 1? Teste no Console e explique com a palavra tipo.',
+      'Vira `"31"`, não 4. `"3"` é **string** (texto). O `+` com texto **cola**. `3 + 1` (número) soma e dá 4. `typeof "3"` é `"string"`; `typeof 3` é `"number"`.',
+    ),
+    proxima(
+      'Na próxima você combina valores: somar, colar texto, comparar do jeito que não engana.',
+      '/aprender/javascript/operadores',
+    ),
   ],
 
   operadores: [
@@ -164,8 +188,14 @@ console.log(7 > 3 && 7 < 10)`),
     tente(
       'No Console: 7 > 3, 7 === "7", 7 == "7". Qual deu false? Esse é o === te protegendo. Depois escreva uma conta com && que só é verdadeira se os dois lados forem verdadeiros.',
     ),
-    ex('Escreva uma comparação que só é verdadeira se idade for pelo menos 18 (use >=). Cole no Console com uma idade de teste.'),
-    proxima('Na próxima o programa escolhe um caminho: se a pergunta for sim, faz A; senão, faz B.'),
+    ex(
+      'Escreva uma comparação que só é verdadeira se idade for pelo menos 18 (use >=). Cole no Console com uma idade de teste.',
+      '`idade >= 18`. Com `let idade = 18` dá `true`. Com `17` dá `false`. `>=` é “pelo menos”. Não use um `=` só (isso atribui, não compara) nem `==` (engana no tipo).',
+    ),
+    proxima(
+      'Na próxima o programa escolhe um caminho: se a pergunta for sim, faz A; senão, faz B.',
+      '/aprender/javascript/if-else',
+    ),
   ],
 
   'if-else': [
@@ -192,8 +222,14 @@ if (hora < 12) {
     tente(
       'No Console, cole o bloco com hora = 14. Tem que aparecer Boa tarde. Mude para 9, cole de novo: Bom dia. Depois 20: Boa noite. O const hora não deixa você só escrever hora = 9 na linha de baixo se já existia — recarregue o Console (limpe) ou use let.',
     ),
-    ex('Escreva um if que imprime "pode dirigir" se idade for >= 18, e "espera um pouco" no else. Rode no Console com dois valores.'),
-    proxima('Na próxima o computador repete uma ação um número certo de vezes, sem você copiar a linha 20 vezes.'),
+    ex(
+      'Escreva um if que imprime "pode dirigir" se idade for >= 18, e "espera um pouco" no else. Rode no Console com dois valores.',
+      'No Console: `const idade = 18` e depois `if (idade >= 18) { console.log(\'pode dirigir\') } else { console.log(\'espera um pouco\') }`. Com 18 aparece “pode dirigir”. Troque para 16 e rode de novo: cai no `else`. A pergunta mora nos parênteses; o que fazer, nas chaves.',
+    ),
+    proxima(
+      'Na próxima o computador repete uma ação um número certo de vezes, sem você copiar a linha 20 vezes.',
+      '/aprender/javascript/loops',
+    ),
   ],
 
   loops: [
@@ -220,8 +256,14 @@ while (n > 0) {
     tente(
       'No Console, some os números de 1 a 10 com um for. Use let soma = 0 e some i dentro do loop. console.log(soma) no fim — tem que dar 55. Se o Console “pensar” demais, você esqueceu de parar o while: feche a aba.',
     ),
-    ex('O que aconteceria se no while você esquecesse n = n - 1? Não rode isso no site — só explique.'),
-    proxima('Na próxima você empacota um pedaço de código com nome e chama quando quiser.'),
+    ex(
+      'O que aconteceria se no while você esquecesse n = n - 1? Não rode isso no site — só explique.',
+      '`n` nunca muda. A condição `n > 0` continua verdadeira para sempre. O loop **não acaba** e o Chrome trava. Sempre pergunte: quando isso acaba? No `for`, o `i = i + 1` no fim de cada volta faz o mesmo papel.',
+    ),
+    proxima(
+      'Na próxima você empacota um pedaço de código com nome e chama quando quiser.',
+      '/aprender/javascript/funcoes',
+    ),
   ],
 
   funcoes: [
@@ -249,8 +291,14 @@ cumprimentar('Ana')`),
     tente(
       'No Console: escreva function dobro(n) { return n * 2 } e chame dobro(7). Tem que imprimir 14 se você der console.log no resultado. Sem o console.log, o 14 existe mas você não vê.',
     ),
-    ex('Qual a diferença entre console.log dentro da função e return? Quando cada um serve?'),
-    proxima('Na próxima você guarda vários valores numa lista — e o primeiro item é o 0, não o 1.'),
+    ex(
+      'Qual a diferença entre console.log dentro da função e return? Quando cada um serve?',
+      '`console.log` **mostra** no Console. `return` **devolve** o valor para quem chamou e para a função. `somar(2, 3)` precisa de return para você guardar o 5 numa variável. Cumprimentar com “Olá” na tela do Console pode ser só log. Um não substitui o outro.',
+    ),
+    proxima(
+      'Na próxima você guarda vários valores numa lista — e o primeiro item é o 0, não o 1.',
+      '/aprender/javascript/arrays',
+    ),
   ],
 
   arrays: [
@@ -275,8 +323,14 @@ for (let i = 0; i < frutas.length; i = i + 1) {
     tente(
       'No Console: crie const notas = [7, 8, 9] e calcule a média — some no for e divida por notas.length. console.log da média. Se der NaN, algum índice passou do fim da lista.',
     ),
-    ex('Se a lista tem 4 itens, qual é o índice do último? Por que não é 4?'),
-    proxima('Na próxima a coisa do mundo real ganha nome nas chaves: um aluno, uma aula — não uma fila 0, 1, 2.'),
+    ex(
+      'Se a lista tem 4 itens, qual é o índice do último? Por que não é 4?',
+      'O último é o índice **3**. A lista começa em 0: 0, 1, 2, 3. Quatro itens, o 4 não existe — `lista[4]` é `undefined`. `length` é 4 (quantos itens); o último índice é `length - 1`.',
+    ),
+    proxima(
+      'Na próxima a coisa do mundo real ganha nome nas chaves: um aluno, uma aula — não uma fila 0, 1, 2.',
+      '/aprender/javascript/objetos',
+    ),
   ],
 
   objetos: [
@@ -302,18 +356,24 @@ aluno.idade = 20`),
     tente(
       'No Console, modele const aula = { titulo: \'Variáveis\', minutos: 20 } e imprima aula.titulo. Depois mude aula.minutos e log de novo.',
     ),
-    ex('Qual a diferença prática entre array e objeto? Pense: lista de notas vs ficha de um aluno.'),
-    proxima('Na próxima o JavaScript aponta para um título na *página* e troca o texto. Até agora tudo foi no Console.'),
+    ex(
+      'Qual a diferença prática entre array e objeto? Pense: lista de notas vs ficha de um aluno.',
+      '**Array** é fila: índice 0, 1, 2. Lista de notas. **Objeto** é ficha: chaves com nome (`nome`, `idade`). Um aluno. Lista de alunos = array de objetos.',
+    ),
+    proxima(
+      'Na próxima o JavaScript aponta para um título na *página* e troca o texto. Até agora tudo foi no Console.',
+      '/aprender/javascript/dom',
+    ),
   ],
 
   dom: [
     md(`Até agora o JS só falou no Console. Para mexer no que a pessoa *vê*, o Chrome transforma o HTML numa árvore de peças. Essa árvore se chama **DOM**.
 
-A bancada muda: **pasta + Chrome**. Dois arquivos na mesma pasta.`),
+A bancada muda: **pasta + Chrome**. Dois arquivos na mesma pasta. [Como baixar e abrir](/aprender/comecar/baixar-e-abrir).`),
     img(
       '/images/trilhas/javascript/pasta-js.svg',
       'Pasta minha-aula com index.html e script.js',
-      { legenda: 'Abra o HTML. O script.js precisa estar ao lado. [Como abrir](/aprender/comecar/baixar-e-abrir).' },
+      { legenda: 'Abra o HTML. O script.js precisa estar ao lado, na mesma pasta.' },
     ),
     md(`Você já deu \`id\` no HTML básico. Aqui o JS usa esse gancho.
 
@@ -334,8 +394,14 @@ titulo.textContent = 'Aula de DOM'`),
     tente(
       'Baixe o zip, extraia, abra a pasta no VS Code, abra index.html no Chrome. O título tem que mudar sozinho. No script.js, troque a string do textContent, Ctrl+S, F5. Se der erro de null no Console: o id do HTML não bate com o do JS, ou o script subiu antes do HTML.',
     ),
-    ex('Por que querySelector(\'#titulo\') usa a cerquilha? O que ela indica?'),
-    proxima('Na próxima um botão na página reage ao clique — sem recarregar.'),
+    ex(
+      'Por que querySelector(\'#titulo\') usa a cerquilha? O que ela indica?',
+      'A cerquilha é o **id**, o mesmo sinal do CSS. `querySelector(\'#titulo\')` pergunta: cadê a peça com `id="titulo"`? Ponto seria class (`.card`). Sem sinal, seria o nome da tag.',
+    ),
+    proxima(
+      'Na próxima um botão na página reage ao clique — sem recarregar.',
+      '/aprender/javascript/eventos',
+    ),
   ],
 
   eventos: [
@@ -364,8 +430,14 @@ Se o script estiver no head, \`querySelector('#btn')\` acha null: o botão ainda
     tente(
       'Abra o zip no Chrome. Cada clique deve somar 1 no parágrafo. Se der null, os ids não batem. Mude o texto do botão no HTML (body) e recarregue — o JS continua ouvindo o mesmo id.',
     ),
-    ex('O que a página faria se você pusesse o JS no <head> sem esperar o HTML? (Pista: querySelector acharia null.)'),
-    proxima('Na próxima você junta o iniciante num joguinho: o computador escolhe, você clica, o placar sobe na tela.'),
+    ex(
+      'O que a página faria se você pusesse o JS no <head> sem esperar o HTML? (Pista: querySelector acharia null.)',
+      'O script no head roda **antes** do body existir. `querySelector(\'#btn\')` acha `null`. A próxima linha que usa o botão quebra. Por isso o `<script src="script.js">` vai no **fim do body**.',
+    ),
+    proxima(
+      'Na próxima você junta o iniciante num joguinho: o computador escolhe, você clica, o placar sobe na tela.',
+      '/aprender/javascript/projeto-pedra-papel-tesoura',
+    ),
   ],
 
   'projeto-pedra-papel-tesoura': [
@@ -373,7 +445,7 @@ Se o script estiver no head, \`querySelector('#btn')\` acha null: o botão ainda
 
 O que desta trilha entra: variáveis para os pontos, função que sorteia, \`if\` para o resultado, clique, \`textContent\` para o placar. Não é aula nova. É cola.
 
-Pasta: \`index.html\`, \`estilos.css\`, \`script.js\`. O CSS dos três botões em fila é o flex da trilha HTML.`),
+Pasta: \`index.html\`, \`estilos.css\`, \`script.js\`. O CSS dos três botões em fila é o [flex da trilha HTML](/aprender/html-css/caixa-e-lado-a-lado).`),
     img(
       '/images/trilhas/javascript/pasta-js.svg',
       'Pasta da aula com HTML e script (e CSS no zip)',
@@ -394,6 +466,15 @@ Pasta: \`index.html\`, \`estilos.css\`, \`script.js\`. O CSS dos três botões e
     ),
     ex(
       'Checklist: três botões, placar, empate sem ponto, página quieta. Qual peça veio do HTML (id, botão) e qual veio do JS (if, função)?',
+      `Na tela, os quatro pontos do checklist têm que estar lá.
+
+Do **HTML**: os três \`button\`, os ids (\`placar\`, \`rodada\`), o \`div\` dos botões. Do **CSS**: a fila (\`display: flex\`), da aula de caixa. Do **JS**: a função que sorteia, o \`if\` de quem ganhou, o \`addEventListener\` no clique, o \`textContent\` do placar.
+
+Empate não soma ponto. A página não recarrega. Se o placar não sobe, o Console (F12) aponta a linha. O zip comentado é a cola.`,
+    ),
+    proxima(
+      'O iniciante fechou. A próxima é o intermediário: map, filter e listas sem um for gigante.',
+      '/aprender/javascript/arrays-map-filter',
     ),
   ],
 }

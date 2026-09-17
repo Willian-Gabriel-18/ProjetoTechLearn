@@ -495,34 +495,56 @@ console.log(aluno.idade)
   },
   'arrays-map-filter': {
     titulo: 'map e filter',
-    js: `// map: outra lista, mesmo tamanho, item transformado.
-// filter: só quem passa no teste. Os dois não mudam a lista original.
+    js: `// Bancada: Console (F12). Os três não mudam a lista original.
 
 const notas = [5, 7, 9, 4]
+
+// map: outra lista, mesmo tamanho, cada item transformado.
 const comUm = notas.map(function (n) {
   return n + 1
 })
+
+// filter: só quem passa no teste (aqui: nota >= 6).
 const passou = notas.filter(function (n) {
   return n >= 6
 })
-console.log(comUm)
-console.log(passou)
+
+// find: o PRIMEIRO que passa. Se ninguém passar, undefined.
+const primeira = notas.find(function (n) {
+  return n >= 6
+})
+
+console.log('map', comUm)
+console.log('filter', passou)
+console.log('find', primeira)
+console.log('original intacto', notas)
 `,
   },
   'funcoes-es6': {
     titulo: 'Funções do dia a dia',
-    js: `// Arrow é forma curta. Crase encaixa valor com \${ }.
-
+    js: `// Arrow = forma curta. Se o corpo é uma expressão, o return vem implícito.
 const dobro = (n) => n * 2
 const nome = 'Lia'
+// Crase: \${ } encaixa o valor no meio da frase.
 console.log(dobro(7))
 console.log(\`Olá, \${nome}\`)
+
+// Sem os pontinhos, b e original são A MESMA lista.
+const original = [1, 2]
+const mesma = original
+mesma[0] = 9
+console.log('mesma gaveta', original)
+
+// Com [...], copia os itens para um array NOVO.
+const copia = [...[1, 2]]
+copia[0] = 9
+console.log('cópia', copia)
 `,
   },
   'escopo-e-closure': {
     titulo: 'Escopo e closure',
-    js: `// A função interna “lembra” o que estava à volta quando foi criada.
-// Cada chamada de criarContador() tem o próprio let n.
+    js: `// n vive DENTRO de criarContador. Cada chamada abre a própria gaveta.
+// A função de dentro “lembra” esse n (closure).
 
 function criarContador() {
   let n = 0
@@ -533,24 +555,27 @@ function criarContador() {
 }
 
 const a = criarContador()
-console.log(a())
-console.log(a())
+const b = criarContador()
+console.log('a', a()) // 1
+console.log('a', a()) // 2
+console.log('b', b()) // 1 — não briga com a
 `,
   },
   json: {
     titulo: 'JSON',
     js: `// Objeto JS não viaja na rede. JSON é o texto combinado.
-// stringify vai. parse volta.
+// stringify vai (objeto → texto). parse volta (texto → objeto).
 
 const aula = { titulo: 'JSON', minutos: 20 }
 const texto = JSON.stringify(aula)
-console.log(texto)
-console.log(JSON.parse(texto).titulo)
+console.log('texto que viaja', texto)
+console.log('de volta', JSON.parse(texto).titulo)
 `,
   },
   promises: {
     titulo: 'Promises',
-    js: `// Promise: um valor que ainda não chegou. then = quando chegar. catch = se falhar.
+    js: `// Promise = valor futuro. then = quando chegar. catch = se falhar.
+// A página NÃO trava: “isso sai antes” aparece primeiro.
 
 const espera = new Promise(function (resolve) {
   setTimeout(function () {
@@ -566,8 +591,8 @@ console.log('isso sai antes')
   },
   'async-await': {
     titulo: 'async/await',
-    js: `// async function + await: espera sem virar escada de then.
-// Só funciona dentro de função async.
+    js: `// Mesma Promise, letra de passo a passo.
+// await só funciona dentro de função async. Pausa ESTA função, não a página.
 
 function esperar(ms) {
   return new Promise(function (resolve) {
@@ -586,8 +611,8 @@ run()
   },
   fetch: {
     titulo: 'fetch',
-    js: `// fetch chama uma URL. A resposta ainda não é o JSON: chame .json().
-// Troque o CEP (8 dígitos) pelo da sua rua.
+    js: `// fetch chama uma URL. A resposta AINDA NÃO é o JSON: chame .json().
+// ViaCEP é pública, sem senha. Troque o CEP (8 dígitos) pelo da sua rua.
 
 async function buscarCep(cep) {
   const url = 'https://viacep.com.br/ws/' + cep + '/json/'
@@ -605,7 +630,7 @@ buscarCep('01001000').then(function (dados) {
   },
   this: {
     titulo: 'this',
-    js: `// this no método aponta para o objeto à esquerda do ponto.
+    js: `// this = quem chamou com o PONTO. conta.mostrar() → this é conta.
 // Arrow não ganha this próprio — por isso o método aqui é function.
 
 const conta = {
@@ -614,13 +639,17 @@ const conta = {
     console.log(this.saldo)
   },
 }
-conta.mostrar()
+
+conta.mostrar() // 10
+
+const solta = conta.mostrar
+solta() // this se perde (undefined / erro)
 `,
   },
   classes: {
     titulo: 'Classes',
-    js: `// class é um molde. constructor roda na hora do new.
-// this.saldo é o saldo desta conta, não de todas.
+    js: `// class = molde. constructor roda no new.
+// this.saldo é o saldo DESTA conta, não de todas.
 
 class Conta {
   constructor(saldo) {
@@ -631,44 +660,49 @@ class Conta {
   }
 }
 
-const c = new Conta(10)
-c.depositar(5)
-console.log(c.saldo)
+const a = new Conta(10)
+const b = new Conta(0)
+a.depositar(5)
+console.log(a.saldo, b.saldo) // 15 e 0 — duas gavetas
 `,
   },
   prototipo: {
     titulo: 'Protótipo',
-    js: `// Se o objeto não tem a chave, o JS olha no protótipo.
-// Object.create(pai) faz um objeto que “herda” do pai.
+    js: `// Se o objeto não tem a chave, o JS olha no protótipo (o pai).
+// Object.create(pai) liga os dois. Não é cópia.
 
 const pai = { tipo: 'conta' }
 const filha = Object.create(pai)
 filha.saldo = 3
-console.log(filha.saldo)
-console.log(filha.tipo)
+console.log(filha.saldo) // no próprio objeto
+console.log(filha.tipo) // veio do pai
 `,
   },
   'event-loop': {
     titulo: 'Event loop',
-    js: `// setTimeout 0 não é “agora”: entra na fila. O log B espera o A terminar.
+    js: `// Ordem: A, C, B. O setTimeout 0 NÃO fura a pilha.
+// B só roda quando o código síncrono (A e C) acaba.
 
 console.log('A')
 setTimeout(function () {
-  console.log('C')
+  console.log('B')
 }, 0)
-console.log('B')
+console.log('C')
 `,
   },
   erros: {
     titulo: 'Erros',
-    js: `// try/catch segura o erro. A página continua. Evite alert na cara do aluno.
+    js: `// try tenta. catch pega o erro. finally roda sempre.
+// A página continua. Evite alert na cara de quem lê.
 
 function lerJson(texto) {
   try {
     return JSON.parse(texto)
   } catch (e) {
-    console.log('JSON inválido')
+    console.log('Não deu para ler esse texto como JSON.')
     return null
+  } finally {
+    console.log('tentativa de parse acabou')
   }
 }
 
@@ -679,7 +713,8 @@ console.log(lerJson('ops'))
   bundler: {
     titulo: 'Bundler',
     js: `// Analogia, não configuração.
-// Vários arquivos seus viram o que o Chrome baixa. Você não abre cada .vue no navegador.
+// Várias receitas (arquivos) viram um marmitex (o que o Chrome baixa).
+// Ganhos: nome curto, tamanho menor, import que o navegador entende.
 
 console.log('Isto rodou num arquivo só.')
 console.log('Num app grande, o bundler junta vários arquivos como este.')
@@ -793,11 +828,22 @@ gravar('javascript', 'projeto-pedra-papel-tesoura', {
     </div>`,
     js: 'script.js',
   }),
-  'estilos.css': `.botoes { display: flex; gap: 0.75rem; }
-button { padding: 0.6rem 1rem; }
-`,
-  'script.js': `// Três botões. O computador sorteia. if decide quem ganhou. textContent atualiza o placar.
+  'estilos.css': `/* Os três botões em fila: o PAI ganha flex. gap = espaço entre eles.
+   É a mesma ideia da aula de caixa (HTML e CSS). */
 
+.botoes {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* padding = espaço DENTRO da borda. O texto do botão respira. */
+button {
+  padding: 0.6rem 1rem;
+}
+`,
+  'script.js': `// Mini-projeto do iniciante. Leia de cima a baixo: cada bloco é uma aula que você já fez.
+
+// Sorteia a jogada do computador. Math.random() vai de 0 até quase 1.
 function jogadaComputador() {
   const n = Math.random()
   if (n < 0.33) return 'pedra'
@@ -805,6 +851,7 @@ function jogadaComputador() {
   return 'tesoura'
 }
 
+// if decide o resultado. Empate devolve "empate" — não soma ponto lá embaixo.
 function resultado(jogador, pc) {
   if (jogador === pc) return 'empate'
   if (
@@ -817,11 +864,15 @@ function resultado(jogador, pc) {
   return 'computador'
 }
 
+// let: os pontos mudam a cada rodada.
 let pontosVoce = 0
 let pontosPc = 0
+
+// ids do HTML. Se mudar o id lá, mude aqui.
 const placar = document.querySelector('#placar')
 const rodada = document.querySelector('#rodada')
 
+// Cada botão tem data-jogada. Clique → joga, compara, atualiza o texto (sem recarregar).
 document.querySelectorAll('[data-jogada]').forEach(function (botao) {
   botao.addEventListener('click', function () {
     const voce = botao.getAttribute('data-jogada')
@@ -829,6 +880,7 @@ document.querySelectorAll('[data-jogada]').forEach(function (botao) {
     const r = resultado(voce, pc)
     if (r === 'você') pontosVoce = pontosVoce + 1
     if (r === 'computador') pontosPc = pontosPc + 1
+    // textContent troca o que a pessoa lê. Empate não entra nos ifs de ponto.
     placar.textContent = 'Você ' + pontosVoce + ' × ' + pontosPc + ' Computador'
     rodada.textContent = 'Você: ' + voce + '. PC: ' + pc + '. ' + r
   })
@@ -847,14 +899,16 @@ gravar('javascript', 'formularios', {
     <p id="saida"></p>`,
     js: 'script.js',
   }),
-  'script.js': `// preventDefault cancela o recarregar. trim tira espaços nas pontas.
+  'script.js': `// Bancada: pasta + Chrome. index.html e este arquivo na mesma pasta.
 
 const form = document.querySelector('#form')
 const campo = document.querySelector('#cep')
 const saida = document.querySelector('#saida')
 
 form.addEventListener('submit', function (evento) {
+  // Sem isto, o HTML recarrega a página e o JS perde o estado.
   evento.preventDefault()
+  // trim tira espaços nas pontas. "   " parece preenchido e está vazio.
   const valor = campo.value.trim()
   if (valor === '') {
     saida.textContent = 'Preencha o CEP.'
@@ -872,13 +926,14 @@ gravar('javascript', 'modulos', {
     js: 'main.js',
     modulo: true,
   }),
-  'somar.js': `// Este arquivo oferece a função. O outro importa.
+  'somar.js': `// Um arquivo, um trabalho: só calcula. O outro arquivo é quem fala com a página.
 
 export function somar(a, b) {
   return a + b
 }
 `,
-  'main.js': `// type="module" no HTML é obrigatório. Um arquivo calcula, o outro fala com a página.
+  'main.js': `// type="module" no HTML é obrigatório. Sem isso o import quebra.
+// Se der erro de CORS / module, você abriu como file:// — use um servidor local.
 
 import { somar } from './somar.js'
 console.log(somar(2, 3))
@@ -896,13 +951,16 @@ gravar('javascript', 'projeto-lista-de-tarefas', {
     <ul id="lista"></ul>`,
     js: 'script.js',
   }),
-  'script.js': `// Inclui, marca feita no clique, lembra no localStorage. Sem innerHTML com texto cru: textContent.
+  'script.js': `// Mini-projeto intermediário. Inclui, marca feita, lembra no localStorage.
+// textContent (nunca innerHTML com texto cru).
 
 const chave = 'techlearn-tarefas'
 const form = document.querySelector('#form')
 const campo = document.querySelector('#campo')
 const lista = document.querySelector('#lista')
 
+// localStorage só guarda string. JSON.parse volta para lista.
+// Se o texto estiver quebrado, devolve [] — limpar dados do site não pode crashar.
 function ler() {
   try {
     return JSON.parse(localStorage.getItem(chave) || '[]')
@@ -953,7 +1011,8 @@ gravar('javascript', 'seguranca-front', {
     <p id="nome"></p>`,
     js: 'script.js',
   }),
-  'script.js': `// textContent trata o texto como texto. innerHTML com dado de fora abre XSS.
+  'script.js': `// textContent trata o texto como texto. innerHTML com dado de fora abre XSS
+// (o navegador executaria o onerror e um alerta apareceria).
 
 const nome = '<img src=x onerror=alert(1)>'
 const p = document.querySelector('#nome')
@@ -973,19 +1032,22 @@ gravar('javascript', 'projeto-consulta-publica', {
     <p id="saida"></p>`,
     js: 'script.js',
   }),
-  'script.js': `// Loading, cidade, CEP inexistente, falha de rede. textContent, nunca innerHTML com a resposta.
+  'script.js': `// Mini-projeto avançado. Quatro estados na tela: carregando, cidade, CEP inexistente, falha de rede.
+// textContent sempre — a resposta da API nunca vira HTML.
 
 async function mostrarCep(cep, saida) {
   saida.textContent = 'Buscando…'
   try {
     const resp = await fetch('https://viacep.com.br/ws/' + cep + '/json/')
     const dados = await resp.json()
+    // ViaCEP devolve { erro: true } quando o CEP não existe.
     if (dados.erro) {
       saida.textContent = 'CEP não encontrado.'
       return
     }
     saida.textContent = dados.localidade + ' / ' + dados.uf
   } catch (e) {
+    // Wi-Fi desligado, URL errada, etc. Frase humana, não o erro cru.
     saida.textContent = 'Falha de rede. Tente de novo.'
   }
 }

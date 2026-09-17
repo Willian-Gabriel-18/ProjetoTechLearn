@@ -1,7 +1,8 @@
-// setTimeout 0 não é “agora”: entra na fila. O log B espera o A terminar.
+// Ordem: A, C, B. O setTimeout 0 NÃO fura a pilha.
+// B só roda quando o código síncrono (A e C) acaba.
 
 console.log('A')
 setTimeout(function () {
-  console.log('C')
+  console.log('B')
 }, 0)
-console.log('B')
+console.log('C')

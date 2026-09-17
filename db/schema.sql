@@ -78,7 +78,7 @@ CREATE INDEX aulas_trilha_ordem_idx ON aulas (trilha_id, nivel, ordem);
 -- arquivo:   { "arquivo_id": "<uuid>", "rotulo": "Baixar exercício" }
 -- imagem:    { "src": "/images/...", "alt": "...", "credito": "Pexels" }
 -- tente:     { "instrucao": "..." }
--- exercicio: { "enunciado": "..." }
+-- exercicio: { "enunciado": "...", "resposta": "markdown do gabarito (oculto até o clique)" }
 CREATE TABLE blocos_aula (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   aula_id uuid NOT NULL REFERENCES aulas (id) ON DELETE CASCADE,

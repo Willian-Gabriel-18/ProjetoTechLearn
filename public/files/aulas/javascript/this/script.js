@@ -1,4 +1,4 @@
-// this no método aponta para o objeto à esquerda do ponto.
+// this = quem chamou com o PONTO. conta.mostrar() → this é conta.
 // Arrow não ganha this próprio — por isso o método aqui é function.
 
 const conta = {
@@ -7,4 +7,8 @@ const conta = {
     console.log(this.saldo)
   },
 }
-conta.mostrar()
+
+conta.mostrar() // 10
+
+const solta = conta.mostrar
+solta() // this se perde (undefined / erro)

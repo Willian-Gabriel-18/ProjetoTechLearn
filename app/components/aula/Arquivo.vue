@@ -47,7 +47,15 @@ const ehZip = computed(() => String(props.conteudo?.href || '').toLowerCase().en
         to="/aprender/comecar/baixar-e-abrir"
         class="underline text-cerrado font-bold"
       >
-        Não lembra? Volte à aula de baixar e abrir
+        Não lembra de baixar e abrir?
+      </NuxtLink>
+    </p>
+    <p class="mt-2">
+      <NuxtLink
+        to="/aprender/comecar/duas-bancadas"
+        class="underline text-cerrado font-bold"
+      >
+        Pasta+Chrome ou Console?
       </NuxtLink>
     </p>
   </aside>
