@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
         WHERE aula_id = ${atual[0].aula_id} AND ordem > ${atual[0].ordem}
         ORDER BY ordem ASC LIMIT 1
       `
-  if (!vizinho[0]) return { ok: true }
+  if (!vizinho[0]) return { ok: true, moveu: false }
 
   // Troca as ordens; usa valor temporário negativo para não bater no UNIQUE (aula_id, ordem).
   const a = atual[0]
@@ -29,5 +29,5 @@ export default defineEventHandler(async (event) => {
   await sql`UPDATE blocos_aula SET ordem = -1 WHERE id = ${a.id}`
   await sql`UPDATE blocos_aula SET ordem = ${a.ordem} WHERE id = ${b.id}`
   await sql`UPDATE blocos_aula SET ordem = ${b.ordem} WHERE id = ${a.id}`
-  return { ok: true }
+  return { ok: true, moveu: true }
 })
