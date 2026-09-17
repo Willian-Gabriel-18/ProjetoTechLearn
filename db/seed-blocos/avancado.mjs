@@ -36,6 +36,7 @@ solta()`),
     proxima(
       'Na próxima aula um molde com class: duas contas, cada uma com seu saldo.',
       '/aprender/javascript/classes',
+      'Classes (OOP leve)',
     ),
   ],
 
@@ -76,6 +77,7 @@ Se um dia você quiser \`class Poupanca extends Conta\`, \`super(saldo)\` chama 
     proxima(
       'Na próxima aula o mecanismo por baixo das classes: se o objeto não tem a propriedade, o JS olha no protótipo.',
       '/aprender/javascript/prototipo',
+      'Protótipo (o mecanismo por baixo)',
     ),
   ],
 
@@ -111,6 +113,7 @@ console.log(filho.tipo)`),
     proxima(
       'Na próxima aula você prevê a ordem dos logs: sincrono primeiro, depois o setTimeout 0.',
       '/aprender/javascript/event-loop',
+      'A fila do JavaScript — event loop',
     ),
   ],
 
@@ -144,6 +147,7 @@ Tem uma fila ainda mais urgente (microtask: \`Promise.then\`). Não precisa deco
     proxima(
       'Na próxima aula um JSON ruim não derruba a página: você mostra uma frase clara para a pessoa.',
       '/aprender/javascript/erros',
+      'Erros de verdade',
     ),
   ],
 
@@ -183,6 +187,7 @@ console.log(lerJson('ops'))`),
     proxima(
       'Na próxima aula, em analogia: o que Vite e Nuxt fazem quando o projeto “compila”.',
       '/aprender/javascript/bundler',
+      'Módulos e um bundler de relance',
     ),
   ],
 
@@ -214,6 +219,7 @@ Bancada: olhe o endereço desta plataforma (localhost ou o site no ar). Não pre
     proxima(
       'Na próxima aula você recusa colar HTML que veio de desconhecido — e nunca põe senha no JS que o Chrome baixa.',
       '/aprender/javascript/seguranca-front',
+      'Segurança no front',
     ),
   ],
 
@@ -243,6 +249,7 @@ p.textContent = nome
     proxima(
       'Na próxima aula você fecha o avançado com um buscador de CEP: loading, erro amigável, cidade na tela.',
       '/aprender/javascript/projeto-consulta-publica',
+      'Mini-projeto: consulta pública',
     ),
   ],
 

@@ -1,3 +1,7 @@
+// Mini-projeto: lista de tarefas. Pasta + Chrome.
+// Tente: inclua duas tarefas, clique numa (risca), recarregue — tem que lembrar.
+// Tente: Limpar dados do site neste endereço e recarregar — lista vazia, sem erro.
+//
 // Mini-projeto intermediário. Inclui, marca feita, lembra no localStorage.
 // textContent (nunca innerHTML com texto cru).
 

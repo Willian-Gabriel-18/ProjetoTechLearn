@@ -1,4 +1,5 @@
-/* padding = dentro da borda. margin = fora. gap = espaço entre filhos do flex. */
+/* Aula: caixa. padding = dentro. margin = fora. gap = entre filhos do flex.
+   Tente: aumente o gap. Tente: padding maior num botão — o texto respira. */
 
 body {
   font-family: Georgia, serif;

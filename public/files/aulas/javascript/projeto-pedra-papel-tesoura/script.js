@@ -1,3 +1,7 @@
+// Mini-projeto: pedra, papel e tesoura. Pasta + Chrome. F5 depois de salvar.
+// Tente: jogue até empatar — o placar não pode somar.
+// Tente: abra o Console (F12) se o placar não subir: o vermelho aponta a linha.
+//
 // Mini-projeto do iniciante. Leia de cima a baixo: cada bloco é uma aula que você já fez.
 
 // Sorteia a jogada do computador. Math.random() vai de 0 até quase 1.

@@ -1,3 +1,6 @@
+// Aula: DOM. Pasta + Chrome. Tente: troque a string do textContent, Ctrl+S, F5.
+// Tente: se der null no Console, o id do HTML não bate com o do JS.
+//
 // Este arquivo está na mesma pasta do index.html.
 // A cerquilha (#) é o id. Se mudar o id no HTML, mude aqui também.
 

@@ -1,3 +1,6 @@
+// Aula: Classes. Bancada: Console.
+// Tente: deposite só em a e logue a.saldo e b.saldo — duas gavetas.
+//
 // class = molde. constructor roda no new.
 // this.saldo é o saldo DESTA conta, não de todas.
 

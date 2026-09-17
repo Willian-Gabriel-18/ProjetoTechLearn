@@ -1,3 +1,7 @@
+// Aula: Escopo e closure. Bancada: Console.
+// Tente: chame a() três vezes e b() uma — 3 e 1, não brigam.
+// Tente: imagine n fora da função: aí só existiria UMA gaveta.
+//
 // n vive DENTRO de criarContador. Cada chamada abre a própria gaveta.
 // A função de dentro “lembra” esse n (closure).
 

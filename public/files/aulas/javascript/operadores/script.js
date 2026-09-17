@@ -1,5 +1,8 @@
-// === compara valor e tipo. == tenta converter e engana.
-// 10 === '10' é false. 10 == '10' é true — por isso evitamos ==.
+// Aula: Operadores. Bancada: Console.
+// === compara valor E tipo. == tenta converter e engana.
+//
+// Tente: 7 === '7' e 7 == '7'. Qual deu false?
+// Tente: uma conta com && que só é verdadeira se os dois lados forem.
 
 console.log(10 + 5)
 console.log('Tech' + 'Learn')

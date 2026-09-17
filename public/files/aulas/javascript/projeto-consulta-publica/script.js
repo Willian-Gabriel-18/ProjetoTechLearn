@@ -1,3 +1,7 @@
+// Mini-projeto: consulta de CEP. Pasta + Chrome, com internet.
+// Tente: 01001000 (centro de SP). Tente: 00000000 (CEP inexistente).
+// Tente: desligue o Wi-Fi e busque de novo (falha de rede).
+//
 // Mini-projeto avançado. Quatro estados na tela: carregando, cidade, CEP inexistente, falha de rede.
 // textContent sempre — a resposta da API nunca vira HTML.
 

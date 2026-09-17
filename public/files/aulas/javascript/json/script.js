@@ -1,3 +1,7 @@
+// Aula: JSON. Bancada: Console.
+// Tente: JSON.parse('{"ok": true}') e leia .ok.
+// Tente: JSON.parse('nao e json') e leia o erro vermelho.
+//
 // Objeto JS não viaja na rede. JSON é o texto combinado.
 // stringify vai (objeto → texto). parse volta (texto → objeto).
 

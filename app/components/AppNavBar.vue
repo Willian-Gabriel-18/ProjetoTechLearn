@@ -52,7 +52,7 @@ function ativo(path) {
               class="px-2 py-2 rounded-md inline-flex items-center gap-1.5"
               :class="ativo('/novidades') ? 'bg-linha/70' : 'hover:text-cerrado'"
             >
-              <i class="pi pi-comments" aria-hidden="true" />
+              <i class="pi pi-sparkles" aria-hidden="true" />
               <span class="hidden sm:inline">Novidades</span>
             </NuxtLink>
           </li>

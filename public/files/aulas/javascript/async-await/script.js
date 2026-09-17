@@ -1,3 +1,6 @@
+// Aula: async/await. Bancada: Console.
+// Tente: chame run() duas vezes seguidas — as esperas andam juntas.
+//
 // Mesma Promise, letra de passo a passo.
 // await só funciona dentro de função async. Pausa ESTA função, não a página.
 

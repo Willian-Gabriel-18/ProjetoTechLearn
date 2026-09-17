@@ -1,3 +1,7 @@
+// Aula: Promises. Bancada: Console.
+// Tente: troque 500 por 1000 e veja o log atrasar.
+// Tente: clique na página durante a espera — ela continua viva.
+//
 // Promise = valor futuro. then = quando chegar. catch = se falhar.
 // A página NÃO trava: “isso sai antes” aparece primeiro.
 

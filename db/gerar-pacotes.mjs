@@ -62,8 +62,8 @@ function htmlConsole(titulo) {
 const htmlCss = {
   'o-que-e-uma-pagina': {
     'pagina.html': `<!--
-  Abra no Chrome. No VS Code, abra a PASTA, edite, Ctrl+S, F5.
-  Hoje: mude o texto entre <p> e </p>.
+  Aula: O que é uma página. Abra no Chrome. VS Code: abra a PASTA, Ctrl+S, F5.
+  Tente: mude o texto entre <p> e </p> e recarregue.
   DOCTYPE, head e body a aula "Esqueleto" explica com calma.
 -->
 <!DOCTYPE html>
@@ -81,9 +81,9 @@ const htmlCss = {
   },
   'anatomia-da-tag': {
     'tag.html': `<!--
-  Ache <p> (abertura), o texto (conteúdo) e </p> (fechamento).
-  A barra no fechamento diz: aqui acaba o parágrafo.
-  Troque o conteúdo. Acrescente um segundo <p>…</p> no body.
+  Aula: Anatomia da tag.
+  Tente: troque o conteúdo do primeiro <p>.
+  Tente: acrescente um segundo <p>…</p> no body e recarregue.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -102,8 +102,8 @@ const htmlCss = {
   },
   esqueleto: {
     'esqueleto.html': `<!--
-  Abra no Chrome. A aba vem do <title> (head). O parágrafo vive no body.
-  Troque o title e o p. charset e viewport ficam.
+  Aula: Esqueleto. A aba vem do <title> (head). O parágrafo vive no body.
+  Tente: troque o title — a aba muda. Troque o p — o meio muda.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -126,7 +126,9 @@ const htmlCss = {
   },
   'texto-e-titulos': {
     'texto.html': `<!--
-  Tudo que você vê está no body. Um h1 só. strong = importância. em = ênfase no tom.
+  Aula: Texto e títulos. Um h1 só. strong = importância. em = ênfase no tom.
+  Tente: acrescente um h2 "Modo de fazer" e um p seu, ainda no body.
+  Tente: troque strong por em e veja que não é a mesma tag.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -151,8 +153,9 @@ const htmlCss = {
   },
   'links-imagens-listas': {
     'links.html': `<!--
-  Como abrir: Chrome. Ctrl+clique no link abre outra aba.
-  O que mudar: o href, um item da lista, o alt da imagem.
+  Aula: Links, imagens e listas. Ctrl+clique no link abre outra aba.
+  Tente: troque o href por um site que você usa.
+  Tente: acrescente um <li> e mude o alt para descrever o desenho.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -186,8 +189,8 @@ const htmlCss = {
   },
   'nomear-pecas': {
     'nomes.html': `<!--
-  Como abrir: Chrome. No F12, aba Elements, procure id="titulo".
-  O que mudar: um id único e uma class repetida em dois blocos.
+  Aula: Nomear peças. F12 → Elements, procure id="titulo".
+  Tente: dois blocos com a mesma class. Tente: um id em dois lugares — o JS depois pega só o primeiro.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -210,8 +213,8 @@ const htmlCss = {
   },
   'botao-e-formulario': {
     'formulario.html': `<!--
-  Como abrir: Chrome. Clique na palavra Nome — o cursor vai para o campo.
-  Enviar recarrega a página (padrão do HTML). O botão type="button" não envia.
+  Aula: Botão e formulário. Clique na palavra Nome — o cursor vai para o campo.
+  Tente: Enviar (a página recarrega — é o HTML). Tente: o botão "Só um botão" não envia.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -251,8 +254,9 @@ const htmlCss = {
     <p class="card">Este parágrafo usa a classe card.</p>
     <p id="aviso">Este parágrafo usa o id aviso.</p>`,
     }),
-    'estilos.css': `/* Como abrir: junto com o index.html, na mesma pasta.
-   O que mudar: as cores. Recarregue o HTML (F5). */
+    'estilos.css': `/* Aula: CSS ligar e vestir. Junto com o index.html, na mesma pasta.
+   Tente: troque a cor do h1, Ctrl+S, F5 no HTML.
+   Tente: mude font-size do .card. */
 
 /* Todas as tags h1 desta página. */
 h1 {
@@ -286,7 +290,8 @@ h1 {
       <button type="button">Tesoura</button>
     </div>`,
     }),
-    'estilos.css': `/* padding = dentro da borda. margin = fora. gap = espaço entre filhos do flex. */
+    'estilos.css': `/* Aula: caixa. padding = dentro. margin = fora. gap = entre filhos do flex.
+   Tente: aumente o gap. Tente: padding maior num botão — o texto respira. */
 
 body {
   font-family: Georgia, serif;
@@ -328,7 +333,8 @@ button {
       <button type="button">Oi</button>
     </p>`,
     }),
-    'estilos.css': `/* Vista desta página. Mude cor e espaço até ficar com a sua cara. */
+    'estilos.css': `/* Mini-projeto: uma página sua. Mude cor e espaço até ficar com a sua cara.
+   Tente: troque a cor do h1 e o padding do botão. */
 
 body {
   font-family: Georgia, serif;
@@ -358,16 +364,23 @@ img {
 const jsConsole = {
   'o-que-e-javascript': {
     titulo: 'O que é JavaScript',
-    js: `// Abra no Chrome + F12 (Console). Esta linha pede para o navegador escrever.
-// O que mudar: o texto entre aspas.
+    js: `// Aula: O que é JavaScript. Bancada: Console (F12).
+// // no começo da linha é comentário: o Chrome ignora.
+// console.log é um MÉTODO: peça.ação(). O ponto liga.
+//
+// Tente: troque Olá por seu nome.
+// Tente: acrescente uma segunda linha console.log('passo 2').
 
 console.log('Olá')
 `,
   },
   'console-e-devtools': {
     titulo: 'Console e DevTools',
-    js: `// Cada console.log é um passo visível. console.error pinta de vermelho de propósito.
-// Digite no Console um nome que não existe (banana) e leia ReferenceError.
+    js: `// Aula: Console. Bancada: F12 → aba Console.
+// Cada log é um passo. console.error pinta de vermelho de propósito.
+//
+// Tente: some 10 + 32 só digitando no Console.
+// Tente: escreva banana (sem aspas) e leia ReferenceError.
 
 console.log('passo 1')
 console.log(2 + 2)
@@ -376,9 +389,11 @@ console.error('isso é só um teste de erro')
   },
   variaveis: {
     titulo: 'Variáveis',
-    js: `// let = gaveta que pode trocar o conteúdo.
-// const = gaveta que não troca o que está dentro.
-// Tente pais = 'Outro' e leia o erro: você prometeu não trocar.
+    js: `// Aula: Variáveis. Bancada: Console.
+// let = pode trocar. const = não troca o valor.
+//
+// Tente: mude idade para 21 e logue de novo.
+// Tente: pais = 'Outro' — leia o erro: você prometeu não trocar.
 
 let idade = 18
 const pais = 'Brasil'
@@ -389,22 +404,29 @@ console.log(pais)
   },
   'tipos-de-dados': {
     titulo: 'Tipos de dados',
-    js: `// typeof pergunta a espécie do valor.
-// 10 é number. '10' é string. Não são a mesma coisa.
+    js: `// Aula: Tipos. Bancada: Console.
+// typeof pergunta a espécie. 'Ana'.length é propriedade. toUpperCase() é método.
+//
+// Tente: 'Ana'.length e 'Ana'.toUpperCase().
+// Tente: 2 * 'a' — o Console mostra NaN (não é um número).
 
 console.log(typeof 10)
 console.log(typeof '10')
 console.log(typeof true)
-console.log(typeof undefined)
-
+console.log('Ana'.length)
+console.log('Ana'.toUpperCase())
+console.log(2 * 'a')
 const vazioDeProposito = null
 console.log(vazioDeProposito)
 `,
   },
   operadores: {
     titulo: 'Operadores',
-    js: `// === compara valor e tipo. == tenta converter e engana.
-// 10 === '10' é false. 10 == '10' é true — por isso evitamos ==.
+    js: `// Aula: Operadores. Bancada: Console.
+// === compara valor E tipo. == tenta converter e engana.
+//
+// Tente: 7 === '7' e 7 == '7'. Qual deu false?
+// Tente: uma conta com && que só é verdadeira se os dois lados forem.
 
 console.log(10 + 5)
 console.log('Tech' + 'Learn')
@@ -416,8 +438,11 @@ console.log(7 > 3 && 7 < 10)
   },
   'if-else': {
     titulo: 'if e else',
-    js: `// Troque hora para 9 (Bom dia) e 20 (Boa noite).
-// A condição dentro do if vira verdadeiro ou falso.
+    js: `// Aula: if e else. Bancada: Console. Cole o bloco INTEIRO.
+// Troque hora para 9 (Bom dia) e 20 (Boa noite).
+//
+// Tente: if ('') { console.log('entrou') } — texto vazio não entra.
+// Tente: if (0) { console.log('entrou') } — zero também é “não”.
 
 const hora = 14
 if (hora < 12) {
@@ -431,8 +456,11 @@ if (hora < 12) {
   },
   loops: {
     titulo: 'Loops',
-    js: `// for: começa em 0, enquanto i < 5, soma 1.
-// while: repete enquanto a condição for verdadeira. Sempre mude a variável, senão trava.
+    js: `// Aula: Loops. Bancada: Console.
+// for: começa em 0, enquanto i < 5, soma 1. while: sempre mude a variável.
+//
+// Tente: some 1 a 10 com for (let soma = 0). Tem que dar 55.
+// Não rode um while sem n = n - 1 — trava o Chrome.
 
 for (let i = 0; i < 5; i = i + 1) {
   console.log('volta', i)
@@ -447,8 +475,13 @@ while (n > 0) {
   },
   funcoes: {
     titulo: 'Funções',
-    js: `// return devolve o valor e para a função.
-// console.log só mostra. São trabalhos diferentes.
+    js: `// Aula: Funções. Bancada: Console.
+// Declarar = escrever a receita. Chamar = usar. a, b = parâmetros. 2, 3 = argumentos.
+// return devolve. console.log só mostra.
+//
+// Tente: troque 2 e 3 por outros números.
+// Tente: acrescente console.log(somar(10, 1)).
+// Tente: apague o return e veja undefined.
 
 function somar(a, b) {
   return a + b
@@ -465,8 +498,11 @@ cumprimentar('Ana')
   },
   arrays: {
     titulo: 'Arrays',
-    js: `// Índice começa em 0. frutas[1] é o segundo item.
-// push coloca no fim. length é quantos itens existem agora.
+    js: `// Aula: Arrays. Bancada: Console.
+// Índice começa em 0. length = propriedade. push() = método (leva parênteses).
+//
+// Tente: console.log(frutas[1]) — segundo item, não o primeiro.
+// Tente: frutas.push('caju') e logue length de novo.
 
 const frutas = ['açaí', 'manga', 'caju']
 console.log(frutas[0])
@@ -479,8 +515,11 @@ for (let i = 0; i < frutas.length; i = i + 1) {
   },
   objetos: {
     titulo: 'Objetos',
-    js: `// Ficha com chaves, não fila 0, 1, 2.
-// Ponto (aluno.nome) é o jeito mais comum.
+    js: `// Aula: Objetos. Bancada: Console.
+// Ficha com chaves (propriedades). Método = função numa chave. Sem this nesta aula.
+//
+// Tente: mude aluno.idade e logue de novo.
+// Tente: chame conta.mostrar(). Depois troque o saldo e chame de novo.
 
 const aluno = {
   nome: 'Lia',
@@ -491,11 +530,23 @@ console.log(aluno.nome)
 console.log(aluno['cidade'])
 aluno.idade = 20
 console.log(aluno.idade)
+
+const conta = {
+  saldo: 10,
+  mostrar: function () {
+    console.log(conta.saldo)
+  },
+}
+conta.mostrar()
 `,
   },
   'arrays-map-filter': {
     titulo: 'map e filter',
-    js: `// Bancada: Console (F12). Os três não mudam a lista original.
+    js: `// Aula: map, filter, find. Bancada: Console.
+// Os três NÃO mudam a lista original.
+//
+// Tente: filter só os pares (n % 2 === 0).
+// Tente: find o primeiro >= 9.
 
 const notas = [5, 7, 9, 4]
 
@@ -522,7 +573,11 @@ console.log('original intacto', notas)
   },
   'funcoes-es6': {
     titulo: 'Funções do dia a dia',
-    js: `// Arrow = forma curta. Se o corpo é uma expressão, o return vem implícito.
+    js: `// Aula: Funções do dia a dia. Bancada: Console.
+// Tente: const b = [...original]; b.push(3); console.log(original, b).
+// Tente: reescreva function soma(a, b) { return a + b } como arrow.
+//
+// Arrow = forma curta. Se o corpo é uma expressão, o return vem implícito.
 const dobro = (n) => n * 2
 const nome = 'Lia'
 // Crase: \${ } encaixa o valor no meio da frase.
@@ -543,7 +598,11 @@ console.log('cópia', copia)
   },
   'escopo-e-closure': {
     titulo: 'Escopo e closure',
-    js: `// n vive DENTRO de criarContador. Cada chamada abre a própria gaveta.
+    js: `// Aula: Escopo e closure. Bancada: Console.
+// Tente: chame a() três vezes e b() uma — 3 e 1, não brigam.
+// Tente: imagine n fora da função: aí só existiria UMA gaveta.
+//
+// n vive DENTRO de criarContador. Cada chamada abre a própria gaveta.
 // A função de dentro “lembra” esse n (closure).
 
 function criarContador() {
@@ -563,7 +622,11 @@ console.log('b', b()) // 1 — não briga com a
   },
   json: {
     titulo: 'JSON',
-    js: `// Objeto JS não viaja na rede. JSON é o texto combinado.
+    js: `// Aula: JSON. Bancada: Console.
+// Tente: JSON.parse('{"ok": true}') e leia .ok.
+// Tente: JSON.parse('nao e json') e leia o erro vermelho.
+//
+// Objeto JS não viaja na rede. JSON é o texto combinado.
 // stringify vai (objeto → texto). parse volta (texto → objeto).
 
 const aula = { titulo: 'JSON', minutos: 20 }
@@ -574,7 +637,11 @@ console.log('de volta', JSON.parse(texto).titulo)
   },
   promises: {
     titulo: 'Promises',
-    js: `// Promise = valor futuro. then = quando chegar. catch = se falhar.
+    js: `// Aula: Promises. Bancada: Console.
+// Tente: troque 500 por 1000 e veja o log atrasar.
+// Tente: clique na página durante a espera — ela continua viva.
+//
+// Promise = valor futuro. then = quando chegar. catch = se falhar.
 // A página NÃO trava: “isso sai antes” aparece primeiro.
 
 const espera = new Promise(function (resolve) {
@@ -591,7 +658,10 @@ console.log('isso sai antes')
   },
   'async-await': {
     titulo: 'async/await',
-    js: `// Mesma Promise, letra de passo a passo.
+    js: `// Aula: async/await. Bancada: Console.
+// Tente: chame run() duas vezes seguidas — as esperas andam juntas.
+//
+// Mesma Promise, letra de passo a passo.
 // await só funciona dentro de função async. Pausa ESTA função, não a página.
 
 function esperar(ms) {
@@ -611,7 +681,11 @@ run()
   },
   fetch: {
     titulo: 'fetch',
-    js: `// fetch chama uma URL. A resposta AINDA NÃO é o JSON: chame .json().
+    js: `// Aula: fetch. Bancada: Console (precisa de internet).
+// Tente: troque o CEP 01001000 pelo da sua rua (8 dígitos).
+// Tente: um CEP inventado e leia o que a API devolve.
+//
+// fetch chama uma URL. A resposta AINDA NÃO é o JSON: chame .json().
 // ViaCEP é pública, sem senha. Troque o CEP (8 dígitos) pelo da sua rua.
 
 async function buscarCep(cep) {
@@ -630,7 +704,11 @@ buscarCep('01001000').then(function (dados) {
   },
   this: {
     titulo: 'this',
-    js: `// this = quem chamou com o PONTO. conta.mostrar() → this é conta.
+    js: `// Aula: this. Bancada: Console.
+// Tente: rode conta.mostrar() e depois solta().
+// Tente: const mostra = () => console.log(conta.saldo) e chame mostra().
+//
+// this = quem chamou com o PONTO. conta.mostrar() → this é conta.
 // Arrow não ganha this próprio — por isso o método aqui é function.
 
 const conta = {
@@ -648,7 +726,10 @@ solta() // this se perde (undefined / erro)
   },
   classes: {
     titulo: 'Classes',
-    js: `// class = molde. constructor roda no new.
+    js: `// Aula: Classes. Bancada: Console.
+// Tente: deposite só em a e logue a.saldo e b.saldo — duas gavetas.
+//
+// class = molde. constructor roda no new.
 // this.saldo é o saldo DESTA conta, não de todas.
 
 class Conta {
@@ -668,7 +749,10 @@ console.log(a.saldo, b.saldo) // 15 e 0 — duas gavetas
   },
   prototipo: {
     titulo: 'Protótipo',
-    js: `// Se o objeto não tem a chave, o JS olha no protótipo (o pai).
+    js: `// Aula: Protótipo. Bancada: Console.
+// Tente: mude pai.tipo e leia filha.tipo de novo — não é cópia.
+//
+// Se o objeto não tem a chave, o JS olha no protótipo (o pai).
 // Object.create(pai) liga os dois. Não é cópia.
 
 const pai = { tipo: 'conta' }
@@ -680,7 +764,10 @@ console.log(filha.tipo) // veio do pai
   },
   'event-loop': {
     titulo: 'Event loop',
-    js: `// Ordem: A, C, B. O setTimeout 0 NÃO fura a pilha.
+    js: `// Aula: Event loop. Bancada: Console.
+// Tente: rode e anote a ordem. Tem que ser A, C, B — não A, B, C.
+//
+// Ordem: A, C, B. O setTimeout 0 NÃO fura a pilha.
 // B só roda quando o código síncrono (A e C) acaba.
 
 console.log('A')
@@ -692,7 +779,11 @@ console.log('C')
   },
   erros: {
     titulo: 'Erros',
-    js: `// try tenta. catch pega o erro. finally roda sempre.
+    js: `// Aula: Erros. Bancada: Console.
+// Tente: lerJson('{"ok":true}') e lerJson('banana').
+// Tente: os dois passam pelo finally.
+//
+// try tenta. catch pega o erro. finally roda sempre.
 // A página continua. Evite alert na cara de quem lê.
 
 function lerJson(texto) {
@@ -712,7 +803,10 @@ console.log(lerJson('ops'))
   },
   bundler: {
     titulo: 'Bundler',
-    js: `// Analogia, não configuração.
+    js: `// Aula: Bundler. Analogia, não configuração.
+// Tente: olhe o endereço desta plataforma — o Chrome não abre cada .vue.
+//
+// Analogia, não configuração.
 // Várias receitas (arquivos) viram um marmitex (o que o Chrome baixa).
 // Ganhos: nome curto, tamanho menor, import que o navegador entende.
 
@@ -777,7 +871,10 @@ gravar('javascript', 'dom', {
     <p id="msg">oi</p>`,
     js: 'script.js',
   }),
-  'script.js': `// Este arquivo está na mesma pasta do index.html.
+  'script.js': `// Aula: DOM. Pasta + Chrome. Tente: troque a string do textContent, Ctrl+S, F5.
+// Tente: se der null no Console, o id do HTML não bate com o do JS.
+//
+// Este arquivo está na mesma pasta do index.html.
 // A cerquilha (#) é o id. Se mudar o id no HTML, mude aqui também.
 
 // 1) Acha na página a peça com id="titulo".
@@ -799,7 +896,10 @@ gravar('javascript', 'eventos', {
     <p id="saida">Cliques: 0</p>`,
     js: 'script.js',
   }),
-  'script.js': `// Pasta: este script.js ao lado do index.html.
+  'script.js': `// Aula: Eventos. Pasta + Chrome. Tente: cada clique deve somar 1 no parágrafo.
+// Tente: mude o texto do botão no HTML e recarregue — o JS continua no mesmo id.
+//
+// Pasta: este script.js ao lado do index.html.
 // 1) Acha o botão e o parágrafo pelos ids do HTML.
 const botao = document.querySelector('#btn')
 const saida = document.querySelector('#saida')
@@ -841,7 +941,11 @@ button {
   padding: 0.6rem 1rem;
 }
 `,
-  'script.js': `// Mini-projeto do iniciante. Leia de cima a baixo: cada bloco é uma aula que você já fez.
+  'script.js': `// Mini-projeto: pedra, papel e tesoura. Pasta + Chrome. F5 depois de salvar.
+// Tente: jogue até empatar — o placar não pode somar.
+// Tente: abra o Console (F12) se o placar não subir: o vermelho aponta a linha.
+//
+// Mini-projeto do iniciante. Leia de cima a baixo: cada bloco é uma aula que você já fez.
 
 // Sorteia a jogada do computador. Math.random() vai de 0 até quase 1.
 function jogadaComputador() {
@@ -899,7 +1003,10 @@ gravar('javascript', 'formularios', {
     <p id="saida"></p>`,
     js: 'script.js',
   }),
-  'script.js': `// Bancada: pasta + Chrome. index.html e este arquivo na mesma pasta.
+  'script.js': `// Aula: Formulários. Pasta + Chrome.
+// Tente: envie vazio (aviso). Tente: espaços na frente — trim trata como vazio.
+//
+// Bancada: pasta + Chrome. index.html e este arquivo na mesma pasta.
 
 const form = document.querySelector('#form')
 const campo = document.querySelector('#cep')
@@ -932,7 +1039,9 @@ export function somar(a, b) {
   return a + b
 }
 `,
-  'main.js': `// type="module" no HTML é obrigatório. Sem isso o import quebra.
+  'main.js': `// Aula: Módulos. Tente: Console deve mostrar 5. Se der CORS, use um servidor local.
+//
+// type="module" no HTML é obrigatório. Sem isso o import quebra.
 // Se der erro de CORS / module, você abriu como file:// — use um servidor local.
 
 import { somar } from './somar.js'
@@ -951,7 +1060,11 @@ gravar('javascript', 'projeto-lista-de-tarefas', {
     <ul id="lista"></ul>`,
     js: 'script.js',
   }),
-  'script.js': `// Mini-projeto intermediário. Inclui, marca feita, lembra no localStorage.
+  'script.js': `// Mini-projeto: lista de tarefas. Pasta + Chrome.
+// Tente: inclua duas tarefas, clique numa (risca), recarregue — tem que lembrar.
+// Tente: Limpar dados do site neste endereço e recarregar — lista vazia, sem erro.
+//
+// Mini-projeto intermediário. Inclui, marca feita, lembra no localStorage.
 // textContent (nunca innerHTML com texto cru).
 
 const chave = 'techlearn-tarefas'
@@ -1011,7 +1124,10 @@ gravar('javascript', 'seguranca-front', {
     <p id="nome"></p>`,
     js: 'script.js',
   }),
-  'script.js': `// textContent trata o texto como texto. innerHTML com dado de fora abre XSS
+  'script.js': `// Aula: Segurança no front. Pasta + Chrome.
+// Tente: o símbolo < tem que aparecer na tela, NÃO um alerta.
+//
+// textContent trata o texto como texto. innerHTML com dado de fora abre XSS
 // (o navegador executaria o onerror e um alerta apareceria).
 
 const nome = '<img src=x onerror=alert(1)>'
@@ -1032,7 +1148,11 @@ gravar('javascript', 'projeto-consulta-publica', {
     <p id="saida"></p>`,
     js: 'script.js',
   }),
-  'script.js': `// Mini-projeto avançado. Quatro estados na tela: carregando, cidade, CEP inexistente, falha de rede.
+  'script.js': `// Mini-projeto: consulta de CEP. Pasta + Chrome, com internet.
+// Tente: 01001000 (centro de SP). Tente: 00000000 (CEP inexistente).
+// Tente: desligue o Wi-Fi e busque de novo (falha de rede).
+//
+// Mini-projeto avançado. Quatro estados na tela: carregando, cidade, CEP inexistente, falha de rede.
 // textContent sempre — a resposta da API nunca vira HTML.
 
 async function mostrarCep(cep, saida) {

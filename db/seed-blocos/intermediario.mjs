@@ -45,6 +45,7 @@ O teste do filter/find é uma função que devolve verdadeiro ou falso. \`n % 2 
     proxima(
       'Na próxima o código moderno fica mais curto: arrow, crase no texto, e desmontar objeto em variáveis.',
       '/aprender/javascript/funcoes-es6',
+      'Funções do dia a dia',
     ),
   ],
 
@@ -93,6 +94,7 @@ console.log(cidade, original, copia)`),
     proxima(
       'Na próxima você explica por que uma variável de dentro da função não existe fora — e por que um contador “lembra”.',
       '/aprender/javascript/escopo-e-closure',
+      'Onde a variável vale — escopo e closure',
     ),
   ],
 
@@ -135,6 +137,7 @@ Se \`n\` vivesse **fora** da função (um \`let n = 0\` no topo), só existiria 
     proxima(
       'Na próxima o objeto vira texto para viajar na internet — e o texto vira objeto de novo.',
       '/aprender/javascript/json',
+      'JSON — o formato das APIs',
     ),
   ],
 
@@ -168,6 +171,7 @@ Na aula de [erros](/aprender/javascript/erros) você envolve o parse num \`try\`
     proxima(
       'Na próxima o JavaScript espera sem travar a página: uma promessa de valor futuro.',
       '/aprender/javascript/promises',
+      'Esperar sem travar — Promises',
     ),
   ],
 
@@ -205,6 +209,7 @@ console.log('isso sai antes')`),
     proxima(
       'Na próxima a mesma espera se escreve como passo a passo, com async e await.',
       '/aprender/javascript/async-await',
+      'async/await',
     ),
   ],
 
@@ -246,6 +251,7 @@ run()`),
     proxima(
       'Na próxima você busca um CEP na internet e lê o JSON — sem chave de API.',
       '/aprender/javascript/fetch',
+      'Buscar dados — fetch',
     ),
   ],
 
@@ -283,6 +289,7 @@ buscarCep('01001000').then(function (dados) {
     proxima(
       'Na próxima o formulário não recarrega a página: você lê o campo e mostra o resultado na hora.',
       '/aprender/javascript/formularios',
+      'Formulários',
     ),
   ],
 
@@ -321,6 +328,7 @@ form.addEventListener('submit', function (evento) {
     proxima(
       'Na próxima o código se parte em dois arquivos: um calcula, o outro fala com a página.',
       '/aprender/javascript/modulos',
+      'Organizar o código',
     ),
   ],
 
@@ -362,6 +370,7 @@ console.log(somar(2, 3))
     proxima(
       'Na próxima um app único: tarefas, filtro, e a lista lembra depois que a página recarrega.',
       '/aprender/javascript/projeto-lista-de-tarefas',
+      'Mini-projeto: lista de tarefas',
     ),
   ],
 
@@ -404,6 +413,7 @@ O zip comentado é a cola. Faltou um? Volte na aula da peça (formulário, JSON,
     proxima(
       'O intermediário fechou. A próxima é o avançado: this, o ponto, e por que a arrow é diferente.',
       '/aprender/javascript/this',
+      'this e objetos com método',
     ),
   ],
 }

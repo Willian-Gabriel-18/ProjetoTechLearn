@@ -41,6 +41,7 @@ Na próxima aula o Chrome entra. Antes: confira se você vê \`.html\` no nome d
     proxima(
       'Na próxima: o Chrome é o programa da janela. Google é busca — um site, dentro do Chrome.',
       '/aprender/comecar/chrome-nao-e-google',
+      'Chrome não é o Google',
     ),
   ],
 
@@ -88,6 +89,7 @@ Celular abre o TechLearn. Escrever arquivo, salvar e recarregar é trabalho de *
     proxima(
       'Na próxima o editor: o programa em que você escreve o código. Não é Word.',
       '/aprender/comecar/editor-vscode',
+      'O editor é o VS Code',
     ),
   ],
 
@@ -130,6 +132,7 @@ Se você abrir só um arquivo solto, o VS Code não “enxerga” o vizinho. Aí
     proxima(
       'Na próxima os atalhos do VS Code que as outras aulas vão citar: salvar, formatar, comentar.',
       '/aprender/comecar/atalhos-vscode',
+      'Atalhos do VS Code',
     ),
   ],
 
@@ -164,6 +167,7 @@ Crie arquivo novo: clique com o botão direito na pasta à esquerda → New File
     proxima(
       'Na próxima o botão de baixar deste site: zip, mesma pasta, abrir o HTML — para HTML+CSS e para JavaScript.',
       '/aprender/comecar/baixar-e-abrir',
+      'Baixar e abrir o pacote',
     ),
   ],
 
@@ -213,6 +217,7 @@ Esqueceu este gesto no meio de outra aula? O botão de baixar tem o link de volt
     proxima(
       'Na próxima as duas bancadas: quando o teste é a página no Chrome, e quando o teste é o Console (F12).',
       '/aprender/comecar/duas-bancadas',
+      'Duas bancadas',
     ),
   ],
 
@@ -247,6 +252,7 @@ Esqueceu de baixar e extrair? [Baixar e abrir o pacote](/aprender/comecar/baixar
     proxima(
       'Acabou o ponto de partida. A próxima trilha é HTML e CSS: o palco. JavaScript usa esse palco.',
       '/aprender/html-css/o-que-e-uma-pagina',
+      'O que é uma página',
     ),
   ],
 }

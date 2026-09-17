@@ -1,3 +1,6 @@
+// Aula: Formulários. Pasta + Chrome.
+// Tente: envie vazio (aviso). Tente: espaços na frente — trim trata como vazio.
+//
 // Bancada: pasta + Chrome. index.html e este arquivo na mesma pasta.
 
 const form = document.querySelector('#form')

@@ -1,3 +1,6 @@
+// Aula: Eventos. Pasta + Chrome. Tente: cada clique deve somar 1 no parágrafo.
+// Tente: mude o texto do botão no HTML e recarregue — o JS continua no mesmo id.
+//
 // Pasta: este script.js ao lado do index.html.
 // 1) Acha o botão e o parágrafo pelos ids do HTML.
 const botao = document.querySelector('#btn')

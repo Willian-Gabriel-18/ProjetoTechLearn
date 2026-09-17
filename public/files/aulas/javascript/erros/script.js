@@ -1,3 +1,7 @@
+// Aula: Erros. Bancada: Console.
+// Tente: lerJson('{"ok":true}') e lerJson('banana').
+// Tente: os dois passam pelo finally.
+//
 // try tenta. catch pega o erro. finally roda sempre.
 // A página continua. Evite alert na cara de quem lê.
 

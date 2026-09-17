@@ -41,6 +41,7 @@ No VS Code: abra a **pasta** da aula, abra o \`.html\`, mude a frase, Ctrl+S, F5
     proxima(
       'Na próxima a peça de que o HTML é feito: a tag — abertura, conteúdo, fechamento.',
       '/aprender/html-css/anatomia-da-tag',
+      'Anatomia da tag',
     ),
   ],
 
@@ -94,6 +95,7 @@ Mais na frente você vai ver tags que **não fecham** (\`img\`, \`meta\`, \`inpu
     proxima(
       'Na próxima o esqueleto da página: onde essas tags visíveis entram (body) e o que fica escondido (head).',
       '/aprender/html-css/esqueleto',
+      'Esqueleto',
     ),
   ],
 
@@ -156,6 +158,7 @@ A tag \`<p>\` da aula passada não fica solta no arquivo. Ela vai **dentro do bo
     proxima(
       'Na próxima o body ganha texto de verdade: h1, h2, parágrafo — e duas tags que parecem iguais mas não são.',
       '/aprender/html-css/texto-e-titulos',
+      'Texto e títulos',
     ),
   ],
 
@@ -202,6 +205,7 @@ Existem \`<b>\` e \`<i>\`: só visual, quase sem esse significado. Nestas aulas 
     proxima(
       'Na próxima: link, imagem (esta tag não fecha) e lista — sempre no body.',
       '/aprender/html-css/links-imagens-listas',
+      'Links, imagens e listas',
     ),
   ],
 
@@ -254,6 +258,7 @@ O \`li\` não fica órfão no body. Ele mora dentro da lista.`),
     proxima(
       'Na próxima cada peça ganha um nome: id (único) e class (repetível). O JavaScript vai perguntar esses nomes.',
       '/aprender/html-css/nomear-pecas',
+      'Nomear peças',
     ),
   ],
 
@@ -301,6 +306,7 @@ O arquivo desta aula tem um h1 com id e dois blocos com a mesma class. Leia os c
     proxima(
       'Na próxima: botão, campo, rótulo e formulário — ainda sem JavaScript.',
       '/aprender/html-css/botao-e-formulario',
+      'Botão e formulário',
     ),
   ],
 
@@ -348,6 +354,7 @@ O arquivo desta aula tem um h1 com id e dois blocos com a mesma class. Leia os c
     proxima(
       'Na próxima o CSS: arquivo separado na mesma pasta, ligado no head, cor e letra.',
       '/aprender/html-css/css-ligar-e-vestir',
+      'CSS: ligar e vestir',
     ),
   ],
 
@@ -417,6 +424,7 @@ Cada uma segue o mesmo formato: \`nome: valor;\`. Sem o ponto e vírgula, a pró
     proxima(
       'Na próxima a caixa: margin, padding, border — e três botões na mesma linha.',
       '/aprender/html-css/caixa-e-lado-a-lado',
+      'Caixa e lado a lado',
     ),
   ],
 
@@ -469,6 +477,7 @@ button {
     proxima(
       'Na próxima você junta o básico numa página sua. A porta seguinte é o JavaScript.',
       '/aprender/html-css/projeto-pagina-sua',
+      'Mini-projeto: uma página sua',
     ),
   ],
 

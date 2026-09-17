@@ -1,3 +1,7 @@
+// Aula: Funções do dia a dia. Bancada: Console.
+// Tente: const b = [...original]; b.push(3); console.log(original, b).
+// Tente: reescreva function soma(a, b) { return a + b } como arrow.
+//
 // Arrow = forma curta. Se o corpo é uma expressão, o return vem implícito.
 const dobro = (n) => n * 2
 const nome = 'Lia'

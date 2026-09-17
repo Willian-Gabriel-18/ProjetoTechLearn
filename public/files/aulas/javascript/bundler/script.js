@@ -1,3 +1,6 @@
+// Aula: Bundler. Analogia, não configuração.
+// Tente: olhe o endereço desta plataforma — o Chrome não abre cada .vue.
+//
 // Analogia, não configuração.
 // Várias receitas (arquivos) viram um marmitex (o que o Chrome baixa).
 // Ganhos: nome curto, tamanho menor, import que o navegador entende.

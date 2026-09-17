@@ -1,4 +1,8 @@
-// Bancada: Console (F12). Os três não mudam a lista original.
+// Aula: map, filter, find. Bancada: Console.
+// Os três NÃO mudam a lista original.
+//
+// Tente: filter só os pares (n % 2 === 0).
+// Tente: find o primeiro >= 9.
 
 const notas = [5, 7, 9, 4]
 

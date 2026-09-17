@@ -27,14 +27,23 @@ As primeiras aulas desta trilha testam no **Console** (F12). Depois o JS mexe na
     ),
     md(`O pedido mais simples: \`console.log('Olá')\`. O Chrome escreve Olá **na aba Console**, não no meio da página.
 
+O ponto no meio (\`console.log\`) é o jeito do JavaScript de pedir uma **ferramenta** de um valor. \`console\` é a peça; \`log\` é a ação. Isso vai voltar nas aulas de texto, lista e ficha.
+
 Como abrir o Console você viu em [Duas bancadas](/aprender/comecar/duas-bancadas). Aqui o gesto: F12 (Mac: Cmd+Option+I) → aba **Console** → cole a linha → Enter.
 
-Se aparecer \`undefined\` na linha de baixo, tudo bem: o log funcionou; \`undefined\` é o “essa linha não devolveu valor”.`),
+Se aparecer \`undefined\` na linha de baixo, tudo bem: o log funcionou; \`undefined\` é o “essa linha não devolveu valor”.
+
+Recado para você, não para o Chrome: comece a linha com \`//\`. É **comentário**. O Chrome ignora. Serve para lembrar o que a linha faz.`),
     conce(
       'console.log',
-      'Pedido para o Chrome escrever uma mensagem no Console. Não aparece no meio da página.',
+      'Pedido para o Chrome escrever uma mensagem no Console. O ponto liga a peça (console) à ação (log). Não aparece no meio da página.',
     ),
-    code(`console.log('Olá')`),
+    conce(
+      'comentário',
+      'Linha que começa com // . O Chrome não executa. É recado para quem lê o código (você).',
+    ),
+    code(`// Isto não aparece no Console. É recado para você.
+console.log('Olá')`),
     tente(
       'Abra o Chrome, F12, aba Console. Cole console.log(\'Olá\') e Enter. Tem que aparecer Olá. O zip desta aula, se você abrir o index.html, já deixa uma mensagem no Console — é o mesmo log, vindo do arquivo.',
     ),
@@ -45,6 +54,7 @@ Se aparecer \`undefined\` na linha de baixo, tudo bem: o log funcionou; \`undefi
     proxima(
       'Na próxima a mesma janela com calma: onde o erro vermelho aparece e o que ele está dizendo.',
       '/aprender/javascript/console-e-devtools',
+      'O Console e as ferramentas do navegador',
     ),
   ],
 
@@ -81,6 +91,7 @@ console.error('isso é só um teste de erro')`),
     proxima(
       'Na próxima você dá nome às coisas: guarda um valor numa gaveta e troca esse valor depois.',
       '/aprender/javascript/variaveis',
+      'Guardar valores — variáveis',
     ),
   ],
 
@@ -98,7 +109,7 @@ No JavaScript de hoje:
     ),
     md(`Nome da pessoa no formulário: \`const\`. Quantidade no carrinho: \`let\`. Pontos num jogo: \`let\`. Título fixo: \`const\`.
 
-O nome da variável: letra ou \`_\` no começo, sem espaço. \`idade\` sim. \`2idade\` não. \`minha idade\` não.
+O nome da variável: letra ou \`_\` no começo, sem espaço. \`idade\` sim. \`2idade\` não. \`minha idade\` não. No JavaScript o combinado é **camelCase**: \`minhaIdade\`, não \`minha_idade\`.
 
 Esta aula testa **no Console**. O zip, se você abrir o HTML, também roda o mesmo código e já deixa o log lá — mas o exercício abaixo é colar no Console.`),
     code(`let idade = 18
@@ -117,6 +128,7 @@ console.log(pais)`),
     proxima(
       'Na próxima o que está dentro da gaveta: número, texto, verdadeiro ou falso.',
       '/aprender/javascript/tipos-de-dados',
+      'Tipos de dados',
     ),
   ],
 
@@ -140,20 +152,33 @@ Os tipos que mais aparecem no começo:
       'null e undefined',
       'undefined é “ainda não pus nada”. null é “pus de propósito o vazio”. No começo, se der undefined, quase sempre faltou atribuir.',
     ),
+    conce(
+      'propriedade e método',
+      'Propriedade é um dado grudado no valor: \'Ana\'.length. Método é uma ação grudada: \'Ana\'.toUpperCase(). O ponto liga; o método leva parênteses.',
+    ),
     md(`Campo de idade que veio como texto \`"18"\` não entra no \`if (idade >= 18)\` do jeito que você espera. Loja que soma \`"10" + 5\` e ganha \`"105"\` em vez de 15: misturou texto com número.
 
 Aspas fazem string. \`true\` sem aspas é boolean. \`'true'\` é texto.
+
+Texto e número vêm com **ferramentas no ponto** — o mesmo ponto de \`console.log\`.
+
+- \`'Ana'.length\` — quantas letras. Isso é uma **propriedade** (um dado grudado).
+- \`'Ana'.toUpperCase()\` — vira \`'ANA'\`. Isso é um **método** (uma ação grudada). Os parênteses chamam a ação.
+
+\`2 * 'a'\` não é número. O Console mostra \`NaN\`: “não é um número”. Não é um tipo para guardar de propósito; é o recado de uma conta que não deu.
 
 Teste no **Console**.`),
     code(`typeof 10
 typeof '10'
 typeof true
-typeof undefined
+console.log('Ana'.length)
+console.log('Ana'.toUpperCase())
+console.log(2 * 'a')
 let caixa = null
 console.log(typeof caixa)`),
     yt('808eYu9B9Yw', 'Data Types — Beau teaches JavaScript', 'freeCodeCamp.org'),
     tente(
-      'No Console (F12): typeof "Ana", typeof 2026, typeof false. As três respostas: string, number, boolean. Depois teste "3" + 1 e 3 + 1. São resultados diferentes — um cola, o outro soma.',
+      'No Console (F12): typeof "Ana", typeof 2026, typeof false. As três respostas: string, number, boolean. Depois "Ana".length e "Ana".toUpperCase(). Por fim teste "3" + 1 e 3 + 1 — um cola, o outro soma.',
     ),
     ex(
       'O que acontece se você fizer "3" + 1? Teste no Console e explique com a palavra tipo.',
@@ -162,6 +187,7 @@ console.log(typeof caixa)`),
     proxima(
       'Na próxima você combina valores: somar, colar texto, comparar do jeito que não engana.',
       '/aprender/javascript/operadores',
+      'Contas e comparações — operadores',
     ),
   ],
 
@@ -195,6 +221,7 @@ console.log(7 > 3 && 7 < 10)`),
     proxima(
       'Na próxima o programa escolhe um caminho: se a pergunta for sim, faz A; senão, faz B.',
       '/aprender/javascript/if-else',
+      'Decidir — if e else',
     ),
   ],
 
@@ -203,7 +230,9 @@ console.log(7 > 3 && 7 < 10)`),
 
 \`else\` é o “caso contrário”. \`else if\` é “senão, pergunta de novo”.
 
-A pergunta tem que virar verdadeiro ou falso. \`idade >= 18\` é uma pergunta. \`idade = 18\` **não** é: um igual só *atribui*, não compara. Comparar é \`===\` ou \`>=\`.`),
+A pergunta tem que virar verdadeiro ou falso. \`idade >= 18\` é uma pergunta. \`idade = 18\` **não** é: um igual só *atribui*, não compara. Comparar é \`===\` ou \`>=\`.
+
+O \`if\` também trata alguns valores como “não”: \`''\` (texto vazio) e \`0\`. \`if ('') { ... }\` não entra. Não precisa decorar uma lista; se o campo veio vazio, o if vê isso como não.`),
     conce(
       'condição',
       'Expressão que vira verdadeiro ou falso. É o que vai dentro do if. Ex.: idade >= 18.',
@@ -229,6 +258,7 @@ if (hora < 12) {
     proxima(
       'Na próxima o computador repete uma ação um número certo de vezes, sem você copiar a linha 20 vezes.',
       '/aprender/javascript/loops',
+      'Repetir — loops',
     ),
   ],
 
@@ -263,18 +293,30 @@ while (n > 0) {
     proxima(
       'Na próxima você empacota um pedaço de código com nome e chama quando quiser.',
       '/aprender/javascript/funcoes',
+      'Funções — um bloco com nome',
     ),
   ],
 
   funcoes: [
-    md(`Função é uma receita. Você define uma vez. Chama várias. Os **parâmetros** são os ingredientes. O \`return\` devolve o prato pronto e **para** a função.
+    md(`Sem função, você copia a mesma conta em quatro lugares. Muda um, esquece os outros. Função é o nome desse pedaço: você **declara** uma vez e **chama** quando quiser.
 
-Sem \`return\`, o resultado é \`undefined\`. \`console.log\` *mostra* algo no Console. \`return\` *devolve* algo para quem chamou. São trabalhos diferentes. Um não substitui o outro.
+Dois momentos, não misture:
 
-\`function somar(a, b) { return a + b }\` — a e b são parâmetros. \`somar(2, 3)\` é a chamada. O 5 sai no return.`),
+1. **Declarar** — escrever a receita. \`function somar(a, b) { return a + b }\`. Ainda não somou nada.
+2. **Chamar** — usar a receita. \`somar(2, 3)\`. Agora sim: entra 2 e 3, sai 5.
+
+**Parâmetro** é o nome na receita (\`a\`, \`b\`). **Argumento** é o valor na chamada (\`2\`, \`3\`). O primeiro parâmetro recebe o primeiro argumento.
+
+O \`return\` devolve o prato e **para** a função. Sem \`return\`, o resultado é \`undefined\`.
+
+\`console.log\` *mostra* no Console. \`return\` *devolve* para quem chamou, para você guardar numa variável. Um não substitui o outro. \`cumprimentar\` só fala; \`somar\` precisa devolver o número.`),
+    conce(
+      'função',
+      'Pedaço de código com nome. Declara uma vez (function …), chama quando quiser (nome()). Parâmetro = nome na receita. Argumento = valor na chamada.',
+    ),
     conce(
       'return',
-      'Devolve um valor para quem chamou a função e para a função. Sem return, o resultado é undefined.',
+      'Devolve um valor para quem chamou e para a função. Sem return, o resultado é undefined.',
     ),
     code(`function somar(a, b) {
   return a + b
@@ -289,15 +331,16 @@ function cumprimentar(nome) {
 cumprimentar('Ana')`),
     yt('R8SjM4DKK80', 'Functions — Beau teaches JavaScript', 'freeCodeCamp.org'),
     tente(
-      'No Console: escreva function dobro(n) { return n * 2 } e chame dobro(7). Tem que imprimir 14 se você der console.log no resultado. Sem o console.log, o 14 existe mas você não vê.',
+      'No Console: escreva function dobro(n) { return n * 2 } — isso é declarar. Depois chame dobro(7) e dê console.log no resultado: 14. Sem o log, o 14 existe mas você não vê. Troque o argumento 7 por 10.',
     ),
     ex(
-      'Qual a diferença entre console.log dentro da função e return? Quando cada um serve?',
-      '`console.log` **mostra** no Console. `return` **devolve** o valor para quem chamou e para a função. `somar(2, 3)` precisa de return para você guardar o 5 numa variável. Cumprimentar com “Olá” na tela do Console pode ser só log. Um não substitui o outro.',
+      'Qual a diferença entre declarar a função e chamá-la? E, na chamada, o que é parâmetro e o que é argumento?',
+      'Declarar é escrever `function somar(a, b) { … }` — a receita ainda não rodou. Chamar é `somar(2, 3)` — agora entra valor. `a` e `b` são **parâmetros** (nomes). `2` e `3` são **argumentos** (valores). `return` devolve o resultado; `console.log` só mostra.',
     ),
     proxima(
       'Na próxima você guarda vários valores numa lista — e o primeiro item é o 0, não o 1.',
       '/aprender/javascript/arrays',
+      'Listas — arrays',
     ),
   ],
 
@@ -306,12 +349,12 @@ cumprimentar('Ana')`),
 
 Isso não é capricho: é o combinado da linguagem. Errar por um é o bug mais comum do começo.
 
-\`length\` é quantos itens existem agora. \`push\` coloca um item no fim.
+\`length\` é quantos itens existem agora — uma **propriedade**, como \`'Ana'.length\`. \`push\` coloca um item no fim — um **método**, por isso leva parênteses: \`frutas.push('goiaba')\`. A lista é um valor com ferramentas no ponto, o mesmo da aula de tipos.
 
 As aspas na lista de texto: \`['açaí', 'manga']\`. Sem aspas, o JS procura variáveis com esses nomes.`),
     conce(
       'índice',
-      'Posição na lista, começando em 0. frutas[1] é o segundo item. length é quantos itens existem agora.',
+      'Posição na lista, começando em 0. frutas[1] é o segundo item. length (propriedade) é quantos itens. push (método) coloca no fim.',
     ),
     code(`const frutas = ['açaí', 'manga', 'caju']
 console.log(frutas[0])
@@ -330,20 +373,23 @@ for (let i = 0; i < frutas.length; i = i + 1) {
     proxima(
       'Na próxima a coisa do mundo real ganha nome nas chaves: um aluno, uma aula — não uma fila 0, 1, 2.',
       '/aprender/javascript/objetos',
+      'Fichas — objetos simples',
     ),
   ],
 
   objetos: [
     md(`Objeto não usa índice 0, 1, 2. Usa **chaves** com nome: \`nome\`, \`idade\`, \`cidade\`.
 
-Pense numa ficha, não numa fila.
+Pense numa ficha, não numa fila. Cada chave é uma **propriedade** da ficha.
 
 Ponto (\`aluno.nome\`) é o jeito mais comum de ler. Colchetes (\`aluno['cidade']\`) servem quando o nome da chave está numa variável.
+
+A chave também pode guardar uma **função**. Aí o nome muda: é um **método** da ficha. Chama com ponto e parênteses: \`conta.mostrar()\`. Nesta aula o método usa o nome da ficha (\`conta.saldo\`), sem a palavra \`this\` — isso fica no [avançado](/aprender/javascript/this).
 
 Lista de notas = array. Ficha de um aluno = objeto. Lista de alunos = array de objetos.`),
     conce(
       'objeto',
-      'Coleção de pares chave/valor. Ponto (aluno.nome) é o jeito mais comum. Colchetes servem quando o nome da chave está numa variável.',
+      'Ficha de pares chave/valor. Cada chave é uma propriedade. Se o valor for uma função, essa chave é um método (conta.mostrar()).',
     ),
     code(`const aluno = {
   nome: 'Lia',
@@ -352,17 +398,32 @@ Lista de notas = array. Ficha de um aluno = objeto. Lista de alunos = array de o
 }
 console.log(aluno.nome)
 console.log(aluno['cidade'])
-aluno.idade = 20`),
+aluno.idade = 20
+
+const conta = {
+  saldo: 10,
+  mostrar: function () {
+    console.log(conta.saldo)
+  }
+}
+conta.mostrar()
+
+const turma = [
+  { nome: 'Lia', cidade: 'Recife' },
+  { nome: 'Bia', cidade: 'Manaus' }
+]
+console.log(turma[0].nome)`),
     tente(
-      'No Console, modele const aula = { titulo: \'Variáveis\', minutos: 20 } e imprima aula.titulo. Depois mude aula.minutos e log de novo.',
+      'No Console, modele const aula = { titulo: \'Variáveis\', minutos: 20 } e imprima aula.titulo. Depois mude aula.minutos e log de novo. Em seguida cole o objeto conta e chame conta.mostrar().',
     ),
     ex(
-      'Qual a diferença prática entre array e objeto? Pense: lista de notas vs ficha de um aluno.',
-      '**Array** é fila: índice 0, 1, 2. Lista de notas. **Objeto** é ficha: chaves com nome (`nome`, `idade`). Um aluno. Lista de alunos = array de objetos.',
+      'Qual a diferença prática entre array e objeto? E o que é um método da ficha?',
+      '**Array** é fila: índice 0, 1, 2. Lista de notas. **Objeto** é ficha: chaves com nome (`nome`, `idade`). Um aluno. Lista de alunos = array de objetos. **Método** é uma função guardada numa chave: `conta.mostrar()` — ponto e parênteses. Propriedade é o dado (`conta.saldo`).',
     ),
     proxima(
       'Na próxima o JavaScript aponta para um título na *página* e troca o texto. Até agora tudo foi no Console.',
       '/aprender/javascript/dom',
+      'A página é uma árvore — DOM',
     ),
   ],
 
@@ -401,6 +462,7 @@ titulo.textContent = 'Aula de DOM'`),
     proxima(
       'Na próxima um botão na página reage ao clique — sem recarregar.',
       '/aprender/javascript/eventos',
+      'Clique e outros eventos',
     ),
   ],
 
@@ -437,6 +499,7 @@ Se o script estiver no head, \`querySelector('#btn')\` acha null: o botão ainda
     proxima(
       'Na próxima você junta o iniciante num joguinho: o computador escolhe, você clica, o placar sobe na tela.',
       '/aprender/javascript/projeto-pedra-papel-tesoura',
+      'Mini-projeto: Pedra, papel e tesoura',
     ),
   ],
 
@@ -475,6 +538,7 @@ Empate não soma ponto. A página não recarrega. Se o placar não sobe, o Conso
     proxima(
       'O iniciante fechou. A próxima é o intermediário: map, filter e listas sem um for gigante.',
       '/aprender/javascript/arrays-map-filter',
+      'Arrays com superpoderes',
     ),
   ],
 }

@@ -1,3 +1,6 @@
+// Aula: Segurança no front. Pasta + Chrome.
+// Tente: o símbolo < tem que aparecer na tela, NÃO um alerta.
+//
 // textContent trata o texto como texto. innerHTML com dado de fora abre XSS
 // (o navegador executaria o onerror e um alerta apareceria).
 

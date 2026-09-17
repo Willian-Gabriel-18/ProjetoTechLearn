@@ -15,9 +15,9 @@ export const ex = (enunciado, resposta = '') => ({
   conteudo: { enunciado, resposta },
 })
 export const arq = (href, rotulo) => ({ tipo: 'arquivo', conteudo: { href, rotulo } })
-// href: caminho da aula seguinte. Sem href, a frase já traz o destino (fim de trilha).
-export const proxima = (frase, href) =>
-  md(`## Na próxima\n\n${href ? `[${frase}](${href})` : frase}`)
+// href + titulo: o link é só o nome da aula, não a frase inteira.
+export const proxima = (frase, href, titulo) =>
+  md(href && titulo ? `## Na próxima\n\n${frase}\n\n[${titulo}](${href})` : `## Na próxima\n\n${frase}`)
 
 function contarPalavras(s) {
   return String(s || '')

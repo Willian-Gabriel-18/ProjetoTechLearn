@@ -17,7 +17,7 @@ const src = computed(
         v-if="ativo && conteudo.video_id"
         class="h-full w-full"
         :src="src"
-        title="Vídeo da aula"
+        :title="conteudo.titulo || 'Vídeo da aula'"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       />
