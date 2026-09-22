@@ -26,7 +26,7 @@ O arquivo desta aula é uma página mínima. Você ainda **não** precisa entend
 
 No VS Code: abra a **pasta** da aula, abra o \`.html\`, mude a frase, Ctrl+S, F5 no Chrome.
 
-[Não lembra de baixar e abrir?](/aprender/comecar/baixar-e-abrir)`),
+[Não lembra como baixar e abrir?](/aprender/comecar/baixar-e-abrir)`),
     code(
       `<p>Olá. Isto é uma página.</p>`,
       'html',
