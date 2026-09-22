@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 404, statusMessage: 'Aula não encontrada.' })
   }
   if (!aula.trilha_publicada && usuario?.papel !== 'admin') {
-    throw createError({ statusCode: 403, statusMessage: 'Esta trilha abre em breve.' })
+    throw createError({ statusCode: 403, statusMessage: 'Esta trilha ainda não está disponível.' })
   }
 
   const [blocos, viz, progresso] = await Promise.all([

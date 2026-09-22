@@ -192,7 +192,7 @@ console.log(lerJson('ops'))`),
   ],
 
   bundler: [
-    md(`No iniciante você abria HTML + JS na pasta. Num app grande isso vira dezenas de arquivos, \`import\` que o Chrome antigo não entende, nomes longos, comentários.
+    md(`No básico você abria HTML + JS na pasta. Num app grande isso vira dezenas de arquivos, \`import\` que o Chrome antigo não entende, nomes longos, comentários.
 
 O **bundler** lê o código-fonte e gera o que o visitante baixa. Analogia: várias receitas viram um **marmitex**.
 
@@ -204,13 +204,13 @@ Três ganhos concretos:
 
 O Nuxt (esta plataforma) usa **Vite** por baixo. Você não configura webpack nesta aula. Só precisa da analogia: o que chega no Chrome já veio empacotado. Você não abre cada \`.vue\` no navegador.
 
-Bancada: olhe o endereço desta plataforma (localhost ou o site no ar). Não precisa baixar zip.`),
+Bancada: olhe o endereço desta plataforma (localhost ou o site publicado). Não precisa baixar zip.`),
     conce(
       'bundler',
       'Ferramenta que lê seu código-fonte e gera o que o navegador baixa. Analogia: várias receitas viram um marmitex. Vite/Nuxt fazem isso.',
     ),
     tente(
-      'Olhe o endereço desta plataforma em desenvolvimento (localhost) ou o site no ar. O que chega no Chrome já veio empacotado. Não precisa abrir cada .vue no navegador.',
+      'Olhe o endereço desta plataforma em desenvolvimento (localhost) ou o site publicado. O que chega no Chrome já veio empacotado. Não precisa abrir cada .vue no navegador.',
     ),
     ex(
       'O que o bundler faz, na analogia do marmitex — e cite um ganho (nome, tamanho ou import).',
@@ -256,7 +256,7 @@ p.textContent = nome
   'projeto-consulta-publica': [
     md(`No final existe, na tela: campo de CEP, botão, um parágrafo de saída. Estados: carregando, cidade e UF, CEP inexistente, falha de rede. Sem recarregar. Sem \`innerHTML\` com a resposta.
 
-O que desta trilha entra: fetch + async/await + preventDefault + textContent + try/catch. O [iniciante](/aprender/javascript/eventos) e o [intermediário](/aprender/javascript/formularios) já deram o formulário e o JSON.
+O que desta trilha entra: fetch + async/await + preventDefault + textContent + try/catch. O [básico](/aprender/javascript/eventos) e o [intermediário](/aprender/javascript/formularios) já deram o formulário e o JSON.
 
 Bancada: **pasta + Chrome**, com internet. [Como abrir](/aprender/comecar/baixar-e-abrir).`),
     code(`async function mostrarCep(cep, saida) {

@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
   }
   // Aluno não entra em trilha "em breve". Admin pode ver.
   if (!t[0].publicada && usuario?.papel !== 'admin') {
-    throw createError({ statusCode: 403, statusMessage: 'Esta trilha abre em breve.' })
+    throw createError({ statusCode: 403, statusMessage: 'Esta trilha ainda não está disponível.' })
   }
 
   const aulas = await sql`

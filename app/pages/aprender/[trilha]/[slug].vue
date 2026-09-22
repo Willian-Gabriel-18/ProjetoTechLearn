@@ -52,7 +52,7 @@ async function desmarcarFeita() {
 <template>
   <article class="mx-auto max-w-leitura px-4 py-10 min-w-0 overflow-x-clip">
     <p v-if="error" class="text-cerrado">
-      {{ error.statusCode === 403 ? 'Esta trilha abre em breve.' : 'Aula não encontrada.' }}
+      {{ error.statusCode === 403 ? 'Esta trilha ainda não está disponível.' : 'Aula não encontrada.' }}
     </p>
     <template v-else-if="data">
       <p class="text-sm">
@@ -113,7 +113,7 @@ async function desmarcarFeita() {
           <NuxtLink to="/entrar" class="underline text-cerrado">Entre</NuxtLink>
           ou
           <NuxtLink to="/cadastrar" class="underline text-cerrado">crie uma conta</NuxtLink>.
-          A aula você já pode ler de graça.
+          Você já pode ler a aula de graça.
         </p>
       </div>
 

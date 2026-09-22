@@ -19,7 +19,7 @@ defineProps({
       <NuxtLink to="/aprender/html-css" class="underline text-cerrado font-bold">
         HTML e CSS básico
       </NuxtLink>,
-      começa por lá — é recomendado, não obrigatório.
+      comece por lá — é recomendado, não obrigatório.
     </p>
   </aside>
 </template>

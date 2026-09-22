@@ -55,7 +55,7 @@ const ehZip = computed(() => String(props.conteudo?.href || '').toLowerCase().en
         to="/aprender/comecar/duas-bancadas"
         class="underline text-cerrado font-bold"
       >
-        Pasta+Chrome ou Console?
+        Onde testar: pasta e Chrome, ou Console?
       </NuxtLink>
     </p>
   </aside>

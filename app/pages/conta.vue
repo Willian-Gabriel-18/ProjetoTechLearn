@@ -55,7 +55,7 @@ useHead({ title: 'Conta — TechLearn' })
 <template>
   <section class="mx-auto max-w-md px-4 py-12">
     <h1 class="font-display text-3xl">Sua conta</h1>
-    <p class="mt-2">Mude nome, e-mail ou senha. A senha nova pede a senha de agora.</p>
+    <p class="mt-2">Mude nome, e-mail ou senha. Para trocar a senha, informe a senha atual.</p>
     <form class="mt-6 space-y-4" @submit.prevent="salvar">
       <label class="block">
         Nome

@@ -2,7 +2,7 @@ import { md, conce, code, img, tente, ex, proxima } from './helpers.mjs'
 
 export const intermediario = {
   'arrays-map-filter': [
-    md(`No [iniciante](/aprender/javascript/arrays) você percorreu uma lista com \`for\`. Funciona. Fica comprido.
+    md(`No [básico](/aprender/javascript/arrays) você percorreu uma lista com \`for\`. Funciona. Fica comprido.
 
 Três métodos devolvem (ou visitam) a lista sem você escrever o índice na mão. Os dois primeiros **não mudam** a lista original: entregam outra.
 
@@ -50,7 +50,7 @@ O teste do filter/find é uma função que devolve verdadeiro ou falso. \`n % 2 
   ],
 
   'funcoes-es6': [
-    md(`O JavaScript de hoje escreve a mesma função de um jeito mais curto. Não é outra linguagem. É letra menor para o que você já fez no [iniciante](/aprender/javascript/funcoes).
+    md(`O JavaScript de hoje escreve a mesma função de um jeito mais curto. Não é outra linguagem. É letra menor para o que você já fez no [básico](/aprender/javascript/funcoes).
 
 Bancada: **Console**.`),
     md(`**Arrow** \`() =>\` é forma curta de função. Se o corpo é uma expressão só, o \`return\` vem implícito: \`(n) => n * 2\` é o dobro.

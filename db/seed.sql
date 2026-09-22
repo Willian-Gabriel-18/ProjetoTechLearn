@@ -5,14 +5,14 @@ INSERT INTO trilhas (id, titulo, descricao, ordem, publicada) VALUES
   (
     'html-css',
     'HTML e CSS',
-    'A estrutura e a roupa da página. Comece por aqui.',
+    'A estrutura e o visual da página. Melhor depois da trilha Antes de começar.',
     1,
     true
   ),
   (
     'javascript',
     'JavaScript',
-    'A página reage. Recomendado: HTML e CSS básico antes.',
+    'A página reage ao clique. Melhor depois das trilhas Antes de começar e HTML e CSS.',
     2,
     true
   );
@@ -27,7 +27,7 @@ INSERT INTO aulas (trilha_id, slug, titulo, resumo, ordem, tempo_minutos, tipo, 
   ('html-css', 'botao-e-formulario', 'Botão e formulário', 'button, input, label, form e checkbox. Sem JavaScript ainda.', 7, 20, 'aula', 'basico', false, false),
   ('html-css', 'css-ligar-e-vestir', 'CSS: ligar e vestir', 'Arquivo CSS, seletores, cor e letra.', 8, 20, 'aula', 'basico', false, false),
   ('html-css', 'caixa-e-lado-a-lado', 'Caixa e lado a lado', 'margin, padding, border e três botões em fila.', 9, 20, 'aula', 'basico', false, false),
-  ('html-css', 'projeto-pagina-sua', 'Mini-projeto: uma página sua', 'Título, texto, imagem, lista e um botão. Depois: JavaScript ou HTML intermediário (em breve).', 10, 30, 'projeto', 'basico', false, false),
+  ('html-css', 'projeto-pagina-sua', 'Mini-projeto: uma página sua', 'Título, texto, imagem, lista e um botão. Porta atual: JavaScript.', 10, 30, 'projeto', 'basico', false, false),
   ('javascript', 'o-que-e-javascript', 'O que é JavaScript', 'O que o JS faz na página, editor, script e o primeiro Hello World.', 1, 20, 'aula', 'basico', false, false),
   ('javascript', 'console-e-devtools', 'O Console e as ferramentas do navegador', 'Abrir o DevTools, ler o Console e achar o erro vermelho.', 2, 15, 'aula', 'basico', false, false),
   ('javascript', 'variaveis', 'Guardar valores — variáveis', 'let, const e por que quase não usamos var.', 3, 20, 'aula', 'basico', false, false),

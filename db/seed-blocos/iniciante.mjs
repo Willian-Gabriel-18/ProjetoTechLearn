@@ -4,7 +4,7 @@ export const iniciante = {
   'o-que-e-javascript': [
     md(`JavaScript é a linguagem que faz a página **responder**. O HTML montou o palco. O CSS vestiu. O JS é o que se mexe quando você toca.
 
-Se o [HTML e CSS básico](/aprender/html-css) ainda não entrou, o mapa abaixo ainda vale — só fica mais claro com o palco feito. Esta aula não trava.`),
+Se o [HTML e CSS básico](/aprender/html-css) ainda não entrou, o mapa abaixo ainda vale — só fica mais claro com o palco feito. Não é obrigatório ter feito o HTML antes.`),
     img(
       '/images/trilhas/iniciante/tres-camadas.svg',
       'Três faixas: HTML estrutura, CSS visual, JavaScript reação',
@@ -497,7 +497,7 @@ Se o script estiver no head, \`querySelector('#btn')\` acha null: o botão ainda
       'O script no head roda **antes** do body existir. `querySelector(\'#btn\')` acha `null`. A próxima linha que usa o botão quebra. Por isso o `<script src="script.js">` vai no **fim do body**.',
     ),
     proxima(
-      'Na próxima você junta o iniciante num joguinho: o computador escolhe, você clica, o placar sobe na tela.',
+      'Na próxima você junta o básico num joguinho: o computador escolhe, você clica, o placar sobe na tela.',
       '/aprender/javascript/projeto-pedra-papel-tesoura',
       'Mini-projeto: Pedra, papel e tesoura',
     ),
@@ -536,7 +536,7 @@ Do **HTML**: os três \`button\`, os ids (\`placar\`, \`rodada\`), o \`div\` dos
 Empate não soma ponto. A página não recarrega. Se o placar não sobe, o Console (F12) aponta a linha. O zip comentado é a cola.`,
     ),
     proxima(
-      'O iniciante fechou. A próxima é o intermediário: map, filter e listas sem um for gigante.',
+      'O básico fechou. A próxima é o intermediário: map, filter e listas sem um for gigante.',
       '/aprender/javascript/arrays-map-filter',
       'Arrays com superpoderes',
     ),

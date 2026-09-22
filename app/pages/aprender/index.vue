@@ -5,7 +5,7 @@ useHead({ title: 'Aprenda — TechLearn' })
 function rotuloTrilha(t) {
   if (!t?.publicada) return ''
   if (t.id === 'comecar') return 'O ponto de partida · ' + t.total_aulas + ' aulas'
-  if (t.id === 'html-css') return 'Básico no ar · ' + t.total_aulas + ' aulas'
+  if (t.id === 'html-css') return 'Básico disponível · ' + t.total_aulas + ' aulas'
   if (t.id === 'javascript') return 'Básico, intermediário e avançado · ' + t.total_aulas + ' aulas'
   return t.total_aulas + ' aulas'
 }
@@ -15,8 +15,8 @@ function rotuloTrilha(t) {
   <section class="mx-auto max-w-5xl px-4 py-10">
     <h1 class="font-display text-4xl">Aprenda</h1>
     <p class="mt-3 text-lg max-w-leitura">
-      Comece por Antes de começar (pasta, VS Code, o botão de baixar). Depois HTML e CSS. O
-      JavaScript usa o que essa trilha ensina.
+      Comece pela trilha Antes de começar (pasta, VS Code, botão de baixar). Depois HTML e CSS.
+      O JavaScript usa o palco que o HTML monta.
     </p>
     <ul class="mt-8 space-y-4">
       <li
@@ -30,12 +30,12 @@ function rotuloTrilha(t) {
           <p v-if="t.id === 'html-css' || t.id === 'javascript'" class="mt-2 text-sm">
             Recomendado antes:
             <NuxtLink to="/aprender/comecar" class="underline text-cerrado">Antes de começar</NuxtLink>
-            (não trava).
+            — não é obrigatório.
           </p>
           <p v-if="t.id === 'javascript'" class="mt-2 text-sm">
-            Usa o
+            Melhor depois do
             <NuxtLink to="/aprender/html-css" class="underline text-cerrado">HTML e CSS básico</NuxtLink>
-            (recomendado, não obrigatório).
+            — recomendado, não obrigatório.
           </p>
           <p v-if="t.publicada" class="mt-1 text-sm text-tinta/70">
             {{ rotuloTrilha(t) }}

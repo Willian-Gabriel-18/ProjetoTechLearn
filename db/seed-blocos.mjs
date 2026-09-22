@@ -55,7 +55,7 @@ await sql`
   VALUES (
     'comecar',
     'Antes de começar',
-    'Pasta, Chrome, VS Code e o botão de baixar. Faça isto antes do HTML e do JavaScript.',
+    'Pasta, Chrome, VS Code e o botão de baixar. O ponto de partida, antes das outras trilhas.',
     1,
     true
   )
@@ -70,7 +70,7 @@ await sql`
   VALUES (
     'html-css',
     'HTML e CSS',
-    'A estrutura e a roupa da página. Depois de Antes de começar.',
+    'A estrutura e o visual da página. Melhor depois da trilha Antes de começar.',
     2,
     true
   )
@@ -85,7 +85,7 @@ await sql`
   VALUES (
     'javascript',
     'JavaScript',
-    'A página reage. Recomendado: Antes de começar e HTML e CSS básico.',
+    'A página reage ao clique. Melhor depois das trilhas Antes de começar e HTML e CSS.',
     3,
     true
   )

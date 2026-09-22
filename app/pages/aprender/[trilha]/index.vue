@@ -23,8 +23,8 @@ const soUmNivel = computed(() => niveis.filter((nv) => aulasDoNivel(nv.id).lengt
 <template>
   <section class="mx-auto max-w-5xl px-4 py-10">
     <p v-if="error" class="border border-linha rounded-md p-6">
-      <span class="font-display text-2xl block">Esta trilha ainda não está no ar.</span>
-      <span class="mt-2 block">Enquanto isso, comece por Antes de começar.</span>
+      <span class="font-display text-2xl block">Esta trilha ainda não está disponível.</span>
+      <span class="mt-2 block">Enquanto isso, comece pela trilha Antes de começar.</span>
       <NuxtLink to="/aprender/comecar" class="mt-4 inline-flex underline text-cerrado">
         Ir para Antes de começar
       </NuxtLink>
@@ -118,8 +118,8 @@ const soUmNivel = computed(() => niveis.filter((nv) => aulasDoNivel(nv.id).lengt
         v-if="data.trilha.id === 'html-css'"
         class="mt-10 max-w-leitura leading-relaxed border border-linha rounded-md p-4 bg-white/40"
       >
-        O básico desta trilha está no ar. Mais HTML e CSS (layout, página no celular) entram
-        depois. Agora o próximo passo é o
+        O básico desta trilha já está disponível. Mais HTML e CSS (layout, página no celular)
+        entram depois. O próximo passo agora é o
         <NuxtLink to="/aprender/javascript" class="underline text-cerrado font-bold">JavaScript</NuxtLink>.
       </p>
     </template>

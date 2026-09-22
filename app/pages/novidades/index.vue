@@ -7,8 +7,8 @@ useHead({ title: 'Novidades — TechLearn' })
   <section class="mx-auto max-w-5xl px-4 py-10">
     <h1 class="font-display text-4xl">Novidades</h1>
     <p class="mt-3 text-lg max-w-leitura">
-      Textos sobre tecnologia, completos e em linguagem simples. Pode complementar uma aula ou só
-      apresentar um tema.
+      Textos sobre tecnologia, completos e em linguagem simples. Cada um pode complementar uma
+      aula ou só apresentar um tema.
     </p>
     <ul v-if="data?.noticias?.length" class="mt-8 space-y-4">
       <li v-for="n in data.noticias" :key="n.id" class="border border-linha rounded-md overflow-hidden bg-white/40">

@@ -13,7 +13,7 @@ useHead({
 function rotuloTrilha(t) {
   if (!t?.publicada) return ''
   if (t.id === 'comecar') return 'O ponto de partida · ' + t.total_aulas + ' aulas'
-  if (t.id === 'html-css') return 'Básico no ar · ' + t.total_aulas + ' aulas'
+  if (t.id === 'html-css') return 'Básico disponível · ' + t.total_aulas + ' aulas'
   if (t.id === 'javascript') return 'Básico, intermediário e avançado · ' + t.total_aulas + ' aulas'
   return t.total_aulas + ' aulas'
 }
@@ -27,7 +27,7 @@ function rotuloTrilha(t) {
           Aprenda tecnologia sem pressa e sem enrolação.
         </h1>
         <p class="mt-4 text-lg md:text-xl text-tinta/80 max-w-md">
-          Aulas de graça para quem está começando. Abre o iniciante e tenta.
+          Aulas de graça para quem está começando. Abre a primeira trilha e tenta.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <NuxtLink
@@ -73,7 +73,7 @@ function rotuloTrilha(t) {
     <section class="mx-auto max-w-5xl px-4 py-8">
       <h2 class="font-display text-2xl md:text-3xl">As trilhas</h2>
       <p class="mt-2 text-tinta/80">
-        Comece por Antes de começar. Depois HTML e CSS. O JavaScript usa essa página.
+        Primeiro a trilha Antes de começar. Depois HTML e CSS. O JavaScript usa a página que você monta lá.
       </p>
       <ol class="mt-6 grid md:grid-cols-3 gap-4">
         <li
