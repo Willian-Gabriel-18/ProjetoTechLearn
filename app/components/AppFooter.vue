@@ -2,7 +2,7 @@
   <footer class="mt-12 bg-[#1a3d32] text-papel">
     <div class="mx-auto max-w-5xl px-4 py-8 text-center">
       <p class="text-sm md:text-base">
-        Sua opinião ajuda a melhorar o TechLearn. Leva poucos minutos.
+        Sua opinião ajuda a melhorar o TechLearn. O formulário leva poucos minutos.
       </p>
       <p class="mt-4">
         <a

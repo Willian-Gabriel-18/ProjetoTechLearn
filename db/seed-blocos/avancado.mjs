@@ -34,7 +34,7 @@ solta()`),
       'Depende de **como é chamada**. `conta.mostrar()` — o ponto está em `conta`, `this` é `conta`. `solta()` — não há ponto, `this` se perde. O lugar onde a função foi escrita não decide. (Arrow é o caso especial: herda o this de fora, não cria o próprio.)',
     ),
     proxima(
-      'Na próxima aula um molde com class: duas contas, cada uma com seu saldo.',
+      'Na próxima aula, um molde com class: duas contas, cada uma com seu saldo.',
       '/aprender/javascript/classes',
       'Classes (OOP leve)',
     ),
@@ -75,7 +75,7 @@ Se um dia você quiser \`class Poupanca extends Conta\`, \`super(saldo)\` chama 
       'Porque `new` abre **uma instância**. Cada uma tem o próprio `this.saldo`. O molde é o mesmo; as gavetas não. Por isso `a.depositar(5)` não mexe em `b`.',
     ),
     proxima(
-      'Na próxima aula o mecanismo por baixo das classes: se o objeto não tem a propriedade, o JS olha no protótipo.',
+      'Na próxima aula, o mecanismo por baixo das classes: se o objeto não tem a propriedade, o JS olha no protótipo.',
       '/aprender/javascript/prototipo',
       'Protótipo (o mecanismo por baixo)',
     ),
@@ -111,7 +111,7 @@ console.log(filho.tipo)`),
       'Do **protótipo** (o pai). O JS não acha `tipo` no filho, então olha no objeto reserva. `Object.create(pai)` é o que liga os dois. Não é uma cópia: se o pai mudar `tipo`, o filho lê o valor novo.',
     ),
     proxima(
-      'Na próxima aula você prevê a ordem dos logs: sincrono primeiro, depois o setTimeout 0.',
+      'Na próxima aula, você prevê a ordem dos logs: síncrono primeiro, depois o setTimeout 0.',
       '/aprender/javascript/event-loop',
       'A fila do JavaScript — event loop',
     ),
@@ -145,7 +145,7 @@ Tem uma fila ainda mais urgente (microtask: \`Promise.then\`). Não precisa deco
       'Porque 0 ms não fura a **pilha**. O JS termina o que está agora (`console.log(\'C\')`) e só então pega o que estava esperado. A ordem é A, C, B — não A, B, C. Se saísse B no meio, cada espera travaria a página.',
     ),
     proxima(
-      'Na próxima aula um JSON ruim não derruba a página: você mostra uma frase clara para a pessoa.',
+      'Na próxima aula, um JSON ruim não derruba a página: você mostra uma frase clara para a pessoa.',
       '/aprender/javascript/erros',
       'Erros de verdade',
     ),
@@ -217,7 +217,7 @@ Bancada: olhe o endereço desta plataforma (localhost ou o site publicado). Não
       'Várias receitas (seus arquivos) viram um marmitex (o que o visitante baixa). Um ganho: **tamanho** (tira comentário e o que a rota não usa), ou **nome** (arquivo gerado, não o caminho cru), ou **import** (módulos viram algo que o Chrome da pessoa entende). Sem bundler, você mandaria o código-fonte cru.',
     ),
     proxima(
-      'Na próxima aula você recusa colar HTML que veio de desconhecido — e nunca põe senha no JS que o Chrome baixa.',
+      'Na próxima aula, você recusa colar HTML que veio de desconhecido — e nunca põe senha no JS que o Chrome baixa.',
       '/aprender/javascript/seguranca-front',
       'Segurança no front',
     ),
@@ -247,7 +247,7 @@ p.textContent = nome
       'No **servidor** / arquivo `.env`. Nunca num arquivo que o Chrome baixa. O JS do front qualquer visitante lê (F12 → Sources). Senha no front é senha pública.',
     ),
     proxima(
-      'Na próxima aula você fecha o avançado com um buscador de CEP: loading, erro amigável, cidade na tela.',
+      'Na próxima aula, você fecha o avançado com um buscador de CEP: loading, erro amigável, cidade na tela.',
       '/aprender/javascript/projeto-consulta-publica',
       'Mini-projeto: consulta pública',
     ),

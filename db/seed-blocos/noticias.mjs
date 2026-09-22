@@ -2,7 +2,7 @@ export const noticias = [
   {
     slug: 'backend-so-com-js',
     titulo: 'Dá para fazer o servidor inteiro em JavaScript?',
-    resumo: 'Sim. A mesma língua do navegador também roda no servidor — com outro nome de casa.',
+    resumo: 'Sim. A mesma língua do navegador também roda no servidor — com outro nome, em outra casa.',
     imagem_capa: '/images/novidades/salao-cozinha.jpg',
     markdown: `A pergunta parece maluca se você só viu JavaScript no Chrome. O navegador lê a página, o JS mexe no botão, fim. “Servidor” soa como outra profissão, outra língua.
 
@@ -87,7 +87,7 @@ Toda vez que a tela mostra um dado que não estava no arquivo HTML, alguém perg
   {
     slug: 'ia-e-aprender-js',
     titulo: 'A IA já programa. Então para que eu vou aprender?',
-    resumo: 'Ela escreve código rápido. Ela também escreve código errado com cara de certo. Quem lê ainda manda.',
+    resumo: 'Ela escreve código rápido. Ela também escreve código errado com cara de certo. Quem sabe ler o código ainda é quem manda.',
     imagem_capa: '/images/novidades/estudar.jpg',
     markdown: `A pergunta é honesta. Você viu o ChatGPT, o Copilot, o Grok, o Claude gerar uma função em três segundos. Por que sofrer no Console?
 

@@ -2,6 +2,12 @@
 definePageMeta({ middleware: 'admin' })
 const { data, error } = await useFetch('/api/admin/aulas')
 useHead({ title: 'Admin — TechLearn' })
+
+function rotuloNivel(n) {
+  if (n === 'intermediario') return 'Intermediário'
+  if (n === 'avancado') return 'Avançado'
+  return 'Básico'
+}
 </script>
 
 <template>
@@ -34,7 +40,7 @@ useHead({ title: 'Admin — TechLearn' })
       <tbody>
         <tr v-for="a in data?.aulas || []" :key="a.id" class="border-t border-linha">
           <td class="p-2">{{ a.trilha_id }}</td>
-          <td class="p-2">{{ a.nivel }}</td>
+          <td class="p-2">{{ rotuloNivel(a.nivel) }}</td>
           <td class="p-2">{{ a.ordem }}</td>
           <td class="p-2">
             <NuxtLink :to="`/admin/aulas/${a.id}`" class="underline text-cerrado">{{ a.titulo }}</NuxtLink>

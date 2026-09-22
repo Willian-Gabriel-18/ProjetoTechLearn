@@ -53,7 +53,7 @@ const src = computed(
         :href="`https://www.youtube.com/watch?v=${conteudo.video_id}`"
         target="_blank"
         rel="noopener noreferrer"
-      >ver no YouTube</a>
+      >Ver no YouTube</a>
     </figcaption>
   </figure>
 </template>

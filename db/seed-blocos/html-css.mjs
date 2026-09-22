@@ -39,7 +39,7 @@ No VS Code: abra a **pasta** da aula, abra o \`.html\`, mude a frase, Ctrl+S, F5
       'HTML **monta a estrutura**: diz o que é título, parágrafo, botão. Sem HTML a janela fica vazia. CSS só veste o que já existe — sozinho ele não cria a página.',
     ),
     proxima(
-      'Na próxima a peça de que o HTML é feito: a tag — abertura, conteúdo, fechamento.',
+      'Na próxima, a peça de que o HTML é feito: a tag — abertura, conteúdo, fechamento.',
       '/aprender/html-css/anatomia-da-tag',
       'Anatomia da tag',
     ),
@@ -93,7 +93,7 @@ Mais na frente você vai ver tags que **não fecham** (\`img\`, \`meta\`, \`inpu
       'A barra no fechamento diz **“aqui acaba”**. `<p>` só abre o parágrafo. Sem `</p>`, o Chrome não sabe onde o parágrafo termina — o próximo texto pode entrar no mesmo pedaço.',
     ),
     proxima(
-      'Na próxima o esqueleto da página: onde essas tags visíveis entram (body) e o que fica escondido (head).',
+      'Na próxima, o esqueleto da página: onde essas tags visíveis entram (body) e o que fica escondido (head).',
       '/aprender/html-css/esqueleto',
       'Esqueleto',
     ),
@@ -156,7 +156,7 @@ A tag \`<p>\` da aula passada não fica solta no arquivo. Ela vai **dentro do bo
       'A aba vem do `<title>` no **head**. O parágrafo que a pessoa lê vai no **body**. Head não é o texto do meio da tela.',
     ),
     proxima(
-      'Na próxima o body ganha texto de verdade: h1, h2, parágrafo — e duas tags que parecem iguais mas não são.',
+      'Na próxima, o body ganha texto de verdade: h1, h2, parágrafo — e duas tags que parecem iguais, mas não são.',
       '/aprender/html-css/texto-e-titulos',
       'Texto e títulos',
     ),
@@ -256,7 +256,7 @@ O \`li\` não fica órfão no body. Ele mora dentro da lista.`),
       '**“Bolo de chocolate fatiado”**. `alt` descreve o que a imagem mostra, para quem não a vê. `imagem1.jpg` é o nome do arquivo — não descreve nada.',
     ),
     proxima(
-      'Na próxima cada peça ganha um nome: id (único) e class (repetível). O JavaScript vai perguntar esses nomes.',
+      'Na próxima, cada peça ganha um nome: id (único) e class (repetível). O JavaScript vai perguntar esses nomes.',
       '/aprender/html-css/nomear-pecas',
       'Nomear peças',
     ),
@@ -352,7 +352,7 @@ O arquivo desta aula tem um h1 com id e dois blocos com a mesma class. Leia os c
       '`type="submit"` **envia** o formulário (a página recarrega, no HTML puro). `type="button"` é só um botão: **não** envia. Use button quando o clique for trabalho do JavaScript depois. Se esquecer o type dentro de um form, alguns botões se comportam como enviar.',
     ),
     proxima(
-      'Na próxima o CSS: arquivo separado na mesma pasta, ligado no head, cor e letra.',
+      'Na próxima, o CSS: arquivo separado na mesma pasta, ligado no head, cor e letra.',
       '/aprender/html-css/css-ligar-e-vestir',
       'CSS: ligar e vestir',
     ),
@@ -422,7 +422,7 @@ Cada uma segue o mesmo formato: \`nome: valor;\`. Sem o ponto e vírgula, a pró
       '**Ponto** é class: `.card` veste quem tem `class="card"`. **Cerquilha** é id: `#titulo` veste o `id="titulo"`. Tag sem sinal (`h1`) veste todas as tags com aquele nome.',
     ),
     proxima(
-      'Na próxima a caixa: margin, padding, border — e três botões na mesma linha.',
+      'Na próxima, a caixa: margin, padding, border — e três botões na mesma linha.',
       '/aprender/html-css/caixa-e-lado-a-lado',
       'Caixa e lado a lado',
     ),
@@ -475,7 +475,7 @@ button {
       '**padding** é *dentro*: entre a borda e o texto. **margin** é *fora*: entre esta caixa e a vizinha. Border é a linha no meio dos dois.',
     ),
     proxima(
-      'Na próxima você junta o básico numa página sua. A porta seguinte é o JavaScript.',
+      'Na próxima, você junta o básico numa página sua. O próximo passo é o JavaScript.',
       '/aprender/html-css/projeto-pagina-sua',
       'Mini-projeto: uma página sua',
     ),

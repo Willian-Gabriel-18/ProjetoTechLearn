@@ -27,7 +27,7 @@ function rotuloTrilha(t) {
           Aprenda tecnologia sem pressa e sem enrolação.
         </h1>
         <p class="mt-4 text-lg md:text-xl text-tinta/80 max-w-md">
-          Aulas de graça para quem está começando. Abre a primeira trilha e tenta.
+          Aulas de graça para quem está começando. Abra a primeira trilha e tente.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <NuxtLink
@@ -73,7 +73,7 @@ function rotuloTrilha(t) {
     <section class="mx-auto max-w-5xl px-4 py-8">
       <h2 class="font-display text-2xl md:text-3xl">As trilhas</h2>
       <p class="mt-2 text-tinta/80">
-        Primeiro a trilha Antes de começar. Depois HTML e CSS. O JavaScript usa a página que você monta lá.
+        Comece pela trilha Antes de começar. Depois, HTML e CSS. O JavaScript usa a página que você monta nessa trilha.
       </p>
       <ol class="mt-6 grid md:grid-cols-3 gap-4">
         <li

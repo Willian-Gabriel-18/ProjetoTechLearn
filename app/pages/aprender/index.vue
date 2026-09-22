@@ -15,8 +15,8 @@ function rotuloTrilha(t) {
   <section class="mx-auto max-w-5xl px-4 py-10">
     <h1 class="font-display text-4xl">Aprenda</h1>
     <p class="mt-3 text-lg max-w-leitura">
-      Comece pela trilha Antes de começar (pasta, VS Code, botão de baixar). Depois HTML e CSS.
-      O JavaScript usa o palco que o HTML monta.
+      Comece pela trilha Antes de começar (pasta, VS Code, botão de baixar). Depois, HTML e CSS.
+      O JavaScript usa a página que o HTML monta.
     </p>
     <ul class="mt-8 space-y-4">
       <li

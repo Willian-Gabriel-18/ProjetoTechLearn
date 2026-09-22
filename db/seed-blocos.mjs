@@ -44,7 +44,7 @@ const htmlMeta = [
   ['botao-e-formulario', 'Botão e formulário', 'button, input, label, form e checkbox. Sem JavaScript ainda.', 7, 'aula'],
   ['css-ligar-e-vestir', 'CSS: ligar e vestir', 'Arquivo CSS na mesma pasta, seletores, cor e letra.', 8, 'aula'],
   ['caixa-e-lado-a-lado', 'Caixa e lado a lado', 'margin, padding, border e três botões em fila.', 9, 'aula'],
-  ['projeto-pagina-sua', 'Mini-projeto: uma página sua', 'Título, texto, imagem, lista e um botão. Porta atual: JavaScript.', 10, 'projeto'],
+  ['projeto-pagina-sua', 'Mini-projeto: uma página sua', 'Título, texto, imagem, lista e um botão. Quando terminar, o próximo passo é o JavaScript.', 10, 'projeto'],
 ]
 
 // ordem UNIQUE nas trilhas: empurra primeiro, depois assenta 1, 2, 3.
@@ -133,6 +133,13 @@ async function upsertAulas(trilhaId, lista) {
 
 await upsertAulas('comecar', comecarMeta)
 await upsertAulas('html-css', htmlMeta)
+
+await sql`
+  UPDATE aulas
+  SET resumo = 'try/catch e mensagem para a pessoa, sem alert no site publicado.',
+      atualizado_em = now()
+  WHERE trilha_id = 'javascript' AND slug = 'erros'
+`
 
 const zips = empacotarAulas()
 console.log('zips', zips)

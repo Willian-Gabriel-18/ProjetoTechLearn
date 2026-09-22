@@ -6,7 +6,7 @@ export const comecar = {
 
 Uma **pasta** (também chamada de diretório) é uma gaveta. Dentro dela cabem vários arquivos — e outras pastas.
 
-Nas aulas daqui para a frente você vai ouvir “deixe na mesma pasta”. Quer dizer: os arquivos daquela aula precisam estar na **mesma gaveta**. Se o HTML está em Downloads e o CSS ficou na Área de trabalho, um não acha o outro.`),
+Nas aulas daqui para a frente, você vai ouvir “deixe na mesma pasta”. Quer dizer: os arquivos daquela aula precisam estar na **mesma gaveta**. Se o HTML está em Downloads e o CSS ficou na Área de trabalho, um não acha o outro.`),
     img(
       '/images/trilhas/comecar/arquivo-pasta-extensao.svg',
       'Três desenhos: um arquivo, uma pasta com arquivos, e o nome pagina.html com a extensão .html destacada',
@@ -30,7 +30,7 @@ No Mac, Finder → Ajustes → Avançado → mostrar todas as extensões.`),
     ),
     md(`Nomeie simples. Evite espaço e acento no começo da vida: \`minha-aula\` é mais seguro que \`Minha Aula 1\`. Maiúscula e minúscula importam em alguns sistemas: \`Index.html\` e \`index.html\` podem ser dois arquivos.
 
-Na próxima aula o Chrome entra. Antes: confira se você vê \`.html\` no nome de um arquivo qualquer da pasta Downloads.`),
+Na próxima aula, o Chrome entra. Antes: confira se você vê \`.html\` no nome de um arquivo qualquer da pasta Downloads.`),
     tente(
       'No seu computador, abra a pasta Downloads. Se os nomes não mostram .zip, .pdf, .html, ligue a opção de extensões (Windows ou Mac, texto acima). Só passe daqui quando você vir o ponto e a extensão.',
     ),
@@ -87,7 +87,7 @@ Celular abre o TechLearn. Escrever arquivo, salvar e recarregar é trabalho de *
       'Google é um **site de busca na internet**. O arquivo está numa pasta do seu computador (Downloads, Área de trabalho, etc.). A busca não enxerga essa gaveta. Quem abre o `.html` local é o **Chrome**: arraste o arquivo para a janela ou use Arquivo → Abrir arquivo. O endereço fica `file:///...`.',
     ),
     proxima(
-      'Na próxima o editor: o programa em que você escreve o código. Não é Word.',
+      'Na próxima, o editor: o programa em que você escreve o código. Não é Word.',
       '/aprender/comecar/editor-vscode',
       'O editor é o VS Code',
     ),
@@ -130,7 +130,7 @@ Se você abrir só um arquivo solto, o VS Code não “enxerga” o vizinho. Aí
       'Word (e Google Docs, WhatsApp) grava **formatação escondida**: fonte, negrito, marcas que você não vê. O Chrome espera texto puro com tags. Esse lixo entra no arquivo e a página quebra sem um recado claro. Código vai no **VS Code** (ou outro editor), não no Word.',
     ),
     proxima(
-      'Na próxima os atalhos do VS Code que as outras aulas vão citar: salvar, formatar, comentar.',
+      'Na próxima, os atalhos do VS Code que as outras aulas vão citar: salvar, formatar, comentar.',
       '/aprender/comecar/atalhos-vscode',
       'Atalhos do VS Code',
     ),
@@ -165,7 +165,7 @@ Crie arquivo novo: clique com o botão direito na pasta à esquerda → New File
       '**Ctrl+S** (no Mac, **Cmd+S**). O Chrome lê o arquivo no disco. Se a aba no VS Code ainda tem um pontinho, a mudança não foi gravada. F5 recarrega a versão velha. Salve, depois F5.',
     ),
     proxima(
-      'Na próxima o botão de baixar deste site: zip, mesma pasta, abrir o HTML — para HTML+CSS e para JavaScript.',
+      'Na próxima, o botão de baixar deste site: zip, mesma pasta, abrir o HTML — para HTML+CSS e para JavaScript.',
       '/aprender/comecar/baixar-e-abrir',
       'Baixar e abrir o pacote',
     ),
@@ -215,7 +215,7 @@ Esqueceu este gesto no meio de outra aula? O botão de baixar tem o link de volt
       '`.js` não é a página. É o companheiro que o HTML chama. A cara da aula é o **`index.html`**. Abra o HTML no Chrome; o `script.js` precisa estar na **mesma pasta**. Dois cliques no `.js` mostram código (ou o Chrome tenta baixar), não o desenho da página.',
     ),
     proxima(
-      'Na próxima as duas bancadas: quando o teste é a página no Chrome, e quando o teste é o Console (F12).',
+      'Na próxima, as duas bancadas: quando o teste é a página no Chrome, e quando o teste é o Console (F12).',
       '/aprender/comecar/duas-bancadas',
       'Duas bancadas',
     ),

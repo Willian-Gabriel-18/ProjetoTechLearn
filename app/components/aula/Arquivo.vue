@@ -47,7 +47,7 @@ const ehZip = computed(() => String(props.conteudo?.href || '').toLowerCase().en
         to="/aprender/comecar/baixar-e-abrir"
         class="underline text-cerrado font-bold"
       >
-        Não lembra de baixar e abrir?
+        Não lembra como baixar e abrir?
       </NuxtLink>
     </p>
     <p class="mt-2">

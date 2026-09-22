@@ -190,7 +190,7 @@ async function addOuSalvarBloco() {
 
 async function apagar(id) {
   limparRecados()
-  if (!confirm('Apagar este bloco? Isso não tem desfazer.')) return
+  if (!confirm('Apagar este bloco? Isso não dá para desfazer.')) return
   try {
     await $fetch(`/api/admin/blocos/${id}`, { method: 'DELETE' })
     if (editandoId.value === id) zerarCampos()
@@ -235,7 +235,7 @@ useHead({ title: 'Editar aula — TechLearn' })
 
 <template>
   <section class="mx-auto max-w-3xl px-4 py-10">
-    <NuxtLink to="/admin" class="underline text-cerrado">← lista</NuxtLink>
+    <NuxtLink to="/admin" class="underline text-cerrado">← Lista das aulas</NuxtLink>
     <h1 class="font-display text-3xl mt-2">Editar aula</h1>
 
     <p v-if="error" class="mt-4 text-cerrado">
