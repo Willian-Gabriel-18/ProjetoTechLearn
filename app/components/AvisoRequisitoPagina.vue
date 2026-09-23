@@ -15,10 +15,8 @@ defineProps({
       Recomendado antes
     </p>
     <p class="mt-2 leading-relaxed" :class="compacto ? 'text-sm' : ''">
-      Esta aula usa uma página em HTML e CSS. Se você ainda não fez o
-      <NuxtLink to="/aprender/html-css" class="underline text-cerrado font-bold">
-        HTML e CSS básico
-      </NuxtLink>,
+      Esta aula usa uma página em HTML e CSS. Se você ainda não fez a trilha
+      <NomeTrilha id="html-css" class="font-bold" />,
       comece por lá — é recomendado, não obrigatório.
     </p>
   </aside>

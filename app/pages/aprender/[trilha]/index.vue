@@ -1,4 +1,6 @@
 <script setup>
+import { htmlCitarTrilhas } from '~/utils/trilhas.js'
+
 const route = useRoute()
 const { data, error } = await useFetch(`/api/trilhas/${route.params.trilha}`)
 useHead({ title: () => `${data.value?.trilha?.titulo || 'Trilha'} — TechLearn` })
@@ -24,9 +26,9 @@ const soUmNivel = computed(() => niveis.filter((nv) => aulasDoNivel(nv.id).lengt
   <section class="mx-auto max-w-5xl px-4 py-10">
     <p v-if="error" class="border border-linha rounded-md p-6">
       <span class="font-display text-2xl block">Esta trilha ainda não está disponível.</span>
-      <span class="mt-2 block">Enquanto isso, comece pela trilha Antes de começar.</span>
+      <span class="mt-2 block">Enquanto isso, comece pela trilha <NomeTrilha id="comecar" />.</span>
       <NuxtLink to="/aprender/comecar" class="mt-4 inline-flex underline text-cerrado">
-        Ir para Antes de começar
+        Ir para “Antes de começar”
       </NuxtLink>
     </p>
     <template v-else>
@@ -34,7 +36,7 @@ const soUmNivel = computed(() => niveis.filter((nv) => aulasDoNivel(nv.id).lengt
         <NuxtLink to="/aprender" class="underline text-cerrado">Aprenda</NuxtLink>
       </p>
       <h1 class="font-display text-4xl mt-2">{{ data.trilha.titulo }}</h1>
-      <p class="mt-3 text-lg max-w-leitura">{{ data.trilha.descricao }}</p>
+      <p class="mt-3 text-lg max-w-leitura" v-html="htmlCitarTrilhas(data.trilha.descricao)" />
       <AvisoAntesDeComecar v-if="data.trilha.id === 'html-css' || data.trilha.id === 'javascript'" />
       <AvisoRequisitoPagina v-if="data.trilha.id === 'javascript'" />
       <p v-if="data.resumoProgresso" class="mt-4 text-sm">
@@ -120,7 +122,7 @@ const soUmNivel = computed(() => niveis.filter((nv) => aulasDoNivel(nv.id).lengt
       >
         O básico desta trilha já está disponível. Mais HTML e CSS (layout, página no celular)
         entram depois. O próximo passo agora é o
-        <NuxtLink to="/aprender/javascript" class="underline text-cerrado font-bold">JavaScript</NuxtLink>.
+        <NomeTrilha id="javascript" class="font-bold" />.
       </p>
     </template>
   </section>

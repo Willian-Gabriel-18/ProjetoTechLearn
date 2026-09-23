@@ -56,9 +56,7 @@ async function desmarcarFeita() {
     </p>
     <template v-else-if="data">
       <p class="text-sm">
-        <NuxtLink :to="`/aprender/${data.aula.trilha_id}`" class="underline text-cerrado">
-          {{ data.aula.trilha_titulo }}
-        </NuxtLink>
+        <NomeTrilha :id="data.aula.trilha_id" />
       </p>
       <p class="mt-2 text-sm text-tinta/70">
         {{
@@ -139,7 +137,7 @@ async function desmarcarFeita() {
             to="/aprender/javascript/o-que-e-javascript"
             class="bg-cerrado text-papel font-bold px-4 py-2 rounded-md text-center"
           >
-            Começar o JavaScript
+            Começar o “JavaScript”
           </NuxtLink>
           <NuxtLink
             :to="`/aprender/${data.aula.trilha_id}`"

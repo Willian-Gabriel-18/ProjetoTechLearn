@@ -1,4 +1,6 @@
 <script setup>
+import { htmlCitarTrilhas } from '~/utils/trilhas.js'
+
 const { data } = await useFetch('/api/trilhas')
 useHead({
   title: 'TechLearn — comece por aqui',
@@ -73,7 +75,8 @@ function rotuloTrilha(t) {
     <section class="mx-auto max-w-5xl px-4 py-8">
       <h2 class="font-display text-2xl md:text-3xl">As trilhas</h2>
       <p class="mt-2 text-tinta/80">
-        Comece pela trilha Antes de começar. Depois, HTML e CSS. O JavaScript usa a página que você monta nessa trilha.
+        Comece pela trilha <NomeTrilha id="comecar" />. Depois, <NomeTrilha id="html-css" />.
+        O <NomeTrilha id="javascript" /> usa a página que você monta nessa trilha.
       </p>
       <ol class="mt-6 grid md:grid-cols-3 gap-4">
         <li
@@ -84,7 +87,7 @@ function rotuloTrilha(t) {
         >
           <p class="text-sm text-cerrado">{{ t.ordem }}º</p>
           <h3 class="font-display text-xl mt-1">{{ t.titulo }}</h3>
-          <p class="mt-2 text-sm leading-relaxed flex-1">{{ t.descricao }}</p>
+          <p class="mt-2 text-sm leading-relaxed flex-1" v-html="htmlCitarTrilhas(t.descricao)" />
           <p v-if="t.publicada" class="mt-3 text-sm">
             {{ rotuloTrilha(t) }}
             <span v-if="typeof t.feitas === 'number'"> · {{ t.feitas }} feitas</span>

@@ -34,8 +34,8 @@ useHead({ title: 'Novidades — TechLearn' })
       </li>
     </ul>
     <p v-else class="mt-8 border border-linha p-4 rounded-md">
-      Ainda não publicamos novidades. Enquanto isso, comece por
-      <NuxtLink to="/aprender/comecar" class="underline text-cerrado">Antes de começar</NuxtLink>.
+      Ainda não publicamos novidades. Enquanto isso, comece pela trilha
+      <NomeTrilha id="comecar" />.
     </p>
   </section>
 </template>

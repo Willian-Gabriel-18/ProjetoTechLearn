@@ -15,9 +15,7 @@ defineProps({
     </p>
     <p class="mt-2 leading-relaxed" :class="compacto ? 'text-sm' : ''">
       Pasta, VS Code e o botão de baixar ficam na trilha
-      <NuxtLink to="/aprender/comecar" class="underline text-cerrado font-bold">
-        Antes de começar
-      </NuxtLink>.
+      <NomeTrilha id="comecar" class="font-bold" />.
       É recomendado, não obrigatório.
     </p>
   </aside>

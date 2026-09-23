@@ -1,4 +1,6 @@
 <script setup>
+import { htmlCitarTrilhas } from '~/utils/trilhas.js'
+
 const { data } = await useFetch('/api/trilhas')
 useHead({ title: 'Aprenda — TechLearn' })
 
@@ -15,8 +17,8 @@ function rotuloTrilha(t) {
   <section class="mx-auto max-w-5xl px-4 py-10">
     <h1 class="font-display text-4xl">Aprenda</h1>
     <p class="mt-3 text-lg max-w-leitura">
-      Comece pela trilha Antes de começar (pasta, VS Code, botão de baixar). Depois, HTML e CSS.
-      O JavaScript usa a página que o HTML monta.
+      Comece pela trilha <NomeTrilha id="comecar" /> (pasta, VS Code, botão de baixar).
+      Depois, <NomeTrilha id="html-css" />. O <NomeTrilha id="javascript" /> usa a página que o HTML monta.
     </p>
     <ul class="mt-8 space-y-4">
       <li
@@ -26,15 +28,15 @@ function rotuloTrilha(t) {
       >
         <div>
           <h2 class="font-display text-2xl">{{ t.titulo }}</h2>
-          <p class="mt-1">{{ t.descricao }}</p>
+          <p class="mt-1" v-html="htmlCitarTrilhas(t.descricao)" />
           <p v-if="t.id === 'html-css' || t.id === 'javascript'" class="mt-2 text-sm">
             Recomendado antes:
-            <NuxtLink to="/aprender/comecar" class="underline text-cerrado">Antes de começar</NuxtLink>
+            <NomeTrilha id="comecar" />
             — não é obrigatório.
           </p>
           <p v-if="t.id === 'javascript'" class="mt-2 text-sm">
-            Melhor depois do
-            <NuxtLink to="/aprender/html-css" class="underline text-cerrado">HTML e CSS básico</NuxtLink>
+            Melhor depois da trilha
+            <NomeTrilha id="html-css" />
             — recomendado, não obrigatório.
           </p>
           <p v-if="t.publicada" class="mt-1 text-sm text-tinta/70">

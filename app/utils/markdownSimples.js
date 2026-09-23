@@ -1,4 +1,6 @@
 // Markdown mínimo: parágrafos, títulos, listas, **negrito**, `código`, [texto](url). Sem HTML cru.
+import { aspasNomeTrilha } from './trilhas.js'
+
 function escapeHtml(s) {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -12,14 +14,14 @@ function inline(src) {
   h = h.replace(/`([^`]+)`/g, '<code class="fonte-codigo">$1</code>')
   h = h.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
   h = h.replace(/\*([^*]+)\*/g, '<em>$1</em>')
-  h = h.replace(
-    /\[([^\]]+)\]\((https?:[^)]+)\)/g,
-    '<a href="$2" class="underline text-cerrado" target="_blank" rel="noopener noreferrer">$1</a>',
-  )
-  h = h.replace(
-    /\[([^\]]+)\]\((\/[^)]+)\)/g,
-    '<a href="$2" class="underline text-cerrado">$1</a>',
-  )
+  h = h.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g, (_, texto, href) => {
+    const rotulo = aspasNomeTrilha(texto)
+    return `<a href="${href}" class="underline text-cerrado" target="_blank" rel="noopener noreferrer">${rotulo}</a>`
+  })
+  h = h.replace(/\[([^\]]+)\]\((\/[^)]+)\)/g, (_, texto, href) => {
+    const rotulo = aspasNomeTrilha(texto)
+    return `<a href="${href}" class="underline text-cerrado">${rotulo}</a>`
+  })
   // URL solta (https://...) que ainda não virou <a>. Não pega o que já está em href="...".
   h = h.replace(/(^|[^"'>=])(https?:\/\/[^\s<]+)/g, (tudo, antes, url) => {
     const limpo = url.replace(/[).,;:!?]+$/, '')

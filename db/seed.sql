@@ -5,14 +5,14 @@ INSERT INTO trilhas (id, titulo, descricao, ordem, publicada) VALUES
   (
     'html-css',
     'HTML e CSS',
-    'A estrutura e o visual da página. Melhor depois da trilha Antes de começar.',
+    'A estrutura e o visual da página. Melhor depois da trilha “Antes de começar”.',
     1,
     true
   ),
   (
     'javascript',
     'JavaScript',
-    'A página reage ao clique. Melhor depois das trilhas Antes de começar e HTML e CSS.',
+    'A página reage ao clique. Melhor depois das trilhas “Antes de começar” e “HTML e CSS”.',
     2,
     true
   );
